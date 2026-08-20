@@ -131,6 +131,14 @@ main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
 /* views 热度 */
 .card .views{font-size:.72rem;color:var(--muted);margin-left:auto}
 
+/* Award Scripts demo */
+.filter-bar select{padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:.86rem;background:#fff;color:var(--text);max-width:260px}
+.script-card{gap:10px}
+.script-card .award-name{font-size:.78rem;font-weight:800;color:var(--purple);letter-spacing:.15px}
+.script-card blockquote{font-size:.88rem;line-height:1.7;color:#334155;border-left:3px solid #c4b5fd;padding:3px 0 3px 13px;margin:2px 0;white-space:pre-line}
+.script-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:.73rem;color:var(--muted)}
+.demo-pill{display:inline-flex;align-items:center;background:var(--gold-light);color:#92400e;border:1px solid #fcd34d;border-radius:20px;padding:3px 9px;font-size:.68rem;font-weight:800}
+
 /* Home cards */
 .home-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
 .home-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);cursor:pointer;transition:box-shadow .12s;border-top:4px solid var(--primary)}
@@ -211,6 +219,7 @@ footer .copy{margin-top:26px;text-align:center;font-size:.8rem;color:#94a3b8}
   <div class="tabs-inner">
     <button class="tab-btn active" data-tab="home" data-i18n="tab_home">总览</button>
     <button class="tab-btn" data-tab="impact" data-i18n="tab_impact">Impact 智库</button>
+    <button class="tab-btn" data-tab="scripts">颁奖词库</button>
     <button class="tab-btn" data-tab="open" data-i18n="tab_open">开源队伍</button>
     <button class="tab-btn" data-tab="tech" data-i18n="tab_tech">技术资源</button>
   </div>
@@ -227,6 +236,7 @@ footer .copy{margin-top:26px;text-align:center;font-size:.8rem;color:#94a3b8}
 
   <div class="home-cards">
     <div class="home-card" onclick="switchTab('impact')"><h3 data-i18n="home_impact_t">Impact 智库</h3><p data-i18n="home_impact_d">2021–2026 共 514 支获奖队伍的 essay / 视频 / 演示直链，可搜索可筛选。</p></div>
+    <div class="home-card" onclick="switchTab('scripts')"><h3>颁奖词库</h3><p>不只限于 Impact：按队伍、奖项和赛事查找 FIRST 官方评委颁奖词。</p></div>
     <div class="home-card" onclick="switchTab('open')"><h3 data-i18n="home_open_t">开源队伍</h3><p data-i18n="home_open_d">六赛季共 2092 支 Open Alliance 队伍，按 Build Thread 访问量排序，有 CAD 的直接预览。</p></div>
     <div class="home-card" onclick="switchTab('tech')"><h3 data-i18n="home_tech_t">技术资源</h3><p data-i18n="home_tech_d">CAD、程序、数据、学习资源，按分类筛。</p></div>
   </div>
@@ -253,6 +263,21 @@ footer .copy{margin-top:26px;text-align:center;font-size:.8rem;color:#94a3b8}
     <span class="result-count" id="imCount"></span>
   </div>
   <div class="grid" id="imGrid"></div>
+</section>
+
+<!-- ================= 颁奖词库 ================= -->
+<section class="tab-panel" id="tab-scripts">
+  <div class="section-head"><h2 id="asTitle">全奖项颁奖词库</h2><span class="cnt" id="asTotal"></span></div>
+  <p class="lead" id="asLead">收录官方赛事页面公开的队伍奖项颁奖词原文；不包含比赛名次、个人奖项或没有公开颁奖词的记录。</p>
+  <div class="info-box"><b>原文优先：</b>颁奖词保持 FIRST 官方英文原文，每张卡片都可回到官方赛事页面核对。后续可增加明确标注的中文机器译文。</div>
+  <div class="filter-bar">
+    <input type="text" id="asSearch" placeholder="搜队号、队名、奖项或颁奖词…" oninput="resetAwardScripts()">
+    <select id="asAward" aria-label="按奖项筛选" onchange="resetAwardScripts()"><option value="">全部奖项</option></select>
+    <select id="asEvent" aria-label="按赛事筛选" onchange="resetAwardScripts()"><option value="">全部赛事</option></select>
+    <span class="result-count" id="asCount"></span>
+  </div>
+  <div class="grid wide" id="asGrid"><div class="card"><div class="note">正在载入颁奖词 Demo…</div></div></div>
+  <div style="text-align:center;margin-top:18px"><button class="chip" id="asMore" type="button" onclick="showMoreAwardScripts()" hidden>加载更多</button></div>
 </section>
 
 <!-- ================= 开源队伍 ================= -->
@@ -364,6 +389,11 @@ const DATA = {"seasons":{"2021":{"game":"INFINITE RECHARGE at Home","impact":[{"
 const SEASONS = DATA.seasons;   // {"2021":{game,impact[],open[],openNote?}, ...}
 const HALL    = DATA.hall;      // [{y,n,nm,loc}]
 const YEARS   = Object.keys(SEASONS).sort();   // ["2021".."2026"]
+let AWARD_SCRIPTS = [];
+let AWARD_META = {events:[]};
+let awardVisible = 48;
+const AWARD_CACHE = {};
+let awardLoadToken = 0;
 
 /* ---------- 技术资源（全局） ---------- */
 const CATS = [
@@ -447,6 +477,9 @@ function essayUrl(y,n){
   // 2021–2026 essay 均遵循官方统一 URL 规律；个别队存有显式 e 则优先
   return 'https://info.firstinspires.org/hubfs/web/program/frc/awards/fia-essays/'+y+'/'+n+'.pdf';
 }
+function esc(value){
+  return String(value==null?'':value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
 
 /* ---- Tab 切换 ---- */
 document.querySelectorAll('.tab-btn').forEach(b=>{
@@ -470,6 +503,7 @@ function selectSeason(y){
   renderSeasonList();
   renderStats();
   renderImpact();
+  loadAwardScripts(y);
   renderOpen();
   renderChampBox();
   try{ history.replaceState(null,'','#'+y); }catch(e){}
@@ -539,6 +573,84 @@ function buildChips(el,filters,state,fn){
 }
 buildChips('imChips',IMP_FILTERS,impFilter,'setImpFilter');
 function setImpFilter(id){impFilter=id;buildChips('imChips',IMP_FILTERS,impFilter,'setImpFilter');renderImpact();}
+
+/* ---- 全奖项颁奖词库 Demo ---- */
+function fillAwardScriptFilters(){
+  const awards = [...new Set(AWARD_SCRIPTS.map(x=>x.awardName))].sort();
+  const events = [...new Map(AWARD_SCRIPTS.map(x=>[x.eventCode,x.eventName])).entries()];
+  $('asAward').innerHTML = '<option value="">全部奖项</option>'+awards.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join('');
+  $('asEvent').innerHTML = '<option value="">全部赛事</option>'+events.map(x=>'<option value="'+esc(x[0])+'">'+esc(x[1])+'</option>').join('');
+}
+function renderAwardScripts(){
+  const q = ($('asSearch').value||'').toLowerCase().trim();
+  const award = $('asAward').value;
+  const event = $('asEvent').value;
+  const list = AWARD_SCRIPTS.filter(x=>{
+    const haystack = [x.teamNumber,x.teamName,x.awardName,x.eventName,x.script].join(' ').toLowerCase();
+    return (!q||haystack.includes(q)) && (!award||x.awardName===award) && (!event||x.eventCode===event);
+  }).sort((a,b)=>a.awardName.localeCompare(b.awardName)||a.teamNumber-b.teamNumber);
+  const visible = list.slice(0,awardVisible);
+  $('asTotal').textContent = AWARD_SCRIPTS.length+' 条官方原文 · '+AWARD_META.events.length+' 场赛事';
+  $('asCount').textContent = '显示 '+visible.length+' / '+list.length;
+  $('asMore').hidden = visible.length>=list.length;
+  $('asMore').textContent = '加载更多（还剩 '+Math.max(0,list.length-visible.length)+' 条）';
+  $('asGrid').innerHTML = visible.length ? visible.map(x=>
+    '<article class="card script-card">'+
+      '<div class="award-name">'+esc(x.awardName)+'</div>'+
+      '<div class="num">'+esc(x.teamNumber)+'</div>'+
+      '<div class="nm">'+esc(x.teamName)+'</div>'+
+      '<blockquote lang="en">'+esc(x.script)+'</blockquote>'+
+      '<div class="script-meta"><span class="badge purple">'+esc(x.eventCode)+'</span><span>'+esc(x.eventName)+'</span><span>· 官方英文原文</span></div>'+
+      '<div class="links">'+btn('essay','查看官方来源',x.source)+'</div>'+
+    '</article>'
+  ).join('') : '<div class="card"><div class="note">没有符合当前筛选条件的颁奖词。</div></div>';
+}
+function resetAwardScripts(){awardVisible=48;renderAwardScripts();}
+function showMoreAwardScripts(){awardVisible+=48;renderAwardScripts();}
+async function loadAwardScripts(year=currentSeason){
+  const token = ++awardLoadToken;
+  $('asTitle').textContent = year+' · 全奖项颁奖词库';
+  $('asTotal').textContent = '载入中…';
+  $('asGrid').innerHTML = '<div class="card"><div class="note">正在载入 '+year+' 赛季颁奖词…</div></div>';
+  if(year==='2021'){
+    AWARD_SCRIPTS=[]; AWARD_META={events:[]};
+    fillAwardScriptFilters();
+    $('asTotal').textContent='暂无可靠公开数据';
+    $('asCount').textContent=''; $('asMore').hidden=true;
+    $('asLead').textContent='2021 赛季官方赛事页面没有形成可可靠归档的队伍颁奖词数据，因此这里明确留空，不补写、不推测。';
+    $('asGrid').innerHTML='<div class="warn-box">该赛季暂无可靠的官方颁奖词原文。你仍可在 Impact 智库查看获奖材料。</div>';
+    return;
+  }
+  try{
+    let payload = AWARD_CACHE[year];
+    if(!payload){
+      let lastError;
+      for(let attempt=1;attempt<=3;attempt++){
+        try{
+          const response = await fetch('data/award-scripts/'+year+'.json',{cache:'no-store'});
+          if(!response.ok) throw new Error('HTTP '+response.status);
+          payload = await response.json();
+          break;
+        }catch(error){
+          lastError=error;
+          if(attempt<3) await new Promise(resolve=>setTimeout(resolve,attempt*500));
+        }
+      }
+      if(!payload) throw lastError||new Error('unknown load error');
+      AWARD_CACHE[year]=payload;
+    }
+    if(token!==awardLoadToken) return;
+    AWARD_SCRIPTS = payload.records||[];
+    AWARD_META = payload;
+    $('asLead').textContent = '收录 '+year+' 赛季 '+payload.events.length+' 场官方赛事页面公开的队伍奖项颁奖词原文；不包含比赛名次、个人奖项或没有公开颁奖词的记录。';
+    fillAwardScriptFilters();
+    resetAwardScripts();
+  }catch(error){
+    if(token!==awardLoadToken) return;
+    $('asTotal').textContent = '载入失败';
+    $('asGrid').innerHTML = '<div class="warn-box">'+year+' 赛季数据载入失败。<button class="chip" type="button" style="margin-left:8px" onclick="loadAwardScripts(\''+year+'\')">重新载入</button></div>';
+  }
+}
 
 /* ---- 开源队伍（按当前赛季） ---- */
 const OP_FILTERS = [
@@ -640,6 +752,7 @@ function setTcFilter(id){tcFilter=id;buildChips('tcChips',TC_FILTERS,tcFilter,'s
   renderStats();
   renderChampBox();
   renderImpact();
+  loadAwardScripts(currentSeason);
   renderOpen();
   renderHall();
   renderTech();
