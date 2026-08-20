@@ -366,6 +366,9 @@ const AWARD_UI_EN={tab_scripts:"Award Scripts",home_scripts_t:"Award Scripts",ho
 Object.keys(I18N).forEach(lang=>Object.assign(I18N[lang],AWARD_UI_EN));
 Object.assign(I18N['zh-CN'],{tab_scripts:"颁奖词库",home_scripts_t:"颁奖词库",home_scripts_d:"不只限于 Impact：按队伍、奖项和赛事查找 FIRST 官方评委颁奖词。",scripts_lead:"收录官方赛事页面公开的队伍奖项颁奖词原文；不包含比赛名次、个人奖项或没有公开颁奖词的记录。",scripts_original:"原文优先：颁奖词保持 FIRST 官方英文原文，每张卡片都可回到官方赛事页面核对。",scripts_search:"搜队号、队名、奖项或颁奖词…",scripts_all_awards:"全部奖项",scripts_all_events:"全部赛事",scripts_title:"全奖项颁奖词库",scripts_originals:" 条官方原文",scripts_events:" 场赛事",scripts_showing:"显示",scripts_load_more:"加载更多",scripts_remaining:"还剩",scripts_empty:"没有符合当前筛选条件的颁奖词。",scripts_official_en:"官方英文原文",scripts_source:"查看官方来源",scripts_loading:"正在载入颁奖词…",scripts_load_failed:"赛季数据载入失败。",scripts_retry:"重新载入",scripts_no_data:"暂无可靠公开数据",scripts_no_data_lead:"2021 赛季官方赛事页面没有形成可可靠归档的队伍颁奖词数据，因此这里明确留空，不补写、不推测。",scripts_no_data_box:"该赛季暂无可靠的官方颁奖词原文。你仍可在 Impact 智库查看获奖材料。"});
 Object.assign(I18N['zh-TW'],{tab_scripts:"頒獎詞庫",home_scripts_t:"頒獎詞庫",home_scripts_d:"不限於 Impact：依隊伍、獎項與賽事查找 FIRST 官方評審頒獎詞。",scripts_lead:"收錄官方賽事頁面公開的隊伍獎項頒獎詞原文；不包含比賽名次、個人獎項或未公開頒獎詞的記錄。",scripts_original:"原文優先：頒獎詞保留 FIRST 官方英文原文，每張卡片都可回到官方賽事頁面核對。",scripts_search:"搜尋隊號、隊名、獎項或頒獎詞…",scripts_all_awards:"全部獎項",scripts_all_events:"全部賽事",scripts_title:"全獎項頒獎詞庫",scripts_originals:" 條官方原文",scripts_events:" 場賽事",scripts_showing:"顯示",scripts_load_more:"載入更多",scripts_remaining:"剩餘",scripts_empty:"沒有符合目前篩選條件的頒獎詞。",scripts_official_en:"官方英文原文",scripts_source:"查看官方來源",scripts_loading:"正在載入頒獎詞…",scripts_load_failed:"賽季資料載入失敗。",scripts_retry:"重新載入",scripts_no_data:"暫無可靠公開資料",scripts_no_data_lead:"2021 賽季官方賽事頁面沒有可靠的隊伍頒獎詞存檔，因此此處明確留空。",scripts_no_data_box:"此賽季暫無可靠的官方頒獎詞原文；Impact 智庫仍可查看獲獎資料。"});
+Object.keys(I18N).forEach(lang=>Object.assign(I18N[lang],{champ_finalists:"5 finalists: "}));
+Object.assign(I18N['zh-CN'],{champ_finalists:"5 支决赛入围："});
+Object.assign(I18N['zh-TW'],{champ_finalists:"5 支決賽入圍："});
 function t(k){ return (I18N[LANG]&&I18N[LANG][k])||I18N['en'][k]||k; }
 function applyI18n(){
   document.querySelectorAll('[data-i18n]').forEach(el=>{
@@ -459,8 +462,8 @@ const HALL_LINKS = {
 };
 
 /* ---------- 各赛季世锦赛冠军补充说明 ---------- */
-const CHAMP_EXTRA = {
-2026:"5 支决赛入围：1880 / 9277 / 8393 / 359 / 9545。"
+const CHAMP_FINALISTS = {
+2026:[1880,9277,8393,359,9545]
 };
 
 /* ================================================================
@@ -527,10 +530,10 @@ function renderChampBox(){
   const y = currentSeason;
   const champs = HALL.filter(h=>String(h.y)===String(y));
   if(!champs.length){ $('champBox').innerHTML=''; return; }
-  const inner = champs.map(h=>'<b>'+h.n+' '+h.nm+'</b>（'+h.loc+'）').join(' 与 ');
-  const extra = CHAMP_EXTRA[y] ? ' '+CHAMP_EXTRA[y] : '';
+  const inner = champs.map(h=>'<b>'+h.n+' '+h.nm+'</b> ('+h.loc+')').join(' & ');
+  const extra = CHAMP_FINALISTS[y] ? ' '+t('champ_finalists')+CHAMP_FINALISTS[y].join(' / ')+'.' : '';
   const btnTxt = champs.map(h=>btn('essay','Essay',essayUrl(y,h.n))).join(' ');
-  $('champBox').innerHTML = '<b>'+y+' '+t('champ_prefix')+'</b>'+inner+'。'+extra+btnTxt;
+  $('champBox').innerHTML = '<b>'+y+' '+t('champ_prefix')+'</b> '+inner+'.'+extra+' '+btnTxt;
 }
 
 /* ---- Impact 智库（按当前赛季） ---- */
@@ -698,13 +701,14 @@ function renderOpen(){
   $('opTitle').textContent = y+' · '+SEASONS[y].game+' — '+t('tab_open');
   $('openTotal').textContent = listAll.length + t(opSort==='team'?'teams_sorted_number':'teams_sorted');
   $('opCount').textContent = t('showing')+' ' + list.length + ' / ' + listAll.length;
+  const siteLabel = t('site_label');
   $('opGrid').innerHTML = list.map(t=>{
     const links = [];
     if(t.cad) links.push(btn('cad','CAD',t.cad));
     if(t.gh) links.push(btn('gh','Code',t.gh));
     if(t.yt) links.push(btn('video','YouTube',t.yt));
     if(t.ph) links.push(btn('pres','Photos',t.ph));
-    if(t.site) links.push(btn('site','网站',t.site));
+    if(t.site) links.push(btn('site',siteLabel,t.site));
     if(t.cd) links.push(btn('cd','Build Thread',t.cd));
     // CAD preview 图标：有 CAD 的队伍在队号旁标一个小图标
     const cadIcon = t.cad ? '<a class="cad-prev" href="'+t.cad+'" target="_blank" rel="noopener" title="CAD 预览"><span class="cad-dot"></span>3D</a>' : '';
