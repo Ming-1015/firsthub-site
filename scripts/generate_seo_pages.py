@@ -40,19 +40,19 @@ main{max-width:1080px;margin:28px auto;padding:0 20px 60px}h1{font-size:2rem;lin
 TEXT = {
     "en": {
         "lang": "en",
-        "brand": "FRC Knowledge Hub",
-        "tag": "Open FRC award, team and technical knowledge",
-        "home": "Interactive site",
-        "index": "SEO directory",
+        "brand": "FRC Community Resource Hub",
+        "tag": "Community-built FRC award, team, and technical resources",
+        "home": "Main site",
+        "index": "Browse all resources",
         "switch": "中文",
         "overview": "Season overview",
-        "impact": "Impact Award winners",
+        "impact": "Impact Award teams",
         "open": "Open Alliance teams",
         "scripts": "Award scripts",
-        "impact_lead": "Official FIRST Impact Award winning materials, team names and event sources.",
-        "open_lead": "Public Build Threads, CAD, code, video and team websites collected for the FRC community.",
-        "script_lead": "Official judge-written team award citations published on FIRST event pages.",
-        "source": "Official event source",
+        "impact_lead": "Official FIRST Impact Award materials, current team names, and award-event sources.",
+        "open_lead": "Public Build Threads, CAD, code, videos, and team websites collected for the FRC community.",
+        "script_lead": "Official team award citations written by judges and published on FIRST event pages.",
+        "source": "FIRST event page",
         "essay": "Official essay",
         "build": "Build Thread",
         "code": "Code",
@@ -60,6 +60,8 @@ TEXT = {
         "video": "Video",
         "website": "Website",
         "views": "views",
+        "records": "records",
+        "events": "events",
     },
     "zh": {
         "lang": "zh-CN",
@@ -83,6 +85,8 @@ TEXT = {
         "video": "视频",
         "website": "网站",
         "views": "次浏览",
+        "records": "条记录",
+        "events": "场赛事",
     },
 }
 
@@ -98,7 +102,7 @@ def page(*, lang: str, path: str, title: str, description: str, body: str, other
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{BASE}/og-cover.png">
 <style>{STYLE}</style><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(',', ':'))}</script></head>
 <body><header class="top"><div class="wrap"><a class="language" href="{other}">{t['switch']}</a><div class="brand">{t['brand']}</div><div class="tag">{t['tag']}</div><nav class="nav"><a href="/">{t['home']}</a><a href="/{lang}/">{t['index']}</a></nav></div></header><main>{body}</main>
-<footer><div class="wrap">FRC Knowledge Hub · Built by FRC Team 5449 · <a href="/sitemap.xml">Sitemap</a></div></footer>
+<footer><div class="wrap">{t['brand']} · Built by FRC Team 5449 · <a href="/sitemap.xml">Sitemap</a></div></footer>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"471714dc027b4b71abdb6f6098af33e9"}}'></script></body></html>"""
 
 
@@ -123,15 +127,15 @@ def generate(data: dict) -> list[str]:
         for year in YEARS:
             season = seasons[year]
             cards.append(f'<article class="card"><h2>{year} · {esc(season["game"])}</h2><p>{len(season.get("impact", []))} {t["impact"]}<br>{len(season.get("open", []))} {t["open"]}</p><div class="links"><a href="/{lang}/seasons/{year}/">{t["overview"]}</a><a href="/{lang}/impact/{year}/">{t["impact"]}</a><a href="/{lang}/open-teams/{year}/">{t["open"]}</a>{f'<a href="/{lang}/award-scripts/{year}/">{t["scripts"]}</a>' if year != '2021' else ''}</div></article>')
-        desc = "FRC seasons, Impact Award winners, official award scripts and Open Alliance team resources." if lang == "en" else "按赛季浏览 FRC Impact Award 获奖队伍、官方颁奖词及 Open Alliance 开源资料。"
+        desc = "Browse FRC Impact Award materials, official award scripts, and Open Alliance team resources by season." if lang == "en" else "按赛季浏览 FRC Impact Award 获奖队伍、官方颁奖词及 Open Alliance 开源资料。"
         body = f'<p class="crumb"><a href="/">{t["home"]}</a></p><h1>{t["brand"]} · {t["index"]}</h1><p class="lead">{desc}</p><section class="cards">{"".join(cards)}</section>'
-        schema = {"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{t['brand']} {t['index']}", "url": f"{BASE}/{lang}/", "isPartOf": {"@type": "WebSite", "name": "FRC Knowledge Hub", "url": BASE}}
+        schema = {"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{t['brand']} {t['index']}", "url": f"{BASE}/{lang}/", "isPartOf": {"@type": "WebSite", "name": "FRC Community Resource Hub", "url": BASE}}
         write_page(f"/{lang}", page(lang=lang, path=f"/{lang}/", other_path=f"/{other}/", title=f"{t['brand']} · {t['index']}", description=desc, body=body, schema=schema)); generated.append(f"/{lang}/")
 
         for year in YEARS:
             season = seasons[year]
             game = season["game"]
-            overview_desc = (f"{year} FRC {game} season: Impact Award winners, Open Alliance teams and official award resources." if lang == "en" else f"{year} FRC {game} 赛季：Impact Award 获奖队伍、Open Alliance 开源队伍和官方奖项资料。")
+            overview_desc = (f"Resources from the {year} FRC {game} season, including Impact Award teams, Open Alliance teams, and official award materials." if lang == "en" else f"{year} FRC {game} 赛季：Impact Award 获奖队伍、Open Alliance 开源队伍和官方奖项资料。")
             body = f'<p class="crumb"><a href="/{lang}/">{t["index"]}</a></p><h1>{year} FRC {esc(game)}</h1><p class="lead">{overview_desc}</p><section class="cards"><article class="card"><h2>{t["impact"]}</h2><p>{len(season.get("impact", []))}</p><a href="/{lang}/impact/{year}/">{t["impact"]}</a></article><article class="card"><h2>{t["open"]}</h2><p>{len(season.get("open", []))}</p><a href="/{lang}/open-teams/{year}/">{t["open"]}</a></article>{f'<article class="card"><h2>{t["scripts"]}</h2><a href="/{lang}/award-scripts/{year}/">{t["scripts"]}</a></article>' if year != '2021' else ''}</section>'
             schema = {"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{year} FRC {game}", "url": f"{BASE}/{lang}/seasons/{year}/"}
             write_page(f"/{lang}/seasons/{year}", page(lang=lang, path=f"/{lang}/seasons/{year}/", other_path=f"/{other}/seasons/{year}/", title=f"{year} FRC {game} · {t['brand']}", description=overview_desc, body=body, schema=schema)); generated.append(f"/{lang}/seasons/{year}/")
@@ -141,19 +145,20 @@ def generate(data: dict) -> list[str]:
                 events = " · ".join(f'<a href="{esc(e.get("url"))}" rel="noopener">{esc(e.get("name"))}</a>' for e in team.get("events", []) if e.get("url"))
                 links = f'<div class="links"><a href="{esc(team.get("e"))}" rel="noopener">{t["essay"]}</a></div>' if team.get("e") else ""
                 impact_rows.append(f'<article class="row"><div class="num">FRC {esc(team.get("n"))} · {esc(team.get("nm"))}</div><div class="meta">{events}</div>{links}</article>')
-            impact_desc = f"{year} FRC Impact Award winning teams, official essays and regional or district event sources." if lang == "en" else f"{year} FRC Impact Award 获奖队伍、官方 Essay 及 Regional 或 District 获奖赛事来源。"
+            impact_desc = f"{year} FRC Impact Award teams, official essays, and Regional or District award-event sources." if lang == "en" else f"{year} FRC Impact Award 获奖队伍、官方 Essay 及 Regional 或 District 获奖赛事来源。"
             body = f'<p class="crumb"><a href="/{lang}/seasons/{year}/">{year} {esc(game)}</a></p><h1>{year} {t["impact"]}</h1><p class="lead">{t["impact_lead"]}</p>{"".join(impact_rows)}'
-            schema = {"@context": "https://schema.org", "@type": "Dataset", "name": f"{year} FRC Impact Award winners", "description": impact_desc, "url": f"{BASE}/{lang}/impact/{year}/", "creator": {"@type": "Organization", "name": "FRC Knowledge Hub"}}
-            write_page(f"/{lang}/impact/{year}", page(lang=lang, path=f"/{lang}/impact/{year}/", other_path=f"/{other}/impact/{year}/", title=f"{year} FRC Impact Award Winners · {t['brand']}", description=impact_desc, body=body, schema=schema)); generated.append(f"/{lang}/impact/{year}/")
+            schema = {"@context": "https://schema.org", "@type": "Dataset", "name": f"{year} FRC Impact Award teams", "description": impact_desc, "url": f"{BASE}/{lang}/impact/{year}/", "creator": {"@type": "Organization", "name": "FRC Community Resource Hub"}}
+            write_page(f"/{lang}/impact/{year}", page(lang=lang, path=f"/{lang}/impact/{year}/", other_path=f"/{other}/impact/{year}/", title=f"{year} FRC Impact Award Teams · {t['brand']}", description=impact_desc, body=body, schema=schema)); generated.append(f"/{lang}/impact/{year}/")
 
             open_rows = []
             for team in sorted(season.get("open", []), key=lambda x: int(x.get("n", 0))):
-                tags = " ".join(f'<span class="pill">{esc(tag)}</span>' for tag in team.get("tags", []))
+                tag_en = {"底盘":"Drivetrain","自瞄":"Vision","吸取":"Intake","射击":"Shooter","爬升":"Climb","自动":"Autonomous","侦察":"Scouting"}
+                tags = " ".join(f'<span class="pill">{esc(tag_en.get(tag, tag) if lang == "en" else tag)}</span>' for tag in team.get("tags", []))
                 view_text = f'{esc(team.get("views"))} {t["views"]}' if team.get("views") else ""
                 open_rows.append(f'<article class="row"><div class="num">FRC {esc(team.get("n"))} · {esc(team.get("nm"))}</div><div class="meta">{view_text} {tags}</div>{links_for_team(team, t)}</article>')
             open_desc = f"{year} FRC Open Alliance teams with public Build Threads, CAD, code, video and websites." if lang == "en" else f"{year} FRC Open Alliance 开源队伍及公开 Build Thread、CAD、代码、视频和网站。"
             body = f'<p class="crumb"><a href="/{lang}/seasons/{year}/">{year} {esc(game)}</a></p><h1>{year} {t["open"]}</h1><p class="lead">{t["open_lead"]}</p>{"".join(open_rows)}'
-            schema = {"@context": "https://schema.org", "@type": "Dataset", "name": f"{year} FRC Open Alliance teams", "description": open_desc, "url": f"{BASE}/{lang}/open-teams/{year}/", "creator": {"@type": "Organization", "name": "FRC Knowledge Hub"}}
+            schema = {"@context": "https://schema.org", "@type": "Dataset", "name": f"{year} FRC Open Alliance teams", "description": open_desc, "url": f"{BASE}/{lang}/open-teams/{year}/", "creator": {"@type": "Organization", "name": "FRC Community Resource Hub"}}
             write_page(f"/{lang}/open-teams/{year}", page(lang=lang, path=f"/{lang}/open-teams/{year}/", other_path=f"/{other}/open-teams/{year}/", title=f"{year} FRC Open Alliance Teams · {t['brand']}", description=open_desc, body=body, schema=schema)); generated.append(f"/{lang}/open-teams/{year}/")
 
             award_file = ROOT / "data" / "award-scripts" / f"{year}.json"
@@ -168,8 +173,8 @@ def generate(data: dict) -> list[str]:
                     names[award] = names.get(award, 0) + 1; events[event] = events.get(event, 0) + 1
                 award_list = "".join(f'<article class="row"><strong>{esc(name)}</strong><span class="meta"> · {count}</span></article>' for name, count in sorted(names.items(), key=lambda x: (-x[1], x[0])))
                 script_desc = f"{year} official FRC team award scripts indexed by award and event." if lang == "en" else f"{year} FRC 官方队伍奖项颁奖词索引，按奖项与赛事整理。"
-                body = f'<p class="crumb"><a href="/{lang}/seasons/{year}/">{year} {esc(game)}</a></p><h1>{year} {t["scripts"]}</h1><p class="lead">{t["script_lead"]} {len(records)} records · {len(events)} events.</p>{award_list}<p><a href="/#{year}">{t["home"]}</a></p>'
-                schema = {"@context": "https://schema.org", "@type": "Dataset", "name": f"{year} FRC official award scripts", "description": script_desc, "url": f"{BASE}/{lang}/award-scripts/{year}/", "creator": {"@type": "Organization", "name": "FRC Knowledge Hub"}}
+                body = f'<p class="crumb"><a href="/{lang}/seasons/{year}/">{year} {esc(game)}</a></p><h1>{year} {t["scripts"]}</h1><p class="lead">{t["script_lead"]} {len(records)} {t["records"]} · {len(events)} {t["events"]}.</p>{award_list}<p><a href="/#{year}">{t["home"]}</a></p>'
+                schema = {"@context": "https://schema.org", "@type": "Dataset", "name": f"{year} FRC official award scripts", "description": script_desc, "url": f"{BASE}/{lang}/award-scripts/{year}/", "creator": {"@type": "Organization", "name": "FRC Community Resource Hub"}}
                 write_page(f"/{lang}/award-scripts/{year}", page(lang=lang, path=f"/{lang}/award-scripts/{year}/", other_path=f"/{other}/award-scripts/{year}/", title=f"{year} FRC Award Scripts · {t['brand']}", description=script_desc, body=body, schema=schema)); generated.append(f"/{lang}/award-scripts/{year}/")
     return generated
 
