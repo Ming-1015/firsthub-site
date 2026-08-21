@@ -1,6 +1,6 @@
 # FirstHub
 
-FRC Community Resource Hub: https://firsthub.site
+FIRSTHub · FRC Open Resource Library: https://firsthub.site
 
 ## Data workflow
 
