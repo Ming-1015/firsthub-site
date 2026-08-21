@@ -20,7 +20,12 @@ python scripts/deep_mine_github.py --year 2026
 python scripts/deep_mine_github.py --year 2026 --apply
 python scripts/validate_data.py
 python scripts/rebuild_site.py
+python scripts/generate_seo_pages.py
 ```
 
 Review `data/github_candidates_2026.json` before publishing. Git commits and
 deployment are intentionally separate steps.
+
+`generate_seo_pages.py` rebuilds the crawlable English and Chinese season,
+Impact, Open Alliance, and award-script indexes, plus `sitemap.xml` and
+`robots.txt`. Run it after changing the inline season data or award-script JSON.
