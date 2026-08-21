@@ -25,16 +25,17 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚙️%3C/text%3E%3C/svg%3E">
 <style>
 :root{
-  --bg:#f4f6fa; --surface:#ffffff; --border:#e2e8f0; --text:#1e293b; --muted:#64748b;
-  --primary:#1d4ed8; --primary-dark:#1e40af; --primary-light:#eff6ff;
+  --bg:#f3f1eb; --surface:#fffefa; --border:#d8d5cc; --text:#172033; --muted:#657083;
+  --primary:#9f4a87; --primary-dark:#32152e; --primary-light:#f7edf4;
+  --team-pink:#c45a9f;
   --red:#dc2626; --red-light:#fee2e2;
   --gold:#d97706; --gold-light:#fef3c7;
   --green:#059669; --green-light:#d1fae5;
   --purple:#7c3aed; --purple-light:#ede9fe;
   --teal:#0d9488; --teal-light:#ccfbf1;
-  --radius:12px;
-  --shadow:0 1px 3px rgba(15,23,42,.08),0 1px 2px rgba(15,23,42,.04);
-  --shadow-lg:0 10px 25px -5px rgba(15,23,42,.12);
+  --radius:4px;
+  --shadow:none;
+  --shadow-lg:0 8px 20px rgba(23,32,51,.08);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
@@ -43,39 +44,42 @@ a:hover{text-decoration:underline}
 #langSel option{background:#fff;color:#1e293b}
 
 /* ===== Hero ===== */
-.hero{background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);color:#fff;padding:44px 24px 34px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.06)}
-.hero::before{content:"";position:absolute;left:-60px;bottom:-120px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.05)}
+.hero{background:#2b132a;color:#fff;padding:38px 24px 30px;position:relative;overflow:hidden;border-top:6px solid var(--team-pink)}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.hero::before{content:"FRC / KNOWLEDGE ARCHIVE";position:absolute;right:24px;bottom:12px;font:700 10px/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:2px;color:rgba(255,255,255,.28)}
 .hero-inner{max-width:1120px;margin:0 auto;position:relative;z-index:1}
-.hero .kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:4px 14px;border-radius:20px;font-size:.8rem;letter-spacing:.4px;margin-bottom:14px}
-.hero h1{font-size:2.2rem;font-weight:800;letter-spacing:.5px}
+.team-mark-wrap{position:absolute;left:0;top:-4px;width:176px;height:176px;display:flex;align-items:center;justify-content:center}
+.team-mark{width:176px;height:176px;object-fit:contain;filter:drop-shadow(0 7px 12px rgba(0,0,0,.3))}
+.hero-copy{padding-left:198px}
+.hero .kicker{display:inline-block;border-left:3px solid var(--team-pink);padding:2px 0 2px 10px;font:700 .72rem/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.8px;margin-bottom:14px;text-transform:uppercase}
+.hero h1{font-size:2.2rem;font-weight:800;letter-spacing:-.5px}
 .hero h1 .en{font-size:1rem;font-weight:500;opacity:.75;margin-left:10px;letter-spacing:1px}
 .hero .sub{font-size:1.02rem;opacity:.92;margin-top:8px;max-width:780px}
 .hero .sub b{color:#fde68a}
-.stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
-.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:10px 20px;text-align:center;min-width:120px;backdrop-filter:blur(4px)}
-.stat .num{font-size:1.5rem;font-weight:800;color:#fff}
-.stat .lbl{font-size:.75rem;opacity:.85;margin-top:2px}
+.stats{display:flex;gap:0;flex-wrap:wrap;margin-top:24px;border-top:1px solid rgba(255,255,255,.2);max-width:720px}
+.stat{border-right:1px solid rgba(255,255,255,.2);padding:12px 24px 6px 0;margin-right:24px;text-align:left;min-width:120px}
+.stat .num{font:800 1.45rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:#fff}
+.stat .lbl{font-size:.72rem;opacity:.72;margin-top:6px}
 
 /* ===== Season selector ===== */
-.seasonbar{background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow);position:sticky;top:0;z-index:60}
+.seasonbar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:60}
 .seasonbar-inner{max-width:1120px;margin:0 auto;padding:10px 12px}
 .seasonbar .cap{font-size:.72rem;font-weight:800;color:var(--muted);letter-spacing:1px;margin-bottom:8px;text-transform:uppercase}
 .season-list{display:flex;gap:8px;flex-wrap:wrap}
-.season-btn{border:1px solid var(--border);background:#fff;border-radius:10px;padding:7px 18px;cursor:pointer;text-align:center;transition:box-shadow .12s;min-width:86px}
-.season-btn:hover{border-color:var(--primary);box-shadow:var(--shadow)}
+.season-btn{border:0;border-bottom:2px solid transparent;background:transparent;border-radius:0;padding:7px 18px;cursor:pointer;text-align:center;transition:all .12s;min-width:86px}
+.season-btn:hover{border-bottom-color:var(--primary);background:var(--primary-light)}
 .season-btn .yr{font-size:1.02rem;font-weight:800;color:var(--text);display:block;line-height:1.2}
 .season-btn .gm{font-size:.62rem;color:var(--muted);display:block;letter-spacing:.2px;white-space:nowrap}
-.season-btn.active{background:var(--primary);border-color:var(--primary)}
-.season-btn.active .yr{color:#fff}
-.season-btn.active .gm{color:#dbeafe}
+.season-btn.active{background:var(--primary-light);border-bottom-color:var(--team-pink)}
+.season-btn.active .yr{color:var(--primary-dark)}
+.season-btn.active .gm{color:var(--muted)}
 
 /* ===== Nav ===== */
-.tabs{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);position:sticky;top:70px;z-index:50}
+.tabs{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:70px;z-index:50}
 .tabs-inner{max-width:1120px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:0 12px}
 .tab-btn{border:none;background:none;padding:13px 16px;font-size:.92rem;font-weight:600;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:all .15s}
 .tab-btn:hover{color:var(--primary)}
-.tab-btn.active{color:var(--primary);border-bottom-color:var(--primary)}
+.tab-btn.active{color:var(--primary-dark);border-bottom-color:var(--team-pink)}
 
 main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
 .tab-panel{display:none;animation:fade .25s ease}
@@ -87,16 +91,16 @@ main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
 .section-head h2{font-size:1.35rem;font-weight:800}
 .section-head .cnt{font-size:.85rem;color:var(--muted)}
 .lead{color:var(--muted);font-size:.95rem;margin-bottom:14px}
-.info-box{background:var(--primary-light);border-left:4px solid var(--primary);padding:14px 18px;border-radius:8px;font-size:.88rem;margin:14px 0}
+.info-box{background:transparent;border:1px solid var(--border);border-left:4px solid var(--primary);padding:14px 18px;border-radius:0;font-size:.88rem;margin:14px 0}
 .warn-box{background:var(--gold-light);border-left:4px solid var(--gold);padding:14px 18px;border-radius:8px;font-size:.88rem;margin:14px 0;color:#78350f}
 
 /* Filter bar */
 .filter-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0;position:sticky;top:118px;background:var(--bg);padding:10px 0;z-index:40}
 .filter-bar input{flex:1;min-width:200px;padding:9px 14px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;background:#fff}
 .chips{display:flex;gap:6px;flex-wrap:wrap}
-.chip{border:1px solid var(--border);background:#fff;padding:6px 14px;border-radius:20px;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--muted);transition:all .15s}
+.chip{border:1px solid var(--border);background:var(--surface);padding:6px 14px;border-radius:3px;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--muted);transition:all .15s}
 .chip:hover{border-color:var(--primary);color:var(--primary)}
-.chip.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.chip.active{background:var(--primary-dark);border-color:var(--primary-dark);color:#fff}
 .sort-toggle{display:inline-flex;align-items:center;padding:3px;background:#e2e8f0;border-radius:10px;gap:2px}
 .sort-toggle .sort-btn{border:0;background:transparent;color:var(--muted);padding:6px 11px;border-radius:7px;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap}
 .sort-toggle .sort-btn:hover{color:var(--primary-dark)}
@@ -106,14 +110,14 @@ main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
 /* Grids */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
 .grid.wide{grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);transition:box-shadow .12s;display:flex;flex-direction:column;gap:8px}
-.card:hover{box-shadow:var(--shadow-lg);border-color:#93c5fd}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:none;transition:border-color .12s,transform .12s;display:flex;flex-direction:column;gap:8px}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);border-color:#8e9ab8}
 .card .num{font-size:1.25rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .card .nm{font-size:.92rem;font-weight:600;color:var(--text)}
 .card .loc{font-size:.8rem;color:var(--muted)}
 .card .note{font-size:.8rem;color:var(--muted);line-height:1.55}
 .card .links{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.badge{font-size:.62rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:3px 9px;border-radius:20px;color:#fff}
+.badge{font-size:.62rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:3px 7px;border-radius:2px;color:#fff}
 .badge.gold{background:var(--gold)} .badge.green{background:var(--green)} .badge.blue{background:var(--primary)} .badge.gray{background:#64748b} .badge.purple{background:var(--purple)} .badge.teal{background:var(--teal)}
 .btns{display:flex;flex-wrap:wrap;gap:6px}
 .btn{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:6px;font-size:.78rem;font-weight:700;text-decoration:none!important;transition:all .15s;border:1px solid transparent}
@@ -149,7 +153,7 @@ main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
 
 /* Home cards */
 .home-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
-.home-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);cursor:pointer;transition:box-shadow .12s;border-top:4px solid var(--primary)}
+.home-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:none;cursor:pointer;transition:all .12s;border-top:3px solid var(--primary-dark)}
 .home-card:hover{box-shadow:var(--shadow-lg)}
 .home-card .ic{font-size:1.6rem}
 .home-card h3{font-size:1.05rem;margin:8px 0 6px}
@@ -182,10 +186,20 @@ footer li a{color:var(--muted);text-decoration:none;border-bottom:1px dashed #cb
 footer li a:hover{color:var(--primary);border-bottom-color:var(--primary)}
 footer .copy{margin-top:26px;text-align:center;font-size:.8rem;color:#94a3b8}
 
+@media(min-width:1500px){
+  .team-mark-wrap{left:-200px}
+  .hero-copy{padding-left:0}
+}
+
 @media(max-width:640px){
+  .team-mark-wrap{left:0;top:-2px;width:130px;height:130px}
+  .team-mark{width:130px;height:130px}
+  .hero-copy{padding-left:0;padding-top:144px}
   .hero h1{font-size:1.6rem}
-  .stats{gap:8px}
-  .stat{min-width:100px;padding:8px 10px}
+  .hero .kicker{max-width:250px;margin-bottom:14px}
+  .lang-control{top:10px!important;right:0!important}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%}
+  .stat{min-width:0;margin:0;padding:10px 12px 10px 8px;border-right:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.12)}
   .filter-bar{position:static}
   .tabs{top:0}
   .season-btn{min-width:64px;padding:6px 10px}
@@ -197,20 +211,25 @@ footer .copy{margin-top:26px;text-align:center;font-size:.8rem;color:#94a3b8}
 
 <header class="hero">
   <div class="hero-inner">
+    <div class="team-mark-wrap">
+      <img class="team-mark" src="team-5449-logo-transparent.png" alt="FRC Team 5449 Prototype team logo" width="1268" height="1240">
+    </div>
+    <div class="hero-copy">
     <span class="kicker" data-i18n="hero_kicker">FRC · FIRST Robotics Competition · 全社区免费开放</span>
-    <h1>FRC 智库网<span class="en">FRC Knowledge Hub</span></h1>
+    <h1><span data-i18n="site_title">FRC 智库网</span><span class="en" data-i18n="site_subtitle">FRC Knowledge Hub</span></h1>
     <p class="sub" data-i18n="hero_sub">2021–2026 六个赛季的 Impact Award 获奖材料、Open Alliance 开源队伍（CAD / 代码 / Build Thread）、名人堂队伍和技术资源，都整理在这里。</p>
-    <p style="margin-top:10px;font-size:.85rem;opacity:.75">Built by FRC Team 5449 · 为整个 FRC 社区而建</p>
-    <div style="position:absolute;top:10px;right:20px;z-index:2">
+    <p style="margin-top:10px;font-size:.85rem;opacity:.75" data-i18n="built_by">由 FRC Team 5449 建设 · 面向整个 FRC 社区</p>
+    <div class="lang-control" style="position:absolute;top:10px;right:20px;z-index:2">
   <label style="font-size:.72rem;color:rgba(255,255,255,.7);margin-right:4px" data-i18n="lang_label">语言</label>
   <select id="langSel" onchange="setLang(this.value)" style="font-size:.75rem;padding:3px 8px;border-radius:6px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(4px);cursor:pointer">
   </select>
 </div>
-  <div class="stats">
+    <div class="stats">
       <div class="stat"><div class="num" id="stImpact">–</div><div class="lbl" data-i18n="stat_impact">赛季 Impact 获奖队</div></div>
       <div class="stat"><div class="num" id="stOpen">–</div><div class="lbl" data-i18n="stat_open">赛季开源队伍</div></div>
       <div class="stat"><div class="num" id="stHall">–</div><div class="lbl" data-i18n="stat_hall">名人堂队伍</div></div>
       <div class="stat"><div class="num" id="stTech">–</div><div class="lbl" data-i18n="stat_tech">技术资源</div></div>
+    </div>
     </div>
   </div>
 </header>
@@ -335,7 +354,9 @@ footer .copy{margin-top:26px;text-align:center;font-size:.8rem;color:#94a3b8}
     <div>
       <h4 data-i18n="footer_contrib">如何贡献 / 扩充数据</h4>
       <ul>
-        <li data-i18n="c1">本页数据集中在底部 DATA 区（seasons_data.json）</li>
+        <li data-i18n="c1">贡献说明与数据维护方式请查看 GitHub README</li>
+        <li><a href="https://github.com/Ming-1015/firsthub-site" target="_blank" rel="noopener" data-i18n="contrib_repo">查看 GitHub 仓库</a></li>
+        <li><a href="https://github.com/Ming-1015/firsthub-site/issues/new" target="_blank" rel="noopener" data-i18n="contrib_issue">提交数据问题或补充建议</a></li>
         <li data-i18n="c2">Impact / 开源队伍：新增一个队伍对象即可</li>
         <li data-i18n="c3">欢迎补充更多队伍 GitHub / Onshape / YouTube 链接</li>
         <li data-i18n="c4">发现错误或有补充，欢迎在社区反馈共建</li>
@@ -352,10 +373,10 @@ footer .copy{margin-top:26px;text-align:center;font-size:.8rem;color:#94a3b8}
     </div>
   </div>
   <div class="copy" data-i18n="footer_copy">FRC 智库网 · 2021–2026 六赛季知识聚合 · 数据开放，欢迎共建 · 为整个 FRC 社区而建</div>
-  <div class="copy" style="margin-top:6px;opacity:.65;font-size:.78rem">Built by FRC Team 5449</div>
+  <div class="copy" style="margin-top:6px;opacity:.65;font-size:.78rem" data-i18n="footer_built_by">Built by FRC Team 5449</div>
 </footer>
 <nav aria-label="Search directory" style="background:#fff;border-top:1px solid #e2e8f0;padding:14px 20px;text-align:center;font-size:.84rem">
-  <a href="/zh/">中文搜索目录</a><span aria-hidden="true"> · </span><a href="/en/">English search directory</a><span aria-hidden="true"> · </span><a href="/sitemap.xml">Sitemap</a>
+  <a href="/zh/" data-i18n="directory_zh">中文搜索目录</a><span aria-hidden="true"> · </span><a href="/en/" data-i18n="directory_en">English search directory</a><span aria-hidden="true"> · </span><a href="/sitemap.xml" data-i18n="sitemap_label">Sitemap</a>
 </nav>
 
 <script>
@@ -373,6 +394,50 @@ Object.assign(I18N['zh-CN'],{sort_hot:"按热度排序",sort_team:"按队号排�
 Object.assign(I18N['zh-TW'],{sort_hot:"依熱度排序",sort_team:"依隊號排序",teams_sorted_number:" 支隊伍（依隊號順序）",sort_label:"開源隊伍排序方式"});
 Object.assign(I18N.ja,{sort_hot:"人気順",sort_team:"チーム番号順",teams_sorted_number:"チーム（チーム番号順）",sort_label:"Open Teams の並び順"});
 Object.assign(I18N.ko,{sort_hot:"인기순",sort_team:"팀 번호순",teams_sorted_number:"팀(팀 번호순)",sort_label:"Open Teams 정렬"});
+Object.assign(I18N.en,{c1:"See the GitHub README for contribution and data-maintenance instructions.",contrib_repo:"View GitHub repository",contrib_issue:"Report a data issue or suggest an addition"});
+Object.assign(I18N['zh-CN'],{c1:"贡献说明与数据维护方式请查看 GitHub README。",contrib_repo:"查看 GitHub 仓库",contrib_issue:"提交数据问题或补充建议"});
+Object.assign(I18N['zh-TW'],{c1:"貢獻說明與資料維護方式請查看 GitHub README。",contrib_repo:"查看 GitHub 儲存庫",contrib_issue:"回報資料問題或補充建議"});
+Object.assign(I18N.ja,{c1:"貢献方法とデータ管理については GitHub README をご覧ください。",contrib_repo:"GitHub リポジトリを見る",contrib_issue:"データの問題や追加案を報告"});
+Object.assign(I18N.ko,{c1:"기여 및 데이터 관리 방법은 GitHub README를 확인하세요.",contrib_repo:"GitHub 저장소 보기",contrib_issue:"데이터 문제 또는 추가 제안 제출"});
+Object.assign(I18N.es,{c1:"Consulta el README de GitHub para contribuir y mantener los datos.",contrib_repo:"Ver repositorio de GitHub",contrib_issue:"Informar un problema o proponer datos"});
+Object.assign(I18N.fr,{c1:"Consultez le README GitHub pour contribuer et maintenir les données.",contrib_repo:"Voir le dépôt GitHub",contrib_issue:"Signaler un problème ou proposer un ajout"});
+Object.assign(I18N.de,{c1:"Hinweise zu Beiträgen und Datenpflege stehen in der GitHub-README.",contrib_repo:"GitHub-Repository ansehen",contrib_issue:"Datenproblem oder Ergänzung melden"});
+Object.assign(I18N.pt,{c1:"Consulte o README do GitHub para contribuir e manter os dados.",contrib_repo:"Ver repositório no GitHub",contrib_issue:"Relatar problema ou sugerir dados"});
+Object.assign(I18N.th,{c1:"ดูวิธีมีส่วนร่วมและดูแลข้อมูลได้ใน GitHub README",contrib_repo:"ดูที่เก็บ GitHub",contrib_issue:"แจ้งปัญหาข้อมูลหรือเสนอข้อมูลเพิ่ม"});
+Object.assign(I18N.vi,{c1:"Xem GitHub README để biết cách đóng góp và bảo trì dữ liệu.",contrib_repo:"Xem kho GitHub",contrib_issue:"Báo lỗi dữ liệu hoặc đề xuất bổ sung"});
+Object.assign(I18N.id,{c1:"Lihat README GitHub untuk panduan kontribusi dan pemeliharaan data.",contrib_repo:"Lihat repositori GitHub",contrib_issue:"Laporkan masalah atau usulkan data"});
+Object.assign(I18N.en,{
+  site_title:"FRC Knowledge Hub",site_subtitle:"An open community archive",built_by:"Built by FRC Team 5449 for the entire FRC community.",footer_built_by:"Built by FRC Team 5449",
+  hero_kicker:"FRC · FIRST Robotics Competition · Open to the entire community",
+  hero_sub:"A multi-season archive of Impact Award resources, Open Alliance teams (CAD, code, and Build Threads), Hall of Fame teams, and technical resources from 2021–2026.",
+  select_season:"Choose a season",tab_home:"Overview",tab_impact:"Impact Award Archive",tab_open:"Open Alliance Teams",tab_tech:"Technical Resources",
+  stat_impact:"Impact Award team entries",stat_open:"Open Alliance team entries",stat_hall:"Hall of Fame teams",stat_tech:"Technical resources",
+  home_what:"Explore the archive",
+  home_lead:"Browse six seasons of Impact Award essays, videos, and presentations; Open Alliance teams sharing CAD, code, or Build Threads; the official FIRST Hall of Fame; and a curated collection of technical and learning resources.",
+  home_usage:"Choose a season above to update the archive. Use “Impact Award Archive” for winning-team materials, browse “Open Alliance Teams” by Build Thread views or team number, and filter “Technical Resources” by category. Add an anchor such as #2024 to share a specific season.",
+  home_impact_t:"Impact Award Archive",home_impact_d:"Essays, videos, and presentations from 514 award-winning team entries across the 2021–2026 seasons.",
+  home_open_t:"Open Alliance Teams",home_open_d:"2,092 team entries across six seasons, with public Build Threads, CAD, code, and video links.",
+  home_tech_t:"Technical Resources",home_tech_d:"Curated CAD, software, data, strategy, and learning resources, filterable by category.",
+  sources_head:"Data Sources",src_impact_n:"Official annual award essays (PDF) and judging criteria.",
+  src_hof_n:"Official list of Championship Chairman’s Award and FIRST Impact Award winners, 1992–2026.",
+  src_cd_n:"Community-maintained Open Alliance directory for each season.",src_tba_n:"Competition, match, results, and team data, with a public API.",
+  impact_lead:"Essays link to official FIRST PDFs; videos come from team YouTube or Instagram accounts; presentations link to publicly shared Google Drive or Canva files.",
+  open_lead:"Sorted by Build Thread views as a rough indicator of community interest. The CAD icon marks teams that publish robot CAD, including direct Onshape previews where available. Public GitHub repositories are tagged by subsystem or software area when identifiable.",
+  hall_head:"FIRST Hall of Fame",hall_lead:"Teams officially recognized by FIRST for winning the Championship Chairman’s Award (1992–2022) or FIRST Impact Award (2023–present).",
+  tech_head:"FRC Technical Resources",tech_lead:"Official documentation, software frameworks, design tools, data platforms, and community learning resources.",
+  f_all:"All",f_cad:"Public CAD",f_code:"Public code",f_video:"Public video",f_site:"Has a website",
+  imp_f_all:"All",imp_f_video:"Has video",imp_f_pres:"Has presentation/materials",imp_f_champ:"Championship",
+  search_ph:"Search by team number or name…",op_search_ph:"Search by team number, name, or tag…",site_label:"Website",
+  champ_prefix:"Championship Impact Award winner:",teams_suffix:" teams",teams_sorted:" teams, ranked by Build Thread views",showing:"Showing",hall_count:" teams (1992–2026)",tech_count:" resources",
+  footer_src:"Data Sources",footer_contrib:"Contribute Data",footer_roadmap:"Roadmap",
+  c1:"See the GitHub README for contribution and data-maintenance instructions.",c2:"Submit new Impact Award or Open Alliance team records through GitHub.",
+  c3:"Contributions of team GitHub, Onshape, YouTube, and other public resource links are welcome.",c4:"Found an error or a missing resource? Open an issue and help improve the archive.",
+  r1:"Add Impact Award data for the 2020 season and earlier.",r2:"Add more awards, including Dean’s List, Woodie Flowers, and Engineering Excellence.",r3:"Expand the China team section and Chinese-language open-source tutorials.",r4:"Build a mechanism-based index of Open Alliance CAD and code.",
+  footer_copy:"FRC Knowledge Hub · a community-built archive for the 2021–2026 FRC seasons · open data, open collaboration",
+  tag_chassis:"Drivetrain",tag_vision:"Vision",tag_intake:"Intake",tag_shooter:"Shooter",tag_climb:"Climb",tag_auto:"Autonomous",tag_scout:"Scouting",lang_label:"Language",
+  directory_zh:"Chinese search directory",directory_en:"English search directory",sitemap_label:"Sitemap",resource_open:"Open resource",team_page:"FIRST team page",cad_preview:"CAD preview",views_suffix:" views"
+});
+Object.assign(I18N['zh-CN'],{site_title:"FRC 智库网",site_subtitle:"FRC Knowledge Hub",built_by:"由 FRC Team 5449 建设 · 面向整个 FRC 社区",footer_built_by:"由 FRC Team 5449 建设",directory_zh:"中文搜索目录",directory_en:"英文搜索目录",sitemap_label:"站点地图",resource_open:"打开资源",team_page:"FIRST 队伍页",cad_preview:"CAD 预览"});
 const AWARD_UI_EN={tab_scripts:"Award Scripts",home_scripts_t:"Award Scripts",home_scripts_d:"Beyond Impact: search official judge-written award scripts by team, award, and event.",scripts_lead:"Official team award scripts published on event pages; excludes competitive results, individual awards, and records without a public script.",scripts_original:"Original text first: scripts remain in the official FIRST English, and every card links back to its event page.",scripts_search:"Search team, award, event, or script…",scripts_all_awards:"All awards",scripts_all_events:"All events",scripts_title:"All Award Scripts",scripts_originals:" official scripts",scripts_events:" events",scripts_showing:"Showing",scripts_load_more:"Load more",scripts_remaining:"remaining",scripts_empty:"No award scripts match the current filters.",scripts_official_en:"Official English",scripts_source:"Official source",scripts_loading:"Loading award scripts…",scripts_load_failed:"Data failed to load.",scripts_retry:"Retry",scripts_no_data:"No reliable public data",scripts_no_data_lead:"Official event pages for the 2021 season do not provide a reliable archive of team award scripts, so this section is intentionally left blank.",scripts_no_data_box:"No reliable official award-script text is available for this season. Impact materials remain available in the Impact Hub."};
 Object.keys(I18N).forEach(lang=>Object.assign(I18N[lang],AWARD_UI_EN));
 Object.assign(I18N['zh-CN'],{tab_scripts:"颁奖词库",home_scripts_t:"颁奖词库",home_scripts_d:"不只限于 Impact：按队伍、奖项和赛事查找 FIRST 官方评委颁奖词。",scripts_lead:"收录官方赛事页面公开的队伍奖项颁奖词原文；不包含比赛名次、个人奖项或没有公开颁奖词的记录。",scripts_original:"原文优先：颁奖词保持 FIRST 官方英文原文，每张卡片都可回到官方赛事页面核对。",scripts_search:"搜队号、队名、奖项或颁奖词…",scripts_all_awards:"全部奖项",scripts_all_events:"全部赛事",scripts_title:"全奖项颁奖词库",scripts_originals:" 条官方原文",scripts_events:" 场赛事",scripts_showing:"显示",scripts_load_more:"加载更多",scripts_remaining:"还剩",scripts_empty:"没有符合当前筛选条件的颁奖词。",scripts_official_en:"官方英文原文",scripts_source:"查看官方来源",scripts_loading:"正在载入颁奖词…",scripts_load_failed:"赛季数据载入失败。",scripts_retry:"重新载入",scripts_no_data:"暂无可靠公开数据",scripts_no_data_lead:"2021 赛季官方赛事页面没有形成可可靠归档的队伍颁奖词数据，因此这里明确留空，不补写、不推测。",scripts_no_data_box:"该赛季暂无可靠的官方颁奖词原文。你仍可在 Impact 智库查看获奖材料。"});
@@ -415,11 +480,11 @@ let awardLoadToken = 0;
 
 /* ---------- 技术资源（全局） ---------- */
 const CATS = [
-{id:"cad",nm:"机械与 CAD"},
-{id:"code",nm:"程序与软件"},
-{id:"data",nm:"数据与策略"},
-{id:"learn",nm:"学习与教学"},
-{id:"com",nm:"社区与平台"}
+{id:"cad",nm:"机械与 CAD",en:"Mechanical Design & CAD"},
+{id:"code",nm:"程序与软件",en:"Programming & Software"},
+{id:"data",nm:"数据与策略",en:"Data & Strategy"},
+{id:"learn",nm:"学习与教学",en:"Learning & Training"},
+{id:"com",nm:"社区与平台",en:"Community & Platforms"}
 ];
 const TECH = [
 {cat:"cad",t:"Onshape for FRC",u:"https://www.onshape.com/edu/frc",d:"官方教育版免费 + FRC 零件库 + 场地模型，多数强队首选 CAD 平台"},
@@ -459,6 +524,44 @@ const TECH = [
 {cat:"com",t:"r/FRC",u:"https://www.reddit.com/r/FRC/",d:"FRC 子版块，提问 / 分享"},
 {cat:"com",t:"FIRST 官网",u:"https://www.firstinspires.org/robotics/frc",d:"规则 / 赛事 / 官方资源总入口"}
 ];
+const TECH_EN = {
+"https://www.onshape.com/edu/frc":["Onshape for FRC","Free Onshape Education access, FRC parts libraries, and field models on a widely used cloud CAD platform."],
+"https://www.frcdesign.org":["FRCDesign.org","A structured Onshape and FRC mechanical-design course; an excellent starting point for new design students."],
+"https://learn.onshape.com":["Onshape Learning Center","Official self-paced courses for learning Onshape from the fundamentals."],
+"https://grabcad.com/library":["GrabCAD Community Library","Search for FRC robots, mechanisms, components, and 3D-printable parts shared by the community."],
+"https://www.firstcadlibrary.com":["FIRST CAD Library","A consolidated library of COTS components and field models for robot design."],
+"https://onshape4frc.com/robochargers-curriculum":["RoboChargers CAD Curriculum","A free summer CAD curriculum with training videos and lesson materials."],
+"https://photos.spectrum3847.org/Robot-Mechanisms":["Robot Mechanism Photo Library (Spectrum 3847)","Reference photos of real FRC mechanisms for design research and inspiration."],
+"https://www.chiefdelphi.com/c/technical/cad":["Chief Delphi CAD","The main community forum for CAD releases, design reviews, and mechanical discussion."],
+"https://www.wcproducts.com":["WestCoast Products","COTS drivetrain, gearbox, and swerve components with downloadable CAD models."],
+"https://www.revrobotics.com":["REV Robotics","REV components, official CAD files, product documentation, and tutorials."],
+"https://docs.wpilib.org":["WPILib Documentation","Official FRC programming documentation, including the Zero to Robot learning path."],
+"https://github.com/Mechanical-Advantage/AdvantageKit":["AdvantageKit","A logging, replay, and simulation framework from FRC 6328 for robust robot software workflows."],
+"https://github.com/Mechanical-Advantage/AdvantageScope":["AdvantageScope","A desktop visualization and analysis tool for robot logs, live data, and simulation."],
+"https://github.com/mjansen4857/pathplanner":["PathPlanner","Visual autonomous path planning and command generation for FRC robots."],
+"https://github.com/SleipnirGroup/Choreo":["Choreo","Physics-based trajectory optimization used by high-performing FRC teams."],
+"https://photonvision.org":["PhotonVision","Open-source AprilTag localization and vision-targeting software."],
+"https://docs.limelightvision.io":["Limelight Documentation","Documentation for plug-and-play FRC vision hardware and software."],
+"https://github.com/Gold872/elastic-dashboard":["Elastic Dashboard","A modern, customizable FRC robot dashboard and Shuffleboard alternative."],
+"https://docs.ctr-electronics.com":["CTRE Phoenix Documentation","Motor-control and sensor documentation for Talon FX, CANcoder, and the Phoenix ecosystem."],
+"https://docs.revrobotics.com":["REVLib Documentation","Programming reference for SPARK motor controllers, NEO motors, and REV hardware."],
+"https://xrcsimulator.org":["xRC Simulator","A hardware-free robot simulator for practicing FRC driving and programming concepts."],
+"https://www.runoob.com/java/java-tutorial.html":["Java Tutorial (Chinese)","A beginner-friendly Chinese-language Java tutorial for students new to programming."],
+"https://www.thebluealliance.com":["The Blue Alliance","Competition, match, results, and team data with a public API."],
+"https://www.thebluealliance.com/apidocs":["The Blue Alliance API Documentation","Public API documentation for analytics, scouting tools, and event-data applications."],
+"https://statbotics.io":["Statbotics","Modern FRC performance analytics, predictions, rankings, and team trends."],
+"https://github.com/frcteam1678/ScoutRadio":["ScoutRadio (FRC 1678)","An open-source scouting data collection and synchronization system."],
+"https://docs.wpilib.org/en/stable/docs/zero-to-robot/introduction.html":["WPILib: Zero to Robot","The official step-by-step path from a new control system to a functioning robot project."],
+"https://www.frc971.org/workshops":["FRC 971 Workshops","Workshop materials covering mechanical design, CAD, strategy, controls, and manufacturing."],
+"https://www.strykeforce.org/resources":["Stryke Force Resources","A collection of high-quality team training materials and technical presentations."],
+"https://www.spectrum3847.org/recommendedreading":["Spectrum Recommended Reading","A curated reading list of books, articles, and resources for FRC students and mentors."],
+"https://www.firstinspires.org/resource-library/frc/technical-resources":["FIRST Technical Resources","FIRST’s official hub for FRC manuals, technical documentation, and support resources."],
+"https://www.chiefdelphi.com/t/2026-frc-open-alliance-information-and-directory/508112":["Open Alliance Directory","The current season’s community-maintained directory of Open Alliance teams."],
+"https://www.chiefdelphi.com":["Chief Delphi","The primary FRC community forum for technical, strategic, program, and award discussion."],
+"https://discord.gg/frc":["FRC Discord","Real-time discussion and support across the global FRC community."],
+"https://www.reddit.com/r/FRC/":["r/FRC","The FRC subreddit for questions, project updates, and community discussion."],
+"https://www.firstinspires.org/robotics/frc":["FIRST Robotics Competition","The official entry point for FRC rules, events, program information, and resources."]
+};
 
 /* ---------- 名人堂额外链接（已知的开源/官网资源） ---------- */
 const HALL_LINKS = {
@@ -548,12 +651,12 @@ function renderChampBox(){
 }
 
 /* ---- Impact 智库（按当前赛季） ---- */
-const IMP_FILTERS = [
+function impactFilters(){ return [
 {id:"all",nm:t("imp_f_all")},
 {id:"video",nm:t("imp_f_video")},
 {id:"pres",nm:t("imp_f_pres")},
 {id:"champ",nm:t("imp_f_champ")}
-];
+]; }
 let impFilter = "all";
 function renderImpact(){
   const y = currentSeason;
@@ -572,6 +675,7 @@ function renderImpact(){
     return true;
   });
   $('imTitle').textContent = y+' · '+SEASONS[y].game+' — '+t('tab_impact');
+  buildChips('imChips',impactFilters(),impFilter,'setImpFilter');
   $('impactTotal').textContent = listAll.length + t('teams_suffix');
   $('imCount').textContent = t('showing')+' ' + list.length + ' / ' + listAll.length;
   $('imGrid').innerHTML = list.map(t=>{
@@ -590,8 +694,8 @@ function renderImpact(){
 function buildChips(el,filters,state,fn){
   $(el).innerHTML = filters.map(f=>'<button class="chip'+(state===f.id?' active':'')+'" onclick="'+fn+'(\''+f.id+'\')">'+f.nm+'</button>').join('');
 }
-buildChips('imChips',IMP_FILTERS,impFilter,'setImpFilter');
-function setImpFilter(id){impFilter=id;buildChips('imChips',IMP_FILTERS,impFilter,'setImpFilter');renderImpact();}
+buildChips('imChips',impactFilters(),impFilter,'setImpFilter');
+function setImpFilter(id){impFilter=id;renderImpact();}
 
 /* ---- 全奖项颁奖词库 Demo ---- */
 function fillAwardScriptFilters(){
@@ -671,19 +775,19 @@ async function loadAwardScripts(year=currentSeason){
     resetAwardScripts();
   }catch(error){
     if(token!==awardLoadToken) return;
-    $('asTotal').textContent = '载入失败';
+    $('asTotal').textContent = t('scripts_load_failed');
     $('asGrid').innerHTML = '<div class="warn-box">'+year+' · '+t('scripts_load_failed')+'<button class="chip" type="button" style="margin-left:8px" onclick="loadAwardScripts(\''+year+'\')">'+t('scripts_retry')+'</button></div>';
   }
 }
 
 /* ---- 开源队伍（按当前赛季） ---- */
-const OP_FILTERS = [
+function openFilters(){ return [
 {id:"all",nm:t("f_all")},
 {id:"cad",nm:t("f_cad")},
 {id:"code",nm:t("f_code")},
 {id:"video",nm:t("f_video")},
 {id:"site",nm:t("f_site")}
-];
+]; }
 let opFilter = "all";
 let opSort = localStorage.getItem('frc_open_sort') === 'team' ? 'team' : 'hot';
 function renderOpSort(){
@@ -709,32 +813,35 @@ function renderOpen(){
     ? Number(a.n)-Number(b.n) || (a.nm||'').localeCompare(b.nm||'')
     : (Number(b.views)||0)-(Number(a.views)||0) || Number(a.n)-Number(b.n));
   renderOpSort();
+  buildChips('opChips',openFilters(),opFilter,'setOpFilter');
   $('opTitle').textContent = y+' · '+SEASONS[y].game+' — '+t('tab_open');
   $('openTotal').textContent = listAll.length + t(opSort==='team'?'teams_sorted_number':'teams_sorted');
   $('opCount').textContent = t('showing')+' ' + list.length + ' / ' + listAll.length;
   const siteLabel = t('site_label');
-  $('opGrid').innerHTML = list.map(t=>{
+  const cadPreviewLabel = t('cad_preview');
+  const viewsSuffix = t('views_suffix');
+  $('opGrid').innerHTML = list.map(team=>{
     const links = [];
-    if(t.cad) links.push(btn('cad','CAD',t.cad));
-    if(t.gh) links.push(btn('gh','Code',t.gh));
-    if(t.yt) links.push(btn('video','YouTube',t.yt));
-    if(t.ph) links.push(btn('pres','Photos',t.ph));
-    if(t.site) links.push(btn('site',siteLabel,t.site));
-    if(t.cd) links.push(btn('cd','Build Thread',t.cd));
+    if(team.cad) links.push(btn('cad','CAD',team.cad));
+    if(team.gh) links.push(btn('gh','Code',team.gh));
+    if(team.yt) links.push(btn('video','YouTube',team.yt));
+    if(team.ph) links.push(btn('pres','Photos',team.ph));
+    if(team.site) links.push(btn('site',siteLabel,team.site));
+    if(team.cd) links.push(btn('cd','Build Thread',team.cd));
     // CAD preview 图标：有 CAD 的队伍在队号旁标一个小图标
-    const cadIcon = t.cad ? '<a class="cad-prev" href="'+t.cad+'" target="_blank" rel="noopener" title="CAD 预览"><span class="cad-dot"></span>3D</a>' : '';
+    const cadIcon = team.cad ? '<a class="cad-prev" href="'+team.cad+'" target="_blank" rel="noopener" title="'+cadPreviewLabel+'"><span class="cad-dot"></span>3D</a>' : '';
     // 程序方向标签
     const tagKeys = {"底盘":"tag_chassis","自瞄":"tag_vision","吸取":"tag_intake","射击":"tag_shooter","爬升":"tag_climb","自动":"tag_auto","侦察":"tag_scout"};
-    const tags = (t.tags||[]).map(x=>'<span class="tag-chip">'+esc(tagKeys[x]?window.t(tagKeys[x]):x)+'</span>').join('');
+    const tags = (team.tags||[]).map(x=>'<span class="tag-chip">'+esc(tagKeys[x]?window.t(tagKeys[x]):x)+'</span>').join('');
     // 访问量
-    const views = t.views ? '<span class="views">'+(t.views>=1000?(t.views/1000).toFixed(1)+'k views':t.views+' views')+'</span>' : '';
-    return '<div class="card"><div class="num">'+t.n+cadIcon+views+'</div><div class="nm">'+(t.nm||'')+'</div>'+(tags?'<div>'+tags+'</div>':'')+'<div class="links">'+links.join('')+'</div></div>';
+    const views = team.views ? '<span class="views">'+(team.views>=1000?(team.views/1000).toFixed(1)+'k'+viewsSuffix:team.views+viewsSuffix)+'</span>' : '';
+    return '<div class="card"><div class="num">'+team.n+cadIcon+views+'</div><div class="nm">'+(team.nm||'')+'</div>'+(tags?'<div>'+tags+'</div>':'')+'<div class="links">'+links.join('')+'</div></div>';
   }).join('');
   // 赛季备注（如 2021 虚拟赛季说明）
   $('opNote').innerHTML = SEASONS[y].openNote ? '<div class="info-box">'+SEASONS[y].openNote+'</div>' : '';
 }
-buildChips('opChips',OP_FILTERS,opFilter,'setOpFilter');
-function setOpFilter(id){opFilter=id;buildChips('opChips',OP_FILTERS,opFilter,'setOpFilter');renderOpen();}
+buildChips('opChips',openFilters(),opFilter,'setOpFilter');
+function setOpFilter(id){opFilter=id;renderOpen();}
 function setOpSort(id){
   if(id!=='hot' && id!=='team') return;
   opSort=id;
@@ -746,28 +853,34 @@ function setOpSort(id){
 function renderHall(){
   $('hallTotal').textContent = HALL.length + t('hall_count');
   $('hallGrid').innerHTML = HALL.slice().reverse().map(h=>{
-    const links = [btn('team','队伍页','https://frc-events.firstinspires.org/team/'+h.n)];
+    const links = [btn('team',t('team_page'),'https://frc-events.firstinspires.org/team/'+h.n)];
     const extra = HALL_LINKS[h.n]||{};
     if(extra.gh) links.push(btn('gh','GitHub',extra.gh));
-    if(extra.site) links.push(btn('site','官网',extra.site));
+    if(extra.site) links.push(btn('site',t('site_label'),extra.site));
     return '<div class="card"><div class="num"><span class="badge gold">'+h.y+'</span> '+h.n+'</div><div class="nm">'+h.nm+'</div><div class="loc">'+(h.loc||'')+'</div><div class="links">'+links.join('')+'</div></div>';
   }).join('');
 }
 
 /* ---- 技术资源 ---- */
-const TC_FILTERS = [{id:"all",nm:"全部"}].concat(CATS.map(c=>({id:c.id,nm:c.nm})));
+function techFilters(){
+  return [{id:"all",nm:LANG==='en'?t('f_all'):"全部"}].concat(CATS.map(c=>({id:c.id,nm:LANG==='en'?c.en:c.nm})));
+}
 let tcFilter = "all";
 function renderTech(){
   const list = TECH.filter(t=>tcFilter==="all"||t.cat===tcFilter);
   $('techTotal').textContent = TECH.length + t('tech_count');
   $('tcCount').textContent = t('showing')+' ' + list.length + ' / ' + TECH.length;
-  const catName = id => (CATS.find(c=>c.id===id)||{}).nm||'';
-  $('tcGrid').innerHTML = list.map(t=>{
-    return '<div class="card"><div class="nm">'+t.t+' <span class="badge gray" style="margin-left:6px">'+catName(t.cat)+'</span></div><div class="note">'+t.d+'</div><div class="links">'+btn('essay','打开',t.u)+'</div></div>';
+  const catName = id => { const c=CATS.find(c=>c.id===id)||{}; return LANG==='en'?(c.en||c.nm):(c.nm||''); };
+  $('tcGrid').innerHTML = list.map(item=>{
+    const localized = LANG==='en' ? TECH_EN[item.u] : null;
+    const title = localized ? localized[0] : item.t;
+    const description = localized ? localized[1] : item.d;
+    return '<div class="card"><div class="nm">'+title+' <span class="badge gray" style="margin-left:6px">'+catName(item.cat)+'</span></div><div class="note">'+description+'</div><div class="links">'+btn('essay',t('resource_open'),item.u)+'</div></div>';
   }).join('');
+  buildChips('tcChips',techFilters(),tcFilter,'setTcFilter');
 }
-buildChips('tcChips',TC_FILTERS,tcFilter,'setTcFilter');
-function setTcFilter(id){tcFilter=id;buildChips('tcChips',TC_FILTERS,tcFilter,'setTcFilter');renderTech();}
+buildChips('tcChips',techFilters(),tcFilter,'setTcFilter');
+function setTcFilter(id){tcFilter=id;renderTech();}
 
 /* ---- 初始化 ---- */
 (function init(){
