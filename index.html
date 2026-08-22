@@ -73,6 +73,29 @@ a:hover{text-decoration:underline}
 .season-btn.active{background:var(--primary-light);border-bottom-color:var(--team-pink)}
 .season-btn.active .yr{color:var(--primary-dark)}
 .season-btn.active .gm{color:var(--muted)}
+.programbar{background:#fff;border-bottom:1px solid var(--border)}
+.programbar-inner{max-width:1120px;margin:0 auto;padding:12px;display:flex;align-items:center;gap:16px}
+.program-label{font:800 .7rem/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1.2px;color:var(--muted);text-transform:uppercase}
+.program-switch{display:inline-flex;padding:4px;background:#eee9eb;border:1px solid #ddd3d9;border-radius:12px;gap:4px}
+.program-btn{border:0;background:transparent;border-radius:8px;padding:8px 16px;cursor:pointer;color:#675861;text-align:left;transition:.15s ease}
+.program-btn strong{display:block;font-size:.92rem}.program-btn small{display:block;font-size:.62rem;margin-top:1px;opacity:.72}
+.program-btn.active{background:var(--primary);color:#fff;box-shadow:0 2px 8px rgba(64,24,55,.18)}
+.program-beta{font-size:.58rem;font-weight:800;letter-spacing:.7px;color:#7e3d70;background:#f5ddec;border-radius:20px;padding:3px 7px}
+.ftc-demo{display:none;max-width:1120px;margin:0 auto;padding:30px 20px 64px}
+body.ftc-mode .seasonbar,body.ftc-mode .tabs,body.ftc-mode main,body.ftc-mode footer{display:none}
+body.ftc-mode .ftc-demo{display:block}
+.ftc-heroline{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:22px;margin-bottom:24px}
+.ftc-eyebrow{font:800 .7rem/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px;color:var(--primary);text-transform:uppercase}
+.ftc-heroline h2{font-size:1.9rem;margin:7px 0 6px}.ftc-heroline p{color:var(--muted);max-width:720px}
+.ftc-season{white-space:nowrap;border-left:3px solid var(--team-pink);padding-left:13px}.ftc-season strong{display:block;font-size:1.1rem}.ftc-season span{font-size:.72rem;color:var(--muted)}
+.ftc-nav{display:flex;gap:6px;overflow-x:auto;margin-bottom:24px}.ftc-nav button{border:1px solid var(--border);background:#fff;border-radius:99px;padding:8px 14px;font-weight:700;color:var(--muted);cursor:pointer}.ftc-nav button.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.ftc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.ftc-lane{background:#fff;border:1px solid var(--border);border-top:3px solid var(--team-pink);padding:18px;min-height:220px}.ftc-lane .index{font:800 .65rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--team-pink);letter-spacing:1px}.ftc-lane h3{margin:12px 0 7px;font-size:1.03rem}.ftc-lane>p{font-size:.8rem;color:var(--muted);min-height:52px}.ftc-items{margin-top:16px;border-top:1px solid var(--border)}.ftc-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:.76rem}.ftc-item b{display:block;color:var(--text);margin-bottom:2px}.ftc-item span{color:var(--muted)}
+.ftc-content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.ftc-resource{background:#fff;border:1px solid var(--border);padding:18px;display:flex;flex-direction:column;min-height:190px}.ftc-resource .meta{font:800 .62rem/1.3 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--team-pink);letter-spacing:.6px;text-transform:uppercase}.ftc-resource h3{font-size:1rem;margin:11px 0 7px}.ftc-resource p{font-size:.78rem;color:var(--muted);flex:1}.ftc-resource .source{font-size:.66rem;color:#877782;margin-top:12px}.ftc-resource a{align-self:flex-start;margin-top:10px;text-decoration:none;font-size:.72rem;font-weight:800;color:#fff;background:var(--primary);padding:7px 10px}.ftc-resource a:hover{background:var(--primary-dark)}
+.ftc-count{margin-left:auto;color:var(--muted);font-size:.74rem;white-space:nowrap}
+.ftc-seasonbar{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:18px}.ftc-seasonbar .cap{font-size:.72rem;font-weight:800;color:var(--muted);letter-spacing:1px;margin-bottom:8px;text-transform:uppercase}.ftc-seasons{display:flex;gap:8px;overflow-x:auto}.ftc-season-btn{border:0;border-bottom:2px solid transparent;background:transparent;padding:7px 18px;min-width:150px;cursor:pointer;text-align:center}.ftc-season-btn:hover,.ftc-season-btn.active{background:var(--primary-light);border-bottom-color:var(--team-pink)}.ftc-season-btn strong{display:block;font-size:1rem}.ftc-season-btn small{display:block;color:var(--muted);font-size:.62rem;margin-top:2px}.ftc-panel-head{display:flex;align-items:baseline;gap:10px;margin:24px 0 8px}.ftc-panel-head h2{font-size:1.55rem}.ftc-panel-head span{font-size:.78rem;color:var(--muted)}.ftc-panel-lead{color:var(--muted);font-size:.9rem;margin-bottom:18px}.ftc-filter{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.ftc-filter input{flex:1;min-width:220px;padding:10px 13px;border:1px solid var(--border);background:#fff;font-size:.86rem}.ftc-chip{border:1px solid var(--border);background:#fff;border-radius:99px;padding:7px 12px;font-weight:700;color:var(--muted);cursor:pointer}.ftc-chip.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.ftc-note{margin-top:18px;padding:14px 16px;background:#f7f3f5;border-left:3px solid var(--primary);font-size:.78rem;color:var(--muted)}
+@media(max-width:800px){.programbar-inner{align-items:flex-start;flex-direction:column;gap:7px}.program-switch{width:100%}.program-btn{flex:1}.ftc-grid,.ftc-content-grid{grid-template-columns:1fr 1fr}.ftc-heroline{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.ftc-grid,.ftc-content-grid{grid-template-columns:1fr}}
 
 /* ===== Nav ===== */
 .tabs{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:70px;z-index:50}
@@ -233,6 +256,38 @@ footer .copy{margin-top:26px;text-align:center;font-size:.8rem;color:#94a3b8}
     </div>
   </div>
 </header>
+
+<div class="programbar" aria-label="FIRST program selector">
+  <div class="programbar-inner">
+    <span class="program-label">Choose program · 选择项目</span>
+    <div class="program-switch" role="group" aria-label="FRC or FTC">
+      <button class="program-btn active" id="programFrc" type="button" onclick="setProgram('frc')"><strong>FRC</strong><small>FIRST Robotics Competition</small></button>
+      <button class="program-btn" id="programFtc" type="button" onclick="setProgram('ftc')"><strong>FTC <span class="program-beta">DEMO</span></strong><small>FIRST Tech Challenge</small></button>
+    </div>
+  </div>
+</div>
+
+<section class="ftc-demo" id="ftcDemo" aria-label="FTC resource hub demo">
+  <div class="ftc-heroline">
+    <div><div class="ftc-eyebrow">FIRSTHub / FTC preview</div><h2>FTC 开放资源库</h2><p>像 FRC 页面一样按赛季浏览、搜索和筛选；所有资料标明官方、队伍公开或社区来源。</p></div>
+    <div class="ftc-season"><strong id="ftcSeasonYear">2025–2026</strong><span id="ftcSeasonGame">DECODE presented by RTX</span></div>
+  </div>
+  <div class="ftc-seasonbar"><div class="cap">赛季选择 · Select Season</div><div class="ftc-seasons" id="ftcSeasons"></div></div>
+  <div class="ftc-nav" id="ftcNav" aria-label="FTC sections"><button class="active" onclick="renderFtc('overview',this)">总览</button><button onclick="renderFtc('awards',this)">获奖结果</button><button onclick="renderFtc('portfolios',this)">工程作品集</button><button onclick="renderFtc('open',this)">开源队伍</button><button onclick="renderFtc('resources',this)">技术资源</button><span class="ftc-count" id="ftcCount">精选入口</span></div>
+  <div class="ftc-grid" id="ftcOverview">
+    <article class="ftc-lane"><span class="index">01 / RESULTS</span><h3>获奖结果</h3><p>按赛季与赛事整理官方奖项结果，保留赛事名称、奖项等级和原始页面。</p><div class="ftc-items"><div class="ftc-item"><b>Inspire Award</b><span>赛事与队伍可追溯至 FTC Events</span></div><div class="ftc-item"><b>Think · Design · Innovate</b><span>先收录官方公开结果，不虚构颁奖词</span></div></div></article>
+    <article class="ftc-lane"><span class="index">02 / PORTFOLIOS</span><h3>工程作品集</h3><p>汇总队伍主动公开的 Engineering Portfolio，并按赛季与奖项建立索引。</p><div class="ftc-items"><div class="ftc-item"><b>Portfolio Library</b><span>PDF / Slides / team websites</span></div><div class="ftc-item"><b>案例拆解</b><span>结构、叙事与证据链标签</span></div></div></article>
+    <article class="ftc-lane"><span class="index">03 / OPEN TEAMS</span><h3>开源队伍</h3><p>连接公开 CAD、代码、Build Thread 与机器人展示，不用只靠队名搜索。</p><div class="ftc-items"><div class="ftc-item"><b>Open Alliance</b><span>Chief Delphi build threads</span></div><div class="ftc-item"><b>CAD · Code · Video</b><span>按公开程度和内容类型筛选</span></div></div></article>
+    <article class="ftc-lane"><span class="index">04 / TOOLKIT</span><h3>技术资源</h3><p>将官方文档和成熟社区工具按机械、控制、视觉与赛前准备分类。</p><div class="ftc-items"><div class="ftc-item"><b>FTC Docs · SDK</b><span>官方文档与代码基础</span></div><div class="ftc-item"><b>Road Runner · Pedro Pathing</b><span>常用运动与路径工具</span></div></div></article>
+  </div>
+  <div id="ftcPanel" hidden>
+    <div class="ftc-panel-head"><h2 id="ftcPanelTitle"></h2><span id="ftcPanelTotal"></span></div>
+    <p class="ftc-panel-lead" id="ftcPanelLead"></p>
+    <div class="ftc-filter"><input id="ftcSearch" type="search" placeholder="搜索队号、队名、赛事或资料…" oninput="renderFtcCards()"><div id="ftcFilters"></div><span class="ftc-count" id="ftcResultCount"></span></div>
+    <div class="ftc-content-grid" id="ftcContent"></div>
+  </div>
+  <div class="ftc-note"><b>第一版边界：</b>FTC Events 公开的是奖项结果，而多数赛事并不公开完整颁奖词；正式版会明确区分“官方结果”和“队伍自行公开资料”，每条内容都保留来源链接。</div>
+</section>
 
 <!-- ===== 赛季选择键 ===== -->
 <div class="seasonbar">
@@ -883,6 +938,93 @@ buildChips('tcChips',techFilters(),tcFilter,'setTcFilter');
 function setTcFilter(id){tcFilter=id;renderTech();}
 
 /* ---- 初始化 ---- */
+const FTC_DEMO_DATA={
+  awards:[
+    {season:'2025',type:'official',meta:'OFFICIAL · 2025–2026',title:'FTC Season Awards',desc:'按日期汇总本赛季全部官方赛事奖项，可继续按奖项类别筛选。',source:'FIRST · FTC Events',url:'https://ftc-events.firstinspires.org/2025/awards'},
+    {season:'2025',type:'official',meta:'OFFICIAL EVENT · MISSOURI',title:'St. Louis Meet Awards',desc:'示例赛事页：包含 Inspire、Think、Connect、Control、Design、Innovate 和联盟奖项。',source:'FIRST · FTC Events',url:'https://ftc-events.firstinspires.org/2025/USMOKSSTLMLT/awards'},
+    {season:'2025',type:'official',meta:'OFFICIAL · CHINA',title:'China FTC Shanghai #1',desc:'中国区公开结果示例：Inspire Award 为 25720，Think Award 为 22389。',source:'FIRST · FTC Events season index',url:'https://ftc-events.firstinspires.org/2025/awards?id=22'},
+    {season:'2025',type:'manual',meta:'OFFICIAL RULEBOOK',title:'DECODE Award Criteria',desc:'当前赛季评审奖项、作品集提交方式和晋级规则的官方依据。',source:'FIRST · Competition Manual',url:'https://ftc-resources.firstinspires.org/ftc/archive/2026/game/cm-html/DECODE_Competition_Manual_TU32.htm'},
+    {season:'2024',type:'official',meta:'OFFICIAL · 2024–2025',title:'INTO THE DEEP Season Awards',desc:'2024–2025 赛季官方赛事奖项总索引。',source:'FIRST · FTC Events',url:'https://ftc-events.firstinspires.org/2024/awards'},
+    {season:'2023',type:'official',meta:'OFFICIAL · 2023–2024',title:'CENTERSTAGE Season Awards',desc:'2023–2024 赛季官方赛事奖项总索引。',source:'FIRST · FTC Events',url:'https://ftc-events.firstinspires.org/2023/awards'}
+  ],
+  portfolios:[
+    {season:'all',type:'community',meta:'COMMUNITY LIBRARY',title:'FTC Portfolio Lab',desc:'可按赛季、赛事层级与奖项浏览评分后的公开 Engineering Portfolio。',source:'PortfolioLab · team submissions',url:'https://www.ftcportfoliolab.org/portfolio'},
+    {season:'2024',type:'team',meta:'2024–2025 · TEAM 21573',title:'Tecra Bot — INTO THE DEEP',desc:'公开作品集案例；资料页标注 Inspire 1st、Design 1st 与 Think 2nd。',source:'OpenVault · team-submitted',url:'https://www.open-vault-ftc.org/portfolios/portfolios'},
+    {season:'2025',type:'team',meta:'2025–2026 · TEAM 19706',title:'Potential Energy — DECODE',desc:'队伍公开的当季 Worlds Engineering Portfolio，可直接查看其最新文档。',source:'Team 19706 website',url:'https://www.potentialenergyftc.com/resources'},
+    {season:'all',type:'team',meta:'MULTI-SEASON · TEAM 9929',title:'MechaHamsters Archive',desc:'队伍保存的历年 Engineering Notebooks 与 Portfolios，适合比较资料结构演进。',source:'FTC 9929 team website',url:'https://ftc9929.com/past-season-engineering-notebooks/'},
+    {season:'all',type:'community',meta:'MULTI-SEASON ARCHIVE',title:'OpenVault Portfolio Collection',desc:'面向 FTC 队伍的公开作品集集合，可检索队号、赛季与获奖情况。',source:'OpenVault community archive',url:'https://www.open-vault-ftc.org/portfolios/portfolios'}
+  ],
+  open:[
+    {season:'2025',type:'directory',meta:'DIRECTORY · 2025–2026',title:'FTC Open Alliance Season',desc:'当前赛季 FTC Open Alliance 总入口与参与方式。',source:'Chief Delphi · FTC Open Alliance',url:'https://www.chiefdelphi.com/t/the-2025-26-ftc-open-alliance-season/505867'},
+    {season:'2025',type:'thread',meta:'TEAM 12527 · PROTOTYPE',title:'2026 Build Thread',desc:'Team Prototype 的 DECODE 赛季公开研发记录。',source:'Chief Delphi build thread',url:'https://www.chiefdelphi.com/t/ftc-12527-prototype-2026-build-thread/506197'},
+    {season:'2025',type:'thread',meta:'TEAM 23619 · OVERTURE',title:'2025–2026 Build Blog',desc:'Overture 的 FTC Open Alliance 赛季 Build Blog。',source:'Chief Delphi build thread',url:'https://www.chiefdelphi.com/t/overture-23619-ftc-build-blog-2025-2026-open-alliance/508083'},
+    {season:'2025',type:'thread',meta:'TEAM 26154 · 7DOF',title:'7 Degrees of Freedom',desc:'公开记录 DECODE 赛季设计、制造与程序进展。',source:'Chief Delphi build thread',url:'https://www.chiefdelphi.com/t/ftc-26154-7-degrees-of-freedom-2025-26-build-thread/506059'},
+    {season:'2025',type:'thread',meta:'TEAM 17012',title:'Precision Guessworks',desc:'连续参与 FTC Open Alliance 的 2025–2026 赛季 Build Thread。',source:'Chief Delphi build thread',url:'https://www.chiefdelphi.com/t/ftc-17012-precision-guessworks-2025-2026-build-thread/506118'}
+  ],
+  resources:[
+    {type:'official',meta:'OFFICIAL DOCS',title:'FTC Documentation',desc:'机器人控制系统、编程、硬件配置、AprilTag 与赛季技术说明。',source:'FIRST official',url:'https://ftc-docs.firstinspires.org/'},
+    {type:'official',meta:'OFFICIAL CODE',title:'FTC Robot Controller SDK',desc:'官方 Android Studio 项目、示例 OpMode 与版本发布记录。',source:'FIRST-Tech-Challenge · GitHub',url:'https://github.com/FIRST-Tech-Challenge/FtcRobotController'},
+    {type:'community',meta:'COMMUNITY GUIDE',title:'Game Manual 0',desc:'从机械、电子、编程到比赛策略的高质量社区入门指南。',source:'gm0 community documentation',url:'https://gm0.org/'},
+    {type:'community',meta:'MOTION PLANNING',title:'Road Runner',desc:'FTC 常用的轨迹规划与运动控制库及其文档。',source:'Acme Robotics',url:'https://rr.brott.dev/'},
+    {type:'community',meta:'PATHING',title:'Pedro Pathing',desc:'面向 FTC 的路径跟随库，包含快速入门和 API 文档。',source:'FTC community project',url:'https://pedropathing.com/'},
+    {type:'community',meta:'TELEMETRY',title:'FTC Dashboard',desc:'实时遥测、图表、配置变量与摄像头画面的调试工具。',source:'acmerobotics · GitHub',url:'https://github.com/acmerobotics/ftc-dashboard'}
+  ]
+};
+const FTC_SEASONS={2023:'CENTERSTAGE',2024:'INTO THE DEEP',2025:'DECODE'};
+const FTC_PANEL_COPY={
+  awards:['获奖结果','官方赛事奖项结果；每张卡片都可回到 FTC Events 核对。'],
+  portfolios:['工程作品集','队伍主动公开的 Engineering Portfolio 与社区资料库，不代表 FIRST 官方背书。'],
+  open:['FTC Open Alliance 队伍','公开记录机器人研发过程的队伍与赛季 Build Thread。'],
+  resources:['FTC 技术资源','官方文档、常用框架和成熟社区工具；技术资源不受赛季限制。']
+};
+let ftcSeason='2025',ftcCategory='overview',ftcFilter='all';
+function renderFtcSeasons(){
+  $('ftcSeasons').innerHTML=Object.keys(FTC_SEASONS).map(y=>'<button class="ftc-season-btn'+(y===ftcSeason?' active':'')+'" onclick="selectFtcSeason(\''+y+'\')"><strong>'+(y+'–'+String(Number(y)+1).slice(-2))+'</strong><small>'+FTC_SEASONS[y]+'</small></button>').join('');
+  $('ftcSeasonYear').textContent=ftcSeason+'–'+String(Number(ftcSeason)+1);
+  $('ftcSeasonGame').textContent=FTC_SEASONS[ftcSeason]+(ftcSeason==='2025'?' presented by RTX':'');
+}
+function selectFtcSeason(y){ftcSeason=y;renderFtcSeasons();if(ftcCategory!=='overview')renderFtcCards();}
+function renderFtc(category,button){
+  const overview=$('ftcOverview'),panel=$('ftcPanel');ftcCategory=category;ftcFilter='all';
+  document.querySelectorAll('#ftcNav button').forEach(b=>b.classList.toggle('active',b===button));
+  if(category==='overview'){
+    overview.hidden=false;panel.hidden=true;$('ftcCount').textContent='精选入口';return;
+  }
+  overview.hidden=true;panel.hidden=false;$('ftcSearch').value='';
+  $('ftcPanelTitle').textContent=FTC_PANEL_COPY[category][0];$('ftcPanelLead').textContent=FTC_PANEL_COPY[category][1];
+  $('ftcFilters').innerHTML='<button class="ftc-chip active" onclick="setFtcFilter(\'all\',this)">全部</button><button class="ftc-chip" onclick="setFtcFilter(\'official\',this)">官方</button><button class="ftc-chip" onclick="setFtcFilter(\'team\',this)">队伍公开</button><button class="ftc-chip" onclick="setFtcFilter(\'community\',this)">社区</button>';
+  renderFtcCards();
+}
+function setFtcFilter(value,button){ftcFilter=value;document.querySelectorAll('#ftcFilters .ftc-chip').forEach(b=>b.classList.toggle('active',b===button));renderFtcCards();}
+function ftcSourceGroup(item){if(item.type==='official'||item.type==='manual')return'official';if(item.type==='team'||item.type==='thread')return'team';return'community';}
+function renderFtcCards(){
+  const all=FTC_DEMO_DATA[ftcCategory]||[],q=($('ftcSearch').value||'').trim().toLowerCase();
+  const seasonItems=all.filter(item=>ftcCategory==='resources'||!item.season||item.season==='all'||item.season===ftcSeason);
+  const items=seasonItems.filter(item=>(ftcFilter==='all'||ftcSourceGroup(item)===ftcFilter)&&(!q||(item.meta+' '+item.title+' '+item.desc+' '+item.source).toLowerCase().includes(q)));
+  $('ftcPanelTotal').textContent=seasonItems.length+' 条资料';$('ftcCount').textContent=items.length+' / '+seasonItems.length;$('ftcResultCount').textContent='显示 '+items.length+' / '+seasonItems.length;
+  $('ftcContent').innerHTML=items.length?items.map(item=>'<article class="ftc-resource"><span class="meta">'+esc(item.meta)+'</span><h3>'+esc(item.title)+'</h3><p>'+esc(item.desc)+'</p><span class="source">来源：'+esc(item.source)+'</span><a href="'+esc(item.url)+'" target="_blank" rel="noopener">查看来源 ↗</a></article>').join(''):'<div class="info-box">这个赛季在当前 Demo 中还没有符合条件的资料；正式采集时会继续补齐。</div>';
+}
+function setProgram(program){
+  const ftc = program === 'ftc';
+  document.body.classList.toggle('ftc-mode',ftc);
+  $('programFrc').classList.toggle('active',!ftc);
+  $('programFtc').classList.toggle('active',ftc);
+  $('programFrc').setAttribute('aria-pressed',String(!ftc));
+  $('programFtc').setAttribute('aria-pressed',String(ftc));
+  if(ftc){
+    document.querySelector('[data-i18n="hero_kicker"]').textContent='FTC · FIRST Tech Challenge · Open resources for the whole community';
+    document.querySelector('[data-i18n="site_title"]').textContent='FTC 资源库';
+    document.querySelector('[data-i18n="site_subtitle"]').textContent='FIRSTHub · FTC Open Resource Library';
+    document.querySelector('[data-i18n="hero_sub"]').textContent='FTC award results, public engineering portfolios, Open Alliance teams, and technical resources — organized with sources attached.';
+    document.querySelector('[data-i18n="built_by"]').textContent='A FIRSTHub preview built by FRC Team 5449 for the FTC community.';
+    const ftcStats=[['4','资料方向'],['1','演示赛季'],['100%','来源可追溯'],['0','虚构记录']];
+    document.querySelectorAll('.stat').forEach((node,i)=>{node.querySelector('.num').textContent=ftcStats[i][0];node.querySelector('.lbl').textContent=ftcStats[i][1];});
+    history.replaceState(null,'',location.pathname+location.search+'#ftc');
+  }else if(location.hash==='#ftc'){
+    applyI18n();renderStats();
+    history.replaceState(null,'',location.pathname+location.search+'#2026');
+  }
+}
 (function init(){
   const h = (location.hash||'').replace('#','');
   if(SEASONS[h]) currentSeason = h;
@@ -895,6 +1037,8 @@ function setTcFilter(id){tcFilter=id;renderTech();}
   renderOpen();
   renderHall();
   renderTech();
+  renderFtcSeasons();
+  if(h==='ftc') setProgram('ftc');
 })();
 </script>
 <!-- Cloudflare Web Analytics -->
