@@ -1,0 +1,1118 @@
+{
+  "officialSources": [
+    {
+      "year": 2026,
+      "teams": 3787
+    },
+    {
+      "year": 2025,
+      "teams": 3736
+    },
+    {
+      "year": 2024,
+      "teams": 3528
+    },
+    {
+      "year": 2023,
+      "teams": 3354
+    },
+    {
+      "year": 2022,
+      "teams": 3206
+    },
+    {
+      "year": 2021,
+      "teams": 3076
+    }
+  ],
+  "sourceFailures": [],
+  "openTeamOccurrences": 2092,
+  "renamedOccurrences": 116,
+  "renamedUniqueTeams": 54,
+  "unmatchedUniqueTeams": 12,
+  "changes": [
+    {
+      "teamNumber": 2019,
+      "season": "2021",
+      "oldName": "WildStang 2019",
+      "newName": "Robo Runners",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2019"
+    },
+    {
+      "teamNumber": 5,
+      "season": "2021",
+      "oldName": "Beach Blitz",
+      "newName": "Robocards",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/5"
+    },
+    {
+      "teamNumber": 3,
+      "season": "2021",
+      "oldName": "Micro Center Ender  3D Printer deal - $99",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/3"
+    },
+    {
+      "teamNumber": 15,
+      "season": "2021",
+      "oldName": "surfing_man:t5: Tidal Tumble",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/15"
+    },
+    {
+      "teamNumber": 24,
+      "season": "2021",
+      "oldName": "RiverRage  | October 30,",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/24"
+    },
+    {
+      "teamNumber": 550,
+      "season": "2021",
+      "oldName": "Failing NEO  in VersaPlanetary Gearboxes",
+      "newName": "NanKnights",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/550"
+    },
+    {
+      "teamNumber": 9,
+      "season": "2021",
+      "oldName": "Battle at the Border",
+      "newName": "Roosevelt RoboRiders",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/9"
+    },
+    {
+      "teamNumber": 2021,
+      "season": "2021",
+      "oldName": "Turtle Trials 2021: Parcel Panic",
+      "newName": "F.A.R.",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2021"
+    },
+    {
+      "teamNumber": 2011,
+      "season": "2021",
+      "oldName": "FRC",
+      "newName": "SMH Robotics",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2011"
+    },
+    {
+      "teamNumber": 7,
+      "season": "2021",
+      "oldName": "FIRST South Carolina®",
+      "newName": "Team007",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/7"
+    },
+    {
+      "teamNumber": 6,
+      "season": "2021",
+      "oldName": "<\" Wheels for Outreach",
+      "newName": "The CogSquad",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/6"
+    },
+    {
+      "teamNumber": 802,
+      "season": "2021",
+      "oldName": "Realtek RTL8188CU Wireless LAN .11n USB",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/802"
+    },
+    {
+      "teamNumber": 29,
+      "season": "2021",
+      "oldName": "NMRC \"",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/29"
+    },
+    {
+      "teamNumber": 2009,
+      "season": "2021",
+      "oldName": "Team number on",
+      "newName": "Robo-Titans",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2009"
+    },
+    {
+      "teamNumber": 500,
+      "season": "2021",
+      "oldName": "Two Falcon  follower not working",
+      "newName": "Team 500/Team USA",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/500"
+    },
+    {
+      "teamNumber": 2,
+      "season": "2021",
+      "oldName": "(Dec. ) Onshape Webinar - Collaborate with",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2"
+    },
+    {
+      "teamNumber": 376,
+      "season": "2021",
+      "oldName": "New World High Score -  (352 unpenalized) - infinite recharge",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/376"
+    },
+    {
+      "teamNumber": 10,
+      "season": "2021",
+      "oldName": "Beach Blitz",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/10"
+    },
+    {
+      "teamNumber": 17,
+      "season": "2021",
+      "oldName": "NEXT",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/17"
+    },
+    {
+      "teamNumber": 19,
+      "season": "2021",
+      "oldName": "\"Certainty\" - a COVID- Chairman's video from 5985 (",
+      "newName": "Big Red",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/19"
+    },
+    {
+      "teamNumber": 500,
+      "season": "2022",
+      "oldName": "Control system components (Photos of the internal parts of components including motors execpt Falcon )",
+      "newName": "Team 500/Team USA",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/500"
+    },
+    {
+      "teamNumber": 200,
+      "season": "2022",
+      "oldName": "A forgiving and easy bumper mounting solution that doesn’t cost  dollars",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/200"
+    },
+    {
+      "teamNumber": 2009,
+      "season": "2022",
+      "oldName": "pic: Team 2022's Drivebase",
+      "newName": "Robo-Titans",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2009"
+    },
+    {
+      "teamNumber": 3,
+      "season": "2022",
+      "oldName": "CIM Ball Shifter troubles",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/3"
+    },
+    {
+      "teamNumber": 15,
+      "season": "2022",
+      "oldName": "$,000 Capital investment Budget For new Machines",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/15"
+    },
+    {
+      "teamNumber": 1000,
+      "season": "2022",
+      "oldName": "+ images of 2022's game balls for vision",
+      "newName": "Cybearcats",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/1000"
+    },
+    {
+      "teamNumber": 550,
+      "season": "2022",
+      "oldName": "Armabot Turret240 gearbox redesigned for full size NEO, NEO , and Falcon",
+      "newName": "NanKnights",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/550"
+    },
+    {
+      "teamNumber": 17,
+      "season": "2022",
+      "oldName": "FIRST South Carolina®",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/17"
+    },
+    {
+      "teamNumber": 2017,
+      "season": "2022",
+      "oldName": "Beach Bots | 2017",
+      "newName": "Trojans",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2017"
+    },
+    {
+      "teamNumber": 221,
+      "season": "2022",
+      "oldName": "Lamprey En",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/221"
+    },
+    {
+      "teamNumber": 12,
+      "season": "2022",
+      "oldName": "Brunswick Eruption 20th",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/12"
+    },
+    {
+      "teamNumber": 19,
+      "season": "2022",
+      "oldName": "/smartdashboard/SendableBase.h (",
+      "newName": "Big Red",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/19"
+    },
+    {
+      "teamNumber": 13,
+      "season": "2022",
+      "oldName": "Aerospace Valley Air Show Oct -16,",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/13"
+    },
+    {
+      "teamNumber": 2008,
+      "season": "2022",
+      "oldName": "MiGHT 2008",
+      "newName": "VTEC",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2008"
+    },
+    {
+      "teamNumber": 2011,
+      "season": "2022",
+      "oldName": "pic: FRC 2022 2011",
+      "newName": "SMH Robotics",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2011"
+    },
+    {
+      "teamNumber": 2012,
+      "season": "2022",
+      "oldName": "pic: 2022 2012 TBA Photo",
+      "newName": "@ Zenith",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2012"
+    },
+    {
+      "teamNumber": 403,
+      "season": "2022",
+      "oldName": "Forbidden for the Java and C++ APIs",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/403"
+    },
+    {
+      "teamNumber": 2019,
+      "season": "2022",
+      "oldName": "Video from",
+      "newName": "Robo Runners",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2019"
+    },
+    {
+      "teamNumber": 82,
+      "season": "2022",
+      "oldName": "Labeled PXN  fight stick/button board diagram",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/82"
+    },
+    {
+      "teamNumber": 2014,
+      "season": "2022",
+      "oldName": "pic: 2022 2014 TBA Photo",
+      "newName": "Spartans",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2014"
+    },
+    {
+      "teamNumber": 2,
+      "season": "2023",
+      "oldName": "Limelight 2 and 1-2+ for Sale",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2"
+    },
+    {
+      "teamNumber": 23,
+      "season": "2023",
+      "oldName": "Game Tools .1 Out",
+      "newName": "PNTA Pilgrim Nuclear Technology Alliance",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/23"
+    },
+    {
+      "teamNumber": 500,
+      "season": "2023",
+      "oldName": "Used Falcon  Motors, Motor controllers, and other parts for Sale",
+      "newName": "Team 500/Team USA",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/500"
+    },
+    {
+      "teamNumber": 4144,
+      "season": "2023",
+      "oldName": "High Tide",
+      "newName": "Semi con-duck-tors",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/4144"
+    },
+    {
+      "teamNumber": 5,
+      "season": "2023",
+      "oldName": "Open Alliance Show - Live Tuesdays 8pm eastern -  teams each week!",
+      "newName": "Robocards",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/5"
+    },
+    {
+      "teamNumber": 6,
+      "season": "2023",
+      "oldName": "inch pneumatic wheels",
+      "newName": "The CogSquad",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/6"
+    },
+    {
+      "teamNumber": 90,
+      "season": "2023",
+      "oldName": "Rev",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/90"
+    },
+    {
+      "teamNumber": 26,
+      "season": "2023",
+      "oldName": "RiverRage  | October 28,",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/26"
+    },
+    {
+      "teamNumber": 12,
+      "season": "2023",
+      "oldName": "REV PDH Screen Always showing .0V",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/12"
+    },
+    {
+      "teamNumber": 9,
+      "season": "2023",
+      "oldName": "Bumpers",
+      "newName": "Roosevelt RoboRiders",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/9"
+    },
+    {
+      "teamNumber": 2008,
+      "season": "2023",
+      "oldName": "Charged Up (",
+      "newName": "VTEC",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2008"
+    },
+    {
+      "teamNumber": 3,
+      "season": "2023",
+      "oldName": "Motor swerve",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/3"
+    },
+    {
+      "teamNumber": 14,
+      "season": "2023",
+      "oldName": "Duel on the Delaware",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/14"
+    },
+    {
+      "teamNumber": 2023,
+      "season": "2023",
+      "oldName": "SOTAbots  Shifting swerve i2",
+      "newName": "PiraTech",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2023"
+    },
+    {
+      "teamNumber": 7,
+      "season": "2023",
+      "oldName": "WPIlib libs missing (",
+      "newName": "Team007",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/7"
+    },
+    {
+      "teamNumber": 550,
+      "season": "2023",
+      "oldName": "Neo  tool",
+      "newName": "NanKnights",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/550"
+    },
+    {
+      "teamNumber": 29,
+      "season": "2023",
+      "oldName": "RVSTS - FRC",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/29"
+    },
+    {
+      "teamNumber": 15,
+      "season": "2023",
+      "oldName": "FIRST South Carolina®",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/15"
+    },
+    {
+      "teamNumber": 77,
+      "season": "2023",
+      "oldName": "Curie Qual  Driver POV",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/77"
+    },
+    {
+      "teamNumber": 30,
+      "season": "2023",
+      "oldName": "Scouting System in  Minutes with RLD",
+      "newName": "FURY",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/30"
+    },
+    {
+      "teamNumber": 40,
+      "season": "2023",
+      "oldName": "Free Caplugs Sample (the schedule  endcap)",
+      "newName": "Checkmate",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/40"
+    },
+    {
+      "teamNumber": 3,
+      "season": "2024",
+      "oldName": "Center distances when running a belt over  pullies",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/3"
+    },
+    {
+      "teamNumber": 18,
+      "season": "2024",
+      "oldName": "🌊 Tidal Tumble",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/18"
+    },
+    {
+      "teamNumber": 24,
+      "season": "2024",
+      "oldName": "Fatal bug in neutral mode of falcon500 motor with firmware version .3.0.2",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/24"
+    },
+    {
+      "teamNumber": 23,
+      "season": "2024",
+      "oldName": ",000+ Image Note Dataset",
+      "newName": "PNTA Pilgrim Nuclear Technology Alliance",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/23"
+    },
+    {
+      "teamNumber": 500,
+      "season": "2024",
+      "oldName": "Falcon  integrated sensor Phoenix 6 API",
+      "newName": "Team 500/Team USA",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/500"
+    },
+    {
+      "teamNumber": 7,
+      "season": "2024",
+      "oldName": "in 1 FRC screwdriver",
+      "newName": "Team007",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/7"
+    },
+    {
+      "teamNumber": 2024,
+      "season": "2024",
+      "oldName": "SCRAP Build & Activities",
+      "newName": "Warrior Pride",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2024"
+    },
+    {
+      "teamNumber": 550,
+      "season": "2024",
+      "oldName": "Neo  without mounting holes",
+      "newName": "NanKnights",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/550"
+    },
+    {
+      "teamNumber": 5,
+      "season": "2024",
+      "oldName": "Updating Subsystem",
+      "newName": "Robocards",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/5"
+    },
+    {
+      "teamNumber": 10,
+      "season": "2024",
+      "oldName": "Problem installing AprilTags library for Python (Windows )",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/10"
+    },
+    {
+      "teamNumber": 2014,
+      "season": "2024",
+      "oldName": "#9497 Nimble Panther",
+      "newName": "Spartans",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2014"
+    },
+    {
+      "teamNumber": 2025,
+      "season": "2024",
+      "oldName": "FTC 20827 Roborpunk 2024-2025",
+      "newName": "Aztecs",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2025"
+    },
+    {
+      "teamNumber": 6,
+      "season": "2024",
+      "oldName": "\" vs 8\" Mecanum Wheel Size",
+      "newName": "The CogSquad",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/6"
+    },
+    {
+      "teamNumber": 3000,
+      "season": "2024",
+      "oldName": "Microsoft LiveCam HD- focal measurements",
+      "newName": "Jeffersontown Robochargers",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/3000"
+    },
+    {
+      "teamNumber": 19,
+      "season": "2024",
+      "oldName": "HAVOC",
+      "newName": "Big Red",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/19"
+    },
+    {
+      "teamNumber": 7,
+      "season": "2025",
+      "oldName": "Save the Date",
+      "newName": "Team007",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/7"
+    },
+    {
+      "teamNumber": 2025,
+      "season": "2025",
+      "oldName": "95 Grasshoppers",
+      "newName": "Aztecs",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2025"
+    },
+    {
+      "teamNumber": 2017,
+      "season": "2025",
+      "oldName": "Off-Season Turret & Shooter Design: Feedback Welcome!",
+      "newName": "Trojans",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2017"
+    },
+    {
+      "teamNumber": 3,
+      "season": "2025",
+      "oldName": "Loop overruns (0. - 0.04s) RIO2/Magicbot",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/3"
+    },
+    {
+      "teamNumber": 17,
+      "season": "2025",
+      "oldName": "Deep Cage Climb Swing and Team Update",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/17"
+    },
+    {
+      "teamNumber": 84,
+      "season": "2025",
+      "oldName": "Using a TI  Plus CE calculator as a",
+      "newName": "Chuck 84",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/84"
+    },
+    {
+      "teamNumber": 23,
+      "season": "2025",
+      "oldName": "Kettering University - Week 0 Event - February ,",
+      "newName": "PNTA Pilgrim Nuclear Technology Alliance",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/23"
+    },
+    {
+      "teamNumber": 9,
+      "season": "2025",
+      "oldName": "R703 in Team Update , switch no longer allowed between RoboRIO and radio",
+      "newName": "Roosevelt RoboRiders",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/9"
+    },
+    {
+      "teamNumber": 550,
+      "season": "2025",
+      "oldName": "Neo Vortex or  for WCP Swerve Drive",
+      "newName": "NanKnights",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/550"
+    },
+    {
+      "teamNumber": 2019,
+      "season": "2025",
+      "oldName": "Retroactive Galaxia",
+      "newName": "Robo Runners",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2019"
+    },
+    {
+      "teamNumber": 10,
+      "season": "2025",
+      "oldName": "Years of 5514",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/10"
+    },
+    {
+      "teamNumber": 2,
+      "season": "2025",
+      "oldName": "Usage of single limelight for both (servoing/ranging for turret) and megatag 2",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2"
+    },
+    {
+      "teamNumber": 105,
+      "season": "2025",
+      "oldName": "Bag in tba how can i see  game",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/105"
+    },
+    {
+      "teamNumber": 6,
+      "season": "2025",
+      "oldName": "Infinite Recharge in One Week,  Years Late—A Solo",
+      "newName": "The CogSquad",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/6"
+    },
+    {
+      "teamNumber": 90,
+      "season": "2025",
+      "oldName": "What's the best way to get a two wheeled",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/90"
+    },
+    {
+      "teamNumber": 113,
+      "season": "2025",
+      "oldName": "Setting up the VH- for Cheesy",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/113"
+    },
+    {
+      "teamNumber": 109,
+      "season": "2025",
+      "oldName": "Get currently selected",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/109"
+    },
+    {
+      "teamNumber": 2015,
+      "season": "2025",
+      "oldName": "Reprogramming the",
+      "newName": "Static shock",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2015"
+    },
+    {
+      "teamNumber": 500,
+      "season": "2025",
+      "oldName": "Retrieving Limit Switch State on Falcon  (Talon FX)",
+      "newName": "Team 500/Team USA",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/500"
+    },
+    {
+      "teamNumber": 2026,
+      "season": "2025",
+      "oldName": "FTC 29180 QURUT 2025-2026",
+      "newName": "Senai",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2026"
+    },
+    {
+      "teamNumber": 3,
+      "season": "2026",
+      "oldName": "Pulley Belt System in Onshape",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/3"
+    },
+    {
+      "teamNumber": 2026,
+      "season": "2026",
+      "oldName": "Critical Circuits & Robots Done Quick",
+      "newName": "Senai",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2026"
+    },
+    {
+      "teamNumber": 2,
+      "season": "2026",
+      "oldName": "PenguinCAM .0 Full",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2"
+    },
+    {
+      "teamNumber": 24,
+      "season": "2026",
+      "oldName": "Introducing our Full",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/24"
+    },
+    {
+      "teamNumber": 12,
+      "season": "2026",
+      "oldName": "+ Fuel per second with 100% accuracy -Ramtech 59",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/12"
+    },
+    {
+      "teamNumber": 700,
+      "season": "2026",
+      "oldName": "BaseBot",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/700"
+    },
+    {
+      "teamNumber": 26,
+      "season": "2026",
+      "oldName": "Grand Rapids Girls Offseason Competition - September ,",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/26"
+    },
+    {
+      "teamNumber": 6,
+      "season": "2026",
+      "oldName": "FrcCatalyst — a plug-and-play Phoenix  + WPILib library (now competition-proven)",
+      "newName": "The CogSquad",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/6"
+    },
+    {
+      "teamNumber": 2017,
+      "season": "2026",
+      "oldName": "Cut bumper intake vs Over the bumper intake",
+      "newName": "Trojans",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/2017"
+    },
+    {
+      "teamNumber": 550,
+      "season": "2026",
+      "oldName": "Neo/ Neo  on Talon fxs",
+      "newName": "NanKnights",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/550"
+    },
+    {
+      "teamNumber": 30,
+      "season": "2026",
+      "oldName": "Beach Blitz",
+      "newName": "FURY",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/30"
+    },
+    {
+      "teamNumber": 113,
+      "season": "2026",
+      "oldName": "VH- Frustration",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/113"
+    },
+    {
+      "teamNumber": 65,
+      "season": "2026",
+      "oldName": "Anybody get the KOP DigiKey $ voucher (",
+      "newName": "The Huskie Brigade",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/65"
+    },
+    {
+      "teamNumber": 6202,
+      "season": "2026",
+      "oldName": "\"REWIND\" - laeveR toboR  - 801 scitoboR T@CamgiS",
+      "newName": "The Centurions",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/6202"
+    },
+    {
+      "teamNumber": 7,
+      "season": "2026",
+      "oldName": "Alternative WCP /8 OD 1/2 ID bearings",
+      "newName": "Team007",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/7"
+    },
+    {
+      "teamNumber": 18,
+      "season": "2026",
+      "oldName": "Modifying can to use  motors and 4 can",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/18"
+    },
+    {
+      "teamNumber": 29,
+      "season": "2026",
+      "oldName": "RiverRage  | October 24,",
+      "newName": "Unknown Team Name",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/29"
+    },
+    {
+      "teamNumber": 7000,
+      "season": "2026",
+      "oldName": "CTRE Velocity Voltage Motor Caps at  RPM",
+      "newName": "Newton's 4th Law",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/7000"
+    },
+    {
+      "teamNumber": 5,
+      "season": "2026",
+      "oldName": "Spectre",
+      "newName": "Robocards",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/5"
+    },
+    {
+      "teamNumber": 500,
+      "season": "2026",
+      "oldName": "Ctre MotorType in talonFXSimState dosent have falcon",
+      "newName": "Team 500/Team USA",
+      "officialSeason": null,
+      "source": "https://frc-events.firstinspires.org/team/500"
+    }
+  ],
+  "unmatched": [
+    {
+      "teamNumber": 370,
+      "currentName": "In Search Of: WCP- Cable Carrier Model",
+      "seasons": [
+        "2022"
+      ]
+    },
+    {
+      "teamNumber": 775,
+      "currentName": "Where can i find a",
+      "seasons": [
+        "2024"
+      ]
+    },
+    {
+      "teamNumber": 1003,
+      "currentName": "Error",
+      "seasons": [
+        "2021"
+      ]
+    },
+    {
+      "teamNumber": 2018,
+      "currentName": "Elevator Climb",
+      "seasons": [
+        "2021"
+      ]
+    },
+    {
+      "teamNumber": 2507,
+      "currentName": "Key:, Not heated as expected",
+      "seasons": [
+        "2025"
+      ]
+    },
+    {
+      "teamNumber": 3178,
+      "currentName": "2023 LEGO",
+      "seasons": [
+        "2023",
+        "2024"
+      ]
+    },
+    {
+      "teamNumber": 8196,
+      "currentName": "TalonFX En",
+      "seasons": [
+        "2025"
+      ]
+    },
+    {
+      "teamNumber": 10060,
+      "currentName": "“",
+      "seasons": [
+        "2024"
+      ]
+    },
+    {
+      "teamNumber": 14614,
+      "currentName": "FTC Team 14614 Electro Presents: Wall-Thor",
+      "seasons": [
+        "2021"
+      ]
+    },
+    {
+      "teamNumber": 16470,
+      "currentName": "Having trouble getting Adis  working with wpilib",
+      "seasons": [
+        "2022"
+      ]
+    },
+    {
+      "teamNumber": 16818,
+      "currentName": "Hype-Birds",
+      "seasons": [
+        "2026"
+      ]
+    },
+    {
+      "teamNumber": 18219,
+      "currentName": "Primitive Data | MTI Reveal",
+      "seasons": [
+        "2021"
+      ]
+    }
+  ],
+  "removedUnverifiableOccurrences": 13,
+  "removed": [
+    {
+      "season": "2021",
+      "teamNumber": 2018,
+      "currentName": "Elevator Climb"
+    },
+    {
+      "season": "2021",
+      "teamNumber": 18219,
+      "currentName": "Primitive Data | MTI Reveal"
+    },
+    {
+      "season": "2021",
+      "teamNumber": 1003,
+      "currentName": "Error"
+    },
+    {
+      "season": "2021",
+      "teamNumber": 14614,
+      "currentName": "FTC Team 14614 Electro Presents: Wall-Thor"
+    },
+    {
+      "season": "2022",
+      "teamNumber": 16470,
+      "currentName": "Having trouble getting Adis  working with wpilib"
+    },
+    {
+      "season": "2022",
+      "teamNumber": 370,
+      "currentName": "In Search Of: WCP- Cable Carrier Model"
+    },
+    {
+      "season": "2023",
+      "teamNumber": 3178,
+      "currentName": "2023 LEGO"
+    },
+    {
+      "season": "2024",
+      "teamNumber": 3178,
+      "currentName": "LRC 3178"
+    },
+    {
+      "season": "2024",
+      "teamNumber": 775,
+      "currentName": "Where can i find a"
+    },
+    {
+      "season": "2024",
+      "teamNumber": 10060,
+      "currentName": "“"
+    },
+    {
+      "season": "2025",
+      "teamNumber": 8196,
+      "currentName": "TalonFX En"
+    },
+    {
+      "season": "2025",
+      "teamNumber": 2507,
+      "currentName": "Key:, Not heated as expected"
+    },
+    {
+      "season": "2026",
+      "teamNumber": 16818,
+      "currentName": "Hype-Birds"
+    }
+  ]
+}
