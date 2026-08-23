@@ -33,8 +33,14 @@ The important files are:
 - `assets/js/data.js` → `const DATA`: canonical FRC season, Impact, Open
   Alliance, Hall of Fame, and resource data.
 - `assets/js/i18n.js`: interface translations, isolated from application logic.
-- `data/ftc-demo.json`: automatically collected FTC demo records, loaded only
-  after a visitor switches to FTC.
+- `data/ftc-demo-raw.json`: public FTC records as returned by the collectors.
+- `data/ftc-demo.json`: normalized FTC browser dataset, loaded only after a
+  visitor switches to FTC.
+- `scripts/collect_ftc_demo.py`: collects public FTC awards, portfolios, build
+  threads, and directory links without bypassing authentication.
+- `scripts/filter_ftc_demo.py`: de-duplicates and classifies the raw records,
+  rejects obvious false team-number matches, and builds the website/resource
+  filter fields used by the demo.
 - `data/award-scripts/YYYY.json`: collected official team award citations.
 - `scripts/collect_award_scripts.py`: reads public FIRST Event Web award pages.
 - `scripts/clean_award_scripts.py`: applies the public scope, normalization, and
@@ -48,6 +54,18 @@ The important files are:
 
 Python 3.10 or newer is recommended. The scripts use the Python standard
 library and do not require browser automation.
+
+Refresh the FTC demo in two explicit stages:
+
+```powershell
+python scripts/collect_ftc_demo.py --years 2023 2024 2025
+python scripts/filter_ftc_demo.py --check-links
+```
+
+The first command writes `data/ftc-demo-raw.json`; the second writes the
+browser-facing `data/ftc-demo.json`. Link checks are advisory because some
+working sites reject HTTP `HEAD` requests. Review the generated diff and audit
+list before publishing.
 
 Collect one or more known events for a reviewable run:
 
