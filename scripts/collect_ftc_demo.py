@@ -25,7 +25,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "data" / "ftc-demo.json"
+OUTPUT = ROOT / "data" / "ftc-demo-raw.json"
 USER_AGENT = "FIRSTHub FTC public-data collector/1.0 (+https://firsthub.site/)"
 GAMES = {2023: "CENTERSTAGE", 2024: "INTO THE DEEP", 2025: "DECODE"}
 

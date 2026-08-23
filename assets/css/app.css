@@ -12,6 +12,7 @@
   --shadow-lg:0 8px 20px rgba(23,32,51,.08);
 }
 *{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:var(--primary);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -70,6 +71,24 @@ body.ftc-mode .ftc-demo{display:block}
 .ftc-note{margin-top:18px;padding:14px 16px;background:#f7f3f5;border-left:3px solid var(--primary);font-size:.78rem;color:var(--muted)}
 @media(max-width:800px){.programbar-inner{align-items:flex-start;flex-direction:column;gap:7px}.program-switch{width:100%}.program-btn{flex:1}.ftc-grid,.ftc-content-grid{grid-template-columns:1fr 1fr}.ftc-heroline{align-items:flex-start;flex-direction:column}}
 @media(max-width:520px){.ftc-grid,.ftc-content-grid{grid-template-columns:1fr}}
+
+/* FTC uses the FRC information architecture with its own teal/orange identity. */
+body.ftc-mode{--ftc-primary:#006b76;--ftc-dark:#063c43;--ftc-accent:#f28c28;--ftc-light:#e8f5f5}
+body.ftc-mode .hero{background:#073c43;border-top-color:var(--ftc-accent)}
+body.ftc-mode .hero .kicker{border-left-color:var(--ftc-accent)}
+body.ftc-mode .program-btn.active{background:var(--ftc-primary)}
+body.ftc-mode .ftc-eyebrow,.ftc-resource .meta,.ftc-lane .index{color:var(--ftc-primary)}
+body.ftc-mode .ftc-season,.ftc-lane{border-color:var(--ftc-accent)}
+body.ftc-mode .ftc-nav button.active,body.ftc-mode .ftc-chip.active,body.ftc-mode .ftc-resource a{background:var(--ftc-primary);border-color:var(--ftc-primary)}
+body.ftc-mode .ftc-resource a:hover{background:var(--ftc-dark)}
+body.ftc-mode .ftc-season-btn:hover,body.ftc-mode .ftc-season-btn.active{background:var(--ftc-light);border-bottom-color:var(--ftc-accent)}
+body.ftc-mode .ftc-note{background:var(--ftc-light);border-left-color:var(--ftc-accent)}
+.ftc-grid{grid-template-columns:repeat(5,1fr)}
+.ftc-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.ftc-tag{border:1px solid #b9d9dc;background:#e8f5f5;color:#063c43;padding:2px 7px;font-size:.63rem;font-weight:700;border-radius:99px}
+.ftc-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.ftc-links a{margin-top:0}.ftc-links a.secondary{background:#fff;color:#006b76;border:1px solid #8abfc4}.ftc-links a.secondary:hover{background:#e8f5f5}
+@media(max-width:1000px){.ftc-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.ftc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.ftc-grid{grid-template-columns:1fr}}
 
 /* ===== Nav ===== */
 .tabs{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:70px;z-index:50}
