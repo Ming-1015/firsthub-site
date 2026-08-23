@@ -1,7 +1,7 @@
 /* ---------- i18n ---------- */
-Object.assign(I18N.en,{tab_tsite:"Team Resource Sites",tab_style:"Season Style Guide",ts_head:"Team Resource Sites",ts_lead:"Independent technical sites built and maintained by FRC teams — CAD, electrical, programming, and training resources.",ts_n:"Team",ts_visit:"Visit site",ts_all:"All",ts_cat_cad:"CAD / Mechanical",ts_cat_elect:"Electrical",ts_cat_code:"Programming",ts_cat_train:"Training",ts_community:"Community project",sg_head:"Season Style Guide",sg_lead:"Official brand assets and visual guides for each season — style guides, logos, social templates, and wallpapers released by FIRST.",sg_open:"Official page",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"Image",sg_count:" site(s)",sg_count2:" resources"});
-Object.assign(I18N['zh-CN'],{tab_open:"队伍公开资料",tab_tech:"技术资源库",tab_tsite:"队伍技术站",tab_style:"赛季风格指南",ts_head:"队伍技术站",ts_lead:"由 FRC 队伍或社区建设并持续维护的独立技术网站，涵盖 CAD、电气、编程与综合培训。",ts_n:"队伍",ts_visit:"访问网站",ts_all:"全部",ts_cat_cad:"CAD / 机械",ts_cat_elect:"电气",ts_cat_code:"编程",ts_cat_train:"综合培训",ts_community:"社区项目",sg_head:"赛季风格指南",sg_lead:"各赛季官方品牌素材与视觉规范，含风格指南、Logo、社媒模板与壁纸，方便平面设计师与队伍宣传查找。",sg_open:"官方入口",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"图片",sg_count:" 个站点",sg_count2:" 项资源"});
-Object.assign(I18N['zh-TW'],{tab_open:"隊伍公開資源",tab_tech:"技術資源庫",tab_tsite:"隊伍建站",tab_style:"賽季風格指南",ts_head:"隊伍建站",ts_lead:"由 FRC 隊伍自建、持續更新、面向社群的獨立技術站點：CAD／電氣／程式／綜合培訓。",ts_n:"隊伍",ts_visit:"造訪網站",ts_all:"全部",ts_cat_cad:"CAD／機械",ts_cat_elect:"電氣",ts_cat_code:"程式",ts_cat_train:"綜合培訓",ts_community:"社群專案",sg_head:"賽季風格指南",sg_lead:"各賽季官方品牌素材與視覺規範，含風格指南、Logo、社群模板與桌布。",sg_open:"官方入口",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"圖片",sg_count:" 個站點",sg_count2:" 項資源"});
+Object.assign(I18N.en,{tab_tsite:"Team Resource Sites",tab_style:"Season Style Guide",ts_head:"Team Resource Sites",ts_lead:"Independent technical sites built and maintained by FRC teams — CAD, electrical, programming, and training resources.",ts_n:"Team",ts_visit:"Visit site",ts_all:"All",ts_cat_cad:"CAD / Mechanical",ts_cat_elect:"Electrical",ts_cat_code:"Programming",ts_cat_train:"Training",ts_community:"Community project",sg_head:"Season Style Guide",sg_lead:"Official brand assets and visual guides for each season — style guides, logos, social templates, and wallpapers released by FIRST.",sg_open:"Official page",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"Image",sg_count:" sites",sg_count2:" resources",scripts_award_filter:"Filter by award",scripts_event_filter:"Filter by event"});
+Object.assign(I18N['zh-CN'],{tab_open:"队伍公开资料",tab_tech:"技术资源库",tab_tsite:"队伍技术站",tab_style:"赛季风格指南",ts_head:"队伍技术站",ts_lead:"由 FRC 队伍或社区建设并持续维护的独立技术网站，涵盖 CAD、电气、编程与综合培训。",ts_n:"队伍",ts_visit:"访问网站",ts_all:"全部",ts_cat_cad:"CAD / 机械",ts_cat_elect:"电气",ts_cat_code:"编程",ts_cat_train:"综合培训",ts_community:"社区项目",sg_head:"赛季风格指南",sg_lead:"各赛季官方品牌素材与视觉规范，含风格指南、Logo、社媒模板与壁纸，方便平面设计师与队伍宣传查找。",sg_open:"官方入口",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"图片",sg_count:" 个站点",sg_count2:" 项资源",scripts_award_filter:"按奖项筛选",scripts_event_filter:"按赛事筛选"});
+Object.assign(I18N['zh-TW'],{tab_open:"隊伍公開資源",tab_tech:"技術資源庫",tab_tsite:"隊伍建站",tab_style:"賽季風格指南",ts_head:"隊伍建站",ts_lead:"由 FRC 隊伍自建、持續更新、面向社群的獨立技術站點：CAD／電氣／程式／綜合培訓。",ts_n:"隊伍",ts_visit:"造訪網站",ts_all:"全部",ts_cat_cad:"CAD／機械",ts_cat_elect:"電氣",ts_cat_code:"程式",ts_cat_train:"綜合培訓",ts_community:"社群專案",sg_head:"賽季風格指南",sg_lead:"各賽季官方品牌素材與視覺規範，含風格指南、Logo、社群模板與桌布。",sg_open:"官方入口",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"圖片",sg_count:" 個站點",sg_count2:" 項資源",scripts_award_filter:"依獎項篩選",scripts_event_filter:"依賽事篩選"});
 const SUPPORTED_LANGS=['en','zh-CN','zh-TW'];
 const savedLang=localStorage.getItem('frc_lang');
 let LANG=SUPPORTED_LANGS.includes(savedLang)?savedLang:'en';
@@ -30,7 +30,7 @@ Object.assign(I18N.en,{
   stat_impact:"Impact Award team entries",stat_open:"Team resource entries",stat_hall:"Hall of Fame teams",stat_tech:"Technical resources",
   home_what:"Explore the archive",
   home_lead:"Browse six seasons of Impact Award essays, videos, and presentations; team-published CAD, code and Build Threads; the official FIRST Hall of Fame; and a curated collection of technical and learning resources.",
-  home_usage:"Choose a season above to update the archive. Use “Impact Award Archive” for winning-team materials, browse “Team-Published Resources” by Build Thread views or team number, and filter “Technical Resources” by category. Add an anchor such as #2024 to share a specific season.",
+  home_usage:"Open the Impact Award Archive, Award Scripts, or Team-Published Resources to choose a season. Browse team resources by Build Thread views or team number, and filter Technical Resources by category. Add an anchor such as #2024 to share a specific season.",
   home_impact_t:"Impact Award Archive",home_impact_d:"Essays, videos, and presentations from 514 award-winning team entries across the 2021–2026 seasons.",
   home_open_t:"Team-Published Resources",home_open_d:"2,092 team-published resource entries across six seasons, including Build Threads, CAD, code, and video links.",
   home_tech_t:"Technical Resources",home_tech_d:"Curated CAD, software, data, strategy, and learning resources, filterable by category.",
@@ -72,6 +72,7 @@ function applyI18n(){
     else if(el.tagName==='BUTTON'||el.tagName==='A') el.textContent=t(k);
     else el.textContent=t(k);
   });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.i18nAria)));
   document.documentElement.lang = LANG==='zh-CN'?'zh-CN':LANG;
 }
 function renderLangSelector(){

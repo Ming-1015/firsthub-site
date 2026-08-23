@@ -119,8 +119,8 @@
   <div class="info-box" data-i18n="scripts_original"><b>原文优先：</b>颁奖词保持 FIRST 官方英文原文，每张卡片都可回到官方赛事页面核对。</div>
   <div class="filter-bar">
     <input type="text" id="asSearch" data-i18n="scripts_search" placeholder="搜队号、队名、奖项或颁奖词…" oninput="resetAwardScripts()">
-    <select id="asAward" aria-label="按奖项筛选" onchange="resetAwardScripts()"><option value="">全部奖项</option></select>
-    <select id="asEvent" aria-label="按赛事筛选" onchange="resetAwardScripts()"><option value="">全部赛事</option></select>
+    <select id="asAward" data-i18n-aria="scripts_award_filter" aria-label="按奖项筛选" onchange="resetAwardScripts()"><option value="">全部奖项</option></select>
+    <select id="asEvent" data-i18n-aria="scripts_event_filter" aria-label="按赛事筛选" onchange="resetAwardScripts()"><option value="">全部赛事</option></select>
     <span class="result-count" id="asCount"></span>
   </div>
   <div class="grid wide" id="asGrid"><div class="card"><div class="note">正在载入颁奖词 Demo…</div></div></div>
@@ -135,7 +135,7 @@
 
   <div class="filter-bar">
     <input type="text" id="opSearch" data-i18n="op_search_ph" placeholder="搜队号、队名或标签…" oninput="renderOpen()" style="flex:1;min-width:200px;padding:9px 14px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;background:#fff">
-    <div class="sort-toggle" id="opSort" role="group" aria-label="队伍公开资料排序方式"></div>
+    <div class="sort-toggle" id="opSort" role="group" data-i18n-aria="sort_label" aria-label="队伍公开资料排序方式"></div>
     <div class="chips" id="opChips"></div>
     <span class="result-count" id="opCount"></span>
   </div>
@@ -221,7 +221,7 @@
 
 <script src="assets/js/data.js?v=20260823-2" defer></script>
 <script src="assets/js/i18n.js?v=20260823-2" defer></script>
-<script src="assets/js/app.js?v=20260823-4" defer></script>
+<script src="assets/js/app.js?v=20260823-5" defer></script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"471714dc027b4b71abdb6f6098af33e9"}'></script>
 <!-- End Cloudflare Web Analytics -->
