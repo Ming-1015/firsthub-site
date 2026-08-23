@@ -23,7 +23,7 @@
 {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://firsthub.site/#website","url":"https://firsthub.site/","name":"FIRSTHub · FRC Open Resource Library","alternateName":["FRC 智库网","FirstHub FRC"],"description":"A community-built archive of FRC Impact Award materials, award scripts, team-published resources, and technical resources from multiple seasons.","inLanguage":["zh-CN","en"]},{"@type":"Organization","@id":"https://firsthub.site/#organization","name":"FIRSTHub · FRC Open Resource Library","alternateName":"FRC 智库网","url":"https://firsthub.site/","image":"https://firsthub.site/og-cover.png","founder":{"@type":"Organization","name":"FRC Team 5449"},"sameAs":["https://github.com/Ming-1015/firsthub-site"]}]}
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚙️%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/css/app.css?v=20260823-2">
+<link rel="stylesheet" href="assets/css/app.css?v=20260823-4">
 </head>
 <body>
 
@@ -52,14 +52,6 @@
   </div>
 </header>
 
-<!-- ===== 赛季选择键 ===== -->
-<div class="seasonbar">
-  <div class="seasonbar-inner">
-    <div class="cap" data-i18n="select_season">赛季选择 · Select Season</div>
-    <div class="season-list" id="seasonList"></div>
-  </div>
-</div>
-
 <nav class="tabs">
   <div class="tabs-inner">
     <button class="tab-btn active" data-tab="home" data-i18n="tab_home">总览</button>
@@ -71,6 +63,14 @@
     <button class="tab-btn" data-tab="style" data-i18n="tab_style">赛季风格指南</button>
   </div>
 </nav>
+
+<!-- ===== 赛季选择键：仅在随赛季变化的栏目显示 ===== -->
+<div class="seasonbar" id="seasonBar" hidden>
+  <div class="seasonbar-inner">
+    <div class="cap" data-i18n="select_season">赛季选择 · Select Season</div>
+    <div class="season-list" id="seasonList"></div>
+  </div>
+</div>
 
 <main>
 
@@ -221,7 +221,7 @@
 
 <script src="assets/js/data.js?v=20260823-2" defer></script>
 <script src="assets/js/i18n.js?v=20260823-2" defer></script>
-<script src="assets/js/app.js?v=20260823-3" defer></script>
+<script src="assets/js/app.js?v=20260823-4" defer></script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"471714dc027b4b71abdb6f6098af33e9"}'></script>
 <!-- End Cloudflare Web Analytics -->

@@ -111,7 +111,6 @@ const TECH = [
 {cat:"cad",t:"Onshape 学习中心",u:"https://learn.onshape.com",d:"官方免费课程，从零学 CAD"},
 {cat:"cad",t:"GrabCAD FRC 社区",u:"https://grabcad.com/library",d:"搜索 FRC：整机、机构、零件、3D 打印件海量模型"},
 {cat:"cad",t:"FIRST CAD Library",u:"https://www.firstcadlibrary.com",d:"COTS 零件 + 场地模型合集，设计必备素材库"},
-{cat:"cad",t:"RoboChargers 暑期课程",u:"https://onshape4frc.com/robochargers-curriculum",d:"暑期 CAD 培训视频 + 课件（老牌免费课程）"},
 {cat:"cad",t:"机制照片库 (Spectrum 3847)",u:"https://photos.spectrum3847.org/Robot-Mechanisms",d:"各种机构实拍照片，找灵感神器"},
 {cat:"cad",t:"Chief Delphi CAD 版块",u:"https://www.chiefdelphi.com/c/technical/cad",d:"CAD 发布与设计讨论主阵地，各队 CAD 发布帖"},
 {cat:"cad",t:"WCP 产品库",u:"https://www.wcproducts.com",d:"Swerve 模组 / 变速箱等 COTS 件，附 CAD 模型"},
@@ -149,7 +148,6 @@ const TECH_EN = {
 "https://learn.onshape.com":["Onshape Learning Center","Official self-paced courses for learning Onshape from the fundamentals."],
 "https://grabcad.com/library":["GrabCAD Community Library","Search for FRC robots, mechanisms, components, and 3D-printable parts shared by the community."],
 "https://www.firstcadlibrary.com":["FIRST CAD Library","A consolidated library of COTS components and field models for robot design."],
-"https://onshape4frc.com/robochargers-curriculum":["RoboChargers CAD Curriculum","A free summer CAD curriculum with training videos and lesson materials."],
 "https://photos.spectrum3847.org/Robot-Mechanisms":["Robot Mechanism Photo Library (Spectrum 3847)","Reference photos of real FRC mechanisms for design research and inspiration."],
 "https://www.chiefdelphi.com/c/technical/cad":["Chief Delphi CAD","The main community forum for CAD releases, design reviews, and mechanical discussion."],
 "https://www.wcproducts.com":["WestCoast Products","COTS drivetrain, gearbox, and swerve components with downloadable CAD models."],
@@ -228,6 +226,7 @@ document.querySelectorAll('.tab-btn').forEach(b=>{
 function switchTab(tab){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+tab));
+  $('seasonBar').hidden=!['impact','scripts','open'].includes(tab);
   // 修复移动端：切换后滚动到内容区顶部而非页面最顶，避免每次点导航都跳回首屏
   const main = document.querySelector('main');
   if(main){
@@ -518,7 +517,6 @@ const TS_CATS = [
 ];
 const TEAM_SITES = [
 {cat:"elect",n:"",t:"FRCElectrical",u:"https://frcelectrical.org",d:"社区共建的 FRC 电气培训百科：电路、元件、电源分配等基础知识。",dEn:"A community-maintained FRC electrical reference covering circuits, components, and power distribution.",community:true},
-{cat:"cad",n:"6328",t:"Onshape4FRC",u:"https://onshape4frc.com",d:"FRC 6328 的 Onshape 入门指南，含 FeatureScript、MKCAD 库与实战教程。",dEn:"FRC 6328's Onshape guide, with FeatureScript, MKCAD, and practical CAD tutorials."},
 {cat:"elect",n:"2928",t:"2928 FRC Electrical Training",u:"https://2928-frc-electrical-training.readthedocs.io",d:"FRC 2928 的电气培训文档（PDH、roboRIO、传感器）。",dEn:"FRC 2928's electrical training documentation for the PDH, roboRIO, sensors, and wiring."},
 {cat:"code",n:"2928",t:"2928 FRC Programmer Training",u:"https://2928-frc-programmer-training.readthedocs.io",d:"FRC 2928 的编程培训文档（Romi、Swerve Drive、机器学习）。",dEn:"FRC 2928's programming curriculum covering Romi, swerve drive, and machine learning."},
 {cat:"train",n:"3847",t:"Spectrum 3847 Training",u:"https://training.spectrum3847.org",d:"FRC 3847 的综合培训课程：FRC 概述、竞赛和赛事角色等。",dEn:"FRC 3847's general training curriculum covering FRC, competition, and event roles."},
