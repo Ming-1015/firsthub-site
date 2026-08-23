@@ -47,7 +47,7 @@ TEXT = {
         "switch": "中文",
         "overview": "Season overview",
         "impact": "Impact Award teams",
-        "open": "Open Alliance teams",
+        "open": "Team-published resources",
         "scripts": "Award scripts",
         "impact_lead": "Official FIRST Impact Award materials, current team names, and award-event sources.",
         "open_lead": "Public Build Threads, CAD, code, videos, and team websites collected for the FRC community.",
@@ -72,7 +72,7 @@ TEXT = {
         "switch": "English",
         "overview": "赛季总览",
         "impact": "Impact Award 获奖队伍",
-        "open": "Open Alliance 开源队伍",
+        "open": "队伍公开资料",
         "scripts": "官方颁奖词",
         "impact_lead": "整理 FIRST 官方 Impact Award 获奖材料、最新队名和获奖赛事来源。",
         "open_lead": "为 FRC 社区汇总公开的 Build Thread、CAD、代码、视频与队伍网站。",
@@ -127,7 +127,7 @@ def generate(data: dict) -> list[str]:
         for year in YEARS:
             season = seasons[year]
             cards.append(f'<article class="card"><h2>{year} · {esc(season["game"])}</h2><p>{len(season.get("impact", []))} {t["impact"]}<br>{len(season.get("open", []))} {t["open"]}</p><div class="links"><a href="/{lang}/seasons/{year}/">{t["overview"]}</a><a href="/{lang}/impact/{year}/">{t["impact"]}</a><a href="/{lang}/open-teams/{year}/">{t["open"]}</a>{f'<a href="/{lang}/award-scripts/{year}/">{t["scripts"]}</a>' if year != '2021' else ''}</div></article>')
-        desc = "Browse FRC Impact Award materials, official award scripts, and Open Alliance team resources by season." if lang == "en" else "按赛季浏览 FRC Impact Award 获奖队伍、官方颁奖词及 Open Alliance 开源资料。"
+        desc = "Browse FRC Impact Award materials, official award scripts, and team-published resources by season." if lang == "en" else "按赛季浏览 FRC Impact Award 获奖队伍、官方颁奖词及队伍公开资料。"
         body = f'<p class="crumb"><a href="/">{t["home"]}</a></p><h1>{t["brand"]} · {t["index"]}</h1><p class="lead">{desc}</p><section class="cards">{"".join(cards)}</section>'
         schema = {"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{t['brand']} {t['index']}", "url": f"{BASE}/{lang}/", "isPartOf": {"@type": "WebSite", "name": "FIRSTHub · FRC Open Resource Library", "url": BASE}}
         write_page(f"/{lang}", page(lang=lang, path=f"/{lang}/", other_path=f"/{other}/", title=f"{t['brand']} · {t['index']}", description=desc, body=body, schema=schema)); generated.append(f"/{lang}/")
@@ -135,7 +135,7 @@ def generate(data: dict) -> list[str]:
         for year in YEARS:
             season = seasons[year]
             game = season["game"]
-            overview_desc = (f"Resources from the {year} FRC {game} season, including Impact Award teams, Open Alliance teams, and official award materials." if lang == "en" else f"{year} FRC {game} 赛季：Impact Award 获奖队伍、Open Alliance 开源队伍和官方奖项资料。")
+            overview_desc = (f"Resources from the {year} FRC {game} season, including Impact Award teams, team-published resources, and official award materials." if lang == "en" else f"{year} FRC {game} 赛季：Impact Award 获奖队伍、队伍公开资料和官方奖项资料。")
             body = f'<p class="crumb"><a href="/{lang}/">{t["index"]}</a></p><h1>{year} FRC {esc(game)}</h1><p class="lead">{overview_desc}</p><section class="cards"><article class="card"><h2>{t["impact"]}</h2><p>{len(season.get("impact", []))}</p><a href="/{lang}/impact/{year}/">{t["impact"]}</a></article><article class="card"><h2>{t["open"]}</h2><p>{len(season.get("open", []))}</p><a href="/{lang}/open-teams/{year}/">{t["open"]}</a></article>{f'<article class="card"><h2>{t["scripts"]}</h2><a href="/{lang}/award-scripts/{year}/">{t["scripts"]}</a></article>' if year != '2021' else ''}</section>'
             schema = {"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{year} FRC {game}", "url": f"{BASE}/{lang}/seasons/{year}/"}
             write_page(f"/{lang}/seasons/{year}", page(lang=lang, path=f"/{lang}/seasons/{year}/", other_path=f"/{other}/seasons/{year}/", title=f"{year} FRC {game} · {t['brand']}", description=overview_desc, body=body, schema=schema)); generated.append(f"/{lang}/seasons/{year}/")
@@ -156,10 +156,10 @@ def generate(data: dict) -> list[str]:
                 tags = " ".join(f'<span class="pill">{esc(tag_en.get(tag, tag) if lang == "en" else tag)}</span>' for tag in team.get("tags", []))
                 view_text = f'{esc(team.get("views"))} {t["views"]}' if team.get("views") else ""
                 open_rows.append(f'<article class="row"><div class="num">FRC {esc(team.get("n"))} · {esc(team.get("nm"))}</div><div class="meta">{view_text} {tags}</div>{links_for_team(team, t)}</article>')
-            open_desc = f"{year} FRC Open Alliance teams with public Build Threads, CAD, code, video and websites." if lang == "en" else f"{year} FRC Open Alliance 开源队伍及公开 Build Thread、CAD、代码、视频和网站。"
+            open_desc = f"{year} FRC team-published Build Threads, CAD, code, videos, and websites." if lang == "en" else f"{year} FRC 队伍公开的 Build Thread、CAD、代码、视频和网站资料。"
             body = f'<p class="crumb"><a href="/{lang}/seasons/{year}/">{year} {esc(game)}</a></p><h1>{year} {t["open"]}</h1><p class="lead">{t["open_lead"]}</p>{"".join(open_rows)}'
-            schema = {"@context": "https://schema.org", "@type": "Dataset", "name": f"{year} FRC Open Alliance teams", "description": open_desc, "url": f"{BASE}/{lang}/open-teams/{year}/", "creator": {"@type": "Organization", "name": "FIRSTHub · FRC Open Resource Library"}}
-            write_page(f"/{lang}/open-teams/{year}", page(lang=lang, path=f"/{lang}/open-teams/{year}/", other_path=f"/{other}/open-teams/{year}/", title=f"{year} FRC Open Alliance Teams · {t['brand']}", description=open_desc, body=body, schema=schema)); generated.append(f"/{lang}/open-teams/{year}/")
+            schema = {"@context": "https://schema.org", "@type": "Dataset", "name": f"{year} FRC team-published resources", "description": open_desc, "url": f"{BASE}/{lang}/open-teams/{year}/", "creator": {"@type": "Organization", "name": "FIRSTHub · FRC Open Resource Library"}}
+            write_page(f"/{lang}/open-teams/{year}", page(lang=lang, path=f"/{lang}/open-teams/{year}/", other_path=f"/{other}/open-teams/{year}/", title=f"{year} FRC Team-Published Resources · {t['brand']}", description=open_desc, body=body, schema=schema)); generated.append(f"/{lang}/open-teams/{year}/")
 
             award_file = ROOT / "data" / "award-scripts" / f"{year}.json"
             if award_file.exists():
