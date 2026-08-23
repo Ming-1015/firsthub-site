@@ -1,7 +1,10 @@
 /* ---------- i18n ---------- */
-let LANG = localStorage.getItem('frc_lang') || (navigator.language || 'en').toLowerCase().split('-')[0];
-if(LANG==='zh') LANG='zh-CN';
-if(!I18N[LANG]) LANG='en';
+Object.assign(I18N.en,{tab_tsite:"Team Resource Sites",tab_style:"Season Style Guide",ts_head:"Team Resource Sites",ts_lead:"Independent technical sites built and maintained by FRC teams — CAD, electrical, programming, and training resources.",ts_n:"Team",ts_visit:"Visit site",ts_all:"All",ts_cat_cad:"CAD / Mechanical",ts_cat_elect:"Electrical",ts_cat_code:"Programming",ts_cat_train:"Training",ts_community:"Community project",sg_head:"Season Style Guide",sg_lead:"Official brand assets and visual guides for each season — style guides, logos, social templates, and wallpapers released by FIRST.",sg_open:"Official page",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"Image",sg_count:" site(s)",sg_count2:" resources"});
+Object.assign(I18N['zh-CN'],{tab_open:"队伍公开资料",tab_tech:"技术资源库",tab_tsite:"队伍技术站",tab_style:"赛季风格指南",ts_head:"队伍技术站",ts_lead:"由 FRC 队伍或社区建设并持续维护的独立技术网站，涵盖 CAD、电气、编程与综合培训。",ts_n:"队伍",ts_visit:"访问网站",ts_all:"全部",ts_cat_cad:"CAD / 机械",ts_cat_elect:"电气",ts_cat_code:"编程",ts_cat_train:"综合培训",ts_community:"社区项目",sg_head:"赛季风格指南",sg_lead:"各赛季官方品牌素材与视觉规范，含风格指南、Logo、社媒模板与壁纸，方便平面设计师与队伍宣传查找。",sg_open:"官方入口",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"图片",sg_count:" 个站点",sg_count2:" 项资源"});
+Object.assign(I18N['zh-TW'],{tab_open:"隊伍公開資源",tab_tech:"技術資源庫",tab_tsite:"隊伍建站",tab_style:"賽季風格指南",ts_head:"隊伍建站",ts_lead:"由 FRC 隊伍自建、持續更新、面向社群的獨立技術站點：CAD／電氣／程式／綜合培訓。",ts_n:"隊伍",ts_visit:"造訪網站",ts_all:"全部",ts_cat_cad:"CAD／機械",ts_cat_elect:"電氣",ts_cat_code:"程式",ts_cat_train:"綜合培訓",ts_community:"社群專案",sg_head:"賽季風格指南",sg_lead:"各賽季官方品牌素材與視覺規範，含風格指南、Logo、社群模板與桌布。",sg_open:"官方入口",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"圖片",sg_count:" 個站點",sg_count2:" 項資源"});
+const SUPPORTED_LANGS=['en','zh-CN','zh-TW'];
+const savedLang=localStorage.getItem('frc_lang');
+let LANG=SUPPORTED_LANGS.includes(savedLang)?savedLang:'en';
 Object.assign(I18N.en,{sort_hot:"By popularity",sort_team:"By team number",teams_sorted_number:" teams (team number order)",sort_label:"Team-resource sorting"});
 Object.assign(I18N['zh-CN'],{sort_hot:"按热度排序",sort_team:"按队号排序",teams_sorted_number:" 支队伍（按队号顺序）",sort_label:"队伍公开资料排序方式"});
 Object.assign(I18N['zh-TW'],{sort_hot:"依熱度排序",sort_team:"依隊號排序",teams_sorted_number:" 支隊伍（依隊號順序）",sort_label:"隊伍公開資源排序方式"});
@@ -72,7 +75,8 @@ function applyI18n(){
   document.documentElement.lang = LANG==='zh-CN'?'zh-CN':LANG;
 }
 function renderLangSelector(){
-  const opts=Object.keys(I18N).map(l=>'<option value="'+l+'"'+(l===LANG?' selected':'')+'>'+l+'</option>').join('');
+  const names={en:'English','zh-CN':'简体中文','zh-TW':'繁體中文'};
+  const opts=SUPPORTED_LANGS.map(l=>'<option value="'+l+'"'+(l===LANG?' selected':'')+'>'+names[l]+'</option>').join('');
   const el=document.getElementById('langSel');
   if(el){ el.innerHTML=opts; el.value=LANG; }
 }
@@ -80,7 +84,7 @@ function setLang(l){
   if(!I18N[l]) return;
   LANG=l; localStorage.setItem('frc_lang',l);
   applyI18n(); renderLangSelector();
-  renderStats(); renderImpact(); fillAwardScriptFilters(); renderAwardScripts(); renderOpen(); renderHall(); renderTech(); renderChampBox();
+  renderStats(); renderImpact(); fillAwardScriptFilters(); renderAwardScripts(); renderOpen(); renderHall(); renderTech(); renderTsChips(); renderTsite(); renderSeasonGuide(); renderChampBox();
 }
 
 
@@ -224,7 +228,14 @@ document.querySelectorAll('.tab-btn').forEach(b=>{
 function switchTab(tab){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+tab));
-  window.scrollTo({top:0,behavior:'smooth'});
+  // 修复移动端：切换后滚动到内容区顶部而非页面最顶，避免每次点导航都跳回首屏
+  const main = document.querySelector('main');
+  if(main){
+    const top = Math.max(0, main.getBoundingClientRect().top + window.pageYOffset - 8);
+    window.scrollTo({top,behavior:'smooth'});
+  } else {
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
 }
 
 /* ---- 赛季选择键 ---- */
@@ -497,6 +508,95 @@ function renderTech(){
 buildChips('tcChips',techFilters(),tcFilter,'setTcFilter');
 function setTcFilter(id){tcFilter=id;renderTech();}
 
+/* ---- 队伍建设站（全局独立栏目） ---- */
+const TS_CATS = [
+{id:"all",key:"ts_all"},
+{id:"cad",key:"ts_cat_cad"},
+{id:"elect",key:"ts_cat_elect"},
+{id:"code",key:"ts_cat_code"},
+{id:"train",key:"ts_cat_train"}
+];
+const TEAM_SITES = [
+{cat:"elect",n:"",t:"FRCElectrical",u:"https://frcelectrical.org",d:"社区共建的 FRC 电气培训百科：电路、元件、电源分配等基础知识。",dEn:"A community-maintained FRC electrical reference covering circuits, components, and power distribution.",community:true},
+{cat:"cad",n:"6328",t:"Onshape4FRC",u:"https://onshape4frc.com",d:"FRC 6328 的 Onshape 入门指南，含 FeatureScript、MKCAD 库与实战教程。",dEn:"FRC 6328's Onshape guide, with FeatureScript, MKCAD, and practical CAD tutorials."},
+{cat:"elect",n:"2928",t:"2928 FRC Electrical Training",u:"https://2928-frc-electrical-training.readthedocs.io",d:"FRC 2928 的电气培训文档（PDH、roboRIO、传感器）。",dEn:"FRC 2928's electrical training documentation for the PDH, roboRIO, sensors, and wiring."},
+{cat:"code",n:"2928",t:"2928 FRC Programmer Training",u:"https://2928-frc-programmer-training.readthedocs.io",d:"FRC 2928 的编程培训文档（Romi、Swerve Drive、机器学习）。",dEn:"FRC 2928's programming curriculum covering Romi, swerve drive, and machine learning."},
+{cat:"train",n:"3847",t:"Spectrum 3847 Training",u:"https://training.spectrum3847.org",d:"FRC 3847 的综合培训课程：FRC 概述、竞赛和赛事角色等。",dEn:"FRC 3847's general training curriculum covering FRC, competition, and event roles."},
+{cat:"cad",n:"3847",t:"Spectrum CAD Collection",u:"https://cadcollection.spectrum3847.org",d:"FRC 3847 的 CAD 模型资源站，支持浏览与提交机器人 CAD。",dEn:"FRC 3847's collection for browsing and submitting robot CAD models."},
+{cat:"train",n:"1678",t:"Citrus Circuits Fall Workshops",u:"https://www.citruscircuits.org/fall-workshops",d:"FRC 1678 多年秋季工作坊，汇集技术分享与培训材料。",dEn:"FRC 1678's multi-year fall workshops and technical training materials."},
+{cat:"train",n:"971",t:"FRC 971 Workshops",u:"https://www.spartanrobotics.org/workshops",d:"FRC 971 的 Workshop 课件：机械、CAD、策略、编程与制造。",dEn:"FRC 971 workshop materials covering mechanical design, CAD, strategy, programming, and manufacturing."},
+{cat:"code",n:"971",t:"FRC 971 Training Wiki",u:"https://github.com/frc971/training-2026/wiki",d:"FRC 971 软件培训 Wiki（Git、WPILib、子系统与 PID）。",dEn:"FRC 971's software training wiki covering Git, WPILib, subsystems, and PID control."}
+];
+let tsFilter = "all";
+const TS_TEAM_EN={on:"Team",off:""};
+function renderTsite(){
+  const ZH = LANG==='zh-CN'||LANG==='zh-TW';
+  const list = TEAM_SITES.filter(s=>tsFilter==="all"||s.cat===tsFilter);
+  $('tsCount').textContent = list.length+' / '+TEAM_SITES.length+t('sg_count');
+  const catName = cid=>t((TS_CATS.find(x=>x.id===cid)||{}).key||'ts_all');
+  $('tsGrid').innerHTML = list.map(s=>{
+    const badge = s.community
+      ? '<span class="badge purple">'+t('ts_community')+'</span>'
+      : '<span class="badge blue">'+s.n+'</span>';
+    return '<div class="card"><div class="num">'+badge+' <span class="badge teal">'+catName(s.cat)+'</span></div><div class="nm">'+esc(s.t)+'</div><div class="note">'+esc(ZH?s.d:(s.dEn||s.d))+'</div><div class="links">'+btn('site',t('ts_visit'),s.u)+'</div></div>';
+  }).join('');
+}
+function renderTsChips(){
+  $('tsChips').innerHTML = TS_CATS.map(c=>'<button class="chip'+(tsFilter===c.id?' active':'')+'" onclick="setTsFilter(\''+c.id+'\')">'+t(c.key)+'</button>').join('');
+}
+function setTsFilter(id){tsFilter=id;renderTsChips();renderTsite();}
+
+/* ---- 赛季风格指南（全局独立栏目） ---- */
+const STYLE = {
+"2026":{game:"FIRST AGE · REBUILT",note:"2026 赛季素材最完整，含完整 Style Guide、Logo、PPT 模板、社媒模板与壁纸。",noteEn:"The 2026 collection is the most complete, with style guides, logos, a presentation template, social templates, and wallpapers.",list:[
+{t:"Style Guide (PDF)",u:"https://www.firstinspires.org/hubfs/2026%20Season/Season%20Assets/FIRST_AGE_Styleguide_.pdf",k:"pdf"},
+{t:"FRC Style Guide",u:"https://info.firstinspires.org/hubfs/2026%20Season/Season%20Assets/FIRST_AGE-FRC-style-guide.pdf",k:"pdf"},
+{t:"Logo Files (zip)",u:"https://www.firstinspires.org/hubfs/2026%20Season/Season%20Assets/FIRST_AGE-logos.zip",k:"zip"},
+{t:"Social Media Toolkit",u:"https://www.firstinspires.org/hubfs/2026%20Season/Season%20Assets/first_age_social_media_toolkit.pdf",k:"pdf"},
+{t:"社媒图形模板",tEn:"Social Graphic Templates",u:"https://www.firstinspires.org/hubfs/2026%20Season/Season%20Assets/age_frc_social_media_toolkit.pdf",k:"pdf"},
+{t:"PowerPoint 模板",tEn:"PowerPoint Template",u:"https://www.firstinspires.org/hubfs/2026%20Season/Season%20Assets/FIRST_AGE-powerpoint-template.pptx",k:"ppt"},
+{t:"壁纸 · Light",tEn:"Wallpaper · Light",u:"https://www.firstinspires.org/hubfs/2026%20Season/Season%20Assets/FIRST_AGE-wallpaper-light.jpg",k:"img"},
+{t:"壁纸 · Dark",tEn:"Wallpaper · Dark",u:"https://www.firstinspires.org/hubfs/2026%20Season/Season%20Assets/FIRST_AGE-wallpaper-dark.jpg",k:"img"} ]},
+"2025":{game:"REEFSCAPE · FIRST DIVE",note:"官方社媒工具包包含 Logo 与风格规范；官方页面提供其他赛季资料入口。",noteEn:"The official social media toolkit includes logo and style guidance; FIRST's official pages provide access to other season materials.",list:[
+{t:"Social Media Toolkit（含 Logo 与风格规范）",tEn:"Social Media Toolkit (Logo & Style)",u:"https://info.firstinspires.org/hubfs/2025%20Season/Season%20Assets/FIRST_DIVE_Social-media-toolkit.pdf",k:"pdf"},
+{t:"赛季主题页 · 素材入口",tEn:"Game & Season · Asset Portal",u:"https://www.firstinspires.org/robotics/frc/game-and-season",k:"ext"},
+{t:"Season Materials 官方资料",tEn:"Official Season Materials",u:"https://www.firstinspires.org/resources/library/frc/season-materials",k:"ext"} ]},
+"2024":{game:"CRESCENDO",note:"暂未找到可可靠核验的 CRESCENDO 专属风格指南直链；以下保留 FIRST 官方品牌与赛季资料入口，不混用其他赛季素材。",noteEn:"No reliable direct CRESCENDO style-guide link has been verified. These official FIRST brand and season-resource pages are provided without substituting another season's assets.",list:[
+{t:"FIRST 品牌与素材",tEn:"FIRST Brand & Assets",u:"https://www.firstinspires.org/about/brand",k:"ext"},
+{t:"赛季主题页 · 素材入口",tEn:"Game & Season · Asset Portal",u:"https://www.firstinspires.org/robotics/frc/game-and-season",k:"ext"},
+{t:"Season Materials 官方资料",tEn:"Official Season Materials",u:"https://www.firstinspires.org/resources/library/frc/season-materials",k:"ext"} ]},
+"2023":{game:"CHARGED UP",note:"官方志愿者页面提供壁纸与社媒图等数字素材。",noteEn:"An official FIRST volunteer page provides digital assets such as wallpapers and social graphics.",list:[
+{t:"数字内容（壁纸 / 社媒图）",tEn:"Digital Assets (Wallpapers / Social Graphics)",u:"https://info.firstinspires.org/volunteers-gear-up-for-first-energize-season",k:"ext"},
+{t:"赛季主题页 · 素材入口",tEn:"Game & Season · Asset Portal",u:"https://www.firstinspires.org/robotics/frc/game-and-season",k:"ext"},
+{t:"Season Materials 官方资料",tEn:"Official Season Materials",u:"https://www.firstinspires.org/resources/library/frc/season-materials",k:"ext"} ]},
+"2022":{game:"RAPID REACT",note:"官方 Style Guide 含标志间距、颜色版本、缩放规范等完整品牌规范。",noteEn:"The official style guide covers logo clear space, color variants, scaling, and other brand rules.",list:[
+{t:"FRC RAPID REACT Style Guide",u:"https://info.firstinspires.org/hubfs/2022%20Season%20Assets/free-season-assets/fr%20-%20rapid%20react/firstforward-frc-rapidreact-styleguide.pdf",k:"pdf"},
+{t:"赛季主题页 · 素材入口",tEn:"Game & Season · Asset Portal",u:"https://www.firstinspires.org/robotics/frc/game-and-season",k:"ext"},
+{t:"Season Materials 官方资料",tEn:"Official Season Materials",u:"https://www.firstinspires.org/resources/library/frc/season-materials",k:"ext"} ]},
+"2021":{game:"INFINITE RECHARGE",note:"2021 为虚拟赛季，官方直接素材较少，主要提供赛季资料与 At Home 手册入口。",noteEn:"The virtual 2021 season has fewer direct brand assets; official season materials and the At Home manual are provided instead.",list:[
+{t:"赛季主题页 · 素材入口",tEn:"Game & Season · Asset Portal",u:"https://www.firstinspires.org/robotics/frc/game-and-season",k:"ext"},
+{t:"Season Materials 官方资料",tEn:"Official Season Materials",u:"https://www.firstinspires.org/resources/library/frc/season-materials",k:"ext"},
+{t:"At Home 手册（官方 PDF）",tEn:"At Home Manual (Official PDF)",u:"https://firstfrc.blob.core.windows.net/frc2021/Manual/AtHomeManualSections/2021AtHomeChallengesManualSection02.pdf",k:"pdf"} ]}
+};
+let sgSeason = "2026";
+const SG_LABEL = k=>{const m={pdf:t('sg_pdf'),zip:t('sg_zip'),ppt:t('sg_ppt'),img:t('sg_img')};return m[k]||k.toUpperCase();};
+function renderSeasonGuide(){
+  const ZH = LANG==='zh-CN'||LANG==='zh-TW';
+  $('sgSeasonList').innerHTML = Object.keys(STYLE).sort().reverse().map(y=>{
+    const s=STYLE[y];
+    return '<button class="season-btn'+(y===sgSeason?' active':'')+'" onclick="setSeasonGuide(\''+y+'\')"><span class="yr">'+y+'</span><span class="gm">'+s.game+'</span></button>';
+  }).join('');
+  const s = STYLE[sgSeason];
+  $('sgCount').textContent = s.list.length + t('sg_count2');
+  $('sgNote').textContent = ZH ? s.note : (s.noteEn||s.note);
+  $('sgGrid').innerHTML = s.list.map(x=>{
+    const isExt = x.k==='ext';
+    const label = isExt ? t('sg_open') : SG_LABEL(x.k);
+    return '<div class="card"><div class="num"><span class="badge gray">'+(isExt?'WEB':(x.k==='img'?t('sg_img'):x.k.toUpperCase()))+'</span></div><div class="nm">'+esc(ZH?x.t:(x.tEn||x.t))+'</div><div class="links">'+btn(isExt?'site':'essay',label,x.u)+'</div></div>';
+  }).join('');
+}
+function setSeasonGuide(y){sgSeason=y;renderSeasonGuide();}
+
 /* ---- 初始化 ---- */
 (function init(){
   const h = (location.hash||'').replace('#','');
@@ -510,4 +610,7 @@ function setTcFilter(id){tcFilter=id;renderTech();}
   renderOpen();
   renderHall();
   renderTech();
+  renderTsChips();
+  renderTsite();
+  renderSeasonGuide();
 })();

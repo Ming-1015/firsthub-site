@@ -66,7 +66,9 @@
     <button class="tab-btn" data-tab="impact" data-i18n="tab_impact">Impact 智库</button>
     <button class="tab-btn" data-tab="scripts" data-i18n="tab_scripts">颁奖词库</button>
     <button class="tab-btn" data-tab="open" data-i18n="tab_open">队伍公开资料</button>
-    <button class="tab-btn" data-tab="tech" data-i18n="tab_tech">技术资源</button>
+    <button class="tab-btn" data-tab="tech" data-i18n="tab_tech">技术资源库</button>
+    <button class="tab-btn" data-tab="tsite" data-i18n="tab_tsite">队伍技术站</button>
+    <button class="tab-btn" data-tab="style" data-i18n="tab_style">赛季风格指南</button>
   </div>
 </nav>
 
@@ -144,15 +146,35 @@
   <div class="grid wide" id="hallGrid"></div>
 </section>
 
-<!-- ================= 技术资源 ================= -->
+<!-- ================= 技术资源库 ================= -->
 <section class="tab-panel" id="tab-tech">
-  <div class="section-head"><h2 data-i18n="tech_head">FRC 技术资源</h2><span class="cnt" id="techTotal"></span></div>
+  <div class="section-head"><h2 data-i18n="tech_head">FRC 技术资源库</h2><span class="cnt" id="techTotal"></span></div>
   <p class="lead" data-i18n="tech_lead">常用的官方文档、框架、工具和社区，按分类筛。</p>
   <div class="filter-bar">
     <div class="chips" id="tcChips"></div>
     <span class="result-count" id="tcCount"></span>
   </div>
   <div class="grid wide" id="tcGrid"></div>
+</section>
+
+<!-- ================= 队伍技术站 ================= -->
+<section class="tab-panel" id="tab-tsite">
+  <div class="section-head"><h2 data-i18n="ts_head">队伍技术站</h2><span class="cnt" id="tsCount"></span></div>
+  <p class="lead" data-i18n="ts_lead">由 FRC 队伍自建、持续更新、面向社区的独立技术站点：CAD / 电气 / 编程 / 综合培训。</p>
+  <div class="filter-bar">
+    <div class="chips" id="tsChips"></div>
+    <span class="result-count" style="display:none"></span>
+  </div>
+  <div class="grid wide" id="tsGrid"></div>
+</section>
+
+<!-- ================= 赛季风格指南 ================= -->
+<section class="tab-panel" id="tab-style">
+  <div class="section-head"><h2 data-i18n="sg_head">赛季风格指南</h2><span class="cnt" id="sgCount"></span></div>
+  <p class="lead" data-i18n="sg_lead">各赛季官方品牌素材与视觉规范，方便平面设计师与队伍宣传查找。</p>
+  <div style="border-top:1px solid var(--border);padding:10px 0 4px;margin-bottom:6px"><div class="season-list" id="sgSeasonList"></div></div>
+  <div class="info-box" id="sgNote"></div>
+  <div class="grid wide" id="sgGrid"></div>
 </section>
 
 </main>
@@ -199,7 +221,7 @@
 
 <script src="assets/js/data.js?v=20260823-2" defer></script>
 <script src="assets/js/i18n.js?v=20260823-2" defer></script>
-<script src="assets/js/app.js?v=20260823-2" defer></script>
+<script src="assets/js/app.js?v=20260823-3" defer></script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"471714dc027b4b71abdb6f6098af33e9"}'></script>
 <!-- End Cloudflare Web Analytics -->
