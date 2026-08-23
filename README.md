@@ -27,8 +27,14 @@ FIRSTHub uses a mixed workflow rather than a general-purpose web crawler:
 
 The important files are:
 
-- `index.html` → `const DATA`: canonical FRC season, Impact, Open Alliance, Hall
-  of Fame, and technical-resource data used by the main page.
+- `index.html`: lightweight page structure and SEO metadata.
+- `assets/css/app.css`: shared FRC/FTC presentation styles.
+- `assets/js/app.js`: shared application behavior and FRC/FTC rendering logic.
+- `assets/js/data.js` → `const DATA`: canonical FRC season, Impact, Open
+  Alliance, Hall of Fame, and resource data.
+- `assets/js/i18n.js`: interface translations, isolated from application logic.
+- `data/ftc-demo.json`: automatically collected FTC demo records, loaded only
+  after a visitor switches to FTC.
 - `data/award-scripts/YYYY.json`: collected official team award citations.
 - `scripts/collect_award_scripts.py`: reads public FIRST Event Web award pages.
 - `scripts/clean_award_scripts.py`: applies the public scope, normalization, and
@@ -81,7 +87,7 @@ by itself proof that every record is correct.
 - For Open Alliance resources, specify whether the link is CAD, code, video,
   website, portfolio, or Build Thread. Please link to the team's own publication
   whenever possible.
-- Season and team records are currently maintained in `index.html` under
+- Season and team records are currently maintained in `assets/js/data.js` under
   `const DATA`; award citations are stored separately under
   `data/award-scripts/`.
 - Do not submit private documents, access-controlled files, scraped personal

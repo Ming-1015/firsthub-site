@@ -113,6 +113,37 @@ def collect_awards(years: list[int]) -> tuple[list[dict], list[dict]]:
     return records, audit
 
 
+def collect_event_names(years: list[int]) -> tuple[dict[tuple[str, str], str], list[dict]]:
+    """Read the event catalogue embedded in each public season home page."""
+    names: dict[tuple[str, str], str] = {}
+    audit: list[dict] = []
+    for year in years:
+        url = f"https://ftc-events.firstinspires.org/{year}"
+        try:
+            page = fetch(url)
+            groups = []
+            for variable in ("KickoffEvents", "OffSeasonEvents", "OtherEvents", "PremierEvents"):
+                match = re.search(rf"window\.{variable}\s*=\s*", page)
+                if match:
+                    value, _ = json.JSONDecoder().raw_decode(page, match.end())
+                    groups.extend(value)
+            if not groups:
+                raise ValueError("embedded event catalogues not found")
+            count = 0
+            for group in groups:
+                for event in group.get("E", []):
+                    code, name = str(event.get("Tc", "")).upper(), clean(str(event.get("En", "")))
+                    if code and name:
+                        names[(str(year), code)] = name
+                        count += 1
+            audit.append({"source": url, "status": "ok", "records": count})
+            print(f"event names {year}: {count}")
+        except Exception as error:
+            audit.append({"source": url, "status": "failed", "error": str(error)})
+            print(f"event names {year}: FAILED {error}")
+    return names, audit
+
+
 def collect_portfolio_lab() -> tuple[list[dict], dict]:
     url = "https://www.ftcportfoliolab.org/portfolio"
     page = fetch(url)
@@ -264,9 +295,18 @@ def main() -> None:
     args = parser.parse_args()
 
     awards, awards_audit = collect_awards(args.years)
+    event_names, event_audit = collect_event_names(args.years)
+    for item in awards:
+        item["eventName"] = event_names.get((item["season"], item["eventCode"]), item["eventName"])
     portfolios_a, portfolio_audit = collect_portfolio_lab()
     portfolios_b, openvault_audit = collect_openvault()
     open_teams, open_audit = collect_open_alliance(args.chief_pages)
+    official_team_names: dict[int, str] = {}
+    for item in awards:
+        if item.get("teamNumber") and item.get("teamName"):
+            official_team_names[item["teamNumber"]] = item["teamName"]
+    for item in open_teams:
+        item["teamName"] = official_team_names.get(item.get("teamNumber"), "")
     resources, resources_audit = collect_resources()
 
     previous = {}
@@ -286,10 +326,10 @@ def main() -> None:
         "portfolios": list(unique_portfolios.values()),
         "openTeams": open_teams,
         "resources": resources,
-        "audit": awards_audit + [portfolio_audit, openvault_audit] + open_audit + [resources_audit],
+        "audit": awards_audit + event_audit + [portfolio_audit, openvault_audit] + open_audit + [resources_audit],
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"Wrote {OUTPUT}: awards={len(awards)}, portfolios={len(unique_portfolios)}, open={len(open_teams)}, resources={len(resources)}")
 
 
