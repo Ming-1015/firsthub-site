@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-INDEX = ROOT / "index.html"
+DATA_JS = ROOT / "assets" / "js" / "data.js"
 DATA_RE = re.compile(r"const DATA = (.*?);\r?\n")
 ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S)
 TEAM_NAME_RE = re.compile(r"Team\s+(\d+)\s+-\s+(.*?)\s+\((\d{4})\)", re.S)
@@ -70,10 +70,10 @@ def parse_page(year: int, team: int, page: str) -> dict:
 
 
 def main() -> None:
-    source = INDEX.read_text(encoding="utf-8")
+    source = DATA_JS.read_text(encoding="utf-8")
     match = DATA_RE.search(source)
     if not match:
-        raise RuntimeError("Could not locate DATA payload in index.html")
+        raise RuntimeError("Could not locate DATA payload in assets/js/data.js")
     data = json.loads(match.group(1))
     seasons = data["seasons"]
     # Two legacy aggregate-PDF links were previously misread as team numbers.
@@ -125,7 +125,7 @@ def main() -> None:
 
     encoded = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     updated = source[: match.start(1)] + encoded + source[match.end(1) :]
-    INDEX.write_text(updated, encoding="utf-8")
+    DATA_JS.write_text(updated, encoding="utf-8")
     print(f"Updated {renamed} team names; added official events to {event_count} Impact entries")
 
 

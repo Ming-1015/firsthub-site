@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-INDEX = ROOT / "index.html"
+DATA_JS = ROOT / "assets" / "js" / "data.js"
 REPORT = ROOT / "data" / "frc-open-name-audit.json"
 DATA_RE = re.compile(r"const DATA = (.*?);\r?\n")
 USER_AGENT = "FIRSTHub public team-name maintenance/1.0 (+https://firsthub.site/)"
@@ -78,10 +78,10 @@ def main() -> None:
             failures.append({"year": year, "error": str(error)})
             print(f"{year}: FAILED {error}")
 
-    source = INDEX.read_text(encoding="utf-8")
+    source = DATA_JS.read_text(encoding="utf-8")
     match = DATA_RE.search(source)
     if not match:
-        raise RuntimeError("Could not locate DATA payload in index.html")
+        raise RuntimeError("Could not locate DATA payload in assets/js/data.js")
     data = json.loads(match.group(1))
 
     open_numbers = {int(team["n"]) for season_data in data["seasons"].values() for team in season_data.get("open", [])}
@@ -132,7 +132,7 @@ def main() -> None:
         season_data["open"] = kept
 
     encoded = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
-    INDEX.write_text(source[: match.start(1)] + encoded + source[match.end(1) :], encoding="utf-8")
+    DATA_JS.write_text(source[: match.start(1)] + encoded + source[match.end(1) :], encoding="utf-8")
     report = {
         "officialSources": source_counts,
         "sourceFailures": failures,

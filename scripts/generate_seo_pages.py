@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate crawlable static SEO pages from the inline FirstHub dataset."""
+"""Generate crawlable static SEO pages from the FirstHub application dataset."""
 
 from __future__ import annotations
 
@@ -19,11 +19,11 @@ def esc(value: object) -> str:
 
 
 def load_data() -> dict:
-    source = (ROOT / "index.html").read_text(encoding="utf-8")
+    source = (ROOT / "assets" / "js" / "data.js").read_text(encoding="utf-8")
     marker = "const DATA = "
     start = source.find(marker)
     if start < 0:
-        raise RuntimeError("Could not locate inline DATA payload in index.html")
+        raise RuntimeError("Could not locate DATA payload in assets/js/data.js")
     payload = source[start + len(marker):]
     data, _ = json.JSONDecoder().raw_decode(payload)
     return data
