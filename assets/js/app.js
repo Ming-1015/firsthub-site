@@ -643,7 +643,7 @@ async function loadFtcAutoData(){
   if(FTC_AUTO_DATA||ftcDataLoading)return;
   ftcDataLoading=true;$('ftcCount').textContent='正在载入自动采集数据…';
   try{
-    const response=await fetch('data/ftc-demo.json?demo=1');
+    const response=await fetch('data/ftc-demo-v2.json');
     if(!response.ok)throw new Error('HTTP '+response.status);
     FTC_AUTO_DATA=await response.json();
     const total=FTC_AUTO_DATA.awards.length+FTC_AUTO_DATA.portfolios.length+FTC_AUTO_DATA.openTeams.length+(FTC_AUTO_DATA.sites||[]).length+FTC_AUTO_DATA.resources.length;
