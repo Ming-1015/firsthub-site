@@ -200,7 +200,10 @@ def main() -> None:
     youtube_items = []
     if YOUTUBE_INPUT.exists():
         youtube_items = json.loads(YOUTUBE_INPUT.read_text(encoding="utf-8")).get("items", [])
-    raw_open = payload.get("openTeams", []) + CURATED_TEAM_RESOURCES + youtube_items
+    # Refreshes are additive: current discoveries take precedence, while older
+    # still-public records remain available when a search page temporarily
+    # drops them from its newest result window.
+    raw_open = payload.get("openTeams", []) + CURATED_TEAM_RESOURCES + youtube_items + previous.get("openTeams", [])
     enriched = {}
     if not args.skip_team_links:
         with ThreadPoolExecutor(max_workers=6) as pool:
