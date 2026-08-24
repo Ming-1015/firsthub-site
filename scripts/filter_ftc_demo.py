@@ -64,6 +64,18 @@ CURATED_PORTFOLIOS = [
     {"id": "team-17062-2024", "season": "2024", "teamNumber": 17062, "teamName": "Techalongs", "seasonLabel": "2024 Into The Deep", "level": "Team-published", "award": "Engineering Portfolio", "pdf": "https://sites.google.com/view/techalongs/portfolios-notebooks", "sourceType": "team", "source": "https://sites.google.com/view/techalongs/portfolios-notebooks"},
     {"id": "team-19706-2024", "season": "2024", "teamNumber": 19706, "teamName": "Potential Energy", "seasonLabel": "2024 Into The Deep", "level": "Team-published", "award": "Engineering Portfolio", "pdf": "https://www.potentialenergyftc.com/resources", "sourceType": "team", "source": "https://www.potentialenergyftc.com/resources"},
     {"id": "team-14374-2023", "season": "2023", "teamNumber": 14374, "teamName": "Dark Matter", "seasonLabel": "2023 Centerstage", "level": "Team-published", "award": "Engineering Portfolio", "pdf": "https://darkmatterrobotics.com/wp-content/uploads/2024/03/14374_DMportfolio_CenterstageSTATE_FINAL-SMALL.pdf", "sourceType": "team", "source": "https://darkmatterrobotics.com/"},
+    {"id": "team-23396-2023", "season": "2023", "teamNumber": 23396, "teamName": "Hivemind", "seasonLabel": "2023 Centerstage", "level": "Regional", "award": "Think Award", "pdf": "https://www.chiefdelphi.com/t/team-23396-hivemind-2024-centerstage-cad-release-portfolio/468348", "sourceType": "team", "source": "https://www.chiefdelphi.com/t/team-23396-hivemind-2024-centerstage-cad-release-portfolio/468348"},
+    {"id": "team-288-2021", "season": "2021", "teamNumber": 288, "teamName": "Spare Parts", "seasonLabel": "2021 Freight Frenzy", "level": "Team-published", "award": "Engineering Portfolio", "pdf": "https://www.chiefdelphi.com/t/team-288-spare-parts-2021-2022-freight-frenzy-engineering-portfolio/414943", "sourceType": "team", "source": "https://www.chiefdelphi.com/t/team-288-spare-parts-2021-2022-freight-frenzy-engineering-portfolio/414943"},
+]
+
+CURATED_TEAM_RESOURCES = [
+    {"season": "2023", "teamNumber": 23396, "teamName": "Hivemind", "title": "Centerstage CAD release and Engineering Portfolio", "posts": 8, "sourceType": "team", "sourcePlatform": "chief-delphi", "source": "https://www.chiefdelphi.com/t/team-23396-hivemind-2024-centerstage-cad-release-portfolio/468348"},
+    {"season": "2024", "teamNumber": 13193, "teamName": "Code Blue", "title": "INTO THE DEEP Road Runner robot code", "posts": 0, "sourceType": "team", "sourcePlatform": "github", "source": "https://github.com/loarado/Code_Blue_13193_Roadrunner_INTO_THE_DEEP", "links": [{"type": "code", "url": "https://github.com/loarado/Code_Blue_13193_Roadrunner_INTO_THE_DEEP"}]},
+    {"season": "2025", "teamNumber": 492, "teamName": "Titan Robotics", "title": "Reusable FTC robot framework and season template", "posts": 0, "sourceType": "team", "sourcePlatform": "github", "source": "https://github.com/trc492/FtcTemplate", "links": [{"type": "code", "url": "https://github.com/trc492/FtcTemplate"}]},
+    {"season": "2025", "teamNumber": 6448, "teamName": "Jesuit Blue Jays", "title": "Cross-platform Webots FTC Simulator", "posts": 0, "sourceType": "team", "sourcePlatform": "github", "source": "https://github.com/BlueJays6448/FTCSimulator", "links": [{"type": "code", "url": "https://github.com/BlueJays6448/FTCSimulator"}]},
+    {"season": "2022", "teamNumber": 6547, "teamName": "Cobalt Colts", "title": "Engineering Portfolio template discussion and sample", "posts": 0, "sourceType": "team", "sourcePlatform": "reddit", "source": "https://www.reddit.com/r/FTC/comments/10ej3yy/engineering_portfolio_template_from_6547_cobalt/", "links": [{"type": "website", "url": "https://www.reddit.com/r/FTC/comments/10ej3yy/engineering_portfolio_template_from_6547_cobalt/"}]},
+    {"season": "2025", "teamNumber": 14779, "teamName": "Spontaneous Construction", "title": "Team technical wiki and public updates", "posts": 0, "sourceType": "team", "sourcePlatform": "x", "source": "https://x.com/SponConFTC", "links": [{"type": "website", "url": "https://x.com/SponConFTC"}, {"type": "website", "url": "http://projectrobotica.wiki"}]},
+    {"season": "2025", "teamNumber": 14291, "teamName": "Small Town Robotics", "title": "Public team updates on X", "posts": 0, "sourceType": "team", "sourcePlatform": "x", "source": "https://x.com/SmallTownFTC", "links": [{"type": "website", "url": "https://x.com/SmallTownFTC"}]},
 ]
 
 
@@ -78,6 +90,15 @@ def award_category(name: str) -> str:
         if any(term in text for term in terms):
             return key
     return "other"
+
+
+def clean_mojibake(value: str) -> str:
+    if not isinstance(value, str) or not any(marker in value for marker in ("â", "Ã", "ð")):
+        return value
+    try:
+        return value.encode("latin-1").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return value
 
 
 def open_tags(item: dict) -> list[str]:
@@ -150,6 +171,8 @@ def main() -> None:
     parser.add_argument("--skip-team-links", action="store_true", help="Skip CAD/code/video/site extraction from public Chief Delphi first posts")
     args = parser.parse_args()
     payload = json.loads(args.input.read_text(encoding="utf-8"))
+    previous = json.loads(args.output.read_text(encoding="utf-8")) if args.output.exists() else {}
+    previous_links = {item.get("source", ""): item.get("links", []) for item in previous.get("openTeams", [])}
 
     awards, seen_awards = [], set()
     for item in payload.get("awards", []):
@@ -165,11 +188,14 @@ def main() -> None:
         key = item.get("id") or (item.get("season"), item.get("teamNumber"), item.get("pdf"))
         if key not in seen_portfolios and (item.get("teamNumber") is not None) and (item.get("pdf") or item.get("source")):
             seen_portfolios.add(key)
+            item["teamName"] = clean_mojibake(item.get("teamName", ""))
+            if isinstance(item.get("pdf"), str) and item["pdf"].startswith("/http"):
+                item["pdf"] = item["pdf"][1:]
             item["category"] = "portfolio"
             portfolios.append(item)
 
     open_teams, seen_open = [], set()
-    raw_open = payload.get("openTeams", [])
+    raw_open = payload.get("openTeams", []) + CURATED_TEAM_RESOURCES
     enriched = {}
     if not args.skip_team_links:
         with ThreadPoolExecutor(max_workers=6) as pool:
@@ -180,7 +206,8 @@ def main() -> None:
         if not number or number < 100 or number in (2024, 2025, 2026) or url in seen_open:
             continue
         seen_open.add(url)
-        item["links"] = enriched.get(url, item.get("links", []))
+        combined_links = item.get("links", []) + previous_links.get(url, []) + enriched.get(url, [])
+        item["links"] = list({(link.get("type"), link.get("url")): link for link in combined_links if link.get("url")}.values())
         item["tags"] = open_tags(item)
         item["activity"] = int(item.get("posts") or 0)
         open_teams.append(item)

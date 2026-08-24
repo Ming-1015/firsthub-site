@@ -36,7 +36,7 @@ The important files are:
 - `data/ftc-demo-raw.json`: public FTC records as returned by the collectors.
 - `data/ftc-demo.json`: normalized FTC browser dataset, loaded only after a
   visitor switches to FTC.
-- `data/ftc-demo-v2.json`: versioned deployment copy used to avoid stale CDN
+- `data/ftc-demo-v*.json`: versioned deployment copies used to avoid stale CDN
   data after catalogue updates.
 - `scripts/collect_ftc_demo.py`: collects public FTC awards, portfolios, build
   threads, and directory links without bypassing authentication.
