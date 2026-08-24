@@ -643,7 +643,7 @@ async function loadFtcAutoData(){
   if(FTC_AUTO_DATA||ftcDataLoading)return;
   ftcDataLoading=true;$('ftcCount').textContent='正在载入自动采集数据…';
   try{
-    const response=await fetch('data/ftc-demo-v5.json');
+    const response=await fetch('data/ftc-demo-v6.json');
     if(!response.ok)throw new Error('HTTP '+response.status);
     FTC_AUTO_DATA=await response.json();
     const total=FTC_AUTO_DATA.awards.length+FTC_AUTO_DATA.portfolios.length+FTC_AUTO_DATA.openTeams.length+(FTC_AUTO_DATA.sites||[]).length+FTC_AUTO_DATA.resources.length;
@@ -676,7 +676,7 @@ function ftcAutoItems(){
   if(!FTC_AUTO_DATA)return null;
   if(ftcCategory==='awards')return FTC_AUTO_DATA.awards.map(x=>({season:x.season,type:'official',detail:x.category||'other',event:x.eventCode,number:x.teamNumber,meta:x.award,title:'#'+x.teamNumber+' '+(x.teamName||'FTC Team '+x.teamNumber),desc:x.eventName+' · '+x.date,source:'FIRST FTC Events · '+x.eventCode,url:x.source}));
   if(ftcCategory==='portfolios')return FTC_AUTO_DATA.portfolios.map(x=>({season:x.season,type:x.sourceType==='official'?'official':'community',detail:x.level||x.award||'未标注层级',number:x.teamNumber,meta:(x.seasonLabel||'Season not specified')+(x.level?' · '+x.level:''),title:'#'+x.teamNumber+' '+(x.teamName||x.title||'FTC Team'),desc:[x.award,x.rating,x.score].filter(Boolean).join(' · ')||'Public Engineering Portfolio',source:x.source.includes('portfoliolab')?'FTC PortfolioLab':'OpenVault',url:x.pdf||x.source}));
-  if(ftcCategory==='open')return FTC_AUTO_DATA.openTeams.map(x=>({season:x.season,type:'team',detail:(x.tags||['build-thread'])[0],tags:x.tags||['build-thread'],links:x.links||[],number:x.teamNumber||999999,activity:x.activity||x.posts||0,meta:(x.teamNumber?'TEAM '+x.teamNumber+' · ':'')+(x.posts||0).toLocaleString()+' 次更新',title:(x.teamName?x.teamName+' — ':'')+x.title,desc:'队伍公开 Build Thread；标签只描述已识别的公开内容，不代表官方认证。',source:'Chief Delphi',url:x.source}));
+  if(ftcCategory==='open')return FTC_AUTO_DATA.openTeams.map(x=>({season:x.season,type:'team',detail:(x.tags||['build-thread'])[0],tags:x.tags||['build-thread'],links:x.links||[],number:x.teamNumber||999999,activity:x.activity||x.views||x.posts||0,sourcePlatform:x.sourcePlatform||'chief-delphi',meta:(x.teamNumber?'TEAM '+x.teamNumber+' · ':'')+(x.views?Number(x.views).toLocaleString()+' views':(x.posts||0).toLocaleString()+' updates'),title:(x.teamName?x.teamName+' — ':'')+x.title,desc:x.sourcePlatform==='youtube'?'Public FTC team video linked to its original YouTube page.':'Public team resource; tags describe identified content and do not imply FIRST endorsement.',source:x.sourcePlatform==='youtube'?'YouTube':x.sourcePlatform==='github'?'GitHub':'Chief Delphi',url:x.source}));
   if(ftcCategory==='sites')return (FTC_AUTO_DATA.sites||[]).map(x=>({season:'all',type:x.owner==='official'?'official':'community',detail:x.category,tags:[x.category],meta:(x.owner||'community').toUpperCase()+' · '+x.category,title:x.title,desc:x.description,source:'Reviewed public website',url:x.url}));
   if(ftcCategory==='resources')return FTC_AUTO_DATA.resources.map(x=>({season:'all',type:x.sourceType==='official'?'official':'community',detail:x.category,tags:[x.category],meta:x.sourceType==='official'?'OFFICIAL · '+x.category:'COMMUNITY · '+x.category,title:x.title,desc:x.description,source:x.sourceType==='official'?'FIRST / official project':'FTC community project',url:x.url}));
   return [];
@@ -700,8 +700,10 @@ function renderFtcCards(){
       const direct=(item.links||[]).slice(0,5).map(link=>'<a class="btn '+({cad:'cad',code:'gh',video:'video',website:'site'}[link.type]||'site')+'" href="'+esc(link.url)+'" target="_blank" rel="noopener">'+esc(link.type==='code'?'Code':link.type==='video'?'Video':link.type==='website'?'Website':'CAD')+'</a>').join('');
       const tags=(item.tags||[]).filter(tag=>tag!=='build-thread').map(tag=>'<span class="tag-chip">'+esc(tag)+'</span>').join('');
       const cad=(item.tags||[]).includes('cad')?'<span class="cad-prev"><span class="cad-dot"></span>3D</span>':'';
-      const views=item.activity?'<span class="views">'+item.activity+' posts</span>':'';
-      return '<div class="card"><div class="num">'+item.number+cad+views+'</div><div class="nm">'+esc(item.title)+'</div>'+(tags?'<div>'+tags+'</div>':'')+'<div class="links">'+direct+'<a class="btn cd" href="'+esc(item.url)+'" target="_blank" rel="noopener">Build Thread</a></div></div>';
+      const views=item.activity?'<span class="views">'+Number(item.activity).toLocaleString()+' '+(item.sourcePlatform==='youtube'?'views':'posts')+'</span>':'';
+      const hasDirectSource=(item.links||[]).some(link=>link.url===item.url);
+      const sourceButton=hasDirectSource?'':'<a class="btn cd" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+(item.sourcePlatform==='youtube'?'YouTube':item.sourcePlatform==='github'?'GitHub':'Build Thread')+'</a>';
+      return '<div class="card"><div class="num">'+item.number+cad+views+'</div><div class="nm">'+esc(item.title)+'</div>'+(tags?'<div>'+tags+'</div>':'')+'<div class="links">'+direct+sourceButton+'</div></div>';
     }
     const tags=item.tags&&item.tags.length?'<div>'+item.tags.map(tag=>'<span class="tag-chip">'+esc(tag)+'</span>').join('')+'</div>':'';
     return '<div class="card"><div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(item.desc)+'</div>'+tags+'<div class="loc">来源：'+esc(item.source)+'</div><div class="links"><a class="btn essay" href="'+esc(item.url)+'" target="_blank" rel="noopener">查看来源</a></div></div>';

@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "data" / "ftc-demo-raw.json"
 DEFAULT_OUTPUT = ROOT / "data" / "ftc-demo.json"
+YOUTUBE_INPUT = ROOT / "data" / "ftc-youtube.json"
 USER_AGENT = "FIRSTHub FTC resource filter/1.0 (+https://firsthub.site/)"
 
 RESOURCE_CATALOGUE = [
@@ -76,8 +77,6 @@ CURATED_TEAM_RESOURCES = [
     {"season": "2022", "teamNumber": 6547, "teamName": "Cobalt Colts", "title": "Engineering Portfolio template discussion and sample", "posts": 0, "sourceType": "team", "sourcePlatform": "reddit", "source": "https://www.reddit.com/r/FTC/comments/10ej3yy/engineering_portfolio_template_from_6547_cobalt/", "links": [{"type": "website", "url": "https://www.reddit.com/r/FTC/comments/10ej3yy/engineering_portfolio_template_from_6547_cobalt/"}]},
     {"season": "2025", "teamNumber": 14779, "teamName": "Spontaneous Construction", "title": "Team technical wiki and public updates", "posts": 0, "sourceType": "team", "sourcePlatform": "x", "source": "https://x.com/SponConFTC", "links": [{"type": "website", "url": "https://x.com/SponConFTC"}, {"type": "website", "url": "http://projectrobotica.wiki"}]},
     {"season": "2025", "teamNumber": 14291, "teamName": "Small Town Robotics", "title": "Public team updates on X", "posts": 0, "sourceType": "team", "sourcePlatform": "x", "source": "https://x.com/SmallTownFTC", "links": [{"type": "website", "url": "https://x.com/SmallTownFTC"}]},
-    {"season": "2024", "teamNumber": 701, "teamName": "The GONK Squad", "title": "2025 INTO THE DEEP Robot Reveal", "posts": 0, "sourceType": "team", "sourcePlatform": "youtube", "source": "https://www.youtube.com/watch?v=efxuzZgxmoA", "links": [{"type": "video", "url": "https://www.youtube.com/watch?v=efxuzZgxmoA"}]},
-    {"season": "2024", "teamNumber": 19705, "teamName": "FTC WX WXY WXYZ", "title": "2024–25 INTO THE DEEP Season Final Robot Reveal", "posts": 0, "sourceType": "team", "sourcePlatform": "youtube", "source": "https://www.youtube.com/watch?v=oG_gRNIp2DU", "links": [{"type": "video", "url": "https://www.youtube.com/watch?v=oG_gRNIp2DU"}]},
 ]
 
 
@@ -105,13 +104,14 @@ def clean_mojibake(value: str) -> str:
 
 def open_tags(item: dict) -> list[str]:
     text = f"{item.get('title', '')} {item.get('source', '')} {' '.join(link.get('url', '') for link in item.get('links', []))}".lower()
-    tags = ["build-thread"]
+    tags = ["build-thread"] if "chiefdelphi.com/t/" in item.get("source", "") else []
     checks = {
         "cad": ("cad", "onshape", "solidworks"), "code": ("code", "github", "software"),
         "video": ("video", "youtube", "reveal"), "portfolio": ("portfolio", "notebook"),
-        "website": ("website", ".org", ".com"),
     }
     tags.extend(tag for tag, terms in checks.items() if any(term in text for term in terms))
+    if any(link.get("type") == "website" for link in item.get("links", [])):
+        tags.append("website")
     return tags
 
 
@@ -197,7 +197,10 @@ def main() -> None:
             portfolios.append(item)
 
     open_teams, seen_open = [], set()
-    raw_open = payload.get("openTeams", []) + CURATED_TEAM_RESOURCES
+    youtube_items = []
+    if YOUTUBE_INPUT.exists():
+        youtube_items = json.loads(YOUTUBE_INPUT.read_text(encoding="utf-8")).get("items", [])
+    raw_open = payload.get("openTeams", []) + CURATED_TEAM_RESOURCES + youtube_items
     enriched = {}
     if not args.skip_team_links:
         with ThreadPoolExecutor(max_workers=6) as pool:
@@ -211,7 +214,7 @@ def main() -> None:
         combined_links = item.get("links", []) + previous_links.get(url, []) + enriched.get(url, [])
         item["links"] = list({(link.get("type"), link.get("url")): link for link in combined_links if link.get("url")}.values())
         item["tags"] = open_tags(item)
-        item["activity"] = int(item.get("posts") or 0)
+        item["activity"] = int(item.get("views") or item.get("posts") or 0)
         open_teams.append(item)
 
     resources = catalogue(RESOURCE_CATALOGUE, args.check_links)

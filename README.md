@@ -40,6 +40,9 @@ The important files are:
   data after catalogue updates.
 - `scripts/collect_ftc_demo.py`: collects public FTC awards, portfolios, build
   threads, and directory links without bypassing authentication.
+- `scripts/collect_ftc_youtube.py`: searches public YouTube metadata for
+  season-specific FTC team videos, extracts explicit team numbers, and stores
+  original links without downloading or re-hosting video files.
 - `scripts/filter_ftc_demo.py`: de-duplicates and classifies the raw records,
   rejects obvious false team-number matches, and builds the website/resource
   filter fields used by the demo.
@@ -54,13 +57,16 @@ The important files are:
 
 ## Reproducing the maintenance workflow
 
-Python 3.10 or newer is recommended. The scripts use the Python standard
-library and do not require browser automation.
+Python 3.10 or newer is recommended. Most scripts use only the Python standard
+library and do not require browser automation. The optional YouTube metadata
+collector uses `yt-dlp`.
 
 Refresh the FTC demo in two explicit stages:
 
 ```powershell
 python scripts/collect_ftc_demo.py --years 2023 2024 2025
+python -m pip install yt-dlp
+python scripts/collect_ftc_youtube.py
 python scripts/filter_ftc_demo.py --check-links
 ```
 
