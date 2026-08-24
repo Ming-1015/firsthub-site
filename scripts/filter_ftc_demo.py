@@ -36,6 +36,10 @@ RESOURCE_CATALOGUE = [
     ("AprilTag Library", "vision", "official", "FTC Docs 中的 AprilTag 检测与定位说明。", "https://ftc-docs.firstinspires.org/en/latest/apriltag/vision_portal/apriltag_intro/apriltag-intro.html"),
     ("CTRL ALT FTC", "learning", "community", "由 FTC 社区维护的设计、制造与控制教程。", "https://www.ctrlaltftc.com/"),
     ("FTC Scouting", "strategy", "community", "FTC 比赛数据、赛程与 scouting 工具入口。", "https://ftcscout.org/"),
+    ("FTC Stack", "learning", "community", "按主题整理 FTC 编程库、控制框架与常用工具的参考站。", "https://www.ftcstack.com/docs/reference/libraries"),
+    ("Blueprint", "learning", "community", "由 FTC 队伍建设的软硬件教程、交互式模拟器与代码案例知识库。", "https://ftcblueprint.com/"),
+    ("FIRST FTC Team Resources", "official", "official", "FIRST 官方 StarterBot、检查清单、接线、SDK、模拟器与队伍支持资源入口。", "https://ftc-resources.firstinspires.org/ftc/team"),
+    ("FTC Open House", "learning", "community", "面向新老 FTC 队伍的机械、CAD、编程与队伍运营学习入口。", "https://ftcopenhouse.com/"),
 ]
 
 SITE_CATALOGUE = [
@@ -47,6 +51,19 @@ SITE_CATALOGUE = [
     ("OpenFTC", "community", "vision", "EasyOpenCV 等 FTC 开源软件项目主页。", "https://github.com/OpenFTC"),
     ("FTC Scout", "community", "strategy", "赛事数据、队伍和 scouting 检索站。", "https://ftcscout.org/"),
     ("FTC Portfolio Lab", "community", "awards", "公开 Engineering Portfolio 索引和评分资料。", "https://www.ftcportfoliolab.org/portfolio"),
+    ("Blueprint · FTC Knowledge Base", "community", "learning", "FTC 队伍维护的软硬件指南、模拟器、作品集与代码评审站。", "https://ftcblueprint.com/"),
+    ("FTC Stack", "community", "programming", "集中介绍 FTC 编程库、框架与工具的技术参考站。", "https://www.ftcstack.com/docs/reference/libraries"),
+    ("FTC Open House", "community", "learning", "覆盖入门、CAD、机械与编程主题的社区学习站。", "https://ftcopenhouse.com/"),
+    ("Tech Ninja Team 9929 Archive", "team", "awards", "FTC 9929 公开的多赛季 Engineering Portfolio 与 Engineering Notebook 档案。", "https://ftc9929.com/past-season-engineering-notebooks/"),
+    ("Techalongs 17062 Portfolio Library", "team", "awards", "FTC 17062 整理的历年作品集、模板与其他队伍示例入口。", "https://sites.google.com/view/techalongs/portfolios-notebooks"),
+    ("Potential Energy 19706 Resources", "team", "awards", "FTC 19706 公开的作品集、工程笔记与培训资料。", "https://www.potentialenergyftc.com/resources"),
+]
+
+CURATED_PORTFOLIOS = [
+    {"id": "team-9929-2024", "season": "2024", "teamNumber": 9929, "teamName": "Tech Ninja Team", "seasonLabel": "2024 Into The Deep", "level": "Team-published", "award": "Engineering Portfolio", "pdf": "https://ftc9929.com/past-season-engineering-notebooks/", "sourceType": "team", "source": "https://ftc9929.com/past-season-engineering-notebooks/"},
+    {"id": "team-17062-2024", "season": "2024", "teamNumber": 17062, "teamName": "Techalongs", "seasonLabel": "2024 Into The Deep", "level": "Team-published", "award": "Engineering Portfolio", "pdf": "https://sites.google.com/view/techalongs/portfolios-notebooks", "sourceType": "team", "source": "https://sites.google.com/view/techalongs/portfolios-notebooks"},
+    {"id": "team-19706-2024", "season": "2024", "teamNumber": 19706, "teamName": "Potential Energy", "seasonLabel": "2024 Into The Deep", "level": "Team-published", "award": "Engineering Portfolio", "pdf": "https://www.potentialenergyftc.com/resources", "sourceType": "team", "source": "https://www.potentialenergyftc.com/resources"},
+    {"id": "team-14374-2023", "season": "2023", "teamNumber": 14374, "teamName": "Dark Matter", "seasonLabel": "2023 Centerstage", "level": "Team-published", "award": "Engineering Portfolio", "pdf": "https://darkmatterrobotics.com/wp-content/uploads/2024/03/14374_DMportfolio_CenterstageSTATE_FINAL-SMALL.pdf", "sourceType": "team", "source": "https://darkmatterrobotics.com/"},
 ]
 
 
@@ -143,9 +160,11 @@ def main() -> None:
         item["category"] = award_category(item.get("award", ""))
         awards.append(item)
 
-    portfolios = []
-    for item in payload.get("portfolios", []):
-        if item.get("teamNumber") and (item.get("pdf") or item.get("source")):
+    portfolios, seen_portfolios = [], set()
+    for item in payload.get("portfolios", []) + CURATED_PORTFOLIOS:
+        key = item.get("id") or (item.get("season"), item.get("teamNumber"), item.get("pdf"))
+        if key not in seen_portfolios and (item.get("teamNumber") is not None) and (item.get("pdf") or item.get("source")):
+            seen_portfolios.add(key)
             item["category"] = "portfolio"
             portfolios.append(item)
 
