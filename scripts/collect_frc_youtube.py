@@ -192,10 +192,13 @@ def main() -> None:
     parser.add_argument("--skip-team-validation", action="store_true")
     args = parser.parse_args()
     previous_urls: set[str] = set()
+    previous_items: list[dict] = []
     if args.output.exists():
         try:
-            previous_urls = {item["source"] for item in json.loads(args.output.read_text(encoding="utf-8")).get("items", [])}
+            previous_items = json.loads(args.output.read_text(encoding="utf-8")).get("items", [])
+            previous_urls = {item["source"] for item in previous_items}
         except (json.JSONDecodeError, KeyError):
+            previous_items = []
             previous_urls = set()
     collected: dict[str, dict] = {}
     audit = []
@@ -225,6 +228,12 @@ def main() -> None:
                 }
                 accepted += 1
             audit.append({"season": season, "query": query, "results": len(entries), "accepted": accepted})
+    # YouTube search rankings are not stable. Retain earlier verified public
+    # records when they temporarily fall outside the current result window.
+    for item in previous_items:
+        video_id = item.get("source", "").partition("v=")[2].partition("&")[0]
+        if video_id:
+            collected.setdefault(video_id, item)
     validation: dict[int, bool | None] = {}
     official_names: dict[int, str] = {}
     if not args.skip_team_validation:
@@ -238,7 +247,7 @@ def main() -> None:
     merge = merge_into_data(items, official_names, previous_urls)
     result = {
         "generatedAt": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
-        "source": "YouTube public search metadata", "policy": "Original URLs only; no video files are downloaded or re-hosted.",
+        "source": "YouTube public search metadata", "policy": "Original URLs only; no video files are downloaded or re-hosted. Previously verified public records are retained across refreshes.",
         "items": items, "audit": audit,
         "teamValidation": {"source": "FIRST FRC Event Web team pages", "rejectedMissingTeamNumbers": sorted(number for number, valid in validation.items() if valid is False)},
         "merge": merge,

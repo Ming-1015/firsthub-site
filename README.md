@@ -81,8 +81,8 @@ list before publishing.
 GitHub Actions also runs both FRC and FTC resource refreshes every three days
 at approximately 03:17 UTC. The workflow can be started manually from the
 repository's Actions tab and commits only public data back to `main`. FTC
-refreshes are additive, so temporary search-result changes do not erase older
-public team records that are already in the library.
+and FRC refreshes are additive, so temporary search-result changes do not erase
+older public team records that are already in the library.
 
 Collect one or more known events for a reviewable run:
 
