@@ -37,7 +37,8 @@ a:hover{text-decoration:underline}
 .stat .lbl{font-size:.72rem;opacity:.72;margin-top:6px}
 
 /* ===== Season selector ===== */
-.seasonbar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:60}
+.seasonbar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:49px;z-index:50}
+.seasonbar[hidden]{display:none}
 .seasonbar-inner{max-width:1120px;margin:0 auto;padding:10px 12px}
 .seasonbar .cap{font-size:.72rem;font-weight:800;color:var(--muted);letter-spacing:1px;margin-bottom:8px;text-transform:uppercase}
 .season-list{display:flex;gap:8px;flex-wrap:wrap}
@@ -122,7 +123,7 @@ body.ftc-mode .ftc-nav button.active{color:var(--ftc-dark);background:transparen
 @media(max-width:480px){.ftc-home-cards{grid-template-columns:1fr}}
 
 /* ===== Nav ===== */
-.tabs{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:70px;z-index:50}
+.tabs{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:60}
 .tabs-inner{max-width:1120px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:0 12px}
 .tab-btn{border:none;background:none;padding:13px 16px;font-size:.92rem;font-weight:600;color:var(--muted);cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:all .15s}
 .tab-btn:hover{color:var(--primary)}
