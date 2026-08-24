@@ -63,26 +63,34 @@
 </div>
 
 <section class="ftc-demo" id="ftcDemo" aria-label="FTC resource hub demo">
-  <div class="ftc-heroline">
-    <div><div class="ftc-eyebrow">FIRSTHub / FTC preview</div><h2>FTC 开放资源库</h2><p>像 FRC 页面一样按赛季浏览、搜索和筛选；所有资料标明官方、队伍公开或社区来源。</p></div>
-    <div class="ftc-season"><strong id="ftcSeasonYear">2025–2026</strong><span id="ftcSeasonGame">DECODE presented by RTX</span></div>
-  </div>
-  <div class="ftc-seasonbar" hidden><div class="cap">赛季选择 · Select Season</div><div class="ftc-seasons" id="ftcSeasons"></div></div>
-  <div class="ftc-nav" id="ftcNav" aria-label="FTC sections"><button class="active" onclick="renderFtc('overview',this)">总览</button><button onclick="renderFtc('awards',this)">获奖结果</button><button onclick="renderFtc('portfolios',this)">工程作品集</button><button onclick="renderFtc('open',this)">队伍公开资料</button><button onclick="renderFtc('sites',this)">技术站</button><button onclick="renderFtc('resources',this)">技术资源</button><span class="ftc-count" id="ftcCount">精选入口</span></div>
-  <div class="ftc-grid" id="ftcOverview">
-    <article class="ftc-lane"><span class="index">01 / RESULTS</span><h3>获奖结果</h3><p>按赛季与赛事整理官方奖项结果，保留赛事名称、奖项等级和原始页面。</p><div class="ftc-items"><div class="ftc-item"><b>Inspire Award</b><span>赛事与队伍可追溯至 FTC Events</span></div><div class="ftc-item"><b>Think · Design · Innovate</b><span>先收录官方公开结果，不虚构颁奖词</span></div></div></article>
-    <article class="ftc-lane"><span class="index">02 / PORTFOLIOS</span><h3>工程作品集</h3><p>汇总队伍主动公开的 Engineering Portfolio，并按赛季与奖项建立索引。</p><div class="ftc-items"><div class="ftc-item"><b>Portfolio Library</b><span>PDF / Slides / team websites</span></div><div class="ftc-item"><b>案例拆解</b><span>结构、叙事与证据链标签</span></div></div></article>
-    <article class="ftc-lane"><span class="index">03 / TEAM RESOURCES</span><h3>队伍公开资料</h3><p>连接公开 CAD、代码、Build Thread 与机器人展示，不把“公开资料”误写成 Open Alliance 身份。</p><div class="ftc-items"><div class="ftc-item"><b>Build Thread · CAD · Code</b><span>按队号、类型和活跃度筛选</span></div><div class="ftc-item"><b>Source attached</b><span>每条记录都回到原始公开页面</span></div></div></article>
-    <article class="ftc-lane"><span class="index">04 / TECH SITES</span><h3>技术站</h3><p>收录长期维护的 FTC 教程站、队伍知识库和开放工具网站。</p><div class="ftc-items"><div class="ftc-item"><b>Team & community sites</b><span>按主题和维护者筛选</span></div><div class="ftc-item"><b>Link health</b><span>由 Python 管道检查链接状态</span></div></div></article>
-    <article class="ftc-lane"><span class="index">05 / TOOLKIT</span><h3>技术资源</h3><p>将官方文档和成熟社区工具按机械、电子、编程、视觉、路径与比赛运营分类。</p><div class="ftc-items"><div class="ftc-item"><b>FTC Docs · SDK</b><span>官方文档与代码基础</span></div><div class="ftc-item"><b>Road Runner · Pedro Pathing</b><span>常用运动与路径工具</span></div></div></article>
-  </div>
-  <div id="ftcPanel" hidden>
-    <div class="ftc-panel-head"><h2 id="ftcPanelTitle"></h2><span id="ftcPanelTotal"></span></div>
-    <p class="ftc-panel-lead" id="ftcPanelLead"></p>
-    <div class="ftc-filter"><input id="ftcSearch" type="search" placeholder="搜索队号、队名、赛事或资料…" oninput="renderFtcCards()"><div id="ftcFilters"></div><span class="ftc-count" id="ftcResultCount"></span></div>
-    <div class="ftc-content-grid" id="ftcContent"></div>
-  </div>
-  <div class="ftc-note"><b>第一版边界：</b>FTC Events 公开的是奖项结果，而多数赛事并不公开完整颁奖词；正式版会明确区分“官方结果”和“队伍自行公开资料”，每条内容都保留来源链接。</div>
+  <nav class="ftc-nav" aria-label="FTC sections"><div class="ftc-nav-inner" id="ftcNav"><button class="active" onclick="renderFtc('overview',this)">总览</button><button onclick="renderFtc('awards',this)">获奖结果</button><button onclick="renderFtc('portfolios',this)">工程作品集</button><button onclick="renderFtc('open',this)">队伍公开资料</button><button onclick="renderFtc('sites',this)">技术站</button><button onclick="renderFtc('resources',this)">技术资源</button><span class="ftc-count" id="ftcCount">精选入口</span></div></nav>
+  <div class="ftc-seasonbar" hidden><div class="ftc-seasonbar-inner"><div class="cap">赛季选择 · Select Season</div><div class="ftc-seasons" id="ftcSeasons"></div></div></div>
+  <main class="ftc-main">
+    <div id="ftcOverview">
+      <div class="section-head"><h2>这里有什么</h2></div>
+      <p class="lead">按赛季浏览 FTC 官方获奖结果、公开工程作品集和队伍公开资料；不随赛季变化的技术站与工具放在独立栏目。</p>
+      <div class="info-box"><b>用法：</b>先选择栏目；获奖结果、工程作品集和队伍公开资料会显示赛季导航。队伍资料可按活跃度或队号排序，并按 CAD、代码、视频、网站等类型筛选。</div>
+      <div class="home-cards ftc-home-cards">
+        <div class="home-card" onclick="renderFtcFromCard('awards')"><h3>获奖结果</h3><p>按赛季与赛事整理 FIRST 官方奖项结果，保留赛事、奖项与原始页面。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('portfolios')"><h3>工程作品集</h3><p>汇总队伍主动公开的 Engineering Portfolio，并按赛季和奖项筛选。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('open')"><h3>队伍公开资料</h3><p>集中展示 Build Thread、CAD、代码、视频和队伍网站的公开直链。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('sites')"><h3>技术站</h3><p>长期维护的 FTC 教程站、队伍知识库和开放工具网站。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('resources')"><h3>技术资源</h3><p>官方文档和成熟社区工具，按编程、路径、视觉、策略等方向筛选。</p></div>
+      </div>
+    </div>
+    <div id="ftcPanel" hidden>
+      <div class="section-head"><h2 id="ftcPanelTitle"></h2><span class="cnt" id="ftcPanelTotal"></span></div>
+      <p class="lead" id="ftcPanelLead"></p>
+      <div class="info-box" id="ftcPanelNote">所有条目均保留公开来源；资料标签描述可访问内容，不代表 FIRST 官方认证或排名。</div>
+      <div class="filter-bar"><input id="ftcSearch" type="search" placeholder="搜索队号、队名、赛事或资料…" oninput="renderFtcCards()"><div class="chips" id="ftcFilters"></div><span class="result-count" id="ftcResultCount"></span></div>
+      <div class="grid wide" id="ftcContent"></div>
+    </div>
+  </main>
+  <footer class="ftc-footer"><div class="inner">
+    <div><h4>数据来源</h4><ul><li><a href="https://ftc-events.firstinspires.org/" target="_blank" rel="noopener">FIRST FTC Event Web</a></li><li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">FTC Documentation</a></li><li><a href="https://www.chiefdelphi.com/c/first/ftc-open-alliance" target="_blank" rel="noopener">Chief Delphi · FTC Open Alliance</a></li></ul></div>
+    <div><h4>如何贡献 / 扩充数据</h4><ul><li>采集、清洗和筛选流程记录在 GitHub README</li><li><a href="https://github.com/Ming-1015/firsthub-site/tree/ftc-demo" target="_blank" rel="noopener">查看 FTC Demo 分支</a></li><li><a href="https://github.com/Ming-1015/firsthub-site/issues/new" target="_blank" rel="noopener">提交数据问题或补充建议</a></li></ul></div>
+    <div><h4>数据边界</h4><ul><li>只收录无需登录即可访问的公开资料</li><li>资料标签不代表 FIRST 官方认证</li><li>所有条目保留原始来源链接</li></ul></div>
+  </div><div class="copy">FIRSTHub · FTC Open Resource Library · built for the FTC community</div><div class="copy" style="margin-top:6px;opacity:.65;font-size:.78rem">Built by FRC Team 5449</div></footer>
 </section>
 
 <!-- ===== 赛季选择键 ===== -->

@@ -552,10 +552,9 @@ async function loadFtcAutoData(){
 }
 function renderFtcSeasons(){
   $('ftcSeasons').innerHTML=Object.keys(FTC_SEASONS).map(y=>'<button class="ftc-season-btn'+(y===ftcSeason?' active':'')+'" onclick="selectFtcSeason(\''+y+'\')"><strong>'+(y+'–'+String(Number(y)+1).slice(-2))+'</strong><small>'+FTC_SEASONS[y]+'</small></button>').join('');
-  $('ftcSeasonYear').textContent=ftcSeason+'–'+String(Number(ftcSeason)+1);
-  $('ftcSeasonGame').textContent=FTC_SEASONS[ftcSeason]+(ftcSeason==='2025'?' presented by RTX':'');
 }
 function selectFtcSeason(y){ftcSeason=y;renderFtcSeasons();if(ftcCategory!=='overview')renderFtcCards();}
+function renderFtcFromCard(category){const button=[...document.querySelectorAll('#ftcNav button')].find(node=>node.getAttribute('onclick')?.includes("'"+category+"'"));if(button)renderFtc(category,button);}
 function renderFtc(category,button){
   const overview=$('ftcOverview'),panel=$('ftcPanel');ftcCategory=category;ftcFilter='all';ftcDetailFilter='all';ftcSort='default';
   document.querySelector('.ftc-seasonbar').hidden=(category==='overview'||category==='resources'||category==='sites');
@@ -567,7 +566,7 @@ function renderFtc(category,button){
   $('ftcPanelTitle').textContent=FTC_PANEL_COPY[category][0];$('ftcPanelLead').textContent=FTC_PANEL_COPY[category][1];
   renderFtcCards();
 }
-function setFtcFilter(value,button){ftcFilter=value;document.querySelectorAll('#ftcFilters .ftc-chip').forEach(b=>b.classList.toggle('active',b===button));renderFtcCards();}
+function setFtcFilter(value,button){ftcFilter=value;document.querySelectorAll('#ftcFilters .chip').forEach(b=>b.classList.toggle('active',b===button));renderFtcCards();}
 function setFtcDetail(value){ftcDetailFilter=value;renderFtcCards();}
 function setFtcSort(value){ftcSort=value;renderFtcCards();}
 function ftcSourceGroup(item){if(item.type==='official'||item.type==='manual')return'official';if(item.type==='team'||item.type==='thread')return'team';return'community';}
@@ -584,16 +583,28 @@ function renderFtcCards(){
   const all=ftcAutoItems()||FTC_DEMO_DATA[ftcCategory]||[],q=($('ftcSearch').value||'').trim().toLowerCase();
   const seasonItems=all.filter(item=>ftcCategory==='resources'||ftcCategory==='sites'||!item.season||item.season==='all'||item.season===ftcSeason);
   const details=[...new Set(seasonItems.flatMap(x=>ftcCategory==='open'?(x.tags||[]):[x.detail]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b)));
-  let controls='<button class="ftc-chip'+(ftcFilter==='all'?' active':'')+'" onclick="setFtcFilter(\'all\',this)">全部</button>';
-  if(ftcCategory==='resources'||ftcCategory==='sites'||ftcCategory==='portfolios')controls+='<button class="ftc-chip'+(ftcFilter==='official'?' active':'')+'" onclick="setFtcFilter(\'official\',this)">官方</button><button class="ftc-chip'+(ftcFilter==='community'?' active':'')+'" onclick="setFtcFilter(\'community\',this)">社区</button>';
+  let controls='';
+  if(ftcCategory==='open')controls+='<div class="sort-toggle"><button type="button" class="sort-btn'+(ftcSort==='default'?' active':'')+'" onclick="setFtcSort(\'default\')">按热度排序</button><button type="button" class="sort-btn'+(ftcSort==='number'?' active':'')+'" onclick="setFtcSort(\'number\')">按队号排序</button></div>';
+  controls+='<button class="chip'+(ftcFilter==='all'?' active':'')+'" onclick="setFtcFilter(\'all\',this)">全部</button>';
+  if(ftcCategory==='resources'||ftcCategory==='sites'||ftcCategory==='portfolios')controls+='<button class="chip'+(ftcFilter==='official'?' active':'')+'" onclick="setFtcFilter(\'official\',this)">官方</button><button class="chip'+(ftcFilter==='community'?' active':'')+'" onclick="setFtcFilter(\'community\',this)">社区</button>';
   if(details.length)controls+='<select onchange="setFtcDetail(this.value)"><option value="all">'+(ftcCategory==='awards'?'全部奖项':ftcCategory==='portfolios'?'全部层级/奖项':'全部类型')+'</option>'+details.map(x=>'<option value="'+esc(x)+'"'+(x===ftcDetailFilter?' selected':'')+'>'+esc(x)+'</option>').join('')+'</select>';
-  if(ftcCategory==='open')controls+='<select onchange="setFtcSort(this.value)"><option value="default">按活跃度排序</option><option value="number"'+(ftcSort==='number'?' selected':'')+'>按队号排序</option><option value="title"'+(ftcSort==='title'?' selected':'')+'>按名称排序</option></select>';
   $('ftcFilters').innerHTML=controls;
   let items=seasonItems.filter(item=>(ftcFilter==='all'||ftcSourceGroup(item)===ftcFilter)&&(ftcDetailFilter==='all'||item.detail===ftcDetailFilter||(ftcCategory==='open'&&(item.tags||[]).includes(ftcDetailFilter)))&&(!q||(item.meta+' '+item.title+' '+item.desc+' '+item.source).toLowerCase().includes(q)));
   if(ftcCategory==='open')items.sort((a,b)=>ftcSort==='number'?a.number-b.number:ftcSort==='title'?a.title.localeCompare(b.title):b.activity-a.activity);
   const visible=items.slice(0,60);
   $('ftcPanelTotal').textContent=seasonItems.length+' 条资料';$('ftcCount').textContent=items.length+' / '+seasonItems.length;$('ftcResultCount').textContent='显示 '+items.length+' / '+seasonItems.length;
-  $('ftcContent').innerHTML=items.length?visible.map(item=>'<article class="ftc-resource"><span class="meta">'+esc(item.meta)+'</span><h3>'+esc(item.title)+'</h3><p>'+esc(item.desc)+'</p>'+(item.tags&&item.tags.length?'<div class="ftc-tags">'+item.tags.map(tag=>'<span class="ftc-tag">'+esc(tag)+'</span>').join('')+'</div>':'')+'<span class="source">来源：'+esc(item.source)+'</span><div class="ftc-links"><a href="'+esc(item.url)+'" target="_blank" rel="noopener">原始页面 ↗</a>'+(item.links||[]).slice(0,4).map(link=>'<a class="secondary" href="'+esc(link.url)+'" target="_blank" rel="noopener">'+esc(link.type)+' ↗</a>').join('')+'</div></article>').join('')+(items.length>visible.length?'<div class="info-box">当前先渲染前 '+visible.length+' 条；搜索和筛选会作用于全部 '+items.length+' 条自动采集记录。</div>':''):'<div class="info-box">这个赛季在当前 Demo 中还没有符合条件的资料；自动采集日志中会保留失败来源。</div>';
+  const renderCard=item=>{
+    if(ftcCategory==='open'){
+      const direct=(item.links||[]).slice(0,5).map(link=>'<a class="btn '+({cad:'cad',code:'gh',video:'video',website:'site'}[link.type]||'site')+'" href="'+esc(link.url)+'" target="_blank" rel="noopener">'+esc(link.type==='code'?'Code':link.type==='video'?'Video':link.type==='website'?'Website':'CAD')+'</a>').join('');
+      const tags=(item.tags||[]).filter(tag=>tag!=='build-thread').map(tag=>'<span class="tag-chip">'+esc(tag)+'</span>').join('');
+      const cad=(item.tags||[]).includes('cad')?'<span class="cad-prev"><span class="cad-dot"></span>3D</span>':'';
+      const views=item.activity?'<span class="views">'+item.activity+' posts</span>':'';
+      return '<div class="card"><div class="num">'+item.number+cad+views+'</div><div class="nm">'+esc(item.title)+'</div>'+(tags?'<div>'+tags+'</div>':'')+'<div class="links">'+direct+'<a class="btn cd" href="'+esc(item.url)+'" target="_blank" rel="noopener">Build Thread</a></div></div>';
+    }
+    const tags=item.tags&&item.tags.length?'<div>'+item.tags.map(tag=>'<span class="tag-chip">'+esc(tag)+'</span>').join('')+'</div>':'';
+    return '<div class="card"><div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(item.desc)+'</div>'+tags+'<div class="loc">来源：'+esc(item.source)+'</div><div class="links"><a class="btn essay" href="'+esc(item.url)+'" target="_blank" rel="noopener">查看来源</a></div></div>';
+  };
+  $('ftcContent').innerHTML=items.length?visible.map(renderCard).join('')+(items.length>visible.length?'<div class="info-box">当前先渲染前 '+visible.length+' 条；搜索和筛选会作用于全部 '+items.length+' 条记录。</div>':''):'<div class="info-box">这个赛季还没有符合条件的公开资料。</div>';
 }
 function setProgram(program){
   const ftc = program === 'ftc';

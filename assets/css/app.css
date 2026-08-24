@@ -57,7 +57,7 @@ a:hover{text-decoration:underline}
 .program-btn.active{background:var(--primary);color:#fff;box-shadow:0 2px 8px rgba(64,24,55,.18)}
 .program-beta{font-size:.58rem;font-weight:800;letter-spacing:.7px;color:#7e3d70;background:#f5ddec;border-radius:20px;padding:3px 7px}
 .ftc-demo{display:none;max-width:1120px;margin:0 auto;padding:30px 20px 64px}
-body.ftc-mode .seasonbar,body.ftc-mode .tabs,body.ftc-mode main,body.ftc-mode footer{display:none}
+body.ftc-mode > .seasonbar,body.ftc-mode > .tabs,body.ftc-mode > main,body.ftc-mode > footer{display:none}
 body.ftc-mode .ftc-demo{display:block}
 .ftc-heroline{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:22px;margin-bottom:24px}
 .ftc-eyebrow{font:800 .7rem/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px;color:var(--primary);text-transform:uppercase}
@@ -73,8 +73,8 @@ body.ftc-mode .ftc-demo{display:block}
 @media(max-width:520px){.ftc-grid,.ftc-content-grid{grid-template-columns:1fr}}
 
 /* FTC uses the FRC information architecture with its own teal/orange identity. */
-body.ftc-mode{--ftc-primary:#006b76;--ftc-dark:#063c43;--ftc-accent:#f28c28;--ftc-light:#e8f5f5}
-body.ftc-mode .hero{background:#073c43;border-top-color:var(--ftc-accent)}
+body.ftc-mode{--ftc-primary:#e56f12;--ftc-dark:#8f3d05;--ftc-accent:#ff9b3d;--ftc-light:#fff1e4}
+body.ftc-mode .hero{background:#7c3307;border-top-color:var(--ftc-accent)}
 body.ftc-mode .hero .kicker{border-left-color:var(--ftc-accent)}
 body.ftc-mode .program-btn.active{background:var(--ftc-primary)}
 body.ftc-mode .ftc-eyebrow,.ftc-resource .meta,.ftc-lane .index{color:var(--ftc-primary)}
@@ -84,11 +84,42 @@ body.ftc-mode .ftc-resource a:hover{background:var(--ftc-dark)}
 body.ftc-mode .ftc-season-btn:hover,body.ftc-mode .ftc-season-btn.active{background:var(--ftc-light);border-bottom-color:var(--ftc-accent)}
 body.ftc-mode .ftc-note{background:var(--ftc-light);border-left-color:var(--ftc-accent)}
 .ftc-grid{grid-template-columns:repeat(5,1fr)}
-.ftc-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.ftc-tag{border:1px solid #b9d9dc;background:#e8f5f5;color:#063c43;padding:2px 7px;font-size:.63rem;font-weight:700;border-radius:99px}
-.ftc-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.ftc-links a{margin-top:0}.ftc-links a.secondary{background:#fff;color:#006b76;border:1px solid #8abfc4}.ftc-links a.secondary:hover{background:#e8f5f5}
+.ftc-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.ftc-tag{border:1px solid #f2bc8c;background:#fff1e4;color:#8f3d05;padding:2px 7px;font-size:.63rem;font-weight:700;border-radius:99px}
+.ftc-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.ftc-links a{margin-top:0}.ftc-links a.secondary{background:#fff;color:#b85008;border:1px solid #f0ad72}.ftc-links a.secondary:hover{background:#fff1e4}
 @media(max-width:1000px){.ftc-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){.ftc-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.ftc-grid{grid-template-columns:1fr}}
+
+/* FTC mirrors the FRC page skeleton: tabs, contextual season row, then main. */
+.ftc-demo{max-width:none;margin:0;padding:0}
+.ftc-nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:60;margin:0;display:block}
+.ftc-nav-inner{max-width:1120px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:0 12px;align-items:center}
+.ftc-nav button{border:0;border-bottom:3px solid transparent;background:none;border-radius:0;padding:13px 16px;font-size:.92rem;font-weight:600;color:var(--muted);white-space:nowrap}
+.ftc-nav button:hover{color:var(--ftc-primary)}
+.ftc-nav button.active{color:var(--ftc-dark);background:none;border-color:var(--ftc-accent)}
+body.ftc-mode .ftc-nav button.active{color:var(--ftc-dark);background:transparent;border-color:var(--ftc-accent)}
+.ftc-seasonbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0;margin:0;position:sticky;top:50px;z-index:55}
+.ftc-seasonbar-inner{max-width:1120px;margin:0 auto;padding:10px 12px}
+.ftc-seasonbar .cap{margin-bottom:8px}
+.ftc-seasons{gap:8px;flex-wrap:wrap}
+.ftc-season-btn{border:0;border-bottom:2px solid transparent;border-radius:0;padding:7px 18px;min-width:86px}
+.ftc-season-btn:hover,.ftc-season-btn.active{background:var(--ftc-light);border-bottom-color:var(--ftc-accent)}
+.ftc-main{display:block!important;max-width:1120px;margin:0 auto;padding:28px 20px 60px}
+.ftc-home-cards{grid-template-columns:repeat(5,1fr)}
+.ftc-main .filter-bar input{flex:1;min-width:200px;padding:9px 14px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;background:#fff}
+.ftc-main .filter-bar select{padding:8px 30px 8px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text);font-size:.8rem}
+.ftc-main .ftc-chip{border-radius:20px;padding:7px 13px}
+.ftc-main .chip.active{background:var(--ftc-primary);border-color:var(--ftc-primary);color:#fff}
+.ftc-main .sort-toggle .sort-btn.active{color:var(--ftc-dark)}
+.ftc-main .card{border-top-color:var(--ftc-accent)}
+.ftc-main .card .nm,.ftc-main .card .team-num{color:var(--ftc-dark)}
+.ftc-main .ftc-links a{display:inline-block;padding:7px 11px;border-radius:6px;background:var(--ftc-primary);color:#fff;font-size:.72rem;font-weight:800;text-decoration:none}
+.ftc-main .ftc-links a:hover{background:var(--ftc-dark)}
+.ftc-main .ftc-links a.secondary{background:#fff;color:var(--ftc-dark);border:1px solid #f0ad72}
+.ftc-footer{margin-top:0}.ftc-footer a:hover{color:var(--ftc-primary);border-bottom-color:var(--ftc-primary)}
+@media(max-width:1000px){.ftc-home-cards{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.ftc-nav{position:sticky;top:0}.ftc-seasonbar{position:static}.ftc-home-cards{grid-template-columns:1fr 1fr}.ftc-count{display:none}}
+@media(max-width:480px){.ftc-home-cards{grid-template-columns:1fr}}
 
 /* ===== Nav ===== */
 .tabs{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:70px;z-index:50}
