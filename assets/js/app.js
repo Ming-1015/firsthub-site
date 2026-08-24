@@ -450,7 +450,8 @@ function renderOpen(){
     const links = [];
     if(team.cad) links.push(btn('cad','CAD',team.cad));
     if(team.gh) links.push(btn('gh','Code',team.gh));
-    if(team.yt) links.push(btn('video','YouTube',team.yt));
+    const teamVideos=team.ytVideos&&team.ytVideos.length?team.ytVideos:(team.yt?[{url:team.yt}]:[]);
+    teamVideos.forEach((video,index)=>links.push(btn('video',teamVideos.length>1?'Video '+(index+1):'YouTube',video.url)));
     if(team.ph) links.push(btn('pres','Photos',team.ph));
     if(team.site) links.push(btn('site',siteLabel,team.site));
     if(team.cd) links.push(btn('cd','Build Thread',team.cd));
@@ -643,7 +644,7 @@ async function loadFtcAutoData(){
   if(FTC_AUTO_DATA||ftcDataLoading)return;
   ftcDataLoading=true;$('ftcCount').textContent='正在载入自动采集数据…';
   try{
-    const response=await fetch('data/ftc-demo-v6.json');
+    const response=await fetch('data/ftc-demo-v6.json',{cache:'no-store'});
     if(!response.ok)throw new Error('HTTP '+response.status);
     FTC_AUTO_DATA=await response.json();
     const total=FTC_AUTO_DATA.awards.length+FTC_AUTO_DATA.portfolios.length+FTC_AUTO_DATA.openTeams.length+(FTC_AUTO_DATA.sites||[]).length+FTC_AUTO_DATA.resources.length;

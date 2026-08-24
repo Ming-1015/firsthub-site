@@ -43,6 +43,9 @@ The important files are:
 - `scripts/collect_ftc_youtube.py`: searches public YouTube metadata for
   season-specific FTC team videos, extracts explicit team numbers, and stores
   original links without downloading or re-hosting video files.
+- `scripts/collect_frc_youtube.py`: applies the same public-video, team-number,
+  official-team-page, season, and de-duplication rules to FRC, then merges the
+  verified links into each season's Team-Published Resources cards.
 - `scripts/filter_ftc_demo.py`: de-duplicates and classifies the raw records,
   rejects obvious false team-number matches, and builds the website/resource
   filter fields used by the demo.
@@ -74,6 +77,10 @@ The first command writes `data/ftc-demo-raw.json`; the second writes the
 browser-facing `data/ftc-demo.json`. Link checks are advisory because some
 working sites reject HTTP `HEAD` requests. Review the generated diff and audit
 list before publishing.
+
+GitHub Actions also runs both FRC and FTC resource refreshes every three days
+at approximately 03:17 UTC. The workflow can be started manually from the
+repository's Actions tab and commits only public data back to `main`.
 
 Collect one or more known events for a reviewable run:
 
