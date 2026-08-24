@@ -30,6 +30,8 @@ The important files are:
 - `index.html`: lightweight page structure and SEO metadata.
 - `assets/css/app.css`: shared FRC/FTC presentation styles.
 - `assets/js/app.js`: shared application behavior and FRC/FTC rendering logic.
+- `assets/js/locales-es-tr.js`: complete Spanish and Turkish interface copy,
+  kept separate so native speakers can review it without touching app logic.
 - `assets/js/data.js` → `const DATA`: canonical FRC season, Impact, Open
   Alliance, Hall of Fame, and resource data.
 - `assets/js/i18n.js`: interface translations, isolated from application logic.

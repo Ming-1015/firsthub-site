@@ -2,7 +2,13 @@
 Object.assign(I18N.en,{tab_tsite:"Team Resource Sites",tab_style:"Season Style Guide",ts_head:"Team Resource Sites",ts_lead:"Independent technical sites built and maintained by FRC teams — CAD, electrical, programming, and training resources.",ts_n:"Team",ts_visit:"Visit site",ts_all:"All",ts_cat_cad:"CAD / Mechanical",ts_cat_elect:"Electrical",ts_cat_code:"Programming",ts_cat_train:"Training",ts_community:"Community project",sg_head:"Season Style Guide",sg_lead:"Official brand assets and visual guides for each season — style guides, logos, social templates, and wallpapers released by FIRST.",sg_open:"Official page",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"Image",sg_count:" sites",sg_count2:" resources",scripts_award_filter:"Filter by award",scripts_event_filter:"Filter by event"});
 Object.assign(I18N['zh-CN'],{tab_open:"队伍公开资料",tab_tech:"技术资源库",tab_tsite:"队伍技术站",tab_style:"赛季风格指南",ts_head:"队伍技术站",ts_lead:"由 FRC 队伍或社区建设并持续维护的独立技术网站，涵盖 CAD、电气、编程与综合培训。",ts_n:"队伍",ts_visit:"访问网站",ts_all:"全部",ts_cat_cad:"CAD / 机械",ts_cat_elect:"电气",ts_cat_code:"编程",ts_cat_train:"综合培训",ts_community:"社区项目",sg_head:"赛季风格指南",sg_lead:"各赛季官方品牌素材与视觉规范，含风格指南、Logo、社媒模板与壁纸，方便平面设计师与队伍宣传查找。",sg_open:"官方入口",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"图片",sg_count:" 个站点",sg_count2:" 项资源",scripts_award_filter:"按奖项筛选",scripts_event_filter:"按赛事筛选"});
 Object.assign(I18N['zh-TW'],{tab_open:"隊伍公開資源",tab_tech:"技術資源庫",tab_tsite:"隊伍建站",tab_style:"賽季風格指南",ts_head:"隊伍建站",ts_lead:"由 FRC 隊伍自建、持續更新、面向社群的獨立技術站點：CAD／電氣／程式／綜合培訓。",ts_n:"隊伍",ts_visit:"造訪網站",ts_all:"全部",ts_cat_cad:"CAD／機械",ts_cat_elect:"電氣",ts_cat_code:"程式",ts_cat_train:"綜合培訓",ts_community:"社群專案",sg_head:"賽季風格指南",sg_lead:"各賽季官方品牌素材與視覺規範，含風格指南、Logo、社群模板與桌布。",sg_open:"官方入口",sg_pdf:"PDF",sg_zip:"ZIP",sg_ppt:"PPT",sg_img:"圖片",sg_count:" 個站點",sg_count2:" 項資源",scripts_award_filter:"依獎項篩選",scripts_event_filter:"依賽事篩選"});
-const SUPPORTED_LANGS=['en','zh-CN','zh-TW'];
+Object.assign(I18N.en,{program_choose:"Choose program",ftc_tab_overview:"Overview",ftc_tab_awards:"Award Results",ftc_tab_portfolios:"Engineering Portfolios",ftc_tab_open:"Team-Published Resources",ftc_tab_sites:"Technical Sites",ftc_tab_resources:"Technical Resources",ftc_featured:"Featured sections",ftc_overview_title:"Explore the FTC library",ftc_overview_lead:"Browse official FTC award results, public Engineering Portfolios, and team-published resources by season. Technical sites and tools that are not season-specific have their own sections.",ftc_overview_usage:"Choose a section first. Award Results, Engineering Portfolios, and Team-Published Resources display the season selector. Sort team resources by activity or team number and filter by CAD, code, video, website, and other resource types.",ftc_card_awards:"Official FIRST award results organized by season and event, with the event, award, and original page preserved.",ftc_card_portfolios:"Public Engineering Portfolios shared by teams, filterable by season and award.",ftc_card_open:"Direct links to public Build Threads, CAD, code, videos, and team websites.",ftc_card_sites:"Maintained FTC tutorial sites, team knowledge bases, and open community tools.",ftc_card_resources:"Official documentation and established community tools, grouped by programming, pathing, vision, strategy, and other areas.",ftc_source_note:"Every record retains its public source. Resource tags describe accessible content and do not imply FIRST endorsement or ranking.",ftc_search:"Search by team number, name, event, or resource…",ftc_contrib_process:"The collection, cleaning, and filtering process is documented in the GitHub README.",ftc_demo_branch:"View the FTC demo branch",ftc_data_boundaries:"Data boundaries",ftc_boundary_public:"Only publicly accessible resources that require no login are included.",ftc_boundary_labels:"Resource tags do not imply FIRST endorsement.",ftc_boundary_sources:"Every record retains a link to its original source.",ftc_loading:"Loading automatically collected data…",ftc_load_failed:"Automated data could not be loaded",ftc_auto_records:" automatically collected records",ftc_records:" records",ftc_official:"Official",ftc_community:"Community",ftc_all_awards:"All awards",ftc_all_levels:"All levels and awards",ftc_all_types:"All types",ftc_result_showing:"Showing",ftc_source_label:"Source:",ftc_view_source:"View source",ftc_render_limit:"Showing the first {visible} records. Search and filters apply to all {total} records.",ftc_empty:"No public resources match this season and the current filters.",ftc_views:"views",ftc_updates:"updates",ftc_public_portfolio:"Public Engineering Portfolio",ftc_public_video:"Public FTC team video linked to its original YouTube page.",ftc_public_team_resource:"Public team resource. Tags describe the identified content and do not imply FIRST endorsement.",ftc_reviewed_site:"Reviewed public website",ftc_official_project:"FIRST or official project",ftc_community_project:"FTC community project",ftc_resource_note:"Open the original source for the complete description and documentation.",ftc_hero_kicker:"FTC · FIRST Tech Challenge · Open to the entire community",ftc_site_title:"FTC Resource Library",ftc_site_subtitle:"FIRSTHub · FTC Open Resource Library",ftc_hero_sub:"FTC award results, public Engineering Portfolios, team-published resources, technical sites, and tools, organized with original sources attached.",ftc_built_by:"A FIRSTHub preview built by FRC Team 5449 for the FTC community.",ftc_stat_directions:"Resource areas",ftc_stat_seasons:"Seasons covered",ftc_stat_traceable:"Sources traceable",ftc_stat_fabricated:"Fabricated records",tech_resource_note:"Open the original source for the complete description and documentation.",sg_resource_note:"See the official FIRST assets and guidance available for this season.",ts_resource_note:"Independent technical site maintained by an FRC team or the community."});
+Object.assign(I18N['zh-CN'],{program_choose:"选择项目",ftc_tab_overview:"总览",ftc_tab_awards:"获奖结果",ftc_tab_portfolios:"工程作品集",ftc_tab_open:"队伍公开资料",ftc_tab_sites:"技术站",ftc_tab_resources:"技术资源",ftc_featured:"精选入口",ftc_overview_title:"探索 FTC 资料库",ftc_overview_lead:"按赛季浏览 FTC 官方获奖结果、公开工程作品集和队伍公开资料；不随赛季变化的技术站与工具放在独立栏目。",ftc_overview_usage:"先选择栏目；获奖结果、工程作品集和队伍公开资料会显示赛季导航。队伍资料可按活跃度或队号排序，并按 CAD、代码、视频、网站等类型筛选。",ftc_card_awards:"按赛季与赛事整理 FIRST 官方奖项结果，保留赛事、奖项与原始页面。",ftc_card_portfolios:"汇总队伍主动公开的 Engineering Portfolio，并按赛季和奖项筛选。",ftc_card_open:"集中展示 Build Thread、CAD、代码、视频和队伍网站的公开直链。",ftc_card_sites:"长期维护的 FTC 教程站、队伍知识库和开放工具网站。",ftc_card_resources:"官方文档和成熟社区工具，按编程、路径、视觉、策略等方向筛选。",ftc_source_note:"所有条目均保留公开来源；资料标签描述可访问内容，不代表 FIRST 官方认证或排名。",ftc_search:"搜索队号、队名、赛事或资料…",ftc_contrib_process:"采集、清洗和筛选流程记录在 GitHub README。",ftc_demo_branch:"查看 FTC Demo 分支",ftc_data_boundaries:"数据边界",ftc_boundary_public:"只收录无需登录即可访问的公开资料。",ftc_boundary_labels:"资料标签不代表 FIRST 官方认证。",ftc_boundary_sources:"所有条目保留原始来源链接。",ftc_loading:"正在载入自动采集数据…",ftc_load_failed:"自动数据载入失败",ftc_auto_records:" 条自动采集记录",ftc_records:" 条资料",ftc_official:"官方",ftc_community:"社区",ftc_all_awards:"全部奖项",ftc_all_levels:"全部层级与奖项",ftc_all_types:"全部类型",ftc_result_showing:"显示",ftc_source_label:"来源：",ftc_view_source:"查看来源",ftc_render_limit:"当前先显示前 {visible} 条；搜索和筛选会作用于全部 {total} 条记录。",ftc_empty:"这个赛季没有符合当前筛选条件的公开资料。",ftc_views:"次观看",ftc_updates:"次更新",ftc_public_portfolio:"公开 Engineering Portfolio",ftc_public_video:"FTC 队伍公开视频，链接指向原始 YouTube 页面。",ftc_public_team_resource:"队伍公开资料；标签描述已识别内容，不代表 FIRST 官方认证。",ftc_reviewed_site:"已核验的公开网站",ftc_official_project:"FIRST 或其他官方项目",ftc_community_project:"FTC 社区项目",ftc_resource_note:"请打开原始来源查看完整介绍和文档。",ftc_hero_kicker:"FTC · FIRST Tech Challenge · 面向整个社区开放",ftc_site_title:"FTC 资料库",ftc_site_subtitle:"FIRSTHub · FTC 开放资料库",ftc_hero_sub:"汇集 FTC 获奖结果、公开工程作品集、队伍公开资料、技术站与工具，并保留原始来源。",ftc_built_by:"由 FRC Team 5449 为 FTC 社区建设的 FIRSTHub 预览版。",ftc_stat_directions:"资料方向",ftc_stat_seasons:"已整理赛季",ftc_stat_traceable:"来源可追溯",ftc_stat_fabricated:"虚构记录",tech_resource_note:"请打开原始来源查看完整介绍和文档。",sg_resource_note:"查看本赛季 FIRST 官方素材与使用指南。",ts_resource_note:"由 FRC 队伍或社区维护的独立技术网站。",views_suffix:" 次观看"});
+Object.assign(I18N['zh-TW'],{program_choose:"選擇項目",ftc_tab_overview:"總覽",ftc_tab_awards:"獲獎結果",ftc_tab_portfolios:"工程作品集",ftc_tab_open:"隊伍公開資料",ftc_tab_sites:"技術站",ftc_tab_resources:"技術資源",ftc_featured:"精選入口",ftc_overview_title:"探索 FTC 資料庫",ftc_overview_lead:"依賽季瀏覽 FTC 官方獲獎結果、公開工程作品集與隊伍公開資料；不隨賽季變化的技術站與工具另設獨立欄目。",ftc_overview_usage:"先選擇欄目；獲獎結果、工程作品集與隊伍公開資料會顯示賽季導覽。隊伍資料可依活躍度或隊號排序，並依 CAD、程式碼、影片、網站等類型篩選。",ftc_card_awards:"依賽季與賽事整理 FIRST 官方獎項結果，保留賽事、獎項與原始頁面。",ftc_card_portfolios:"彙整隊伍主動公開的 Engineering Portfolio，並可依賽季與獎項篩選。",ftc_card_open:"集中展示 Build Thread、CAD、程式碼、影片與隊伍網站的公開連結。",ftc_card_sites:"持續維護的 FTC 教學站、隊伍知識庫與開放工具網站。",ftc_card_resources:"官方文件與成熟社群工具，依程式設計、路徑規劃、視覺、策略等方向篩選。",ftc_source_note:"所有項目均保留公開來源；資料標籤僅描述可存取內容，不代表 FIRST 官方認證或排名。",ftc_search:"搜尋隊號、隊名、賽事或資料…",ftc_contrib_process:"蒐集、清理與篩選流程記錄於 GitHub README。",ftc_demo_branch:"查看 FTC Demo 分支",ftc_data_boundaries:"資料範圍",ftc_boundary_public:"僅收錄無須登入即可存取的公開資料。",ftc_boundary_labels:"資料標籤不代表 FIRST 官方認證。",ftc_boundary_sources:"所有項目均保留原始來源連結。",ftc_loading:"正在載入自動蒐集資料…",ftc_load_failed:"自動資料載入失敗",ftc_auto_records:" 筆自動蒐集記錄",ftc_records:" 筆資料",ftc_official:"官方",ftc_community:"社群",ftc_all_awards:"全部獎項",ftc_all_levels:"全部層級與獎項",ftc_all_types:"全部類型",ftc_result_showing:"顯示",ftc_source_label:"來源：",ftc_view_source:"查看來源",ftc_render_limit:"目前先顯示前 {visible} 筆；搜尋與篩選會套用至全部 {total} 筆記錄。",ftc_empty:"此賽季沒有符合目前篩選條件的公開資料。",ftc_views:"次觀看",ftc_updates:"次更新",ftc_public_portfolio:"公開 Engineering Portfolio",ftc_public_video:"FTC 隊伍公開影片，連結指向原始 YouTube 頁面。",ftc_public_team_resource:"隊伍公開資料；標籤描述已識別內容，不代表 FIRST 官方認證。",ftc_reviewed_site:"已核驗的公開網站",ftc_official_project:"FIRST 或其他官方專案",ftc_community_project:"FTC 社群專案",ftc_resource_note:"請開啟原始來源查看完整介紹與文件。",ftc_hero_kicker:"FTC · FIRST Tech Challenge · 面向整個社群開放",ftc_site_title:"FTC 資料庫",ftc_site_subtitle:"FIRSTHub · FTC 開放資料庫",ftc_hero_sub:"彙整 FTC 獲獎結果、公開工程作品集、隊伍公開資料、技術站與工具，並保留原始來源。",ftc_built_by:"由 FRC Team 5449 為 FTC 社群建置的 FIRSTHub 預覽版。",ftc_stat_directions:"資料方向",ftc_stat_seasons:"已整理賽季",ftc_stat_traceable:"來源可追溯",ftc_stat_fabricated:"虛構記錄",tech_resource_note:"請開啟原始來源查看完整介紹與文件。",sg_resource_note:"查看本賽季 FIRST 官方素材與使用指南。",ts_resource_note:"由 FRC 隊伍或社群維護的獨立技術網站。"});
+Object.assign(I18N.en,{tech_cat_cad:"Mechanical Design and CAD",tech_cat_code:"Programming and Software",tech_cat_data:"Data and Strategy",tech_cat_learn:"Learning and Training",tech_cat_com:"Community and Platforms"});
+Object.assign(I18N['zh-CN'],{tech_cat_cad:"机械与 CAD",tech_cat_code:"程序与软件",tech_cat_data:"数据与策略",tech_cat_learn:"学习与教学",tech_cat_com:"社区与平台"});
+Object.assign(I18N['zh-TW'],{tech_cat_cad:"機械與 CAD",tech_cat_code:"程式與軟體",tech_cat_data:"資料與策略",tech_cat_learn:"學習與教學",tech_cat_com:"社群與平台"});
+const SUPPORTED_LANGS=['en','zh-CN','zh-TW','es','tr'];
 const savedLang=localStorage.getItem('frc_lang');
 let LANG=SUPPORTED_LANGS.includes(savedLang)?savedLang:'en';
 Object.assign(I18N.en,{sort_hot:"By popularity",sort_team:"By team number",teams_sorted_number:" teams (team number order)",sort_label:"Team-resource sorting"});
@@ -55,6 +61,7 @@ Object.assign(I18N.en,{
 });
 Object.assign(I18N['zh-CN'],{site_title:"FRC 智库网",site_subtitle:"FIRSTHub · FRC Open Resource Library",built_by:"由 FRC Team 5449 建设 · 面向整个 FRC 社区",footer_built_by:"由 FRC Team 5449 建设",directory_zh:"中文搜索目录",directory_en:"英文搜索目录",sitemap_label:"站点地图",resource_open:"打开资源",team_page:"FIRST 队伍页",cad_preview:"CAD 预览",hero_sub:"汇集 2021–2026 六个赛季的 Impact Award 获奖材料、队伍公开的 CAD / 代码 / Build Thread、名人堂队伍和技术资源。",stat_open:"赛季队伍资料",home_lead:"这里汇集六个赛季的 Impact Award 获奖材料、队伍公开的 CAD / 代码 / Build Thread、FIRST 官方名人堂，以及常用工具和学习资源。切换上方赛季即可更新内容。",home_usage:"用法：点赛季键切换年份；在「Impact 智库」查看获奖材料；在「队伍公开资料」中按 Build Thread 访问量或队号浏览 CAD、代码和视频；在「技术资源」中按分类查找工具。网址后加 #2024 这类锚点即可分享指定赛季。",home_open_d:"六赛季共 2,092 条由队伍公开的 Build Thread、CAD、代码和视频资料，支持检索与排序。",c2:"Impact / 队伍公开资料：通过 GitHub 提交新的队伍记录。",r4:"按机构类型建立队伍公开 CAD / 代码速查。"});
 Object.assign(I18N['zh-TW'],{hero_sub:"彙整 2021–2026 六個賽季的 Impact Award 獲獎資料、隊伍公開的 CAD／程式碼／Build Thread、名人堂隊伍與技術資源。",stat_open:"賽季隊伍資源",home_open_d:"六個賽季共 2,092 筆由隊伍公開的 Build Thread、CAD、程式碼與影片資源，可搜尋與排序。",c2:"Impact／隊伍公開資源：透過 GitHub 提交新的隊伍記錄。",r4:"依機構類型建立隊伍公開 CAD／程式碼索引。"});
+Object.assign(I18N['zh-TW'],{site_title:"FRC 智庫網",site_subtitle:"FIRSTHub · FRC 開放資料庫",built_by:"由 FRC Team 5449 建置 · 面向整個 FRC 社群",footer_built_by:"由 FRC Team 5449 建置",directory_zh:"中文搜尋目錄",directory_en:"英文搜尋目錄",sitemap_label:"網站地圖",resource_open:"開啟資源",team_page:"FIRST 隊伍頁面",cad_preview:"CAD 預覽",views_suffix:" 次觀看"});
 const TEAM_RESOURCE_LABELS={ja:"チーム公開資料",ko:"팀 공개 자료",'zh-TW':"隊伍公開資源",ms:"Sumber Diterbitkan Pasukan",de:"Von Teams veröffentlichte Ressourcen",nl:"Door teams gepubliceerde bronnen",ru:"Материалы команд",pl:"Materiały publikowane przez zespoły",en:"Team-Published Resources",'zh-CN':"队伍公开资料",es:"Recursos publicados por equipos",pt:"Recursos publicados por equipes",fr:"Ressources publiées par les équipes",it:"Risorse pubblicate dai team",tr:"Takımların Yayınladığı Kaynaklar",he:"משאבים שפורסמו על ידי קבוצות",ar:"موارد نشرتها الفرق",hi:"टीमों द्वारा प्रकाशित संसाधन",th:"แหล่งข้อมูลที่ทีมเผยแพร่",vi:"Tài nguyên do đội công bố",id:"Sumber Daya yang Diterbitkan Tim"};
 Object.entries(TEAM_RESOURCE_LABELS).forEach(([lang,label])=>Object.assign(I18N[lang],{tab_open:label,home_open_t:label}));
 const AWARD_UI_EN={tab_scripts:"Award Scripts",home_scripts_t:"Award Scripts",home_scripts_d:"Search official judge-written award citations by team, award, and event—not just Impact Award entries.",scripts_lead:"Official team award citations published on FIRST event pages. Competitive results, individual awards, and records without a public citation are excluded.",scripts_original:"Official text is preserved in English, and every card links to the corresponding FIRST event page for verification.",scripts_search:"Search by team, award, event, or citation…",scripts_all_awards:"All awards",scripts_all_events:"All events",scripts_title:"Official Award Scripts",scripts_originals:" official citations",scripts_events:" events",scripts_showing:"Showing",scripts_load_more:"Load more",scripts_remaining:"remaining",scripts_empty:"No award citations match the current filters.",scripts_official_en:"Official English text",scripts_source:"View FIRST event page",scripts_loading:"Loading award scripts…",scripts_load_failed:"Award-script data could not be loaded.",scripts_retry:"Try again",scripts_no_data:"No reliable public data",scripts_no_data_lead:"FIRST event pages for the 2021 season do not provide a reliable archive of team award citations, so this section is intentionally left blank.",scripts_no_data_box:"No reliable official award citations are available for this season. Impact Award materials remain available in the Impact Award Archive."};
@@ -76,7 +83,7 @@ function applyI18n(){
   document.documentElement.lang = LANG==='zh-CN'?'zh-CN':LANG;
 }
 function renderLangSelector(){
-  const names={en:'English','zh-CN':'简体中文','zh-TW':'繁體中文'};
+  const names={en:'English','zh-CN':'简体中文','zh-TW':'繁體中文',es:'Español',tr:'Türkçe'};
   const opts=SUPPORTED_LANGS.map(l=>'<option value="'+l+'"'+(l===LANG?' selected':'')+'>'+names[l]+'</option>').join('');
   const el=document.getElementById('langSel');
   if(el){ el.innerHTML=opts; el.value=LANG; }
@@ -86,6 +93,7 @@ function setLang(l){
   LANG=l; localStorage.setItem('frc_lang',l);
   applyI18n(); renderLangSelector();
   renderStats(); renderImpact(); fillAwardScriptFilters(); renderAwardScripts(); renderOpen(); renderHall(); renderTech(); renderTsChips(); renderTsite(); renderSeasonGuide(); renderChampBox();
+  if(document.body.classList.contains('ftc-mode'))setProgram('ftc');
 }
 
 
@@ -100,11 +108,11 @@ let awardLoadToken = 0;
 
 /* ---------- 技术资源（全局） ---------- */
 const CATS = [
-{id:"cad",nm:"机械与 CAD",en:"Mechanical Design & CAD"},
-{id:"code",nm:"程序与软件",en:"Programming & Software"},
-{id:"data",nm:"数据与策略",en:"Data & Strategy"},
-{id:"learn",nm:"学习与教学",en:"Learning & Training"},
-{id:"com",nm:"社区与平台",en:"Community & Platforms"}
+{id:"cad",key:"tech_cat_cad"},
+{id:"code",key:"tech_cat_code"},
+{id:"data",key:"tech_cat_data"},
+{id:"learn",key:"tech_cat_learn"},
+{id:"com",key:"tech_cat_com"}
 ];
 const TECH = [
 {cat:"cad",t:"Onshape for FRC",u:"https://www.onshape.com/edu/frc",d:"官方教育版免费 + FRC 零件库 + 场地模型，多数强队首选 CAD 平台"},
@@ -490,18 +498,19 @@ function renderHall(){
 
 /* ---- 技术资源 ---- */
 function techFilters(){
-  return [{id:"all",nm:LANG==='en'?t('f_all'):"全部"}].concat(CATS.map(c=>({id:c.id,nm:LANG==='en'?c.en:c.nm})));
+  return [{id:"all",nm:t('f_all')}].concat(CATS.map(c=>({id:c.id,nm:t(c.key)})));
 }
 let tcFilter = "all";
 function renderTech(){
   const list = TECH.filter(t=>tcFilter==="all"||t.cat===tcFilter);
   $('techTotal').textContent = TECH.length + t('tech_count');
   $('tcCount').textContent = t('showing')+' ' + list.length + ' / ' + TECH.length;
-  const catName = id => { const c=CATS.find(c=>c.id===id)||{}; return LANG==='en'?(c.en||c.nm):(c.nm||''); };
+  const ZH=LANG==='zh-CN';
+  const catName = id => t((CATS.find(c=>c.id===id)||{}).key||'f_all');
   $('tcGrid').innerHTML = list.map(item=>{
-    const localized = LANG==='en' ? TECH_EN[item.u] : null;
+    const localized = ZH ? null : TECH_EN[item.u];
     const title = localized ? localized[0] : item.t;
-    const description = localized ? localized[1] : item.d;
+    const description = LANG==='zh-CN' ? item.d : (LANG==='en'&&localized ? localized[1] : t('tech_resource_note'));
     return '<div class="card"><div class="nm">'+title+' <span class="badge gray" style="margin-left:6px">'+catName(item.cat)+'</span></div><div class="note">'+description+'</div><div class="links">'+btn('essay',t('resource_open'),item.u)+'</div></div>';
   }).join('');
   buildChips('tcChips',techFilters(),tcFilter,'setTcFilter');
@@ -530,7 +539,7 @@ const TEAM_SITES = [
 let tsFilter = "all";
 const TS_TEAM_EN={on:"Team",off:""};
 function renderTsite(){
-  const ZH = LANG==='zh-CN'||LANG==='zh-TW';
+  const ZH = LANG==='zh-CN';
   const list = TEAM_SITES.filter(s=>tsFilter==="all"||s.cat===tsFilter);
   $('tsCount').textContent = list.length+' / '+TEAM_SITES.length+t('sg_count');
   const catName = cid=>t((TS_CATS.find(x=>x.id===cid)||{}).key||'ts_all');
@@ -538,7 +547,8 @@ function renderTsite(){
     const badge = s.community
       ? '<span class="badge purple">'+t('ts_community')+'</span>'
       : '<span class="badge blue">'+s.n+'</span>';
-    return '<div class="card"><div class="num">'+badge+' <span class="badge teal">'+catName(s.cat)+'</span></div><div class="nm">'+esc(s.t)+'</div><div class="note">'+esc(ZH?s.d:(s.dEn||s.d))+'</div><div class="links">'+btn('site',t('ts_visit'),s.u)+'</div></div>';
+    const description=ZH?s.d:(LANG==='en'?(s.dEn||s.d):t('ts_resource_note'));
+    return '<div class="card"><div class="num">'+badge+' <span class="badge teal">'+catName(s.cat)+'</span></div><div class="nm">'+esc(s.t)+'</div><div class="note">'+esc(description)+'</div><div class="links">'+btn('site',t('ts_visit'),s.u)+'</div></div>';
   }).join('');
 }
 function renderTsChips(){
@@ -581,14 +591,14 @@ const STYLE = {
 let sgSeason = "2026";
 const SG_LABEL = k=>{const m={pdf:t('sg_pdf'),zip:t('sg_zip'),ppt:t('sg_ppt'),img:t('sg_img')};return m[k]||k.toUpperCase();};
 function renderSeasonGuide(){
-  const ZH = LANG==='zh-CN'||LANG==='zh-TW';
+  const ZH = LANG==='zh-CN';
   $('sgSeasonList').innerHTML = Object.keys(STYLE).sort().reverse().map(y=>{
     const s=STYLE[y];
     return '<button class="season-btn'+(y===sgSeason?' active':'')+'" onclick="setSeasonGuide(\''+y+'\')"><span class="yr">'+y+'</span><span class="gm">'+s.game+'</span></button>';
   }).join('');
   const s = STYLE[sgSeason];
   $('sgCount').textContent = s.list.length + t('sg_count2');
-  $('sgNote').textContent = ZH ? s.note : (s.noteEn||s.note);
+  $('sgNote').textContent = ZH ? s.note : (LANG==='en'?(s.noteEn||s.note):t('sg_resource_note'));
   $('sgGrid').innerHTML = s.list.map(x=>{
     const isExt = x.k==='ext';
     const label = isExt ? t('sg_open') : SG_LABEL(x.k);
@@ -631,26 +641,28 @@ const FTC_DEMO_DATA={
   ]
 };
 const FTC_SEASONS={2023:'CENTERSTAGE',2024:'INTO THE DEEP',2025:'DECODE'};
-const FTC_PANEL_COPY={
-  awards:['获奖结果','官方赛事奖项结果；每张卡片都可回到 FTC Events 核对。'],
-  portfolios:['工程作品集','队伍主动公开的 Engineering Portfolio 与社区资料库，不代表 FIRST 官方背书。'],
-  open:['队伍公开资料','公开记录机器人研发过程的 Build Thread 与队伍资料；“公开资料”不等同于 Open Alliance 身份。'],
-  sites:['FTC 技术站','长期维护的队伍知识库、社区教程站与工具网站；此栏目不受赛季限制。'],
-  resources:['FTC 技术资源','官方文档、常用框架和成熟社区工具；按技术方向筛选，不受赛季限制。']
+const FTC_LABELS={
+  en:{alliance:'Alliance',connect:'Connect Award',control:'Control Award',design:'Design Award',innovate:'Innovate Award',inspire:'Inspire Award',judges:"Judges’ Choice Award",motivate:'Motivate Award',other:'Other',think:'Think Award',Nationals:'National',"Not specifies":'Not specified',"Premier Event":'Premier Event',Regional:'Regional',Regionals:'Regionals',"Team-published":'Team-published',Worlds:'World Championship',"build-thread":'Build Thread',cad:'CAD',code:'Code',portfolio:'Portfolio',video:'Video',website:'Website',awards:'Awards',learning:'Learning',mechanical:'Mechanical',motion:'Motion',programming:'Programming',strategy:'Strategy',vision:'Vision',community:'Community',official:'Official'},
+  'zh-CN':{alliance:'联盟',connect:'Connect Award',control:'Control Award',design:'Design Award',innovate:'Innovate Award',inspire:'Inspire Award',judges:'评委选择奖',motivate:'Motivate Award',other:'其他',think:'Think Award',Nationals:'全国赛',"Not specifies":'未注明',"Premier Event":'顶级赛事',Regional:'区域赛',Regionals:'区域赛',"Team-published":'队伍公开',Worlds:'世界锦标赛',"build-thread":'研发记录',cad:'CAD',code:'代码',portfolio:'作品集',video:'视频',website:'网站',awards:'奖项',learning:'学习',mechanical:'机械',motion:'运动控制',programming:'编程',strategy:'策略',vision:'视觉',community:'社区',official:'官方'},
+  'zh-TW':{alliance:'聯盟',connect:'Connect Award',control:'Control Award',design:'Design Award',innovate:'Innovate Award',inspire:'Inspire Award',judges:'評審選擇獎',motivate:'Motivate Award',other:'其他',think:'Think Award',Nationals:'全國賽',"Not specifies":'未註明',"Premier Event":'頂級賽事',Regional:'區域賽',Regionals:'區域賽',"Team-published":'隊伍公開',Worlds:'世界錦標賽',"build-thread":'研發記錄',cad:'CAD',code:'程式碼',portfolio:'作品集',video:'影片',website:'網站',awards:'獎項',learning:'學習',mechanical:'機械',motion:'運動控制',programming:'程式設計',strategy:'策略',vision:'視覺',community:'社群',official:'官方'},
+  es:{alliance:'Alianza',connect:'Premio Connect',control:'Premio Control',design:'Premio Design',innovate:'Premio Innovate',inspire:'Premio Inspire',judges:'Premio Elección de los Jueces',motivate:'Premio Motivate',other:'Otros',think:'Premio Think',Nationals:'Nacional',"Not specifies":'Sin especificar',"Premier Event":'Evento Premier',Regional:'Regional',Regionals:'Regionales',"Team-published":'Publicado por el equipo',Worlds:'Campeonato Mundial',"build-thread":'Build Thread',cad:'CAD',code:'Código',portfolio:'Portafolio',video:'Video',website:'Sitio web',awards:'Premios',learning:'Aprendizaje',mechanical:'Mecánica',motion:'Movimiento',programming:'Programación',strategy:'Estrategia',vision:'Visión',community:'Comunidad',official:'Oficial'},
+  tr:{alliance:'İttifak',connect:'Connect Ödülü',control:'Control Ödülü',design:'Design Ödülü',innovate:'Innovate Ödülü',inspire:'Inspire Ödülü',judges:'Jüri Özel Ödülü',motivate:'Motivate Ödülü',other:'Diğer',think:'Think Ödülü',Nationals:'Ulusal Şampiyona',"Not specifies":'Belirtilmemiş',"Premier Event":'Premier Etkinlik',Regional:'Bölgesel',Regionals:'Bölgesel Etkinlikler',"Team-published":'Takım tarafından yayımlanan',Worlds:'Dünya Şampiyonası',"build-thread":'Build Thread',cad:'CAD',code:'Kod',portfolio:'Portfolyo',video:'Video',website:'Web sitesi',awards:'Ödüller',learning:'Öğrenme',mechanical:'Mekanik',motion:'Hareket',programming:'Programlama',strategy:'Strateji',vision:'Görüntü işleme',community:'Topluluk',official:'Resmî'}
 };
+function ftcLabel(value){return (FTC_LABELS[LANG]&&FTC_LABELS[LANG][value])||FTC_LABELS.en[value]||value;}
+const FTC_PANEL_COPY={awards:['ftc_tab_awards','ftc_card_awards'],portfolios:['ftc_tab_portfolios','ftc_card_portfolios'],open:['ftc_tab_open','ftc_card_open'],sites:['ftc_tab_sites','ftc_card_sites'],resources:['ftc_tab_resources','ftc_card_resources']};
 let ftcSeason='2025',ftcCategory='overview',ftcFilter='all',ftcDetailFilter='all',ftcSort='default';
 let FTC_AUTO_DATA=null,ftcDataLoading=false;
 async function loadFtcAutoData(){
   if(FTC_AUTO_DATA||ftcDataLoading)return;
-  ftcDataLoading=true;$('ftcCount').textContent='正在载入自动采集数据…';
+  ftcDataLoading=true;$('ftcCount').textContent=t('ftc_loading');
   try{
     const response=await fetch('data/ftc-demo-v6.json',{cache:'no-store'});
     if(!response.ok)throw new Error('HTTP '+response.status);
     FTC_AUTO_DATA=await response.json();
     const total=FTC_AUTO_DATA.awards.length+FTC_AUTO_DATA.portfolios.length+FTC_AUTO_DATA.openTeams.length+(FTC_AUTO_DATA.sites||[]).length+FTC_AUTO_DATA.resources.length;
-    $('ftcCount').textContent=total.toLocaleString()+' 条自动采集记录';
+    $('ftcCount').textContent=total.toLocaleString()+t('ftc_auto_records');
     if(ftcCategory!=='overview')renderFtcCards();
-  }catch(error){$('ftcCount').textContent='自动数据载入失败';console.warn('FTC demo data:',error);}
+  }catch(error){$('ftcCount').textContent=t('ftc_load_failed');console.warn('FTC demo data:',error);}
   finally{ftcDataLoading=false;}
 }
 function renderFtcSeasons(){
@@ -663,10 +675,10 @@ function renderFtc(category,button){
   document.querySelector('.ftc-seasonbar').hidden=(category==='overview'||category==='resources'||category==='sites');
   document.querySelectorAll('#ftcNav button').forEach(b=>b.classList.toggle('active',b===button));
   if(category==='overview'){
-    overview.hidden=false;panel.hidden=true;$('ftcCount').textContent='精选入口';return;
+    overview.hidden=false;panel.hidden=true;$('ftcCount').textContent=t('ftc_featured');return;
   }
   overview.hidden=true;panel.hidden=false;$('ftcSearch').value='';
-  $('ftcPanelTitle').textContent=FTC_PANEL_COPY[category][0];$('ftcPanelLead').textContent=FTC_PANEL_COPY[category][1];
+  $('ftcPanelTitle').textContent=t(FTC_PANEL_COPY[category][0]);$('ftcPanelLead').textContent=t(FTC_PANEL_COPY[category][1]);
   renderFtcCards();
 }
 function setFtcFilter(value,button){ftcFilter=value;document.querySelectorAll('#ftcFilters .chip').forEach(b=>b.classList.toggle('active',b===button));renderFtcCards();}
@@ -676,40 +688,43 @@ function ftcSourceGroup(item){if(item.type==='official'||item.type==='manual')re
 function ftcAutoItems(){
   if(!FTC_AUTO_DATA)return null;
   if(ftcCategory==='awards')return FTC_AUTO_DATA.awards.map(x=>({season:x.season,type:'official',detail:x.category||'other',event:x.eventCode,number:x.teamNumber,meta:x.award,title:'#'+x.teamNumber+' '+(x.teamName||'FTC Team '+x.teamNumber),desc:x.eventName+' · '+x.date,source:'FIRST FTC Events · '+x.eventCode,url:x.source}));
-  if(ftcCategory==='portfolios')return FTC_AUTO_DATA.portfolios.map(x=>({season:x.season,type:x.sourceType==='official'?'official':'community',detail:x.level||x.award||'未标注层级',number:x.teamNumber,meta:(x.seasonLabel||'Season not specified')+(x.level?' · '+x.level:''),title:'#'+x.teamNumber+' '+(x.teamName||x.title||'FTC Team'),desc:[x.award,x.rating,x.score].filter(Boolean).join(' · ')||'Public Engineering Portfolio',source:x.source.includes('portfoliolab')?'FTC PortfolioLab':'OpenVault',url:x.pdf||x.source}));
-  if(ftcCategory==='open')return FTC_AUTO_DATA.openTeams.map(x=>({season:x.season,type:'team',detail:(x.tags||['build-thread'])[0],tags:x.tags||['build-thread'],links:x.links||[],number:x.teamNumber||999999,activity:x.activity||x.views||x.posts||0,sourcePlatform:x.sourcePlatform||'chief-delphi',meta:(x.teamNumber?'TEAM '+x.teamNumber+' · ':'')+(x.views?Number(x.views).toLocaleString()+' views':(x.posts||0).toLocaleString()+' updates'),title:(x.teamName?x.teamName+' — ':'')+x.title,desc:x.sourcePlatform==='youtube'?'Public FTC team video linked to its original YouTube page.':'Public team resource; tags describe identified content and do not imply FIRST endorsement.',source:x.sourcePlatform==='youtube'?'YouTube':x.sourcePlatform==='github'?'GitHub':'Chief Delphi',url:x.source}));
-  if(ftcCategory==='sites')return (FTC_AUTO_DATA.sites||[]).map(x=>({season:'all',type:x.owner==='official'?'official':'community',detail:x.category,tags:[x.category],meta:(x.owner||'community').toUpperCase()+' · '+x.category,title:x.title,desc:x.description,source:'Reviewed public website',url:x.url}));
-  if(ftcCategory==='resources')return FTC_AUTO_DATA.resources.map(x=>({season:'all',type:x.sourceType==='official'?'official':'community',detail:x.category,tags:[x.category],meta:x.sourceType==='official'?'OFFICIAL · '+x.category:'COMMUNITY · '+x.category,title:x.title,desc:x.description,source:x.sourceType==='official'?'FIRST / official project':'FTC community project',url:x.url}));
+  if(ftcCategory==='portfolios')return FTC_AUTO_DATA.portfolios.map(x=>({season:x.season,type:x.sourceType==='official'?'official':'community',detail:x.level||x.award||t('ftc_all_levels'),number:x.teamNumber,meta:(x.seasonLabel||'Season')+(x.level?' · '+x.level:''),title:'#'+x.teamNumber+' '+(x.teamName||x.title||'FTC Team'),desc:[x.award,x.rating,x.score].filter(Boolean).join(' · ')||t('ftc_public_portfolio'),source:x.source.includes('portfoliolab')?'FTC PortfolioLab':'OpenVault',url:x.pdf||x.source}));
+  if(ftcCategory==='open')return FTC_AUTO_DATA.openTeams.map(x=>({season:x.season,type:'team',detail:(x.tags||['build-thread'])[0],tags:x.tags||['build-thread'],links:x.links||[],number:x.teamNumber||999999,activity:x.activity||x.views||x.posts||0,sourcePlatform:x.sourcePlatform||'chief-delphi',meta:(x.teamNumber?t('ts_n')+' '+x.teamNumber+' · ':'')+(x.views?Number(x.views).toLocaleString()+' '+t('ftc_views'):(x.posts||0).toLocaleString()+' '+t('ftc_updates')),title:(x.teamName?x.teamName+' — ':'')+x.title,desc:x.sourcePlatform==='youtube'?t('ftc_public_video'):t('ftc_public_team_resource'),source:x.sourcePlatform==='youtube'?'YouTube':x.sourcePlatform==='github'?'GitHub':'Chief Delphi',url:x.source}));
+  if(ftcCategory==='sites')return (FTC_AUTO_DATA.sites||[]).map(x=>({season:'all',type:x.owner==='official'?'official':'community',detail:x.category,tags:[x.category],meta:ftcLabel(x.owner||'community')+' · '+ftcLabel(x.category),title:x.title,desc:LANG==='zh-CN'?x.description:t('ftc_resource_note'),source:t('ftc_reviewed_site'),url:x.url}));
+  if(ftcCategory==='resources')return FTC_AUTO_DATA.resources.map(x=>({season:'all',type:x.sourceType==='official'?'official':'community',detail:x.category,tags:[x.category],meta:ftcLabel(x.sourceType==='official'?'official':'community')+' · '+ftcLabel(x.category),title:x.title,desc:LANG==='zh-CN'?x.description:t('ftc_resource_note'),source:x.sourceType==='official'?t('ftc_official_project'):t('ftc_community_project'),url:x.url}));
   return [];
 }
 function renderFtcCards(){
-  const all=ftcAutoItems()||FTC_DEMO_DATA[ftcCategory]||[],q=($('ftcSearch').value||'').trim().toLowerCase();
+  const sourceItems=ftcAutoItems()||FTC_DEMO_DATA[ftcCategory]||[];
+  const all=LANG!=='zh-CN'?sourceItems.map(item=>(/[\u3400-\u9fff]/.test(item.desc||'')?{...item,desc:t('ftc_resource_note')}:item)):sourceItems;
+  const q=($('ftcSearch').value||'').trim().toLowerCase();
   const seasonItems=all.filter(item=>ftcCategory==='resources'||ftcCategory==='sites'||!item.season||item.season==='all'||item.season===ftcSeason);
   const details=[...new Set(seasonItems.flatMap(x=>ftcCategory==='open'?(x.tags||[]):[x.detail]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b)));
   let controls='';
-  if(ftcCategory==='open')controls+='<div class="sort-toggle"><button type="button" class="sort-btn'+(ftcSort==='default'?' active':'')+'" onclick="setFtcSort(\'default\')">按热度排序</button><button type="button" class="sort-btn'+(ftcSort==='number'?' active':'')+'" onclick="setFtcSort(\'number\')">按队号排序</button></div>';
-  controls+='<button class="chip'+(ftcFilter==='all'?' active':'')+'" onclick="setFtcFilter(\'all\',this)">全部</button>';
-  if(ftcCategory==='resources'||ftcCategory==='sites'||ftcCategory==='portfolios')controls+='<button class="chip'+(ftcFilter==='official'?' active':'')+'" onclick="setFtcFilter(\'official\',this)">官方</button><button class="chip'+(ftcFilter==='community'?' active':'')+'" onclick="setFtcFilter(\'community\',this)">社区</button>';
-  if(details.length)controls+='<select onchange="setFtcDetail(this.value)"><option value="all">'+(ftcCategory==='awards'?'全部奖项':ftcCategory==='portfolios'?'全部层级/奖项':'全部类型')+'</option>'+details.map(x=>'<option value="'+esc(x)+'"'+(x===ftcDetailFilter?' selected':'')+'>'+esc(x)+'</option>').join('')+'</select>';
+  if(ftcCategory==='open')controls+='<div class="sort-toggle"><button type="button" class="sort-btn'+(ftcSort==='default'?' active':'')+'" onclick="setFtcSort(\'default\')">'+t('sort_hot')+'</button><button type="button" class="sort-btn'+(ftcSort==='number'?' active':'')+'" onclick="setFtcSort(\'number\')">'+t('sort_team')+'</button></div>';
+  controls+='<button class="chip'+(ftcFilter==='all'?' active':'')+'" onclick="setFtcFilter(\'all\',this)">'+t('f_all')+'</button>';
+  if(ftcCategory==='resources'||ftcCategory==='sites'||ftcCategory==='portfolios')controls+='<button class="chip'+(ftcFilter==='official'?' active':'')+'" onclick="setFtcFilter(\'official\',this)">'+t('ftc_official')+'</button><button class="chip'+(ftcFilter==='community'?' active':'')+'" onclick="setFtcFilter(\'community\',this)">'+t('ftc_community')+'</button>';
+  if(details.length)controls+='<select onchange="setFtcDetail(this.value)"><option value="all">'+(ftcCategory==='awards'?t('ftc_all_awards'):ftcCategory==='portfolios'?t('ftc_all_levels'):t('ftc_all_types'))+'</option>'+details.map(x=>'<option value="'+esc(x)+'"'+(x===ftcDetailFilter?' selected':'')+'>'+esc(ftcLabel(x))+'</option>').join('')+'</select>';
   $('ftcFilters').innerHTML=controls;
   let items=seasonItems.filter(item=>(ftcFilter==='all'||ftcSourceGroup(item)===ftcFilter)&&(ftcDetailFilter==='all'||item.detail===ftcDetailFilter||(ftcCategory==='open'&&(item.tags||[]).includes(ftcDetailFilter)))&&(!q||(item.meta+' '+item.title+' '+item.desc+' '+item.source).toLowerCase().includes(q)));
   if(ftcCategory==='open')items.sort((a,b)=>ftcSort==='number'?a.number-b.number:ftcSort==='title'?a.title.localeCompare(b.title):b.activity-a.activity);
   const visible=items.slice(0,60);
-  $('ftcPanelTotal').textContent=seasonItems.length+' 条资料';$('ftcCount').textContent=items.length+' / '+seasonItems.length;$('ftcResultCount').textContent='显示 '+items.length+' / '+seasonItems.length;
+  $('ftcPanelTotal').textContent=seasonItems.length+t('ftc_records');$('ftcCount').textContent=items.length+' / '+seasonItems.length;$('ftcResultCount').textContent=t('ftc_result_showing')+' '+items.length+' / '+seasonItems.length;
   const renderCard=item=>{
     if(ftcCategory==='open'){
-      const direct=(item.links||[]).slice(0,5).map(link=>'<a class="btn '+({cad:'cad',code:'gh',video:'video',website:'site'}[link.type]||'site')+'" href="'+esc(link.url)+'" target="_blank" rel="noopener">'+esc(link.type==='code'?'Code':link.type==='video'?'Video':link.type==='website'?'Website':'CAD')+'</a>').join('');
-      const tags=(item.tags||[]).filter(tag=>tag!=='build-thread').map(tag=>'<span class="tag-chip">'+esc(tag)+'</span>').join('');
+      const direct=(item.links||[]).slice(0,5).map(link=>'<a class="btn '+({cad:'cad',code:'gh',video:'video',website:'site'}[link.type]||'site')+'" href="'+esc(link.url)+'" target="_blank" rel="noopener">'+esc(ftcLabel(link.type))+'</a>').join('');
+      const tags=(item.tags||[]).filter(tag=>tag!=='build-thread').map(tag=>'<span class="tag-chip">'+esc(ftcLabel(tag))+'</span>').join('');
       const cad=(item.tags||[]).includes('cad')?'<span class="cad-prev"><span class="cad-dot"></span>3D</span>':'';
-      const views=item.activity?'<span class="views">'+Number(item.activity).toLocaleString()+' '+(item.sourcePlatform==='youtube'?'views':'posts')+'</span>':'';
+      const views=item.activity?'<span class="views">'+Number(item.activity).toLocaleString()+' '+(item.sourcePlatform==='youtube'?t('ftc_views'):t('ftc_updates'))+'</span>':'';
       const hasDirectSource=(item.links||[]).some(link=>link.url===item.url);
       const sourceButton=hasDirectSource?'':'<a class="btn cd" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+(item.sourcePlatform==='youtube'?'YouTube':item.sourcePlatform==='github'?'GitHub':'Build Thread')+'</a>';
       return '<div class="card"><div class="num">'+item.number+cad+views+'</div><div class="nm">'+esc(item.title)+'</div>'+(tags?'<div>'+tags+'</div>':'')+'<div class="links">'+direct+sourceButton+'</div></div>';
     }
-    const tags=item.tags&&item.tags.length?'<div>'+item.tags.map(tag=>'<span class="tag-chip">'+esc(tag)+'</span>').join('')+'</div>':'';
-    return '<div class="card"><div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(item.desc)+'</div>'+tags+'<div class="loc">来源：'+esc(item.source)+'</div><div class="links"><a class="btn essay" href="'+esc(item.url)+'" target="_blank" rel="noopener">查看来源</a></div></div>';
+    const tags=item.tags&&item.tags.length?'<div>'+item.tags.map(tag=>'<span class="tag-chip">'+esc(ftcLabel(tag))+'</span>').join('')+'</div>':'';
+    return '<div class="card"><div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(item.desc)+'</div>'+tags+'<div class="loc">'+t('ftc_source_label')+' '+esc(item.source)+'</div><div class="links"><a class="btn essay" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+t('ftc_view_source')+'</a></div></div>';
   };
-  $('ftcContent').innerHTML=items.length?visible.map(renderCard).join('')+(items.length>visible.length?'<div class="info-box">当前先渲染前 '+visible.length+' 条；搜索和筛选会作用于全部 '+items.length+' 条记录。</div>':''):'<div class="info-box">这个赛季还没有符合条件的公开资料。</div>';
+  const limitNote=t('ftc_render_limit').replace('{visible}',visible.length).replace('{total}',items.length);
+  $('ftcContent').innerHTML=items.length?visible.map(renderCard).join('')+(items.length>visible.length?'<div class="info-box">'+limitNote+'</div>':''):'<div class="info-box">'+t('ftc_empty')+'</div>';
 }
 function setProgram(program){
   const ftc = program === 'ftc';
@@ -720,12 +735,12 @@ function setProgram(program){
   $('programFtc').setAttribute('aria-pressed',String(ftc));
   if(ftc){
     loadFtcAutoData();
-    document.querySelector('[data-i18n="hero_kicker"]').textContent='FTC · FIRST Tech Challenge · Open resources for the whole community';
-    document.querySelector('[data-i18n="site_title"]').textContent='FTC 资源库';
-    document.querySelector('[data-i18n="site_subtitle"]').textContent='FIRSTHub · FTC Open Resource Library';
-    document.querySelector('[data-i18n="hero_sub"]').textContent='FTC award results, public engineering portfolios, team-published resources, technical sites, and tools — organized with sources attached.';
-    document.querySelector('[data-i18n="built_by"]').textContent='A FIRSTHub preview built by FRC Team 5449 for the FTC community.';
-    const ftcStats=[['5','资料方向'],['3','已整理赛季'],['100%','来源可追溯'],['0','虚构记录']];
+    document.querySelector('[data-i18n="hero_kicker"]').textContent=t('ftc_hero_kicker');
+    document.querySelector('[data-i18n="site_title"]').textContent=t('ftc_site_title');
+    document.querySelector('[data-i18n="site_subtitle"]').textContent=t('ftc_site_subtitle');
+    document.querySelector('[data-i18n="hero_sub"]').textContent=t('ftc_hero_sub');
+    document.querySelector('[data-i18n="built_by"]').textContent=t('ftc_built_by');
+    const ftcStats=[['5',t('ftc_stat_directions')],['3',t('ftc_stat_seasons')],['100%',t('ftc_stat_traceable')],['0',t('ftc_stat_fabricated')]];
     document.querySelectorAll('.stat').forEach((node,i)=>{node.querySelector('.num').textContent=ftcStats[i][0];node.querySelector('.lbl').textContent=ftcStats[i][1];});
     history.replaceState(null,'',location.pathname+location.search+'#ftc');
   }else if(location.hash==='#ftc'){

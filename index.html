@@ -20,7 +20,7 @@
 <meta name="twitter:description" content="2021–2026 六赛季 Impact Award 材料智库 + Open Alliance 开源生态 + 名人堂队伍 + 技术资源，全社区免费开放。">
 <meta name="twitter:image" content="https://firsthub.site/og-cover.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://firsthub.site/#website","url":"https://firsthub.site/","name":"FIRSTHub · FRC Open Resource Library","alternateName":["FRC 智库网","FirstHub FRC"],"description":"A community-built archive of FRC Impact Award materials, award scripts, team-published resources, and technical resources from multiple seasons.","inLanguage":["zh-CN","en"]},{"@type":"Organization","@id":"https://firsthub.site/#organization","name":"FIRSTHub · FRC Open Resource Library","alternateName":"FRC 智库网","url":"https://firsthub.site/","image":"https://firsthub.site/og-cover.png","founder":{"@type":"Organization","name":"FRC Team 5449"},"sameAs":["https://github.com/Ming-1015/firsthub-site"]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://firsthub.site/#website","url":"https://firsthub.site/","name":"FIRSTHub · FRC Open Resource Library","alternateName":["FRC 智库网","FirstHub FRC"],"description":"A community-built archive of FRC Impact Award materials, award scripts, team-published resources, and technical resources from multiple seasons.","inLanguage":["en","zh-CN","zh-TW","es","tr"]},{"@type":"Organization","@id":"https://firsthub.site/#organization","name":"FIRSTHub · FRC Open Resource Library","alternateName":"FRC 智库网","url":"https://firsthub.site/","image":"https://firsthub.site/og-cover.png","founder":{"@type":"Organization","name":"FRC Team 5449"},"sameAs":["https://github.com/Ming-1015/firsthub-site"]}]}
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚙️%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/app.css?v=20260824-1">
@@ -54,7 +54,7 @@
 
 <div class="programbar" aria-label="FIRST program selector">
   <div class="programbar-inner">
-    <span class="program-label">Choose program · 选择项目</span>
+    <span class="program-label" data-i18n="program_choose">Choose program</span>
     <div class="program-switch" role="group" aria-label="FRC or FTC">
       <button class="program-btn active" id="programFrc" type="button" onclick="setProgram('frc')"><strong>FRC</strong><small>FIRST Robotics Competition</small></button>
       <button class="program-btn" id="programFtc" type="button" onclick="setProgram('ftc')"><strong>FTC <span class="program-beta">DEMO</span></strong><small>FIRST Tech Challenge</small></button>
@@ -63,33 +63,33 @@
 </div>
 
 <section class="ftc-demo" id="ftcDemo" aria-label="FTC resource hub demo">
-  <nav class="ftc-nav" aria-label="FTC sections"><div class="ftc-nav-inner" id="ftcNav"><button class="active" onclick="renderFtc('overview',this)">总览</button><button onclick="renderFtc('awards',this)">获奖结果</button><button onclick="renderFtc('portfolios',this)">工程作品集</button><button onclick="renderFtc('open',this)">队伍公开资料</button><button onclick="renderFtc('sites',this)">技术站</button><button onclick="renderFtc('resources',this)">技术资源</button><span class="ftc-count" id="ftcCount">精选入口</span></div></nav>
-  <div class="ftc-seasonbar" hidden><div class="ftc-seasonbar-inner"><div class="cap">赛季选择 · Select Season</div><div class="ftc-seasons" id="ftcSeasons"></div></div></div>
+  <nav class="ftc-nav" aria-label="FTC sections"><div class="ftc-nav-inner" id="ftcNav"><button class="active" data-i18n="ftc_tab_overview" onclick="renderFtc('overview',this)">总览</button><button data-i18n="ftc_tab_awards" onclick="renderFtc('awards',this)">获奖结果</button><button data-i18n="ftc_tab_portfolios" onclick="renderFtc('portfolios',this)">工程作品集</button><button data-i18n="ftc_tab_open" onclick="renderFtc('open',this)">队伍公开资料</button><button data-i18n="ftc_tab_sites" onclick="renderFtc('sites',this)">技术站</button><button data-i18n="ftc_tab_resources" onclick="renderFtc('resources',this)">技术资源</button><span class="ftc-count" id="ftcCount" data-i18n="ftc_featured">精选入口</span></div></nav>
+  <div class="ftc-seasonbar" hidden><div class="ftc-seasonbar-inner"><div class="cap" data-i18n="select_season">赛季选择</div><div class="ftc-seasons" id="ftcSeasons"></div></div></div>
   <main class="ftc-main">
     <div id="ftcOverview">
-      <div class="section-head"><h2>这里有什么</h2></div>
-      <p class="lead">按赛季浏览 FTC 官方获奖结果、公开工程作品集和队伍公开资料；不随赛季变化的技术站与工具放在独立栏目。</p>
-      <div class="info-box"><b>用法：</b>先选择栏目；获奖结果、工程作品集和队伍公开资料会显示赛季导航。队伍资料可按活跃度或队号排序，并按 CAD、代码、视频、网站等类型筛选。</div>
+      <div class="section-head"><h2 data-i18n="ftc_overview_title">这里有什么</h2></div>
+      <p class="lead" data-i18n="ftc_overview_lead">按赛季浏览 FTC 官方获奖结果、公开工程作品集和队伍公开资料；不随赛季变化的技术站与工具放在独立栏目。</p>
+      <div class="info-box"><b data-i18n="ftc_overview_usage">用法：先选择栏目；获奖结果、工程作品集和队伍公开资料会显示赛季导航。队伍资料可按活跃度或队号排序，并按 CAD、代码、视频、网站等类型筛选。</b></div>
       <div class="home-cards ftc-home-cards">
-        <div class="home-card" onclick="renderFtcFromCard('awards')"><h3>获奖结果</h3><p>按赛季与赛事整理 FIRST 官方奖项结果，保留赛事、奖项与原始页面。</p></div>
-        <div class="home-card" onclick="renderFtcFromCard('portfolios')"><h3>工程作品集</h3><p>汇总队伍主动公开的 Engineering Portfolio，并按赛季和奖项筛选。</p></div>
-        <div class="home-card" onclick="renderFtcFromCard('open')"><h3>队伍公开资料</h3><p>集中展示 Build Thread、CAD、代码、视频和队伍网站的公开直链。</p></div>
-        <div class="home-card" onclick="renderFtcFromCard('sites')"><h3>技术站</h3><p>长期维护的 FTC 教程站、队伍知识库和开放工具网站。</p></div>
-        <div class="home-card" onclick="renderFtcFromCard('resources')"><h3>技术资源</h3><p>官方文档和成熟社区工具，按编程、路径、视觉、策略等方向筛选。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('awards')"><h3 data-i18n="ftc_tab_awards">获奖结果</h3><p data-i18n="ftc_card_awards">按赛季与赛事整理 FIRST 官方奖项结果，保留赛事、奖项与原始页面。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('portfolios')"><h3 data-i18n="ftc_tab_portfolios">工程作品集</h3><p data-i18n="ftc_card_portfolios">汇总队伍主动公开的 Engineering Portfolio，并按赛季和奖项筛选。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('open')"><h3 data-i18n="ftc_tab_open">队伍公开资料</h3><p data-i18n="ftc_card_open">集中展示 Build Thread、CAD、代码、视频和队伍网站的公开直链。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('sites')"><h3 data-i18n="ftc_tab_sites">技术站</h3><p data-i18n="ftc_card_sites">长期维护的 FTC 教程站、队伍知识库和开放工具网站。</p></div>
+        <div class="home-card" onclick="renderFtcFromCard('resources')"><h3 data-i18n="ftc_tab_resources">技术资源</h3><p data-i18n="ftc_card_resources">官方文档和成熟社区工具，按编程、路径、视觉、策略等方向筛选。</p></div>
       </div>
     </div>
     <div id="ftcPanel" hidden>
       <div class="section-head"><h2 id="ftcPanelTitle"></h2><span class="cnt" id="ftcPanelTotal"></span></div>
       <p class="lead" id="ftcPanelLead"></p>
-      <div class="info-box" id="ftcPanelNote">所有条目均保留公开来源；资料标签描述可访问内容，不代表 FIRST 官方认证或排名。</div>
-      <div class="filter-bar"><input id="ftcSearch" type="search" placeholder="搜索队号、队名、赛事或资料…" oninput="renderFtcCards()"><div class="chips" id="ftcFilters"></div><span class="result-count" id="ftcResultCount"></span></div>
+      <div class="info-box" id="ftcPanelNote" data-i18n="ftc_source_note">所有条目均保留公开来源；资料标签描述可访问内容，不代表 FIRST 官方认证或排名。</div>
+      <div class="filter-bar"><input id="ftcSearch" type="search" data-i18n="ftc_search" placeholder="搜索队号、队名、赛事或资料…" oninput="renderFtcCards()"><div class="chips" id="ftcFilters"></div><span class="result-count" id="ftcResultCount"></span></div>
       <div class="grid wide" id="ftcContent"></div>
     </div>
   </main>
   <footer class="ftc-footer"><div class="inner">
-    <div><h4>数据来源</h4><ul><li><a href="https://ftc-events.firstinspires.org/" target="_blank" rel="noopener">FIRST FTC Event Web</a></li><li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">FTC Documentation</a></li><li><a href="https://www.chiefdelphi.com/c/first/ftc-open-alliance" target="_blank" rel="noopener">Chief Delphi · FTC Open Alliance</a></li></ul></div>
-    <div><h4>如何贡献 / 扩充数据</h4><ul><li>采集、清洗和筛选流程记录在 GitHub README</li><li><a href="https://github.com/Ming-1015/firsthub-site/tree/ftc-demo" target="_blank" rel="noopener">查看 FTC Demo 分支</a></li><li><a href="https://github.com/Ming-1015/firsthub-site/issues/new" target="_blank" rel="noopener">提交数据问题或补充建议</a></li></ul></div>
-    <div><h4>数据边界</h4><ul><li>只收录无需登录即可访问的公开资料</li><li>资料标签不代表 FIRST 官方认证</li><li>所有条目保留原始来源链接</li></ul></div>
+    <div><h4 data-i18n="footer_src">数据来源</h4><ul><li><a href="https://ftc-events.firstinspires.org/" target="_blank" rel="noopener">FIRST FTC Event Web</a></li><li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">FTC Documentation</a></li><li><a href="https://www.chiefdelphi.com/c/first/ftc-open-alliance" target="_blank" rel="noopener">Chief Delphi · FTC Open Alliance</a></li></ul></div>
+    <div><h4 data-i18n="footer_contrib">如何贡献 / 扩充数据</h4><ul><li data-i18n="ftc_contrib_process">采集、清洗和筛选流程记录在 GitHub README</li><li><a href="https://github.com/Ming-1015/firsthub-site/tree/ftc-demo" target="_blank" rel="noopener" data-i18n="ftc_demo_branch">查看 FTC Demo 分支</a></li><li><a href="https://github.com/Ming-1015/firsthub-site/issues/new" target="_blank" rel="noopener" data-i18n="contrib_issue">提交数据问题或补充建议</a></li></ul></div>
+    <div><h4 data-i18n="ftc_data_boundaries">数据边界</h4><ul><li data-i18n="ftc_boundary_public">只收录无需登录即可访问的公开资料</li><li data-i18n="ftc_boundary_labels">资料标签不代表 FIRST 官方认证</li><li data-i18n="ftc_boundary_sources">所有条目保留原始来源链接</li></ul></div>
   </div><div class="copy">FIRSTHub · FTC Open Resource Library · built for the FTC community</div><div class="copy" style="margin-top:6px;opacity:.65;font-size:.78rem">Built by FRC Team 5449</div></footer>
 </section>
 
@@ -262,7 +262,8 @@
 
 <script src="assets/js/data.js?v=07f3284da056" defer></script>
 <script src="assets/js/i18n.js?v=20260823-2" defer></script>
-<script src="assets/js/app.js?v=20260825-1" defer></script>
+<script src="assets/js/app.js?v=20260825-4" defer></script>
+<script src="assets/js/locales-es-tr.js?v=20260825-2" defer></script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"471714dc027b4b71abdb6f6098af33e9"}'></script>
 <!-- End Cloudflare Web Analytics -->
