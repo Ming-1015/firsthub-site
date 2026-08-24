@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T16:05:19+00:00",
+  "generatedAt": "2026-08-24T16:10:28+00:00",
   "source": "YouTube public search metadata",
   "policy": "Original URLs only; no video files are downloaded or re-hosted.",
   "items": [
@@ -75,16 +75,6 @@
     },
     {
       "season": "2021",
-      "teamNumber": 4499,
-      "teamName": "FUN Robotics Network",
-      "title": "Behind the Bumpers FRC 4499 The Highlanders Infinite Recharge 2021 First Updates Now",
-      "views": 1076,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=S-undUjVhBk",
-      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q"
-    },
-    {
-      "season": "2021",
       "teamNumber": 568,
       "teamName": "FRC 568 Nerds of the North",
       "title": "FRC Team 568 2021 Robot Reveal",
@@ -142,16 +132,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=67zpXfPI_6I",
       "channel": "https://www.youtube.com/channel/UC98Rfjv7e7PBBE0gUSCLlaA"
-    },
-    {
-      "season": "2021",
-      "teamNumber": 7166,
-      "teamName": "Red Thunder Robotics FRC 7166",
-      "title": "Red Thunder Robotics 2021 Infinite Recharge Robot Reveal",
-      "views": 486,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=Idbow6FBjIs",
-      "channel": "https://www.youtube.com/channel/UCZQ9NBldI5XRhxit3wBiNXA"
     },
     {
       "season": "2021",
@@ -325,6 +305,16 @@
     },
     {
       "season": "2021",
+      "teamNumber": 6560,
+      "teamName": "FIRST Team - Charging Champions",
+      "title": "FRC 2021 Infinite Recharge at Home Team 6560 Hyperdrive Challenge Bounce Path (9.40s)",
+      "views": 51,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=LwjsJodE7CI",
+      "channel": "https://www.youtube.com/channel/UCopXKZO1IG3zsvQKCXF4ESQ"
+    },
+    {
+      "season": "2021",
       "teamNumber": 1418,
       "teamName": "FIRST Robotics Team 1418",
       "title": "1418 FRC 2021 season, Teleop Bounce - Infinite Recharge @ Home",
@@ -367,6 +357,16 @@
       "season": "2021",
       "teamNumber": 1418,
       "teamName": "FIRST Robotics Team 1418",
+      "title": "1418 FRC 2021 season, Auto Bounce - Infinite Recharge @ Home",
+      "views": 31,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=XMiwVaKvs3Q",
+      "channel": "https://www.youtube.com/channel/UCTf_fi6donN7GbBtVE-fkcw"
+    },
+    {
+      "season": "2021",
+      "teamNumber": 1418,
+      "teamName": "FIRST Robotics Team 1418",
       "title": "1418 FRC 2021 season,  Power Port challenge - Infinite Recharge @ Home",
       "views": 21,
       "sourcePlatform": "youtube",
@@ -378,7 +378,7 @@
       "teamNumber": 1690,
       "teamName": "Orbit 1690",
       "title": "FRC team 1690 Orbit 2022 robot reveal - \"PARKER\"",
-      "views": 219640,
+      "views": 219638,
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=9s7zUlTgnDc",
       "channel": "https://www.youtube.com/channel/UCAzwO9kwoYtP-dK-hwz--iQ"
@@ -402,16 +402,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=FDlPAVBqhg8",
       "channel": "https://www.youtube.com/channel/UCrPaJ2cDBRG5anDkICpr5rg"
-    },
-    {
-      "season": "2022",
-      "teamNumber": 8,
-      "teamName": "Paly Robotics",
-      "title": "Paly Robotics FRC Team 8 - 2022 Robot Reveal: \"Alvaldi\"",
-      "views": 17589,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=5LOWOuQSsvE",
-      "channel": "https://www.youtube.com/channel/UCxDYmpiPO5we91MfFKfWzsQ"
     },
     {
       "season": "2022",
@@ -517,21 +507,21 @@
       "season": "2022",
       "teamNumber": 5712,
       "teamName": "Hemlock's Gray Matter",
-      "title": "2022 FRC Rapid React Week 1 Recap",
-      "views": 4066,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=-4mGUm0kimM",
-      "channel": "https://www.youtube.com/channel/UCny8hrlpAGUPMIS9133u-Rg"
-    },
-    {
-      "season": "2022",
-      "teamNumber": 5712,
-      "teamName": "Hemlock's Gray Matter",
       "title": "2022 FRC Rapid React Shooter and Launcher prototypes",
       "views": 3968,
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=ugyfRdDNPTQ",
       "channel": "https://www.youtube.com/channel/UCny8hrlpAGUPMIS9133u-Rg"
+    },
+    {
+      "season": "2022",
+      "teamNumber": 114,
+      "teamName": "Eaglestrike 114",
+      "title": "FRC Team 114 Eaglestrike 2022 Robot Reveal",
+      "views": 3362,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=VbgEMbmvnIY",
+      "channel": "https://www.youtube.com/channel/UCZ6anpiIBfjEPgDUaE8rjAQ"
     },
     {
       "season": "2022",
@@ -565,13 +555,13 @@
     },
     {
       "season": "2022",
-      "teamNumber": 4678,
-      "teamName": "CyberCavs Team 4678",
-      "title": "FRC Team 4678 CyberCavs 2022 Robot Reveal: \"King Louie\"",
-      "views": 2843,
+      "teamNumber": 972,
+      "teamName": "Iron Claw Robotics",
+      "title": "Robot Reveal 2022 | Iron Claw FRC Team 972",
+      "views": 2881,
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=5TKfQRUCvfU",
-      "channel": "https://www.youtube.com/channel/UC5QbGG96mPMEaUcXMIQI1CQ"
+      "source": "https://www.youtube.com/watch?v=CnkpWQSBsnw",
+      "channel": "https://www.youtube.com/channel/UCCrC2ZOLsNgEqvCuV30kJQA"
     },
     {
       "season": "2022",
@@ -675,16 +665,6 @@
     },
     {
       "season": "2022",
-      "teamNumber": 4788,
-      "teamName": "Curtin FRC 4788 Can't Control",
-      "title": "Curtin FRC - Team 4788 Can't Control - Rapid React Highlights Week 1 & 2",
-      "views": 753,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=FNLQTa69c7A",
-      "channel": "https://www.youtube.com/channel/UC98Rfjv7e7PBBE0gUSCLlaA"
-    },
-    {
-      "season": "2022",
       "teamNumber": 4290,
       "teamName": "BOW Community Robotics",
       "title": "FRC 4290 Shooter Prototype",
@@ -702,6 +682,16 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=QQm4SEfPd8k",
       "channel": "https://www.youtube.com/channel/UCXDdoudmuYHMO4NsNGgMbwQ"
+    },
+    {
+      "season": "2022",
+      "teamNumber": 3534,
+      "teamName": "House Of Cards FRC 3534",
+      "title": "2022 House of Cards Robot Reveal FRC Team 3534",
+      "views": 623,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=7eR_TESlFL4",
+      "channel": "https://www.youtube.com/channel/UCb87gw_lImq7hkQgkZoybZw"
     },
     {
       "season": "2022",
@@ -725,6 +715,16 @@
     },
     {
       "season": "2022",
+      "teamNumber": 6381,
+      "teamName": "Red Raider Robotics Team 6381",
+      "title": "Robot Reveal 2022",
+      "views": 409,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=8oJrD8FyaDU",
+      "channel": "https://www.youtube.com/channel/UCbucIKp2qs0kjEv4Q02a6Cw"
+    },
+    {
+      "season": "2022",
       "teamNumber": 3489,
       "teamName": "FRCTeam3489",
       "title": "FRC 3489 Robot Reveal 2022, Saffir",
@@ -732,6 +732,16 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=owrzuUmJiu0",
       "channel": "https://www.youtube.com/channel/UCZ946V0Rh8THLwUgtdjtgdg"
+    },
+    {
+      "season": "2022",
+      "teamNumber": 3328,
+      "teamName": "NoHo Robo",
+      "title": "NohoRobo - FRC Team 3328 // Rapid React Weeks 3 + 4 Recap",
+      "views": 303,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=Z28B3ZHXxMM",
+      "channel": "https://www.youtube.com/channel/UCK0eePw6Jj8zEg1W-vb7S1Q"
     },
     {
       "season": "2022",
@@ -752,16 +762,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=O5ZmI3dBCSA",
       "channel": "https://www.youtube.com/channel/UCK0eePw6Jj8zEg1W-vb7S1Q"
-    },
-    {
-      "season": "2022",
-      "teamNumber": 2338,
-      "teamName": "Team 2338: Gear it Forward (OFFICIAL)",
-      "title": "2022 RAPID REACT Build Season Highlights",
-      "views": 164,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=AG_tlpQOQJk",
-      "channel": "https://www.youtube.com/channel/UCTXN-QdYnnoBwhnHWKR7O6w"
     },
     {
       "season": "2022",
@@ -825,13 +825,13 @@
     },
     {
       "season": "2023",
-      "teamNumber": 5414,
-      "teamName": "Pearadox FRC 5414",
-      "title": "Pearadox FRC 5414 2023 Charged Up Robot Reveal",
-      "views": 5724,
+      "teamNumber": 2813,
+      "teamName": "FRC 2813 Gear Heads",
+      "title": "FRC 2813 - 2023 Robot Reveal",
+      "views": 14283,
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=yVGXWv3W4IA",
-      "channel": "https://www.youtube.com/channel/UCL8q64mWf2BQ7GgatRTTsuA"
+      "source": "https://www.youtube.com/watch?v=xnTFqxv5Exw",
+      "channel": "https://www.youtube.com/channel/UCl6RubttgSbeC4DmkEe6B3Q"
     },
     {
       "season": "2023",
@@ -855,13 +855,13 @@
     },
     {
       "season": "2023",
-      "teamNumber": 2338,
-      "teamName": "Team 2338: Gear it Forward (OFFICIAL)",
-      "title": "Charged Up Test 2: Two Robots Engaged on Charging Station",
-      "views": 2808,
+      "teamNumber": 6390,
+      "teamName": "FRC Team 6390 Hephaestus",
+      "title": "Team 6390 Hephaestus CHARGED UP robot reveal video!!!",
+      "views": 2703,
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=gRaE-EJSLbA",
-      "channel": "https://www.youtube.com/channel/UCTXN-QdYnnoBwhnHWKR7O6w"
+      "source": "https://www.youtube.com/watch?v=VzLffgqjD-g",
+      "channel": "https://www.youtube.com/channel/UCpQZ5XD_Cf6zy7UhRRphrHA"
     },
     {
       "season": "2023",
@@ -932,6 +932,16 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=_aA8HO4B7k4",
       "channel": "https://www.youtube.com/channel/UC98Rfjv7e7PBBE0gUSCLlaA"
+    },
+    {
+      "season": "2023",
+      "teamNumber": 2637,
+      "teamName": "Team 2637 - Phantom Catz",
+      "title": "FRC Team 2637: Charged Up Robot Reveal",
+      "views": 788,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=dZURd2qye8g",
+      "channel": "https://www.youtube.com/channel/UC0DV7W0ge4LluW8o5vxjSVw"
     },
     {
       "season": "2023",
@@ -1125,16 +1135,6 @@
     },
     {
       "season": "2023",
-      "teamNumber": 9084,
-      "teamName": "Team Octobots 9084",
-      "title": "Octobots FRC Team 9084 \"Aluminati\" 2023 Robot Reveal | Rookie Year [ORIGINAL VERSION]",
-      "views": 301,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=4QZT-R0hb8M",
-      "channel": "https://www.youtube.com/channel/UCLEjdkHdv83XqIH_OQ2WC4w"
-    },
-    {
-      "season": "2023",
       "teamNumber": 6153,
       "teamName": "Blue Crew Robotics (FRC team 6153)",
       "title": "2023 Charged Up Robot Reveal",
@@ -1202,16 +1202,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=xN1MInfWzqE",
       "channel": "https://www.youtube.com/channel/UCkAHm8wQFn12-DjkzsbIg8g"
-    },
-    {
-      "season": "2023",
-      "teamNumber": 8753,
-      "teamName": "Spectre Robotics 8753",
-      "title": "Spectre Robotics FRC 8753 Charged Up 2023 Robot Reveal",
-      "views": 202,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=DFzfSBQm6ek",
-      "channel": "https://www.youtube.com/channel/UCzrnoJRsOe1TAfkzYEWA6pQ"
     },
     {
       "season": "2023",
@@ -1295,6 +1285,16 @@
     },
     {
       "season": "2024",
+      "teamNumber": 4613,
+      "teamName": "FRC Team 4613 - Barker Redbacks",
+      "title": "Barker Redbacks FRC Team 4613 - Robot Reveal 2024",
+      "views": 53253,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=AaAfX_DwbJ0",
+      "channel": "https://www.youtube.com/channel/UCrPaJ2cDBRG5anDkICpr5rg"
+    },
+    {
+      "season": "2024",
       "teamNumber": 27,
       "teamName": "Team Rush 27",
       "title": "FRC 27 Team RUSH - Robot Reveal 2024",
@@ -1345,6 +1345,16 @@
     },
     {
       "season": "2024",
+      "teamNumber": 3683,
+      "teamName": "Team DAVE",
+      "title": "Team DAVE 2024 Robot Reveal | JAEGER | FRC 3683",
+      "views": 9938,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=YW_oEJwQxaA",
+      "channel": "https://www.youtube.com/channel/UCJ-rS90GkBmyRCwpD_1ibJQ"
+    },
+    {
+      "season": "2024",
       "teamNumber": 2481,
       "teamName": "Roboteers Team 2481",
       "title": "FRC Team 2481 Roboteers 2024 Reveal Video FIRST CRESCENDO",
@@ -1352,6 +1362,26 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=42oo4nnEsAg",
       "channel": "https://www.youtube.com/channel/UCBHAiImSZlI2x08xBUBo1sQ"
+    },
+    {
+      "season": "2024",
+      "teamNumber": 2601,
+      "teamName": "Steel Hawks Team 2601",
+      "title": "Steel Hawks - FRC 2601 Crescendo 2024: Hawk Rider",
+      "views": 4604,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=ABSAXoArzUM",
+      "channel": "https://www.youtube.com/channel/UCEWGzCi4HUPlMh-btGRb1dg"
+    },
+    {
+      "season": "2024",
+      "teamNumber": 5712,
+      "teamName": "Hemlock's Gray Matter",
+      "title": "2024 FRC Crescendo Robot Reveal: Apollo #robotreveal #frc #crescendo",
+      "views": 4480,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=cAWlZ01lED0",
+      "channel": "https://www.youtube.com/channel/UCny8hrlpAGUPMIS9133u-Rg"
     },
     {
       "season": "2024",
@@ -1372,6 +1402,16 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=2I_ZkRGXSyc",
       "channel": "https://www.youtube.com/channel/UCOFz5uZ4HI0it3TvRidou0g"
+    },
+    {
+      "season": "2024",
+      "teamNumber": 4329,
+      "teamName": "FRC 4329 Lutheran Roboteers",
+      "title": "2024 Build Season - Week 4 Clip Montage - FRC Team 4329",
+      "views": 2913,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=oUGxKR5182s",
+      "channel": "https://www.youtube.com/channel/UCFCKjgKuMQrl81J2aU54aOg"
     },
     {
       "season": "2024",
@@ -1485,12 +1525,12 @@
     },
     {
       "season": "2024",
-      "teamNumber": 836,
+      "teamNumber": 5951,
       "teamName": "FUN Robotics Network",
-      "title": "836 The RoboBees | Behind the Bumpers | FRC CRESCENDO Robot",
-      "views": 1106,
+      "title": "5951 Makers Assemble | Behind the Bumpers | FRC CRESCENDO Robot",
+      "views": 1097,
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=fB6Z80VQMf4",
+      "source": "https://www.youtube.com/watch?v=qjQ_G-nQ1Mk",
       "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q"
     },
     {
@@ -1525,16 +1565,6 @@
     },
     {
       "season": "2024",
-      "teamNumber": 9084,
-      "teamName": "Team Octobots 9084",
-      "title": "9084 Octobots Robot Reveal v2 | OCTAVE | FRC Crescendo",
-      "views": 884,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=xwhqH7M0j4o",
-      "channel": "https://www.youtube.com/channel/UCLEjdkHdv83XqIH_OQ2WC4w"
-    },
-    {
-      "season": "2024",
       "teamNumber": 698,
       "teamName": "Hamilton Microbots (FRC Team 698)",
       "title": "FRC 698 CRESCENDO 2024 Robot Reveal",
@@ -1555,6 +1585,16 @@
     },
     {
       "season": "2024",
+      "teamNumber": 9084,
+      "teamName": "Team Octobots 9084",
+      "title": "9084 Octobots Robot Reveal | FRC Crescendo | Octave",
+      "views": 739,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=tN3ibt1U1vA",
+      "channel": "https://www.youtube.com/channel/UCLEjdkHdv83XqIH_OQ2WC4w"
+    },
+    {
+      "season": "2024",
       "teamNumber": 2383,
       "teamName": "FUN Robotics Network",
       "title": "2383 Ninjineers | Behind the Bumpers |  FRC CRESCENDO Robot",
@@ -1572,6 +1612,16 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=VhnLQfxVFnU",
       "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q"
+    },
+    {
+      "season": "2024",
+      "teamNumber": 8576,
+      "teamName": "Golden Warriors Robotics",
+      "title": "\"24K\" Robot Reveal - FRC 8576 Golden Warriors Robotics Crescendo Season",
+      "views": 569,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=FeZrhK_hTXw",
+      "channel": "https://www.youtube.com/channel/UCtI8JlBvsDAryrkPpzPvgwA"
     },
     {
       "season": "2024",
@@ -1665,13 +1715,13 @@
     },
     {
       "season": "2024",
-      "teamNumber": 4500,
-      "teamName": "FRCTeam4500",
-      "title": "Team 4500 Crescendo Robot Reveal 2024",
-      "views": 322,
+      "teamNumber": 6381,
+      "teamName": "Red Raider Robotics Team 6381",
+      "title": "Under-Bumper Intake | Red Raider Robotics 6381 | FRC Crescendo 2024",
+      "views": 335,
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=jdWy-m3CJ1Y",
-      "channel": "https://www.youtube.com/channel/UCBGv62kReaFFw2cEHojJwjQ"
+      "source": "https://www.youtube.com/watch?v=wA97zvUR5c4",
+      "channel": "https://www.youtube.com/channel/UCbucIKp2qs0kjEv4Q02a6Cw"
     },
     {
       "season": "2024",
@@ -1722,6 +1772,16 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=KeYfE2gD4Cw",
       "channel": "https://www.youtube.com/channel/UCFCKjgKuMQrl81J2aU54aOg"
+    },
+    {
+      "season": "2024",
+      "teamNumber": 4738,
+      "teamName": "FRC4738 Patribots",
+      "title": "2024 Crescendo Robot Cart Reveal | Team 4738 | Patribots",
+      "views": 220,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=4Irlq5lHIwQ",
+      "channel": "https://www.youtube.com/channel/UC6wWcm6P-Sof178EtFZyIFw"
     },
     {
       "season": "2024",
@@ -1795,16 +1855,6 @@
     },
     {
       "season": "2024",
-      "teamNumber": 7694,
-      "teamName": "FRC 7694: The Iron Lions",
-      "title": "7694 Iron Lions CRESCENDO Robot Reveal - Terry",
-      "views": 122,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=Vm8ilkSS1zk",
-      "channel": "https://www.youtube.com/channel/UCqxEg_PQPiUEBALswJTK5AA"
-    },
-    {
-      "season": "2024",
       "teamNumber": 6808,
       "teamName": "William Tennent Robotics",
       "title": "William Tennent Robotics FRC 6808 Crescendo Robot Reveal",
@@ -1852,16 +1902,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=hNEQfqrXG-Q",
       "channel": "https://www.youtube.com/channel/UCnbubU6patsQz5tTEISYbbw"
-    },
-    {
-      "season": "2024",
-      "teamNumber": 2722,
-      "teamName": "Charge Robotics",
-      "title": "Crescendo Preseason Wrap Up - FRC2722",
-      "views": 24,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=OTSJxBW2oKY",
-      "channel": "https://www.youtube.com/channel/UCBtEHn4h6QwpKR7jClGYbZw"
     },
     {
       "season": "2024",
@@ -1952,6 +1992,16 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=AK34whcAeC0",
       "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q"
+    },
+    {
+      "season": "2025",
+      "teamNumber": 4270,
+      "teamName": "Team 4270: Crusaders",
+      "title": "FRC Team 4270 - Reefscape Reveal",
+      "views": 10829,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=EMCs8j0pego",
+      "channel": "https://www.youtube.com/channel/UCUuLXlLYvZ0fe9ID-NE0_cg"
     },
     {
       "season": "2025",
@@ -2125,13 +2175,13 @@
     },
     {
       "season": "2025",
-      "teamNumber": 4322,
-      "teamName": "FUN Robotics Network",
-      "title": "4322 Clockwork | Robot Demo Upgrades | Vision Assisted Alignment | FRC 2025 REEFSCAPE Open Alliance",
-      "views": 1323,
+      "teamNumber": 3045,
+      "teamName": "FRC Team 3045",
+      "title": "2025 FRC Team 3045 Robot Reveal",
+      "views": 1236,
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=tHILVuGh4DM",
-      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q"
+      "source": "https://www.youtube.com/watch?v=bgmo8PwR-7I",
+      "channel": "https://www.youtube.com/channel/UCXoSN7XBqXVklV8gzLUycfQ"
     },
     {
       "season": "2025",
@@ -2142,16 +2192,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=hf4dQe3qwOU",
       "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q"
-    },
-    {
-      "season": "2025",
-      "teamNumber": 8725,
-      "teamName": "FRC 8725 Misty Panther",
-      "title": "FRC Team 8725 | Robot Reveal 2025 - Pontus",
-      "views": 1064,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=_xsDNelychY",
-      "channel": "https://www.youtube.com/channel/UCDnqDUfKrUdcqkpwK34f61w"
     },
     {
       "season": "2025",
@@ -2172,6 +2212,26 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=q_Gylphe3JQ",
       "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q"
+    },
+    {
+      "season": "2025",
+      "teamNumber": 4738,
+      "teamName": "FRC4738 Patribots",
+      "title": "2025 Reefscape Robot Reveal | Team 4738 | Patribots | Hugo the Hippo",
+      "views": 718,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=DhkkNx_YEhk",
+      "channel": "https://www.youtube.com/channel/UC6wWcm6P-Sof178EtFZyIFw"
+    },
+    {
+      "season": "2025",
+      "teamNumber": 708,
+      "teamName": "FRC Team 708",
+      "title": "2025 Build Season Week 1 | Team 708",
+      "views": 472,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=Erthh_ydYSM",
+      "channel": "https://www.youtube.com/channel/UCje2Xw816JZL6DUYJIxng-A"
     },
     {
       "season": "2025",
@@ -2212,16 +2272,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=xG7_rnzi3gA",
       "channel": "https://www.youtube.com/channel/UCkAHm8wQFn12-DjkzsbIg8g"
-    },
-    {
-      "season": "2025",
-      "teamNumber": 4308,
-      "teamName": "Team 4308: Absolute Robotics",
-      "title": "FRC 4308 2025 Robot Reveal",
-      "views": 277,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=nIxVWvzXnkc",
-      "channel": "https://www.youtube.com/channel/UCFOy9P3ZDVzclLQF3w-mtsw"
     },
     {
       "season": "2025",
@@ -2275,6 +2325,16 @@
     },
     {
       "season": "2025",
+      "teamNumber": 1825,
+      "teamName": "Metro Homeschool Robotics",
+      "title": "FRC 1825 Reefscape Robot Reveal - Metro Homeschool Robotics",
+      "views": 234,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=URxSy6WyEzo",
+      "channel": "https://www.youtube.com/channel/UC4t9p19jvRXmUbOzlrCgJ0g"
+    },
+    {
+      "season": "2025",
       "teamNumber": 670,
       "teamName": "Team 670",
       "title": "TEAM 670 REEFSCAPE ROBOT REVEAL 2025",
@@ -2325,16 +2385,6 @@
     },
     {
       "season": "2025",
-      "teamNumber": 9505,
-      "teamName": "THE VYCERIONS - TEAM 9505",
-      "title": "Reefscape 2025: Week 1 before Central Valley Regional | Team 9505",
-      "views": 184,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=KXyp-CV1HKs",
-      "channel": "https://www.youtube.com/channel/UCxuR7sy5kgY5PccNO3HUy7g"
-    },
-    {
-      "season": "2025",
       "teamNumber": 1153,
       "teamName": "FRC Team 1153, Walpole Timberwolves",
       "title": "FRC Team 1153 Palm Of Your Hand 2025 Build Season Rewind",
@@ -2355,26 +2405,6 @@
     },
     {
       "season": "2025",
-      "teamNumber": 364,
-      "teamName": "FRC 364 - Team Fusion",
-      "title": "2025 Robot Reveal: REEFSCAPE",
-      "views": 137,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=JnWVdVluGp8",
-      "channel": "https://www.youtube.com/channel/UCuB1fW4SuC3y5Hj9uaTHJcQ"
-    },
-    {
-      "season": "2025",
-      "teamNumber": 648,
-      "teamName": "QC Elite Flaming Squirrels - FRC 648",
-      "title": "FRC 648 Robot Reveal 2025 - Reefscape",
-      "views": 77,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=5Z2fmNamsL4",
-      "channel": "https://www.youtube.com/channel/UCord-hRhkiLMdK6PlcyS3vA"
-    },
-    {
-      "season": "2025",
       "teamNumber": 5137,
       "teamName": "Iron Kodiaks",
       "title": "FRC REEFSCAPE Kickoff - Team 5137",
@@ -2388,7 +2418,7 @@
       "teamNumber": 1690,
       "teamName": "Orbit 1690",
       "title": "FRC team 1690 Orbit 2026 robot reveal - \"KEPLER\"",
-      "views": 93621,
+      "views": 93620,
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=yW90nd563wI",
       "channel": "https://www.youtube.com/channel/UCAzwO9kwoYtP-dK-hwz--iQ"
@@ -2398,7 +2428,7 @@
       "teamNumber": 1678,
       "teamName": "FUN Robotics Network",
       "title": "1678 Citrus Circuits | Behind the Bumpers | FRC REBUILT",
-      "views": 32729,
+      "views": 32730,
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=wsAJGi3yxSk",
       "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q"
@@ -2412,16 +2442,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=uy4nd5wp0PU",
       "channel": "https://www.youtube.com/channel/UC0r8ru0pYo3eYcx7vYY3I3A"
-    },
-    {
-      "season": "2026",
-      "teamNumber": 3683,
-      "teamName": "Team DAVE",
-      "title": "Team DAVE 2026 Robot Reveal Teaser | FRC 3683",
-      "views": 16739,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=o1hS_pyysKo",
-      "channel": "https://www.youtube.com/channel/UCJ-rS90GkBmyRCwpD_1ibJQ"
     },
     {
       "season": "2026",
@@ -2535,6 +2555,16 @@
     },
     {
       "season": "2026",
+      "teamNumber": 3128,
+      "teamName": "FRC Team 3128 The Aluminum Narwhals",
+      "title": "FRC Team 3128 - 2026 Robot Reveal: GOJIRA",
+      "views": 2522,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=N6NFpEipD3U",
+      "channel": "https://www.youtube.com/channel/UCUbL54KhJninb7RPi_XHq7Q"
+    },
+    {
+      "season": "2026",
       "teamNumber": 195,
       "teamName": "FIRST Team 195: The CyberKnights",
       "title": "2026 FRC Robot Teaser from the CyberKnights - Big Daddy",
@@ -2605,16 +2635,6 @@
     },
     {
       "season": "2026",
-      "teamNumber": 9175,
-      "teamName": "BrainMachine FRC 9175",
-      "title": "FRC Team 9175 ROBOT REVEAL 2026 \"ATLAS\"",
-      "views": 1192,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=hP5uYyLFIpg",
-      "channel": "https://www.youtube.com/channel/UC13U2QCiBoJwR0Dypb7F3XQ"
-    },
-    {
-      "season": "2026",
       "teamNumber": 9418,
       "teamName": "FRC 9418 - Pastabots (TWHS Robotics)",
       "title": "2026 Robot Reveal... STROMBOLI",
@@ -2652,6 +2672,16 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=MITI-8H7g54",
       "channel": "https://www.youtube.com/channel/UCkAHm8wQFn12-DjkzsbIg8g"
+    },
+    {
+      "season": "2026",
+      "teamNumber": 5549,
+      "teamName": "Gryphon Robotics - FRC 5549",
+      "title": "FRC 5549 Gryphon Robotics 2026 Rebuilt Robot Reveal | SOLARIS",
+      "views": 283,
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=-4nRRHed6Dk",
+      "channel": "https://www.youtube.com/channel/UC5XEPfs11Xf4ZjbVung9oVQ"
     },
     {
       "season": "2026",
@@ -2725,16 +2755,6 @@
     },
     {
       "season": "2026",
-      "teamNumber": 6528,
-      "teamName": "FRC 6528 Terror Bytes",
-      "title": "Building More Than Robots: 2026 Terror Bytes 6528 Rebuilt Impact Award Submission",
-      "views": 86,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=LrTDd89VOvk",
-      "channel": "https://www.youtube.com/channel/UCAcL6KLKUaV-FhO41MDUfmQ"
-    },
-    {
-      "season": "2026",
       "teamNumber": 2537,
       "teamName": "Space RAIDers",
       "title": "Team 2537 REBUILT 2026 | Weeks 5-6 Summary",
@@ -2762,16 +2782,6 @@
       "sourcePlatform": "youtube",
       "source": "https://www.youtube.com/watch?v=VYg4iwSLSi4",
       "channel": "https://www.youtube.com/channel/UCsbofqUr3BmaE4JjKequzUA"
-    },
-    {
-      "season": "2026",
-      "teamNumber": 339,
-      "teamName": "FRC Team 339 Kilroy",
-      "title": "Rebuilt: Week 2+ Recap - Keeping up with Kilroy!",
-      "views": 56,
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=bkjWEPsQnLU",
-      "channel": "https://www.youtube.com/channel/UCCDglvLlLa5RXEN8vJfNwRA"
     },
     {
       "season": "2026",
@@ -2807,13 +2817,13 @@
       "season": "2022",
       "query": "FRC RAPID REACT robot reveal",
       "results": 50,
-      "accepted": 24
+      "accepted": 26
     },
     {
       "season": "2022",
       "query": "FRC RAPID REACT robot walkthrough",
       "results": 50,
-      "accepted": 12
+      "accepted": 11
     },
     {
       "season": "2022",
@@ -2831,31 +2841,31 @@
       "season": "2023",
       "query": "FRC CHARGED UP robot walkthrough",
       "results": 50,
-      "accepted": 8
+      "accepted": 6
     },
     {
       "season": "2023",
       "query": "FRC CHARGED UP team build season",
       "results": 50,
-      "accepted": 22
+      "accepted": 23
     },
     {
       "season": "2024",
       "query": "FRC CRESCENDO robot reveal",
       "results": 50,
-      "accepted": 25
+      "accepted": 28
     },
     {
       "season": "2024",
       "query": "FRC CRESCENDO robot walkthrough",
       "results": 50,
-      "accepted": 21
+      "accepted": 22
     },
     {
       "season": "2024",
       "query": "FRC CRESCENDO team build season",
       "results": 50,
-      "accepted": 17
+      "accepted": 19
     },
     {
       "season": "2025",
@@ -2867,13 +2877,13 @@
       "season": "2025",
       "query": "FRC REEFSCAPE robot walkthrough",
       "results": 50,
-      "accepted": 9
+      "accepted": 7
     },
     {
       "season": "2025",
       "query": "FRC REEFSCAPE team build season",
       "results": 50,
-      "accepted": 17
+      "accepted": 18
     },
     {
       "season": "2026",
@@ -2891,7 +2901,7 @@
       "season": "2026",
       "query": "FRC REBUILT team build season",
       "results": 50,
-      "accepted": 12
+      "accepted": 10
     }
   ],
   "teamValidation": {
@@ -2899,8 +2909,8 @@
     "rejectedMissingTeamNumbers": []
   },
   "merge": {
-    "addedVideos": 268,
-    "addedTeamCards": 123,
-    "dataVersion": "a4d6cea905c6"
+    "addedVideos": 269,
+    "addedTeamCards": 120,
+    "dataVersion": "07f3284da056"
   }
 }
