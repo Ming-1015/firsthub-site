@@ -211,10 +211,32 @@ def collect_openvault() -> tuple[list[dict], dict]:
     return records, {"source": url, "status": "ok", "records": len(records)}
 
 
+def infer_ftc_season(title: str, fallback: str) -> str:
+    """Map a public thread title to the FTC season start year."""
+    lowered = title.lower().replace("–", "-")
+    if "centerstage" in lowered or re.search(r"2023\s*[-/]\s*24", lowered):
+        return "2023"
+    if "into the deep" in lowered or re.search(r"2024\s*[-/]\s*25", lowered):
+        return "2024"
+    if "decode" in lowered or re.search(r"2025\s*[-/]\s*26", lowered) or "2026" in lowered:
+        return "2025"
+    # Calendar-year labels on build threads normally name the season ending in
+    # that year ("2025 build thread" = the 2024-25 INTO THE DEEP season).
+    single_year = re.search(r"\b(2024|2025)\b", lowered)
+    if single_year:
+        return str(int(single_year.group(1)) - 1)
+    return fallback
+
+
 def collect_open_alliance(pages: int = 3) -> tuple[list[dict], list[dict]]:
     records, audit, seen = [], [], set()
-    query = "#ftc-open-alliance after:2025-01-01"
-    for page_number in range(1, pages + 1):
+    queries = [
+        ("2023", "#ftc-open-alliance after:2023-01-01 before:2024-09-01"),
+        ("2024", "#ftc-open-alliance after:2024-01-01 before:2025-09-01"),
+        ("2025", "#ftc-open-alliance after:2025-01-01"),
+    ]
+    for fallback_season, query in queries:
+      for page_number in range(1, pages + 1):
         url = "https://www.chiefdelphi.com/search.json?" + urllib.parse.urlencode({"q": query, "page": page_number})
         try:
             payload = json.loads(fetch(url))
@@ -227,7 +249,7 @@ def collect_open_alliance(pages: int = 3) -> tuple[list[dict], list[dict]]:
                 seen.add(topic["id"])
                 number = re.search(r"(?:FTC|Team)?\s*#?(\d{3,5})", title, re.I)
                 records.append({
-                    "season": "2025",
+                    "season": infer_ftc_season(title, fallback_season),
                     "teamNumber": int(number.group(1)) if number else None,
                     "teamName": "",
                     "title": title,
