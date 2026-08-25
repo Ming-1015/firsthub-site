@@ -93,7 +93,15 @@ function setLang(l){
   LANG=l; localStorage.setItem('frc_lang',l);
   applyI18n(); renderLangSelector();
   renderStats(); renderImpact(); fillAwardScriptFilters(); renderAwardScripts(); renderOpen(); renderHall(); renderTech(); renderTsChips(); renderTsite(); renderSeasonGuide(); renderChampBox();
-  if(document.body.classList.contains('ftc-mode'))setProgram('ftc');
+  if(document.body.classList.contains('ftc-mode')){
+    setProgram('ftc');
+    if(ftcCategory!=='overview'){
+      $('ftcPanelTitle').textContent=t(FTC_PANEL_COPY[ftcCategory][0]);
+      $('ftcPanelLead').textContent=t(FTC_PANEL_COPY[ftcCategory][1]);
+      $('ftcPanelNote').textContent=t(ftcCategory==='style'?'sg_resource_note':'ftc_source_note');
+      renderFtcCards();
+    }
+  }
 }
 
 
@@ -608,6 +616,10 @@ function renderSeasonGuide(){
 function setSeasonGuide(y){sgSeason=y;renderSeasonGuide();}
 
 /* ---- 初始化 ---- */
+Object.assign(I18N.en,{ftc_tab_style:"Season Style Guide",ftc_card_style:"Official FIRST brand guidelines, logos, and social media assets organized by season."});
+Object.assign(I18N['zh-CN'],{ftc_tab_style:"赛季风格指南",ftc_card_style:"按赛季整理 FIRST 官方品牌指南、Logo 与社交媒体素材。"});
+Object.assign(I18N['zh-TW'],{ftc_tab_style:"賽季風格指南",ftc_card_style:"依賽季整理 FIRST 官方品牌指南、Logo 與社群媒體素材。"});
+
 const FTC_DEMO_DATA={
   awards:[
     {season:'2025',type:'official',meta:'OFFICIAL · 2025–2026',title:'FTC Season Awards',desc:'按日期汇总本赛季全部官方赛事奖项，可继续按奖项类别筛选。',source:'FIRST · FTC Events',url:'https://ftc-events.firstinspires.org/2025/awards'},
@@ -641,6 +653,23 @@ const FTC_DEMO_DATA={
   ]
 };
 const FTC_SEASONS={2023:'CENTERSTAGE',2024:'INTO THE DEEP',2025:'DECODE'};
+const FTC_STYLE={
+  2023:[
+    {title:'CENTERSTAGE Style Guide',kind:'pdf',url:'https://info.firstinspires.org/hubfs/2024%20Season/Season%20Assets/FTC_CENTERSTAGE%20StyleGuide_v3_June.pdf'},
+    {title:'CENTERSTAGE Game & Season Materials',kind:'web',url:'https://ftc-resources.firstinspires.org/ftc/archive/2024/game'},
+    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'}
+  ],
+  2024:[
+    {title:'FIRST DIVE Social Media Toolkit',kind:'pdf',url:'https://info.firstinspires.org/hubfs/2025%20Season/Season%20Assets/FIRST_DIVE_Social-media-toolkit.pdf'},
+    {title:'INTO THE DEEP Game & Season Materials',kind:'web',url:'https://ftc-resources.firstinspires.org/ftc/archive/2025/game'},
+    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'}
+  ],
+  2025:[
+    {title:'DECODE Social Media Toolkit',kind:'pdf',url:'https://info.firstinspires.org/hubfs/2026%20Season/Season%20Assets/age_ftc_social_media_toolkit.pdf'},
+    {title:'DECODE Game & Season Materials',kind:'web',url:'https://ftc-resources.firstinspires.org/ftc/archive/2026/game'},
+    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'}
+  ]
+};
 const FTC_LABELS={
   en:{alliance:'Alliance',connect:'Connect Award',control:'Control Award',design:'Design Award',innovate:'Innovate Award',inspire:'Inspire Award',judges:"Judges’ Choice Award",motivate:'Motivate Award',other:'Other',think:'Think Award',Nationals:'National',"Not specifies":'Not specified',"Premier Event":'Premier Event',Regional:'Regional',Regionals:'Regionals',"Team-published":'Team-published',Worlds:'World Championship',"build-thread":'Build Thread',cad:'CAD',code:'Code',portfolio:'Portfolio',video:'Video',website:'Website',awards:'Awards',learning:'Learning',mechanical:'Mechanical',motion:'Motion',programming:'Programming',strategy:'Strategy',vision:'Vision',community:'Community',official:'Official'},
   'zh-CN':{alliance:'联盟',connect:'Connect Award',control:'Control Award',design:'Design Award',innovate:'Innovate Award',inspire:'Inspire Award',judges:'评委选择奖',motivate:'Motivate Award',other:'其他',think:'Think Award',Nationals:'全国赛',"Not specifies":'未注明',"Premier Event":'顶级赛事',Regional:'区域赛',Regionals:'区域赛',"Team-published":'队伍公开',Worlds:'世界锦标赛',"build-thread":'研发记录',cad:'CAD',code:'代码',portfolio:'作品集',video:'视频',website:'网站',awards:'奖项',learning:'学习',mechanical:'机械',motion:'运动控制',programming:'编程',strategy:'策略',vision:'视觉',community:'社区',official:'官方'},
@@ -649,7 +678,7 @@ const FTC_LABELS={
   tr:{alliance:'İttifak',connect:'Connect Ödülü',control:'Control Ödülü',design:'Design Ödülü',innovate:'Innovate Ödülü',inspire:'Inspire Ödülü',judges:'Jüri Özel Ödülü',motivate:'Motivate Ödülü',other:'Diğer',think:'Think Ödülü',Nationals:'Ulusal Şampiyona',"Not specifies":'Belirtilmemiş',"Premier Event":'Premier Etkinlik',Regional:'Bölgesel',Regionals:'Bölgesel Etkinlikler',"Team-published":'Takım tarafından yayımlanan',Worlds:'Dünya Şampiyonası',"build-thread":'Build Thread',cad:'CAD',code:'Kod',portfolio:'Portfolyo',video:'Video',website:'Web sitesi',awards:'Ödüller',learning:'Öğrenme',mechanical:'Mekanik',motion:'Hareket',programming:'Programlama',strategy:'Strateji',vision:'Görüntü işleme',community:'Topluluk',official:'Resmî'}
 };
 function ftcLabel(value){return (FTC_LABELS[LANG]&&FTC_LABELS[LANG][value])||FTC_LABELS.en[value]||value;}
-const FTC_PANEL_COPY={awards:['ftc_tab_awards','ftc_card_awards'],portfolios:['ftc_tab_portfolios','ftc_card_portfolios'],open:['ftc_tab_open','ftc_card_open'],sites:['ftc_tab_sites','ftc_card_sites'],resources:['ftc_tab_resources','ftc_card_resources']};
+const FTC_PANEL_COPY={awards:['ftc_tab_awards','ftc_card_awards'],portfolios:['ftc_tab_portfolios','ftc_card_portfolios'],open:['ftc_tab_open','ftc_card_open'],sites:['ftc_tab_sites','ftc_card_sites'],resources:['ftc_tab_resources','ftc_card_resources'],style:['ftc_tab_style','ftc_card_style']};
 let ftcSeason='2025',ftcCategory='overview',ftcFilter='all',ftcDetailFilter='all',ftcSort='default';
 let FTC_AUTO_DATA=null,ftcDataLoading=false;
 async function loadFtcAutoData(){
@@ -678,6 +707,9 @@ function renderFtc(category,button){
     overview.hidden=false;panel.hidden=true;$('ftcCount').textContent=t('ftc_featured');return;
   }
   overview.hidden=true;panel.hidden=false;$('ftcSearch').value='';
+  $('ftcPanelNote').dataset.i18n=category==='style'?'sg_resource_note':'ftc_source_note';
+  $('ftcPanelNote').textContent=t($('ftcPanelNote').dataset.i18n);
+  $('ftcSearch').closest('.filter-bar').hidden=category==='style';
   $('ftcPanelTitle').textContent=t(FTC_PANEL_COPY[category][0]);$('ftcPanelLead').textContent=t(FTC_PANEL_COPY[category][1]);
   renderFtcCards();
 }
@@ -695,6 +727,16 @@ function ftcAutoItems(){
   return [];
 }
 function renderFtcCards(){
+  if(ftcCategory==='style'){
+    const items=FTC_STYLE[ftcSeason]||[];
+    $('ftcPanelTotal').textContent=items.length+t('sg_count2');
+    $('ftcCount').textContent=items.length+t('sg_count2');
+    $('ftcResultCount').textContent='';
+    $('ftcFilters').innerHTML='';
+    $('ftcContent').innerHTML=items.map(item=>'<div class="card"><div class="num"><span class="badge gray">'+item.kind.toUpperCase()+'</span></div><div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(t('sg_resource_note'))+'</div><div class="links"><a class="btn '+(item.kind==='web'?'site':'essay')+'" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+(item.kind==='web'?t('sg_open'):t('sg_pdf'))+'</a></div></div>').join('');
+    return;
+  }
+  $('ftcSearch').closest('.filter-bar').hidden=false;
   const sourceItems=ftcAutoItems()||FTC_DEMO_DATA[ftcCategory]||[];
   const all=LANG!=='zh-CN'?sourceItems.map(item=>(/[\u3400-\u9fff]/.test(item.desc||'')?{...item,desc:t('ftc_resource_note')}:item)):sourceItems;
   const q=($('ftcSearch').value||'').trim().toLowerCase();
@@ -741,7 +783,7 @@ function setProgram(program){
     document.querySelector('[data-i18n="site_subtitle"]').textContent=t('ftc_site_subtitle');
     document.querySelector('[data-i18n="hero_sub"]').textContent=t('ftc_hero_sub');
     document.querySelector('[data-i18n="built_by"]').textContent=t('ftc_built_by');
-    const ftcStats=[['5',t('ftc_stat_directions')],['3',t('ftc_stat_seasons')],['100%',t('ftc_stat_traceable')],['0',t('ftc_stat_fabricated')]];
+    const ftcStats=[['6',t('ftc_stat_directions')],['3',t('ftc_stat_seasons')],['100%',t('ftc_stat_traceable')],['0',t('ftc_stat_fabricated')]];
     document.querySelectorAll('.stat').forEach((node,i)=>{node.querySelector('.num').textContent=ftcStats[i][0];node.querySelector('.lbl').textContent=ftcStats[i][1];});
     history.replaceState(null,'',location.pathname+location.search+'#ftc');
   }else if(location.hash==='#ftc'){
