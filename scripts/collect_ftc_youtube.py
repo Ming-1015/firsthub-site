@@ -29,6 +29,8 @@ except ImportError as exc:  # pragma: no cover - dependency guidance
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "data" / "ftc-youtube.json"
+FUN_ROBOTICS_CHANNEL = "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q/videos"
+FUN_ROBOTICS_CHANNEL_ID = "UCuJUknE5JjilAfNnmbvr22Q"
 SEARCHES = {
     "2023": [
         "FTC CENTERSTAGE robot reveal",
@@ -122,6 +124,71 @@ def search(query: str, limit: int) -> list[dict]:
     return [entry for entry in result.get("entries", []) if entry]
 
 
+def collect_fun_robotics(limit: int) -> tuple[list[dict], dict]:
+    """Collect team-specific Behind the Bot videos from FUN Robotics.
+
+    FUN Robotics publishes videos about many independent FTC teams. A video is
+    accepted only when its title starts with a team number, contains the series
+    name, and names one of the supported FTC games. The team name comes from
+    the title instead of incorrectly treating FUN Robotics as the team.
+    """
+    options = {
+        "quiet": True,
+        "no_warnings": True,
+        "extract_flat": True,
+        "skip_download": True,
+        "playlistend": limit,
+    }
+    with yt_dlp.YoutubeDL(options) as ydl:
+        result = ydl.extract_info(FUN_ROBOTICS_CHANNEL, download=False) or {}
+    records = []
+    rejected = {"not-behind-the-bot": 0, "missing-team": 0, "unknown-season": 0}
+    title_pattern = re.compile(r"^\s*(\d{3,5})\s+(.+?)\s*\|\s*Behind the Bot\b", re.I)
+    for entry in result.get("entries", []) or []:
+        title = entry.get("title") or ""
+        if "behind the bot" not in title.lower():
+            rejected["not-behind-the-bot"] += 1
+            continue
+        match = title_pattern.search(title)
+        if not match:
+            rejected["missing-team"] += 1
+            continue
+        lowered = title.lower()
+        season = next(
+            (year for year, markers in SEASON_MARKERS.items() if any(marker in lowered for marker in markers)),
+            None,
+        )
+        if not season:
+            rejected["unknown-season"] += 1
+            continue
+        video_id = entry.get("id")
+        if not video_id:
+            continue
+        team_number = int(match.group(1))
+        team_name = match.group(2).strip(" -–—|🚀")
+        url = f"https://www.youtube.com/watch?v={video_id}"
+        records.append({
+            "season": season,
+            "teamNumber": team_number,
+            "teamName": team_name or f"FTC Team {team_number}",
+            "title": title,
+            "views": int(entry.get("view_count") or 0),
+            "posts": 0,
+            "sourceType": "team",
+            "sourcePlatform": "youtube",
+            "source": url,
+            "channel": f"https://www.youtube.com/channel/{FUN_ROBOTICS_CHANNEL_ID}",
+            "publisher": "FUN Robotics Network",
+            "links": [{"type": "video", "url": url}],
+        })
+    return records, {
+        "source": FUN_ROBOTICS_CHANNEL,
+        "scanned": len(result.get("entries", []) or []),
+        "accepted": len(records),
+        "rejected": rejected,
+    }
+
+
 def validate_ftc_team(number: int) -> tuple[int, bool | None]:
     """Return False only for an authoritative missing-team response.
 
@@ -144,6 +211,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--limit-per-query", type=int, default=35)
+    parser.add_argument("--fun-channel-limit", type=int, default=1500)
     parser.add_argument("--skip-team-validation", action="store_true")
     args = parser.parse_args()
 
@@ -188,6 +256,12 @@ def main() -> None:
                     collected[video_id] = item
                 accepted += 1
             audit.append({"season": season, "query": query, "results": len(entries), "accepted": accepted})
+
+    fun_items, fun_audit = collect_fun_robotics(args.fun_channel_limit)
+    for item in fun_items:
+        video_id = item["source"].rsplit("=", 1)[-1]
+        collected[video_id] = item
+    audit.append({"channel": "FUN Robotics Network", **fun_audit})
 
     validation: dict[int, bool | None] = {}
     if not args.skip_team_validation:

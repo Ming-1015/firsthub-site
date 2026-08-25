@@ -44,7 +44,9 @@ The important files are:
   threads, and directory links without bypassing authentication.
 - `scripts/collect_ftc_youtube.py`: searches public YouTube metadata for
   season-specific FTC team videos, extracts explicit team numbers, and stores
-  original links without downloading or re-hosting video files.
+  original links without downloading or re-hosting video files. It also scans
+  the public FUN Robotics Network catalogue for team-specific `Behind the Bot`
+  episodes and extracts the featured team number and name from each title.
 - `scripts/collect_frc_youtube.py`: applies the same public-video, team-number,
   official-team-page, season, and de-duplication rules to FRC, then merges the
   verified links into each season's Team-Published Resources cards.
