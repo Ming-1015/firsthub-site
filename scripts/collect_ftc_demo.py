@@ -144,6 +144,26 @@ def collect_event_names(years: list[int]) -> tuple[dict[tuple[str, str], str], l
     return names, audit
 
 
+def infer_portfolio_season(*values: str) -> tuple[str, str]:
+    """Return canonical FTC season metadata, preferring the game name."""
+    text = " ".join(value or "" for value in values).lower().replace("_", " ")
+    games = (
+        ("decode", "2025", "2025 Decode"),
+        ("into the deep", "2024", "2024 Into The Deep"),
+        ("centerstage", "2023", "2023 Centerstage"),
+        ("powerplay", "2022", "2022 PowerPlay"),
+        ("power play", "2022", "2022 PowerPlay"),
+        ("freight frenzy", "2021", "2021 Freight Frenzy"),
+        ("ultimate goal", "2020", "2020 Ultimate Goal"),
+        ("skystone", "2019", "2019 Skystone"),
+    )
+    for game, year, label in games:
+        if game in text:
+            return year, label
+    year = re.search(r"(20\d{2})", text)
+    return (year.group(1), values[0]) if year else ("", values[0] if values else "")
+
+
 def collect_portfolio_lab() -> tuple[list[dict], dict]:
     url = "https://www.ftcportfoliolab.org/portfolio"
     page = fetch(url)
@@ -157,13 +177,13 @@ def collect_portfolio_lab() -> tuple[list[dict], dict]:
     )
     records = []
     for match in pattern.finditer(page):
-        season_match = re.search(r"(20\d{2})", match.group("season"))
+        season_year, season_label = infer_portfolio_season(match.group("season"), match.group("pdf"))
         records.append({
             "id": "portfoliolab-" + match.group("id"),
-            "season": season_match.group(1) if season_match else "",
+            "season": season_year,
             "teamNumber": int(match.group("number")),
             "teamName": bytes(match.group("name"), "utf-8").decode("unicode_escape"),
-            "seasonLabel": match.group("season"),
+            "seasonLabel": season_label,
             "level": match.group("level"),
             "award": match.group("award"),
             "rating": match.group("stars"),
@@ -191,13 +211,15 @@ def collect_openvault() -> tuple[list[dict], dict]:
         team = re.search(r"<strong>By:\s*(.*?)</strong>", block, re.S)
         if not (number and pdf):
             continue
-        year = re.search(r"(20\d{2})", season.group(1) if season else "")
+        season_year, season_label = infer_portfolio_season(
+            clean(season.group(1)) if season else "", title, html.unescape(pdf.group(1))
+        )
         records.append({
             "id": f"openvault-{number.group(1)}-{index}",
-            "season": year.group(1) if year else "",
+            "season": season_year,
             "teamNumber": int(number.group(1)),
             "teamName": clean(team.group(1)).replace(f"#{number.group(1)}", "").strip() if team else "",
-            "seasonLabel": clean(season.group(1)) if season else "",
+            "seasonLabel": season_label,
             "level": "",
             "award": clean(award.group(1)) if award else "",
             "rating": "",

@@ -123,6 +123,26 @@ def clean_mojibake(value: str) -> str:
         return value
 
 
+def normalize_portfolio_season(item: dict) -> None:
+    """Correct cached community metadata using the unique FTC game name."""
+    text = " ".join(str(item.get(key, "")) for key in ("seasonLabel", "title", "pdf")).lower().replace("_", " ")
+    games = (
+        ("decode", "2025", "2025 Decode"),
+        ("into the deep", "2024", "2024 Into The Deep"),
+        ("centerstage", "2023", "2023 Centerstage"),
+        ("powerplay", "2022", "2022 PowerPlay"),
+        ("power play", "2022", "2022 PowerPlay"),
+        ("freight frenzy", "2021", "2021 Freight Frenzy"),
+        ("ultimate goal", "2020", "2020 Ultimate Goal"),
+        ("skystone", "2019", "2019 Skystone"),
+    )
+    for game, year, label in games:
+        if game in text:
+            item["season"] = year
+            item["seasonLabel"] = label
+            return
+
+
 def open_tags(item: dict) -> list[str]:
     text = f"{item.get('title', '')} {item.get('source', '')} {' '.join(link.get('url', '') for link in item.get('links', []))}".lower()
     tags = ["build-thread"] if "chiefdelphi.com/t/" in item.get("source", "") else []
@@ -212,6 +232,7 @@ def main() -> None:
         if key not in seen_portfolios and (item.get("teamNumber") is not None) and (item.get("pdf") or item.get("source")):
             seen_portfolios.add(key)
             item["teamName"] = clean_mojibake(item.get("teamName", ""))
+            normalize_portfolio_season(item)
             if isinstance(item.get("pdf"), str) and item["pdf"].startswith("/http"):
                 item["pdf"] = item["pdf"][1:]
             item["category"] = "portfolio"
