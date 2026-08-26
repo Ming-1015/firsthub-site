@@ -619,6 +619,9 @@ function setSeasonGuide(y){sgSeason=y;renderSeasonGuide();}
 Object.assign(I18N.en,{ftc_tab_style:"Season Style Guide",ftc_card_style:"Official FIRST brand guidelines, logos, and social media assets organized by season."});
 Object.assign(I18N['zh-CN'],{ftc_tab_style:"赛季风格指南",ftc_card_style:"按赛季整理 FIRST 官方品牌指南、Logo 与社交媒体素材。"});
 Object.assign(I18N['zh-TW'],{ftc_tab_style:"賽季風格指南",ftc_card_style:"依賽季整理 FIRST 官方品牌指南、Logo 與社群媒體素材。"});
+Object.assign(I18N.en,{ftc_stat_open:"Team open resources",ftc_stat_resources:"Technical resources",ftc_stat_sites:"Team-built websites",ftc_stat_portfolios:"Engineering notes"});
+Object.assign(I18N['zh-CN'],{ftc_stat_open:"队伍开源资料",ftc_stat_resources:"技术资源",ftc_stat_sites:"队伍自建网站",ftc_stat_portfolios:"工程笔记"});
+Object.assign(I18N['zh-TW'],{ftc_stat_open:"隊伍開源資料",ftc_stat_resources:"技術資源",ftc_stat_sites:"隊伍自建網站",ftc_stat_portfolios:"工程筆記"});
 
 const FTC_DEMO_DATA={
   awards:[
@@ -688,16 +691,27 @@ async function loadFtcAutoData(){
     const response=await fetch('data/ftc-demo-v6.json',{cache:'no-store'});
     if(!response.ok)throw new Error('HTTP '+response.status);
     FTC_AUTO_DATA=await response.json();
+    renderFtcStats();
     const total=FTC_AUTO_DATA.awards.length+FTC_AUTO_DATA.portfolios.length+FTC_AUTO_DATA.openTeams.length+(FTC_AUTO_DATA.sites||[]).length+FTC_AUTO_DATA.resources.length;
     $('ftcCount').textContent=total.toLocaleString()+t('ftc_auto_records');
     if(ftcCategory!=='overview')renderFtcCards();
   }catch(error){$('ftcCount').textContent=t('ftc_load_failed');console.warn('FTC demo data:',error);}
   finally{ftcDataLoading=false;}
 }
+function renderFtcStats(){
+  if(!document.body.classList.contains('ftc-mode'))return;
+  const stats=FTC_AUTO_DATA?[
+    [FTC_AUTO_DATA.portfolios.length,t('ftc_stat_portfolios')],
+    [FTC_AUTO_DATA.openTeams.length,t('ftc_stat_open')],
+    [(FTC_AUTO_DATA.sites||[]).length,t('ftc_stat_sites')],
+    [FTC_AUTO_DATA.resources.length,t('ftc_stat_resources')]
+  ]:[['–',t('ftc_stat_portfolios')],['–',t('ftc_stat_open')],['–',t('ftc_stat_sites')],['–',t('ftc_stat_resources')]];
+  document.querySelectorAll('.stat').forEach((node,i)=>{node.querySelector('.num').textContent=Number.isFinite(stats[i][0])?stats[i][0].toLocaleString():stats[i][0];node.querySelector('.lbl').textContent=stats[i][1];});
+}
 function renderFtcSeasons(){
   $('ftcSeasons').innerHTML=Object.keys(FTC_SEASONS).map(y=>'<button class="ftc-season-btn'+(y===ftcSeason?' active':'')+'" onclick="selectFtcSeason(\''+y+'\')"><strong>'+(y+'–'+String(Number(y)+1).slice(-2))+'</strong><small>'+FTC_SEASONS[y]+'</small></button>').join('');
 }
-function selectFtcSeason(y){ftcSeason=y;renderFtcSeasons();if(ftcCategory!=='overview')renderFtcCards();}
+function selectFtcSeason(y){ftcSeason=y;renderFtcSeasons();renderFtcStats();if(ftcCategory!=='overview')renderFtcCards();}
 function renderFtcFromCard(category){const button=[...document.querySelectorAll('#ftcNav button')].find(node=>node.getAttribute('onclick')?.includes("'"+category+"'"));if(button)renderFtc(category,button);}
 function renderFtc(category,button){
   const overview=$('ftcOverview'),panel=$('ftcPanel');ftcCategory=category;ftcFilter='all';ftcDetailFilter='all';ftcSort='default';
@@ -783,8 +797,7 @@ function setProgram(program){
     document.querySelector('[data-i18n="site_subtitle"]').textContent=t('ftc_site_subtitle');
     document.querySelector('[data-i18n="hero_sub"]').textContent=t('ftc_hero_sub');
     document.querySelector('[data-i18n="built_by"]').textContent=t('ftc_built_by');
-    const ftcStats=[['6',t('ftc_stat_directions')],['3',t('ftc_stat_seasons')],['100%',t('ftc_stat_traceable')],['0',t('ftc_stat_fabricated')]];
-    document.querySelectorAll('.stat').forEach((node,i)=>{node.querySelector('.num').textContent=ftcStats[i][0];node.querySelector('.lbl').textContent=ftcStats[i][1];});
+    renderFtcStats();
     history.replaceState(null,'',location.pathname+location.search+'#ftc');
   }else if(location.hash==='#ftc'){
     applyI18n();renderStats();

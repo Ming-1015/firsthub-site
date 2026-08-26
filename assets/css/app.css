@@ -31,8 +31,9 @@ a:hover{text-decoration:underline}
 .hero h1 .en{font-size:1rem;font-weight:500;opacity:.75;margin-left:10px;letter-spacing:1px}
 .hero .sub{font-size:1.02rem;opacity:.92;margin-top:8px;max-width:780px}
 .hero .sub b{color:#fde68a}
-.stats{display:flex;gap:0;flex-wrap:wrap;margin-top:24px;border-top:1px solid rgba(255,255,255,.2);max-width:720px}
-.stat{border-right:1px solid rgba(255,255,255,.2);padding:12px 24px 6px 0;margin-right:24px;text-align:left;min-width:120px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:24px;border-top:1px solid rgba(255,255,255,.2);width:100%}
+.stat{border-right:1px solid rgba(255,255,255,.2);padding:12px 20px 6px;text-align:left;min-width:0}
+.stat:first-child{padding-left:0}
 .stat .num{font:800 1.45rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:#fff}
 .stat .lbl{font-size:.72rem;opacity:.72;margin-top:6px}
 

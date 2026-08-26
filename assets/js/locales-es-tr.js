@@ -48,6 +48,8 @@ Object.assign(I18N.tr,{tech_cat_cad:"Mekanik tasarım ve CAD",tech_cat_code:"Pro
 
 Object.assign(I18N.es,{ftc_tab_style:"Guía de estilo de la temporada",ftc_card_style:"Directrices de marca, logotipos y recursos para redes sociales oficiales de FIRST, organizados por temporada."});
 Object.assign(I18N.tr,{ftc_tab_style:"Sezon stil rehberi",ftc_card_style:"Sezona göre düzenlenmiş resmî FIRST marka yönergeleri, logoları ve sosyal medya materyalleri."});
+Object.assign(I18N.es,{ftc_stat_open:"Recursos de código abierto de equipos",ftc_stat_resources:"Recursos técnicos",ftc_stat_sites:"Sitios web creados por equipos",ftc_stat_portfolios:"Cuadernos de ingeniería"});
+Object.assign(I18N.tr,{ftc_stat_open:"Takımların açık kaynakları",ftc_stat_resources:"Teknik kaynaklar",ftc_stat_sites:"Takımların oluşturduğu web siteleri",ftc_stat_portfolios:"Mühendislik defterleri"});
 
 for(const locale of ['es','tr']){
   const missing=Object.keys(I18N.en).filter(key=>!Object.prototype.hasOwnProperty.call(I18N[locale],key));
