@@ -8,7 +8,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "award-scripts"
-EXCLUDED_AWARD_TERMS = ("dean's list", "woodie flowers", "volunteer of the year", "wildcard")
+EXCLUDED_AWARD_TERMS = (
+    "dean's list", "woodie flowers", "volunteer of the year", "wildcard",
+    "regional winners", "regional finalists", "district event winner",
+    "district event finalist", "district championship winner",
+    "district championship finalist", "championship division winner",
+    "championship division finalist",
+)
 
 
 def main() -> None:
@@ -29,8 +35,17 @@ def main() -> None:
             seen.add(key)
             clean.append(record)
         payload["records"] = clean
-        payload["scope"] = "team judged awards with a published official script"
-        payload["excluded"] = ["competitive advancement/results", "individual awards", "empty scripts"]
+        payload["recordCount"] = len(clean)
+        payload["citationCount"] = sum(bool(record.get("script")) for record in clean)
+        records_by_event: dict[str, list[dict]] = {}
+        for record in clean:
+            records_by_event.setdefault(record["eventCode"], []).append(record)
+        for event in payload.get("events", []):
+            event_records = records_by_event.get(event["code"], [])
+            event["records"] = len(event_records)
+            event["scripts"] = sum(bool(record.get("script")) for record in event_records)
+        payload["scope"] = "official team judged award results, with citations when FIRST publishes them"
+        payload["excluded"] = ["competitive advancement/results", "individual awards"]
         path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"{path.name}: {len(clean)} kept, {removed_scope} out-of-scope, {removed_duplicate} duplicates")
 

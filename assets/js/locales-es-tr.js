@@ -51,6 +51,16 @@ Object.assign(I18N.tr,{ftc_tab_style:"Sezon stil rehberi",ftc_card_style:"Sezona
 Object.assign(I18N.es,{ftc_stat_open:"Recursos de código abierto de equipos",ftc_stat_resources:"Recursos técnicos",ftc_stat_sites:"Sitios web creados por equipos",ftc_stat_portfolios:"Cuadernos de ingeniería"});
 Object.assign(I18N.tr,{ftc_stat_open:"Takımların açık kaynakları",ftc_stat_resources:"Teknik kaynaklar",ftc_stat_sites:"Takımların oluşturduğu web siteleri",ftc_stat_portfolios:"Mühendislik defterleri"});
 
+Object.assign(I18N.es,{
+  tab_scripts:"Resultados y textos de premiación",home_scripts_t:"Resultados y textos de premiación",home_scripts_d:"Busca resultados oficiales de premios por equipo, premio y evento, con el texto de los jueces cuando FIRST lo publica.",
+  scripts_lead:"Resultados oficiales de premios evaluados para equipos publicados en las páginas de eventos de FIRST. Se excluyen los premios individuales y los resultados de avance competitivo; el texto de premiación se muestra cuando FIRST lo publica.",scripts_original:"Los equipos, premios y eventos proceden de las páginas oficiales de FIRST. Los textos publicados se conservan en su inglés original y cada tarjeta enlaza a FIRST para su verificación.",scripts_search:"Buscar por equipo, premio, evento o texto…",scripts_title:"Resultados y textos de premios de equipos",scripts_records:" registros de premios",scripts_citations:" textos públicos",scripts_empty:"Ningún registro de premio coincide con los filtros actuales.",scripts_no_citation:"FIRST no ha publicado un texto de premiación para este registro.",scripts_result_label:"Resultado oficial del premio",scripts_loading:"Cargando resultados de premios…",scripts_load_failed:"No se pudieron cargar los resultados de premios."
+});
+Object.assign(I18N.tr,{
+  tab_scripts:"Ödül sonuçları ve metinleri",home_scripts_t:"Ödül sonuçları ve metinleri",home_scripts_d:"Takım, ödül ve etkinliğe göre resmî takım ödülü sonuçlarını arayın; FIRST yayımladığında jüri ödül metnini de görüntüleyin.",
+  scripts_lead:"FIRST etkinlik sayfalarında yayımlanan resmî takım jüri ödülü sonuçları. Bireysel ödüller ve yarışmada ilerlemeye ilişkin sonuçlar kapsam dışıdır; FIRST yayımladığında ödül metni gösterilir.",scripts_original:"Takım, ödül ve etkinlik bilgileri FIRST'ün resmî sayfalarından alınır. Yayımlanan ödül metinleri özgün İngilizce hâliyle korunur ve her kart doğrulama için FIRST sayfasına bağlantı verir.",scripts_search:"Takım, ödül, etkinlik veya ödül metninde arayın…",scripts_title:"Takım ödülü sonuçları ve metinleri",scripts_records:" ödül kaydı",scripts_citations:" herkese açık ödül metni",scripts_empty:"Geçerli filtrelerle eşleşen ödül kaydı yok.",scripts_no_citation:"FIRST bu ödül kaydı için bir ödül metni yayımlamamıştır.",scripts_result_label:"Resmî ödül sonucu",scripts_loading:"Ödül sonuçları yükleniyor…",scripts_load_failed:"Ödül sonucu verileri yüklenemedi.",
+  ftc_source_note:"Her kayıtta, herkese açık özgün kaynak bağlantısı korunur. Kaynak etiketleri erişilebilen içerik türünü belirtir; FIRST tarafından onaylandığı veya sıralandığı anlamına gelmez."
+});
+
 for(const locale of ['es','tr']){
   const missing=Object.keys(I18N.en).filter(key=>!Object.prototype.hasOwnProperty.call(I18N[locale],key));
   if(missing.length)console.error('Incomplete '+locale+' locale:',missing);

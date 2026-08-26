@@ -154,13 +154,13 @@
   <div class="grid" id="imGrid"></div>
 </section>
 
-<!-- ================= 颁奖词库 ================= -->
+<!-- ================= 获奖记录与颁奖词 ================= -->
 <section class="tab-panel" id="tab-scripts">
-  <div class="section-head"><h2 id="asTitle">全奖项颁奖词库</h2><span class="cnt" id="asTotal"></span></div>
-  <p class="lead" id="asLead" data-i18n="scripts_lead">收录官方赛事页面公开的队伍奖项颁奖词原文；不包含比赛名次、个人奖项或没有公开颁奖词的记录。</p>
-  <div class="info-box" data-i18n="scripts_original"><b>原文优先：</b>颁奖词保持 FIRST 官方英文原文，每张卡片都可回到官方赛事页面核对。</div>
+  <div class="section-head"><h2 id="asTitle">队伍获奖记录与颁奖词</h2><span class="cnt" id="asTotal"></span></div>
+  <p class="lead" id="asLead" data-i18n="scripts_lead">收录 FIRST 官方赛事页面公布的队伍评审奖项；不包含个人奖项和比赛晋级结果。FIRST 公开颁奖词时展示官方原文。</p>
+  <div class="info-box" data-i18n="scripts_original">队伍、奖项和赛事信息来自 FIRST 官方页面；已公开的颁奖词保留英文原文，每张卡片均可返回官方页面核对。</div>
   <div class="filter-bar">
-    <input type="text" id="asSearch" data-i18n="scripts_search" placeholder="搜队号、队名、奖项或颁奖词…" oninput="resetAwardScripts()">
+    <input type="text" id="asSearch" data-i18n="scripts_search" placeholder="搜索队号、队名、奖项、赛事或颁奖词…" oninput="resetAwardScripts()">
     <select id="asAward" data-i18n-aria="scripts_award_filter" aria-label="按奖项筛选" onchange="resetAwardScripts()"><option value="">全部奖项</option></select>
     <select id="asEvent" data-i18n-aria="scripts_event_filter" aria-label="按赛事筛选" onchange="resetAwardScripts()"><option value="">全部赛事</option></select>
     <span class="result-count" id="asCount"></span>
@@ -263,8 +263,8 @@
 
 <script src="assets/js/data.js?v=d69bd3d61935" defer></script>
 <script src="assets/js/i18n.js?v=20260823-2" defer></script>
-<script src="assets/js/app.js?v=20260825-8" defer></script>
-<script src="assets/js/locales-es-tr.js?v=20260825-5" defer></script>
+<script src="assets/js/app.js?v=20260826-9" defer></script>
+<script src="assets/js/locales-es-tr.js?v=20260826-6" defer></script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"471714dc027b4b71abdb6f6098af33e9"}'></script>
 <!-- End Cloudflare Web Analytics -->

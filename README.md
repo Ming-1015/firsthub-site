@@ -53,8 +53,10 @@ The important files are:
 - `scripts/filter_ftc_demo.py`: de-duplicates and classifies the raw records,
   rejects obvious false team-number matches, and builds the website/resource
   filter fields used by the demo.
-- `data/award-scripts/YYYY.json`: collected official team award citations.
-- `scripts/collect_award_scripts.py`: reads public FIRST Event Web award pages.
+- `data/award-scripts/YYYY.json`: official team judged-award results, including
+  the original English citation when FIRST publishes one.
+- `scripts/collect_award_scripts.py`: reads public FIRST Event Web award pages
+  with bounded concurrency and retry handling.
 - `scripts/clean_award_scripts.py`: applies the public scope, normalization, and
   deduplication rules.
 - `scripts/enrich_impact_teams.py`: verifies Impact-winning events and refreshes
@@ -98,7 +100,7 @@ Collect all events listed by FIRST for a season, with a polite delay between
 requests:
 
 ```powershell
-python scripts/collect_award_scripts.py --year 2026 --all-events --delay 0.25
+python scripts/collect_award_scripts.py --year 2026 --all-events --workers 8
 ```
 
 Then clean the collected award records and refresh Impact metadata when needed:

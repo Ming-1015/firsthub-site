@@ -68,6 +68,9 @@ const AWARD_UI_EN={tab_scripts:"Award Scripts",home_scripts_t:"Award Scripts",ho
 Object.keys(I18N).forEach(lang=>Object.assign(I18N[lang],AWARD_UI_EN));
 Object.assign(I18N['zh-CN'],{tab_scripts:"颁奖词库",home_scripts_t:"颁奖词库",home_scripts_d:"不只限于 Impact：按队伍、奖项和赛事查找 FIRST 官方评委颁奖词。",scripts_lead:"收录官方赛事页面公开的队伍奖项颁奖词原文；不包含比赛名次、个人奖项或没有公开颁奖词的记录。",scripts_original:"原文优先：颁奖词保持 FIRST 官方英文原文，每张卡片都可回到官方赛事页面核对。",scripts_search:"搜队号、队名、奖项或颁奖词…",scripts_all_awards:"全部奖项",scripts_all_events:"全部赛事",scripts_title:"全奖项颁奖词库",scripts_originals:" 条官方原文",scripts_events:" 场赛事",scripts_showing:"显示",scripts_load_more:"加载更多",scripts_remaining:"还剩",scripts_empty:"没有符合当前筛选条件的颁奖词。",scripts_official_en:"官方英文原文",scripts_source:"查看官方来源",scripts_loading:"正在载入颁奖词…",scripts_load_failed:"赛季数据载入失败。",scripts_retry:"重新载入",scripts_no_data:"暂无可靠公开数据",scripts_no_data_lead:"2021 赛季官方赛事页面没有形成可可靠归档的队伍颁奖词数据，因此这里明确留空，不补写、不推测。",scripts_no_data_box:"该赛季暂无可靠的官方颁奖词原文。你仍可在 Impact 智库查看获奖材料。"});
 Object.assign(I18N['zh-TW'],{tab_scripts:"頒獎詞庫",home_scripts_t:"頒獎詞庫",home_scripts_d:"不限於 Impact：依隊伍、獎項與賽事查找 FIRST 官方評審頒獎詞。",scripts_lead:"收錄官方賽事頁面公開的隊伍獎項頒獎詞原文；不包含比賽名次、個人獎項或未公開頒獎詞的記錄。",scripts_original:"原文優先：頒獎詞保留 FIRST 官方英文原文，每張卡片都可回到官方賽事頁面核對。",scripts_search:"搜尋隊號、隊名、獎項或頒獎詞…",scripts_all_awards:"全部獎項",scripts_all_events:"全部賽事",scripts_title:"全獎項頒獎詞庫",scripts_originals:" 條官方原文",scripts_events:" 場賽事",scripts_showing:"顯示",scripts_load_more:"載入更多",scripts_remaining:"剩餘",scripts_empty:"沒有符合目前篩選條件的頒獎詞。",scripts_official_en:"官方英文原文",scripts_source:"查看官方來源",scripts_loading:"正在載入頒獎詞…",scripts_load_failed:"賽季資料載入失敗。",scripts_retry:"重新載入",scripts_no_data:"暫無可靠公開資料",scripts_no_data_lead:"2021 賽季官方賽事頁面沒有可靠的隊伍頒獎詞存檔，因此此處明確留空。",scripts_no_data_box:"此賽季暫無可靠的官方頒獎詞原文；Impact 智庫仍可查看獲獎資料。"});
+Object.assign(I18N.en,{tab_scripts:"Award Results & Citations",home_scripts_t:"Award Results & Citations",home_scripts_d:"Search official team award results by team, award, and event, with judge-written citations where FIRST publishes them.",scripts_lead:"Official team judged-award results published on FIRST Event pages. Individual awards and competitive advancement results are excluded; citations are shown when FIRST publishes them.",scripts_original:"Award names and teams come from official FIRST Event pages. Published citations remain in their original English, and every card links back to FIRST for verification.",scripts_search:"Search by team, award, event, or citation…",scripts_title:"Team Award Results & Citations",scripts_records:" award records",scripts_citations:" public citations",scripts_empty:"No award records match the current filters.",scripts_no_citation:"FIRST has not published an award citation for this record.",scripts_result_label:"Official award result",scripts_loading:"Loading award results…",scripts_load_failed:"Award-result data could not be loaded."});
+Object.assign(I18N['zh-CN'],{tab_scripts:"获奖记录与颁奖词",home_scripts_t:"获奖记录与颁奖词",home_scripts_d:"按队伍、奖项和赛事搜索 FIRST 官方获奖记录；FIRST 公开颁奖词时一并展示。",scripts_lead:"收录 FIRST 官方赛事页面公布的队伍评审奖项；不包含个人奖项和比赛晋级结果。FIRST 公开颁奖词时展示官方原文。",scripts_original:"队伍、奖项和赛事信息来自 FIRST 官方页面；已公开的颁奖词保留英文原文，每张卡片均可返回官方页面核对。",scripts_search:"搜索队号、队名、奖项、赛事或颁奖词…",scripts_title:"队伍获奖记录与颁奖词",scripts_records:" 条获奖记录",scripts_citations:" 条公开颁奖词",scripts_empty:"没有符合当前筛选条件的获奖记录。",scripts_no_citation:"FIRST 尚未为这条获奖记录公开颁奖词。",scripts_result_label:"官方获奖记录",scripts_loading:"正在载入获奖记录…",scripts_load_failed:"获奖记录数据载入失败。"});
+Object.assign(I18N['zh-TW'],{tab_scripts:"獲獎記錄與頒獎詞",home_scripts_t:"獲獎記錄與頒獎詞",home_scripts_d:"依隊伍、獎項與賽事搜尋 FIRST 官方獲獎記錄；FIRST 公開頒獎詞時一併顯示。",scripts_lead:"收錄 FIRST 官方賽事頁面公布的隊伍評審獎項；不包含個人獎項與競賽晉級結果。FIRST 公開頒獎詞時顯示官方原文。",scripts_original:"隊伍、獎項與賽事資訊來自 FIRST 官方頁面；已公開的頒獎詞保留英文原文，每張卡片皆可返回官方頁面核對。",scripts_search:"搜尋隊號、隊名、獎項、賽事或頒獎詞…",scripts_title:"隊伍獲獎記錄與頒獎詞",scripts_records:" 筆獲獎記錄",scripts_citations:" 筆公開頒獎詞",scripts_empty:"沒有符合目前篩選條件的獲獎記錄。",scripts_no_citation:"FIRST 尚未為此獲獎記錄公開頒獎詞。",scripts_result_label:"官方獲獎記錄",scripts_loading:"正在載入獲獎記錄…",scripts_load_failed:"獲獎記錄資料載入失敗。"});
 Object.keys(I18N).forEach(lang=>Object.assign(I18N[lang],{champ_finalists:"5 finalists: "}));
 Object.assign(I18N['zh-CN'],{champ_finalists:"5 支决赛入围："});
 Object.assign(I18N['zh-TW'],{champ_finalists:"5 支決賽入圍："});
@@ -360,7 +363,8 @@ function renderAwardScripts(){
     return (!q||haystack.includes(q)) && (!award||x.awardName===award) && (!event||x.eventCode===event);
   }).sort((a,b)=>a.awardName.localeCompare(b.awardName)||a.teamNumber-b.teamNumber);
   const visible = list.slice(0,awardVisible);
-  $('asTotal').textContent = AWARD_SCRIPTS.length+t('scripts_originals')+' · '+AWARD_META.events.length+t('scripts_events');
+  const citationCount = AWARD_META.citationCount ?? AWARD_SCRIPTS.filter(x=>x.script).length;
+  $('asTotal').textContent = AWARD_SCRIPTS.length+t('scripts_records')+' · '+citationCount+t('scripts_citations')+' · '+AWARD_META.events.length+t('scripts_events');
   $('asCount').textContent = t('scripts_showing')+' '+visible.length+' / '+list.length;
   $('asMore').hidden = visible.length>=list.length;
   $('asMore').textContent = t('scripts_load_more')+' ('+t('scripts_remaining')+' '+Math.max(0,list.length-visible.length)+')';
@@ -369,8 +373,8 @@ function renderAwardScripts(){
       '<div class="award-name">'+esc(x.awardName)+'</div>'+
       '<div class="num">'+esc(x.teamNumber)+'</div>'+
       '<div class="nm">'+esc(x.teamName)+'</div>'+
-      '<blockquote lang="en">'+esc(x.script)+'</blockquote>'+
-      '<div class="script-meta"><span class="badge purple">'+esc(x.eventCode)+'</span><span>'+esc(x.eventName)+'</span><span>· '+t('scripts_official_en')+'</span></div>'+
+      (x.script?'<blockquote lang="en">'+esc(x.script)+'</blockquote>':'<div class="note">'+t('scripts_no_citation')+'</div>')+
+      '<div class="script-meta"><span class="badge purple">'+esc(x.eventCode)+'</span><span>'+esc(x.eventName)+'</span><span>· '+t(x.script?'scripts_official_en':'scripts_result_label')+'</span></div>'+
       '<div class="links">'+btn('essay',t('scripts_source'),x.source)+'</div>'+
     '</article>'
   ).join('') : '<div class="card"><div class="note">'+t('scripts_empty')+'</div></div>';
@@ -778,7 +782,8 @@ function renderFtcCards(){
       return '<div class="card"><div class="num">'+item.number+cad+views+'</div><div class="nm">'+esc(item.title)+'</div>'+(tags?'<div>'+tags+'</div>':'')+sourceLine+'<div class="links">'+direct+sourceButton+'</div></div>';
     }
     const tags=item.tags&&item.tags.length?'<div>'+item.tags.map(tag=>'<span class="tag-chip">'+esc(ftcLabel(tag))+'</span>').join('')+'</div>':'';
-    return '<div class="card"><div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(item.desc)+'</div>'+tags+'<div class="loc">'+t('ftc_source_label')+' '+esc(item.source)+'</div><div class="links"><a class="btn essay" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+t('ftc_view_source')+'</a></div></div>';
+    const awardHeading=ftcCategory==='awards'?'<div class="award-name">'+esc(item.meta)+'</div>':'';
+    return '<div class="card">'+awardHeading+'<div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(item.desc)+'</div>'+tags+'<div class="loc">'+t('ftc_source_label')+' '+esc(item.source)+'</div><div class="links"><a class="btn essay" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+t('ftc_view_source')+'</a></div></div>';
   };
   const limitNote=t('ftc_render_limit').replace('{visible}',visible.length).replace('{total}',items.length);
   $('ftcContent').innerHTML=items.length?visible.map(renderCard).join('')+(items.length>visible.length?'<div class="info-box">'+limitNote+'</div>':''):'<div class="info-box">'+t('ftc_empty')+'</div>';
