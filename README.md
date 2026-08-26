@@ -14,8 +14,9 @@ FIRSTHub uses a mixed workflow rather than a general-purpose web crawler:
    Event Web season, event, award, and team pages. They do not bypass logins or
    collect private information.
 2. **Normalization and filtering.** Collected records are cleaned and
-   deduplicated. Individual awards, competitive advancement/results, empty
-   citations, and unrelated records are excluded from the award-script archive.
+   deduplicated. Individual awards, competitive advancement/results, and
+   unrelated records are excluded; official team awards remain searchable even
+   when FIRST has not published a citation.
 3. **Source-preserving enrichment.** Impact entries are matched to the official
    event where the award was won. Team names are refreshed from the newest
    available FIRST team page, while the original season and event are retained.
@@ -50,6 +51,12 @@ The important files are:
 - `scripts/collect_frc_youtube.py`: applies the same public-video, team-number,
   official-team-page, season, and de-duplication rules to FRC, then merges the
   verified links into each season's Team-Published Resources cards.
+- `scripts/collect_cad_previews.py`: creates compressed static preview images
+  for public Onshape robot CAD. It resolves the current public workspace,
+  selects a likely full-robot assembly, requests a clean shaded view, validates
+  the result, and falls back to the normal CAD link when rendering fails.
+- `assets/cad-previews/`: cached WebP previews and their source manifest. The
+  original public CAD URL remains the canonical source for every image.
 - `scripts/filter_ftc_demo.py`: de-duplicates and classifies the raw records,
   rejects obvious false team-number matches, and builds the website/resource
   filter fields used by the demo.
@@ -89,6 +96,19 @@ at approximately 03:17 UTC. The workflow can be started manually from the
 repository's Actions tab and commits only public data back to `main`. FTC
 and FRC refreshes are additive, so temporary search-result changes do not erase
 older public team records that are already in the library.
+
+Generate missing public Onshape previews locally (browser automation is used
+only during maintenance; visitors receive ordinary static images):
+
+```powershell
+python -m pip install playwright Pillow
+python -m playwright install chromium
+python scripts/collect_cad_previews.py --years 2025 2026 --workers 4
+```
+
+Existing images are reused unless `--force` is supplied. The scheduled workflow
+adds at most 30 missing previews per run so a slow or broken external document
+cannot hold the entire public-data refresh indefinitely.
 
 Collect one or more known events for a reviewable run:
 
