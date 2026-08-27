@@ -664,17 +664,32 @@ const FTC_STYLE={
   2023:[
     {title:'CENTERSTAGE Style Guide',kind:'pdf',url:'https://info.firstinspires.org/hubfs/2024%20Season/Season%20Assets/FTC_CENTERSTAGE%20StyleGuide_v3_June.pdf'},
     {title:'CENTERSTAGE Game & Season Materials',kind:'web',url:'https://ftc-resources.firstinspires.org/ftc/archive/2024/game'},
-    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'}
+    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'},
+    {title:'FIRST Training — FTC Skill Builders',kind:'web',url:'https://training.firstinspires.org/'},
+    {title:'goBILDA CENTERSTAGE StarterBot',kind:'web',url:'https://www.gobilda.com/ftc-starter-kit-2023-2024-season/'},
+    {title:'REV DUO CENTERSTAGE StarterBot',kind:'web',url:'https://docs.revrobotics.com/ftc-kickoff-concepts/centerstage-2023-2024/starter-bot-centerstage'},
+    {title:'Studica CENTERSTAGE StarterBot',kind:'web',url:'https://www.studica.ca/en/ftc-starter-kit-2023-2024'},
+    {title:'AndyMark CENTERSTAGE StarterBot',kind:'web',url:'https://www.andymark.com/pages/centerstage-and-andymark'}
   ],
   2024:[
     {title:'FIRST DIVE Social Media Toolkit',kind:'pdf',url:'https://info.firstinspires.org/hubfs/2025%20Season/Season%20Assets/FIRST_DIVE_Social-media-toolkit.pdf'},
     {title:'INTO THE DEEP Game & Season Materials',kind:'web',url:'https://ftc-resources.firstinspires.org/ftc/archive/2025/game'},
-    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'}
+    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'},
+    {title:'FIRST Training — FTC Skill Builders',kind:'web',url:'https://training.firstinspires.org/'},
+    {title:'goBILDA INTO THE DEEP StarterBot',kind:'web',url:'https://www.gobilda.com/ftc-starter-bot-resource-guide-into-the-deep/'},
+    {title:'REV DUO INTO THE DEEP StarterBot',kind:'web',url:'https://docs.revrobotics.com/ftc-kickoff-concepts/into-the-deep-2024-25'},
+    {title:'Studica INTO THE DEEP StarterBot',kind:'web',url:'https://www.studica.ca/en/ftc-starter-kit-2024-2025'},
+    {title:'AndyMark INTO THE DEEP StarterBot',kind:'web',url:'https://www.andymark.com/pages/into-the-deep-and-andymark'}
   ],
   2025:[
     {title:'DECODE Social Media Toolkit',kind:'pdf',url:'https://info.firstinspires.org/hubfs/2026%20Season/Season%20Assets/age_ftc_social_media_toolkit.pdf'},
     {title:'DECODE Game & Season Materials',kind:'web',url:'https://ftc-resources.firstinspires.org/ftc/archive/2026/game'},
-    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'}
+    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'},
+    {title:'FIRST Training — FTC Skill Builders',kind:'web',url:'https://training.firstinspires.org/'},
+    {title:'goBILDA DECODE StarterBot',kind:'web',url:'https://www.gobilda.com/ftc-starter-bot-resource-guide-decode/'},
+    {title:'REV DUO DECODE StarterBot',kind:'web',url:'https://docs.revrobotics.com/ftc-kickoff-concepts/decode-2025-26'},
+    {title:'Studica DECODE StarterBot',kind:'web',url:'https://www.studica.ca/en/ftc-starter-bot-decode-2025-strategy/'},
+    {title:'AndyMark DECODE StarterBot',kind:'web',url:'https://andymark.com/pages/decode-robits-starter-bot'}
   ]
 };
 const FTC_LABELS={
