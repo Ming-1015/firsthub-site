@@ -249,20 +249,8 @@ function switchTab(tab){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+tab));
   $('seasonBar').hidden=!['impact','scripts','open'].includes(tab);
-  // 切换后定位到内容区，但为粘性导航和（如显示）赛季导航预留空间，
-  // 防止技术资源首行卡片被导航栏遮住而看似“空白”。
-  const main = document.querySelector('main');
-  if(main){
-    requestAnimationFrame(()=>{
-      const tabs = document.querySelector('.tabs');
-      const seasonBar = $('seasonBar');
-      const stickyHeight = (tabs ? tabs.offsetHeight : 0) + (!seasonBar.hidden ? seasonBar.offsetHeight : 0);
-      const top = Math.max(0, main.getBoundingClientRect().top + window.pageYOffset - stickyHeight - 8);
-      window.scrollTo({top,behavior:'smooth'});
-    });
-  } else {
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
+  // 不在切换栏目时强制滚动。这样短内容栏目不会因页面高度被压缩、
+  // 滚动位置被浏览器钳制，而把首行卡片顶到粘性导航栏后面。
 }
 
 /* ---- 赛季选择键 ---- */
