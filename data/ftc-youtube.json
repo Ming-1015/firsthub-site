@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T04:27:02+00:00",
+  "generatedAt": "2026-08-27T08:03:52+00:00",
   "source": "YouTube public search metadata",
   "policy": "Original URLs only; no video files are downloaded or re-hosted.",
   "items": [
@@ -8,7 +8,7 @@
       "teamNumber": 11047,
       "teamName": "Screw it 🔩 FTC & FRC Team",
       "title": "Robot in 1 Day Reveal - FTC CENTER STAGE 2024 | FTC Team 11047 Screw it !! & @dr.player_Taiwan",
-      "views": 34569,
+      "views": 34570,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -26,7 +26,7 @@
       "teamNumber": 11212,
       "teamName": "The Clueless",
       "title": "FTC Centerstage 416 Points World Record | The Clueless #11212",
-      "views": 21901,
+      "views": 21909,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -63,7 +63,7 @@
       "teamNumber": 23396,
       "teamName": "Hivemind",
       "title": "FTC CENTERSTAGE Robot Reveal | FTC 23396 Hivemind",
-      "views": 12529,
+      "views": 12549,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -119,7 +119,7 @@
       "teamNumber": 17962,
       "teamName": "Ro2D2 Team",
       "title": "Ro2D2 FTC 17962 - CENTERSTAGE Robot Reveal",
-      "views": 9612,
+      "views": 9615,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -175,7 +175,7 @@
       "teamNumber": 11329,
       "teamName": "ICE Robotics",
       "title": "Avalanche Reveal FTC Centerstage",
-      "views": 7026,
+      "views": 7042,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -212,7 +212,7 @@
       "teamNumber": 9614,
       "teamName": "Hyperion",
       "title": "9614 Hyperion | Behind the Bot | FTC CENTERSTAGE Robot",
-      "views": 5700,
+      "views": 5800,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -399,6 +399,24 @@
     },
     {
       "season": "2023",
+      "teamNumber": 21229,
+      "teamName": "FTC Quality Control",
+      "title": "V2 Robot Reveal | FTC Centerstage 2024",
+      "views": 1659,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=8KTv4aXn7ik",
+      "channel": "https://www.youtube.com/channel/UCgju4un24HEo6K-7Dk7WjAA",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=8KTv4aXn7ik"
+        }
+      ]
+    },
+    {
+      "season": "2023",
       "teamNumber": 16460,
       "teamName": "GEarheads",
       "title": "16460 GEarheads | Behind the Bot | FTC CENTERSTAGE Robot",
@@ -475,6 +493,24 @@
     },
     {
       "season": "2023",
+      "teamNumber": 7961,
+      "teamName": "FTC Motordame 7961",
+      "title": "Bionic Blast - FTC Centerstage Robot Reveal (2024)",
+      "views": 1387,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=2rhXAyVMEHk",
+      "channel": "https://www.youtube.com/channel/UCT3x16UIwBtifdwKgeh_o7w",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=2rhXAyVMEHk"
+        }
+      ]
+    },
+    {
+      "season": "2023",
       "teamNumber": 19411,
       "teamName": "Tech Tigers",
       "title": "19411 Tech Tigers | Behind the Bot | CENTERSTAGE",
@@ -512,24 +548,6 @@
     },
     {
       "season": "2023",
-      "teamNumber": 16597,
-      "teamName": "Fulminata Robotics",
-      "title": "16597 Fulminata CenterStage FTC Robot Reveal",
-      "views": 826,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=IaBqoNGj_iw",
-      "channel": "https://www.youtube.com/channel/UCRNVZ0MhAhAU4t_mpYZT8gw",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=IaBqoNGj_iw"
-        }
-      ]
-    },
-    {
-      "season": "2023",
       "teamNumber": 9974,
       "teamName": "T.H.O.R. | CRI Winners",
       "title": "9974 T.H.O.R. | CRI Winners | Behind the Bot | CENTERSTAGE",
@@ -544,6 +562,24 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=3L81AW-YKak"
+        }
+      ]
+    },
+    {
+      "season": "2023",
+      "teamNumber": 21627,
+      "teamName": "NinJava FTC",
+      "title": "NinJava 21627 Robot Reveal | FTC CenterStage 2023-2024",
+      "views": 606,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=sixJ5ui-aoY",
+      "channel": "https://www.youtube.com/channel/UCV4-omMtGfnP7xVxH9r9Dhw",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=sixJ5ui-aoY"
         }
       ]
     },
@@ -621,37 +657,37 @@
     },
     {
       "season": "2023",
-      "teamNumber": 12857,
-      "teamName": "Kat Kelley (Woodlands Robotics)",
-      "title": "FTC 12857 Phantom 2024 Robot Haunting Reveal",
-      "views": 272,
+      "teamNumber": 636,
+      "teamName": "FTC 636 - Occam's Razor Clams ",
+      "title": "FTC CENTERSTAGE Game Animation & Closer Look (no intro)",
+      "views": 186,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=sUf7HvPj4hU",
-      "channel": "https://www.youtube.com/channel/UCplTFKgCRzV5XFlZGO4KTGA",
+      "source": "https://www.youtube.com/watch?v=ReMq2ySx9RQ",
+      "channel": "https://www.youtube.com/channel/UCedtpYJA6bisHZXjVOGEZ6g",
       "links": [
         {
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=sUf7HvPj4hU"
+          "url": "https://www.youtube.com/watch?v=ReMq2ySx9RQ"
         }
       ]
     },
     {
       "season": "2023",
-      "teamNumber": 22479,
-      "teamName": "FTC 2-2-4-7-9 | Royal Robots",
-      "title": "How To Take Stages Off of a Linear Slide | Royal Robots 22479 | FTC CENTERSTAGE",
-      "views": 135,
+      "teamNumber": 133,
+      "teamName": "Arrows133Robotics",
+      "title": "FTC 133 - 2023 Centerstage Robot Reveal",
+      "views": 132,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=lDmPf6PEBwM",
-      "channel": "https://www.youtube.com/channel/UCd5Sq8JaqI6gwP2Q3T23Rjg",
+      "source": "https://www.youtube.com/watch?v=lj_JmPN02tM",
+      "channel": "https://www.youtube.com/channel/UClNFUK_78YoQ9-tJjXmR39w",
       "links": [
         {
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=lDmPf6PEBwM"
+          "url": "https://www.youtube.com/watch?v=lj_JmPN02tM"
         }
       ]
     },
@@ -698,7 +734,7 @@
       "teamNumber": 24033,
       "teamName": "Alphatronic Team",
       "title": "Alphatronic FTC 24033 - INTO THE DEEP Robot Reveal",
-      "views": 11886,
+      "views": 11900,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -769,24 +805,6 @@
     },
     {
       "season": "2024",
-      "teamNumber": 23224,
-      "teamName": "Team 254: The Cheesy Poofs",
-      "title": "FTC 23224 Cheesy Bytes: Into the Deep Robot Reveal",
-      "views": 8796,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=FnioJBsmkF4",
-      "channel": "https://www.youtube.com/channel/UC3bsqu63lKlGLa5exfKNBMw",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=FnioJBsmkF4"
-        }
-      ]
-    },
-    {
-      "season": "2024",
       "teamNumber": 18228,
       "teamName": "Red BotBuilders",
       "title": "18228 Red BotBuilders | Behind the Bot | Into the Deep",
@@ -801,6 +819,25 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=1JkwtUWTUyA"
+        }
+      ]
+    },
+    {
+      "season": "2024",
+      "teamNumber": 19098,
+      "teamName": "Eastern Foxes",
+      "title": "19098 Eastern Foxes | Behind the Bot | INTO THE DEEP Robot",
+      "views": 7700,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=3uka-fXH-0I",
+      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
+      "publisher": "FUN Robotics Network",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=3uka-fXH-0I"
         }
       ]
     },
@@ -825,29 +862,10 @@
     },
     {
       "season": "2024",
-      "teamNumber": 19098,
-      "teamName": "Eastern Foxes",
-      "title": "19098 Eastern Foxes | Behind the Bot | INTO THE DEEP Robot",
-      "views": 7600,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=3uka-fXH-0I",
-      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
-      "publisher": "FUN Robotics Network",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=3uka-fXH-0I"
-        }
-      ]
-    },
-    {
-      "season": "2024",
       "teamNumber": 24033,
       "teamName": "Alphatronic",
       "title": "24033 Alphatronic | Behind the Bot | INTO THE DEEP Robot",
-      "views": 7400,
+      "views": 7500,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -1036,7 +1054,7 @@
       "teamNumber": 11329,
       "teamName": "ICE Robotics",
       "title": "ICE Robotics Robot Reveal for FTC Into the Deep",
-      "views": 5009,
+      "views": 5012,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -1073,7 +1091,7 @@
       "teamNumber": 19705,
       "teamName": "FTC WXYZ",
       "title": "FTC 2024-25 INTO THE DEEP | 19705 WXYZ ROBOT REVEAL",
-      "views": 4932,
+      "views": 4947,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -1091,7 +1109,7 @@
       "teamNumber": 19705,
       "teamName": "FTC WXYZ",
       "title": "19705 WXYZ Season Final REVEAL｜FTC 2024-25 Into The Deep",
-      "views": 4824,
+      "views": 4846,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -1109,7 +1127,7 @@
       "teamNumber": 28596,
       "teamName": "Hypernova",
       "title": "28596 Hypernova | Behind the Bot | INTO THE DEEP Robot",
-      "views": 4600,
+      "views": 4700,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -1220,6 +1238,25 @@
     },
     {
       "season": "2024",
+      "teamNumber": 21311,
+      "teamName": "Lion Robotics Gold",
+      "title": "21311 Lion Robotics Gold | Behind the Bot | INTO THE DEEP",
+      "views": 4000,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=_it2l2fjKfw",
+      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
+      "publisher": "FUN Robotics Network",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=_it2l2fjKfw"
+        }
+      ]
+    },
+    {
+      "season": "2024",
       "teamNumber": 18763,
       "teamName": "Texpand",
       "title": "18763 Texpand | Behind the Bot | INTO THE DEEP Robot",
@@ -1234,25 +1271,6 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=Mp_C7mC8Zi8"
-        }
-      ]
-    },
-    {
-      "season": "2024",
-      "teamNumber": 21311,
-      "teamName": "Lion Robotics Gold",
-      "title": "21311 Lion Robotics Gold | Behind the Bot | INTO THE DEEP",
-      "views": 3900,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=_it2l2fjKfw",
-      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
-      "publisher": "FUN Robotics Network",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=_it2l2fjKfw"
         }
       ]
     },
@@ -1280,7 +1298,7 @@
       "teamNumber": 11212,
       "teamName": "The Clueless",
       "title": "Into The Deep Robot Reveal | The Clueless #11212",
-      "views": 3791,
+      "views": 3796,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -2057,7 +2075,7 @@
       "teamNumber": 23650,
       "teamName": "MillburnX",
       "title": "23650 MillburnX | Behind the Bot | 2025 FTC Into the Deep",
-      "views": 944,
+      "views": 945,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -2076,7 +2094,7 @@
       "teamNumber": 23644,
       "teamName": "Skeleton Army",
       "title": "23644 Skeleton Army | Behind the Bot | INTO THE DEEP",
-      "views": 932,
+      "views": 933,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -2111,28 +2129,10 @@
     },
     {
       "season": "2024",
-      "teamNumber": 7129,
-      "teamName": "Robo Raiders FTC 7129",
-      "title": "Into The Deep Robot Reveal | Redemption",
-      "views": 870,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=f8l-FXgyzMY",
-      "channel": "https://www.youtube.com/channel/UCqGu2ovlhmKPtBJH4nuIkxQ",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=f8l-FXgyzMY"
-        }
-      ]
-    },
-    {
-      "season": "2024",
       "teamNumber": 9864,
       "teamName": "Jug Rox Robotics",
       "title": "9864 Jug Rox Robotics | Behind the Bot | INTO THE DEEP",
-      "views": 741,
+      "views": 742,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -2143,24 +2143,6 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=n7CUTv5Gjwg"
-        }
-      ]
-    },
-    {
-      "season": "2024",
-      "teamNumber": 6547,
-      "teamName": "FTC 6547",
-      "title": "INTO THE DEEP - ROBOT IN 30 HOURS - DAY 1",
-      "views": 437,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=WKZfVPo0fiw",
-      "channel": "https://www.youtube.com/channel/UCNqU5yogAoxuT7VWRqlmqAA",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=WKZfVPo0fiw"
         }
       ]
     },
@@ -2256,19 +2238,55 @@
     },
     {
       "season": "2024",
-      "teamNumber": 14579,
-      "teamName": "Find Theta",
-      "title": "#14579 FTC Into the Deep Late Reveal",
-      "views": 66,
+      "teamNumber": 6567,
+      "teamName": "Red Hook RoboRaiders -  FTC 6567",
+      "title": "6567 Roboraiders Into the Deep Robot Reveal",
+      "views": 105,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=jOk18NyDxMs",
-      "channel": "https://www.youtube.com/channel/UCmeqlwDPxj4xt8sk0zNNCIA",
+      "source": "https://www.youtube.com/watch?v=rywxqt6GyMw",
+      "channel": "https://www.youtube.com/channel/UC4oOusyJuuiGbtmdLBqZauA",
       "links": [
         {
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=jOk18NyDxMs"
+          "url": "https://www.youtube.com/watch?v=rywxqt6GyMw"
+        }
+      ]
+    },
+    {
+      "season": "2024",
+      "teamNumber": 21231,
+      "teamName": "FTC Forty-Two",
+      "title": "42 FTC 21231 - Into the Deep Robot Reveal -",
+      "views": 63,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=9UfyJENPsec",
+      "channel": "https://www.youtube.com/channel/UCSKUJoQxF37bTctZsQNz08A",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=9UfyJENPsec"
+        }
+      ]
+    },
+    {
+      "season": "2024",
+      "teamNumber": 7477,
+      "teamName": "FTC Team 7477 - Super 7",
+      "title": "Into the Deep 2024-2025 Field Review",
+      "views": 21,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=-9V6LhWYuWM",
+      "channel": "https://www.youtube.com/channel/UCEjdfmmxu58msesI1u4KVqw",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=-9V6LhWYuWM"
         }
       ]
     },
@@ -2277,7 +2295,7 @@
       "teamNumber": 11047,
       "teamName": "Screw it 🔩 FTC & FRC Team",
       "title": "Robot in 1 Day Reveal - FTC DECODE 2026 | FTC Team 11047 Screw it !! &  @dr.player_Taiwan",
-      "views": 16366,
+      "views": 16371,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -2371,7 +2389,7 @@
       "teamNumber": 11329,
       "teamName": "ICE Robotics",
       "title": "Hailstorm Robot Reveal FTC Decode",
-      "views": 7676,
+      "views": 7737,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -2462,6 +2480,25 @@
     },
     {
       "season": "2025",
+      "teamNumber": 14270,
+      "teamName": "Quantum Robotics",
+      "title": "14270 Quantum Robotics | Behind the Bot | FTC Decode Robot",
+      "views": 5800,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=DiWEMH436hY",
+      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
+      "publisher": "FUN Robotics Network",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=DiWEMH436hY"
+        }
+      ]
+    },
+    {
+      "season": "2025",
       "teamNumber": 26000,
       "teamName": "Theseus",
       "title": "26000 Theseus | Behind the Bot | FTC DECODE Robot",
@@ -2476,25 +2513,6 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=O2zHFFIedcI"
-        }
-      ]
-    },
-    {
-      "season": "2025",
-      "teamNumber": 14270,
-      "teamName": "Quantum Robotics",
-      "title": "14270 Quantum Robotics | Behind the Bot | FTC Decode Robot",
-      "views": 5700,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=DiWEMH436hY",
-      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
-      "publisher": "FUN Robotics Network",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=DiWEMH436hY"
         }
       ]
     },
@@ -2538,24 +2556,6 @@
     },
     {
       "season": "2025",
-      "teamNumber": 19705,
-      "teamName": "FTC WXYZ",
-      "title": "19705 WXYZ China Championship REVEAL｜FTC 2025-26 DECODE",
-      "views": 5411,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=ahfMyOpMsho",
-      "channel": "https://www.youtube.com/channel/UCBHVnOFiM3BShEzVQXXqFuA",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=ahfMyOpMsho"
-        }
-      ]
-    },
-    {
-      "season": "2025",
       "teamNumber": 23521,
       "teamName": "DeSoto Technix",
       "title": "23521 DeSoto Technix | Behind the Bot | FTC DECODE Robot",
@@ -2578,7 +2578,7 @@
       "teamNumber": 23849,
       "teamName": "FUN Robotics Network",
       "title": "🚀 FTC 23849 Droid Force | Behind the Bot – DECODE",
-      "views": 4945,
+      "views": 4949,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -2881,7 +2881,7 @@
       "teamNumber": 19498,
       "teamName": "Devolotics FTC",
       "title": "2025 DECODE Robot Reveal | Devolotics #19498",
-      "views": 2809,
+      "views": 2816,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -3048,6 +3048,25 @@
     },
     {
       "season": "2025",
+      "teamNumber": 3565,
+      "teamName": "Ghost Robotics",
+      "title": "3565 Ghost Robotics | Behind the Bot | FTC DECODE Robot",
+      "views": 2300,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=iOMBicgn2JU",
+      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
+      "publisher": "FUN Robotics Network",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=iOMBicgn2JU"
+        }
+      ]
+    },
+    {
+      "season": "2025",
       "teamNumber": 21229,
       "teamName": "Quality Control",
       "title": "21229 Quality Control | Behind the Bot | DECODE Robot",
@@ -3062,25 +3081,6 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=TD1ywruOkbg"
-        }
-      ]
-    },
-    {
-      "season": "2025",
-      "teamNumber": 3565,
-      "teamName": "Ghost Robotics",
-      "title": "3565 Ghost Robotics | Behind the Bot | FTC DECODE Robot",
-      "views": 2200,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=iOMBicgn2JU",
-      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
-      "publisher": "FUN Robotics Network",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=iOMBicgn2JU"
         }
       ]
     },
@@ -3468,7 +3468,7 @@
       "teamNumber": 25309,
       "teamName": "Team TALOS",
       "title": "TALOS #25309 Robot Reveal | 2025-2026 FTC Decode",
-      "views": 1463,
+      "views": 1466,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -3619,7 +3619,7 @@
       "teamNumber": 15993,
       "teamName": "infO(1) Robotics",
       "title": "FTC Team #15993 infO(1)Robotics 2026 Robot Reveal - \"RYUUX\"",
-      "views": 1102,
+      "views": 1105,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -3710,24 +3710,6 @@
     },
     {
       "season": "2025",
-      "teamNumber": 30592,
-      "teamName": "Little Potato Robotics",
-      "title": "Robot Reveal Gen 2 #ftc #decode #robotics #robotreveal #littlepotato #30592 #gen2",
-      "views": 1016,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=1yW1p4AiDbE",
-      "channel": "https://www.youtube.com/channel/UCQls4awwu7VP_3x_mqP7bzg",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=1yW1p4AiDbE"
-        }
-      ]
-    },
-    {
-      "season": "2025",
       "teamNumber": 16166,
       "teamName": "Watt'S Up",
       "title": "16166 Watt'S Up | Behind the Bot | FTC DECODE Robot",
@@ -3785,29 +3767,10 @@
     },
     {
       "season": "2025",
-      "teamNumber": 23361,
-      "teamName": "Cosmobotics",
-      "title": "23361 Cosmobotics | Behind the Bot | FTC DECODE Robot",
-      "views": 951,
-      "posts": 0,
-      "sourceType": "team",
-      "sourcePlatform": "youtube",
-      "source": "https://www.youtube.com/watch?v=TPqli98KcnM",
-      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
-      "publisher": "FUN Robotics Network",
-      "links": [
-        {
-          "type": "video",
-          "url": "https://www.youtube.com/watch?v=TPqli98KcnM"
-        }
-      ]
-    },
-    {
-      "season": "2025",
       "teamNumber": 23286,
       "teamName": "Lazer Robotics",
       "title": "23286 Lazer Robotics | Behind the Bot | FTC DECODE Robot",
-      "views": 947,
+      "views": 975,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -3818,6 +3781,25 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=a4HCmTSc78w"
+        }
+      ]
+    },
+    {
+      "season": "2025",
+      "teamNumber": 23361,
+      "teamName": "Cosmobotics",
+      "title": "23361 Cosmobotics | Behind the Bot | FTC DECODE Robot",
+      "views": 952,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=TPqli98KcnM",
+      "channel": "https://www.youtube.com/channel/UCuJUknE5JjilAfNnmbvr22Q",
+      "publisher": "FUN Robotics Network",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=TPqli98KcnM"
         }
       ]
     },
@@ -3845,7 +3827,7 @@
       "teamNumber": 32896,
       "teamName": "Droid Squad",
       "title": "32896 Droid Squad | Behind the Bot | FTC DECODE Robot",
-      "views": 880,
+      "views": 886,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -3864,7 +3846,7 @@
       "teamNumber": 18221,
       "teamName": "Meta^Infinity",
       "title": "18221 Meta^Infinity | Behind the Bot | FTC DECODE Robot",
-      "views": 857,
+      "views": 870,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -3883,7 +3865,7 @@
       "teamNumber": 21351,
       "teamName": "Cybotz Robotics",
       "title": "FTC 2025-2026 DECODE Scoring Explained - #21351 Cybotz",
-      "views": 778,
+      "views": 781,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -3956,7 +3938,7 @@
       "teamNumber": 21036,
       "teamName": "JUSTICE FTC",
       "title": "FTC DECODE Robot Teaser Reveal | JUSTICE #21036",
-      "views": 239,
+      "views": 241,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -3974,7 +3956,7 @@
       "teamNumber": 19502,
       "teamName": "The Moment Makers Robotics",
       "title": "FTC 19502 The Moment Makers - Robot Reveal Video - DECODE",
-      "views": 196,
+      "views": 197,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -4046,7 +4028,7 @@
       "teamNumber": 22161,
       "teamName": "M-Tech Dark Matter",
       "title": "Kickoff Presentation - Dark Matter #22161",
-      "views": 53,
+      "views": 54,
       "posts": 0,
       "sourceType": "team",
       "sourcePlatform": "youtube",
@@ -4056,6 +4038,24 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=IP-ugyHT0AI"
+        }
+      ]
+    },
+    {
+      "season": "2025",
+      "teamNumber": 27570,
+      "teamName": "Allen Yang",
+      "title": "FTC Team 27570 Decode Robot Reveal",
+      "views": 7,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=lTMjee8X-vE",
+      "channel": "https://www.youtube.com/channel/UCCWzjKby3OxYeeodAaNPdhQ",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=lTMjee8X-vE"
         }
       ]
     }
@@ -4072,7 +4072,7 @@
       "season": "2023",
       "query": "FTC CENTERSTAGE robot reveal",
       "results": 50,
-      "accepted": 12
+      "accepted": 13
     },
     {
       "season": "2023",
@@ -4090,7 +4090,7 @@
       "season": "2024",
       "query": "FTC INTO THE DEEP robot reveal",
       "results": 50,
-      "accepted": 15
+      "accepted": 14
     },
     {
       "season": "2024",
@@ -4101,14 +4101,14 @@
     {
       "season": "2024",
       "query": "FTC INTO THE DEEP engineering portfolio team",
-      "results": 26,
+      "results": 27,
       "accepted": 0
     },
     {
       "season": "2025",
       "query": "FTC DECODE robot reveal",
       "results": 50,
-      "accepted": 14
+      "accepted": 13
     },
     {
       "season": "2025",
