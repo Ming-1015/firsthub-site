@@ -249,11 +249,17 @@ function switchTab(tab){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+tab));
   $('seasonBar').hidden=!['impact','scripts','open'].includes(tab);
-  // 修复移动端：切换后滚动到内容区顶部而非页面最顶，避免每次点导航都跳回首屏
+  // 切换后定位到内容区，但为粘性导航和（如显示）赛季导航预留空间，
+  // 防止技术资源首行卡片被导航栏遮住而看似“空白”。
   const main = document.querySelector('main');
   if(main){
-    const top = Math.max(0, main.getBoundingClientRect().top + window.pageYOffset - 8);
-    window.scrollTo({top,behavior:'smooth'});
+    requestAnimationFrame(()=>{
+      const tabs = document.querySelector('.tabs');
+      const seasonBar = $('seasonBar');
+      const stickyHeight = (tabs ? tabs.offsetHeight : 0) + (!seasonBar.hidden ? seasonBar.offsetHeight : 0);
+      const top = Math.max(0, main.getBoundingClientRect().top + window.pageYOffset - stickyHeight - 8);
+      window.scrollTo({top,behavior:'smooth'});
+    });
   } else {
     window.scrollTo({top:0,behavior:'smooth'});
   }
