@@ -779,8 +779,20 @@ function renderFtcCards(){
   if(details.length)controls+='<select onchange="setFtcDetail(this.value)"><option value="all">'+(ftcCategory==='awards'?t('ftc_all_awards'):ftcCategory==='portfolios'?t('ftc_all_levels'):t('ftc_all_types'))+'</option>'+details.map(x=>'<option value="'+esc(x)+'"'+(x===ftcDetailFilter?' selected':'')+'>'+esc(ftcLabel(x))+'</option>').join('')+'</select>';
   $('ftcFilters').innerHTML=controls;
   let items=seasonItems.filter(item=>(ftcFilter==='all'||ftcSourceGroup(item)===ftcFilter)&&(ftcDetailFilter==='all'||item.detail===ftcDetailFilter||(ftcCategory==='open'&&(item.tags||[]).includes(ftcDetailFilter)))&&(!q||(item.meta+' '+item.title+' '+item.desc+' '+item.source).toLowerCase().includes(q)));
-  if(ftcCategory==='open')items.sort((a,b)=>ftcSort==='number'?a.number-b.number:ftcSort==='title'?a.title.localeCompare(b.title):b.activity-a.activity);
-  const visible=items.slice(0,60);
+  if(ftcCategory==='open')items.sort((a,b)=>{
+    if(ftcSort==='number')return a.number-b.number;
+    if(ftcSort==='title')return a.title.localeCompare(b.title);
+    // 先展示可直接复用 CAD、代码、网站或研发记录的队伍；纯视频记录仍完整保留在随后。
+    const isVideoOnly=item=>{
+      const tags=item.tags||[];
+      const links=item.links||[];
+      return tags.length>0 && tags.every(tag=>tag==='video') && links.every(link=>link.type==='video');
+    };
+    const videoOnlyOrder=Number(isVideoOnly(a))-Number(isVideoOnly(b));
+    return videoOnlyOrder||b.activity-a.activity||a.number-b.number;
+  });
+  // 队伍公开资料的三个赛季均完整展示；其他高密度列表仍保留渐进渲染上限。
+  const visible=ftcCategory==='open'?items:items.slice(0,60);
   $('ftcPanelTotal').textContent=seasonItems.length+t('ftc_records');$('ftcCount').textContent=items.length+' / '+seasonItems.length;$('ftcResultCount').textContent=t('ftc_result_showing')+' '+items.length+' / '+seasonItems.length;
   const renderCard=item=>{
     if(ftcCategory==='open'){
