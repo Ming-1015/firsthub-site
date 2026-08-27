@@ -91,6 +91,9 @@ CURATED_PORTFOLIOS = [
 ]
 
 CURATED_TEAM_RESOURCES = [
+    {"season": "2023", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ CENTERSTAGE CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2024.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2024-cad.zip"}]},
+    {"season": "2024", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ INTO THE DEEP CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2025.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2025-cad.zip"}]},
+    {"season": "2025", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ DECODE CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2026.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2026-cad.zip"}]},
     {"season": "2023", "teamNumber": 23396, "teamName": "Hivemind", "title": "Centerstage CAD release and Engineering Portfolio", "posts": 8, "sourceType": "team", "sourcePlatform": "chief-delphi", "source": "https://www.chiefdelphi.com/t/team-23396-hivemind-2024-centerstage-cad-release-portfolio/468348"},
     {"season": "2024", "teamNumber": 13193, "teamName": "Code Blue", "title": "INTO THE DEEP Road Runner robot code", "posts": 0, "sourceType": "team", "sourcePlatform": "github", "source": "https://github.com/loarado/Code_Blue_13193_Roadrunner_INTO_THE_DEEP", "links": [{"type": "code", "url": "https://github.com/loarado/Code_Blue_13193_Roadrunner_INTO_THE_DEEP"}]},
     {"season": "2025", "teamNumber": 492, "teamName": "Titan Robotics", "title": "Reusable FTC robot framework and season template", "posts": 0, "sourceType": "team", "sourcePlatform": "github", "source": "https://github.com/trc492/FtcTemplate", "links": [{"type": "code", "url": "https://github.com/trc492/FtcTemplate"}]},
@@ -151,6 +154,10 @@ def open_tags(item: dict) -> list[str]:
         "video": ("video", "youtube", "reveal"), "portfolio": ("portfolio", "notebook"),
     }
     tags.extend(tag for tag, terms in checks.items() if any(term in text for term in terms))
+    # "DECODE" is a game name, not a public code release.  Keep a code tag only
+    # when the word is standalone or a recognized source-control/software URL is present.
+    if "code" in tags and not (re.search(r"\bcode\b", text) or "github" in text or "gitlab" in text or "software" in text):
+        tags.remove("code")
     if any(link.get("type") == "website" for link in item.get("links", [])):
         tags.append("website")
     return tags
