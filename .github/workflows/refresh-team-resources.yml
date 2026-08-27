@@ -15,7 +15,9 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    # A manual run backfills every missing public Onshape preview. Scheduled
+    # runs stay small so the regular three-day refresh remains inexpensive.
+    timeout-minutes: 330
     steps:
       - name: Check out main
         uses: actions/checkout@v4
@@ -44,7 +46,13 @@ jobs:
           cp data/ftc-demo-v6.json data/ftc-demo.json
 
       - name: Add new public Onshape CAD previews
-        run: python scripts/collect_cad_previews.py --workers 2 --limit 30
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            python scripts/collect_cad_previews.py --workers 1 --retries 4
+          else
+            python scripts/collect_cad_previews.py --workers 2 --limit 30 --retries 4
+          fi
 
       - name: Commit changed public data
         shell: bash

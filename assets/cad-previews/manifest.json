@@ -1,13 +1,74 @@
 {
-  "generatedAt": "2026-08-26T16:52:06.238076+00:00",
+  "generatedAt": "2026-08-27T07:59:56.761225+00:00",
   "entries": [
+    {
+      "year": "2021",
+      "team": 955,
+      "cad": "https://cad.onshape.com/documents/2c983c7707c9ade581c69c63/w/bebda9d67b02c9a272097ebf/e/9c477a6e3bb0fbd7a85bddd5?renderMode=0&uiState=61c4c81e309d62005a27db84",
+      "preview": "assets/cad-previews/2021/955-e8784d0cfa.webp",
+      "element": "Drivebase Assembly",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:07.574408+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "2021",
+      "team": 1339,
+      "cad": "https://cad.onshape.com/documents/88b99c758855cbe7121ae77c/w/35167a1e331b7ee18e42ad0d/e/d3b9e693ad11c34f42f4fa88",
+      "preview": "assets/cad-previews/2021/1339-e9e9a33e26.webp",
+      "element": "Robot",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:00.833592+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "2021",
+      "team": 2220,
+      "cad": "https://cad.onshape.com/documents/1fbea64efe212e58d3ae6fbc/w/98d65bd6e721207a755bef2a/e/49b19d9b60e81f3ed40f9b94",
+      "preview": "assets/cad-previews/2021/2220-d6561ab124.webp",
+      "element": "Example Bare Field",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:09.928906+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "2021",
+      "team": 2471,
+      "cad": "https://cad.onshape.com/documents/028ca8fb10baf53e1f6fce96/w/b1250a450d0ba88f0a8b1811/e/a8b9e45297aac9f5688c871d",
+      "preview": "assets/cad-previews/2021/2471-66440b2de2.webp",
+      "element": "WCP-1118",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:06.213447+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "2022",
+      "team": 1675,
+      "cad": "https://cad.onshape.com/documents/29513bb20d40edfa37fa2393/w/e1f8d8ce1eb8fe1e955311e8/e/660513d2a0183a629db6e53c",
+      "preview": "assets/cad-previews/2022/1675-89981f9e59.webp",
+      "element": "Assembly 1",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:14.606999+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "2024",
+      "team": 2582,
+      "cad": "https://cad.onshape.com/documents/a298aa03e45ed9212c189793/w/e95a5f4fa14e2a9c0c823956/e/c2d661b7f5fa8bb351c8860c?renderMode=0&uiState=6542f24a115608246bffaefa",
+      "preview": "assets/cad-previews/2024/2582-dba2d0bc86.webp",
+      "element": "Robot Top Level Assembly",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:42:46.098592+00:00",
+      "status": "ok"
+    },
     {
       "year": "2025",
       "team": 111,
       "cad": "https://cad.onshape.com/documents/cd6b1c3bcec743ac3a6bc559/w/f05c609292ec4546e43f6541/e/7ef5d3d77b01fa800eb213c4",
       "preview": "assets/cad-previews/2025/111-755e525d55.webp",
       "element": "25W - WildStang 2025",
-      "updatedAt": "2026-08-26T16:29:40.520096+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:19.436872+00:00",
       "status": "ok"
     },
     {
@@ -16,7 +77,8 @@
       "cad": "https://cad.onshape.com/documents/456258752934a9d51b4e2c35/w/fc69fa497b3a80cf764a6ecd/e/946f925a33bc7c7ba6066a21",
       "preview": "assets/cad-previews/2025/604-62d9adbcdc.webp",
       "element": "2025 FRC604 Robot",
-      "updatedAt": "2026-08-26T16:37:34.475700+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:30:01.504658+00:00",
       "status": "ok"
     },
     {
@@ -25,7 +87,8 @@
       "cad": "https://cad.onshape.com/documents/18f50fd4a2add97e0a4e653f/w/4b4f1ebd5782c937c9d60635/e/0ea3046218c2a2321d4d3068?renderMode=0&uiState=679295980fc6f0026f26d346",
       "preview": "assets/cad-previews/2025/694-ff39f6e88b.webp",
       "element": "HAL 00",
-      "updatedAt": "2026-08-26T16:31:00.428483+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:56.222493+00:00",
       "status": "ok"
     },
     {
@@ -34,7 +97,8 @@
       "cad": "https://cad.onshape.com/documents/07beed2a16f5d7898cc42c9c/w/a74e4d796ba952dabae8ff7e/e/42c6b0e68334934d197bf369?renderMode=0&uiState=681d78400ee2693e5d5605f0",
       "preview": "assets/cad-previews/2025/1778-17930f9018.webp",
       "element": "Full Assembly",
-      "updatedAt": "2026-08-26T16:39:19.055040+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:32:07.148146+00:00",
       "status": "ok"
     },
     {
@@ -42,8 +106,9 @@
       "team": 2582,
       "cad": "https://cad.onshape.com/documents/45f4646e632be679e8769a1c/w/ec37c6b923a42177fb7e491f/e/aa1ba0560b0e0f95a18f2e41",
       "preview": "assets/cad-previews/2025/2582-33eb45186a.webp",
-      "element": "Robot Base Sketch",
-      "updatedAt": "2026-08-26T16:33:28.845781+00:00",
+      "element": "Robot",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:45:37.146245+00:00",
       "status": "ok"
     },
     {
@@ -52,7 +117,8 @@
       "cad": "https://cad.onshape.com/documents/ca2de945d94037080a11d3a0/w/75e245ff4068106d7cdf5d4d/e/c1c81e2b5361e7e900329e5e?renderMode=0&uiState=6779fb4ba87baa26846147a0",
       "preview": "assets/cad-previews/2025/3061-677018e6f4.webp",
       "element": "3061 | Calypso 2025 Full Robot",
-      "updatedAt": "2026-08-26T16:34:55.891516+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:29:16.164800+00:00",
       "status": "ok"
     },
     {
@@ -61,7 +127,8 @@
       "cad": "https://cad.onshape.com/documents/605debf30bd71b8cde35881a/w/157d42623968b94213e2a5a8/e/dcec98cff9555eb7b4e118ef?renderMode=0&uiState=6776f116b9c62758e263ffc2",
       "preview": "assets/cad-previews/2025/3847-696d615f26.webp",
       "element": "8515 Photon",
-      "updatedAt": "2026-08-26T16:28:22.944528+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:17.684594+00:00",
       "status": "ok"
     },
     {
@@ -70,7 +137,8 @@
       "cad": "https://cad.onshape.com/documents/96a5f9f437337066b2987626/w/9644a0c5069d0349ab3cf5a6/e/01df3e1fb18f1f03077c9c5d",
       "preview": "assets/cad-previews/2025/5940-19f3ef68d1.webp",
       "element": "A-0000-Taiyaki",
-      "updatedAt": "2026-08-26T16:42:38.454181+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:32:57.145097+00:00",
       "status": "ok"
     },
     {
@@ -79,7 +147,8 @@
       "cad": "https://cad.onshape.com/documents/3872562361eef3fa28b83e84/w/7b238e20915affe58e64da2a/e/1dd6858929f0dacad2928c6b",
       "preview": "assets/cad-previews/2025/5987-b042a3dfcf.webp",
       "element": "Feature Playground Assembly",
-      "updatedAt": "2026-08-26T16:41:48.514094+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:45:38.673915+00:00",
       "status": "ok"
     },
     {
@@ -88,7 +157,8 @@
       "cad": "https://cad.onshape.com/documents/21dea5e3fda79ed9efd2c65a/w/44f60597e9fa54719c8b9975/e/a2183ad82f5e824633f0c5b9?renderMode=0&uiState=6828fd6dbac6131a14778ef3",
       "preview": "assets/cad-previews/2025/6328-170355dfae.webp",
       "element": "6328-25D-0000",
-      "updatedAt": "2026-08-26T16:29:00.380936+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:27:15.969032+00:00",
       "status": "ok"
     },
     {
@@ -97,7 +167,8 @@
       "cad": "https://cad.onshape.com/documents/c5b7f0123db35846e1a8ce7d/w/b86402c4abf2af7870da6d05/e/d0a16369f2bb044d294d414d",
       "preview": "assets/cad-previews/2025/6995-9558743bb5.webp",
       "element": "Agnes",
-      "updatedAt": "2026-08-26T16:39:19.426940+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:31:32.406674+00:00",
       "status": "ok"
     },
     {
@@ -106,7 +177,8 @@
       "cad": "https://cad.onshape.com/documents/4384143bd8a61a963dfa73d8/w/e0285bb6ff3856f3c0645000/e/5de9d052d72bb4cf95182333?renderMode=0&uiState=674667a00630d767cf5e7388",
       "preview": "assets/cad-previews/2025/9062-eb5616f8fb.webp",
       "element": "Basic drivetrain",
-      "updatedAt": "2026-08-26T16:42:21.174041+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:33:04.460664+00:00",
       "status": "ok"
     },
     {
@@ -115,7 +187,8 @@
       "cad": "https://cad.onshape.com/documents/252eb205bc1699323c399c2a/w/52c536258375c75fa1eb94d0/e/9f7ebb6dd6e0f50473c3d0d4?renderMode=0&uiState=681a89ea27d6386382148d66",
       "preview": "assets/cad-previews/2025/9496-cede6edd4b.webp",
       "element": "Assembly 1",
-      "updatedAt": "2026-08-26T16:34:20.600415+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:28:31.575896+00:00",
       "status": "ok"
     },
     {
@@ -124,7 +197,8 @@
       "cad": "https://cad.onshape.com/documents/37bb216a8ba748944ffb521a/w/dc0abc543daa317b41955a18/e/776149fcad97d09b66407573?renderMode=0&uiState=694da29e6d008fe6cfa786ac",
       "preview": "assets/cad-previews/2026/3-c90e695654.webp",
       "element": "MAIN",
-      "updatedAt": "2026-08-26T16:52:05.699049+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:36:40.065933+00:00",
       "status": "ok"
     },
     {
@@ -133,7 +207,8 @@
       "cad": "https://cad.onshape.com/documents/ef7d583e14535d6c840b645a/w/9a8f6a7a3210b415cb362591/e/99a8f672b7e1ff50d4279c64",
       "preview": "assets/cad-previews/2026/95-ca7f338a69.webp",
       "element": "chassis parts",
-      "updatedAt": "2026-08-26T16:49:09.361181+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:35:26.954136+00:00",
       "status": "ok"
     },
     {
@@ -142,7 +217,8 @@
       "cad": "https://cad.onshape.com/documents/95442d926cc7ee250767ad2f/w/22a575502d54d0995d3419a8/e/3b222308b4fc4301e5029ae5",
       "preview": "assets/cad-previews/2026/111-77b98c8fd0.webp",
       "element": "26W - WildStang 2026",
-      "updatedAt": "2026-08-26T16:25:58.140592+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:34:41.197753+00:00",
       "status": "ok"
     },
     {
@@ -151,7 +227,8 @@
       "cad": "https://cad.onshape.com/documents/2b44ae58b051bc8b70f03c29/w/dc0349c9235eaa882ae4b5e8/e/aab734627dd0ce53947a46d9",
       "preview": "assets/cad-previews/2026/694-96d3cfc2e7.webp",
       "element": "00- HAL",
-      "updatedAt": "2026-08-26T16:44:36.537452+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:35:21.865696+00:00",
       "status": "ok"
     },
     {
@@ -160,7 +237,8 @@
       "cad": "https://cad.onshape.com/documents/363f51f69b0f6094e6657347/w/2da37c11ab641d1d095c37e0/e/8be1326937f1025569256854",
       "preview": "assets/cad-previews/2026/3847-1649028020.webp",
       "element": "3847 AM 2026",
-      "updatedAt": "2026-08-26T16:43:31.427326+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:34:02.090908+00:00",
       "status": "ok"
     },
     {
@@ -169,7 +247,8 @@
       "cad": "https://cad.onshape.com/documents/3872562361eef3fa28b83e84/w/7b238e20915affe58e64da2a/e/1dd6858929f0dacad2928c6b",
       "preview": "assets/cad-previews/2026/5987-b042a3dfcf.webp",
       "element": "Feature Playground Assembly",
-      "updatedAt": "2026-08-26T16:49:27.826780+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:47:17.888324+00:00",
       "status": "ok"
     },
     {
@@ -178,7 +257,8 @@
       "cad": "https://cad.onshape.com/documents/d77939eb2949da2818a17a2b/w/66a08a06a78d03eb2b3e766e/e/0c98df107bd4bdf37c113658?renderMode=0&uiState=6a3c0d4b82dd2f7ee34184be",
       "preview": "assets/cad-previews/2026/6328-1836bdce13.webp",
       "element": "Assembly 1",
-      "updatedAt": "2026-08-26T16:43:12.920670+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:33:40.288974+00:00",
       "status": "ok"
     },
     {
@@ -187,28 +267,17 @@
       "cad": "https://cad.onshape.com/documents/b7333d6d2663192baabefb55/w/7684c3ec186e787c0be0cd9f/e/fee6fe4f792c34aa6b514ea3",
       "preview": "assets/cad-previews/2026/7407-0c37332a45.webp",
       "element": "7407-0000",
-      "updatedAt": "2026-08-26T16:50:55.543118+00:00",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-27T07:36:06.409529+00:00",
       "status": "ok"
     }
   ],
   "failures": [
     {
-      "year": "2026",
-      "team": 3467,
-      "cad": "https://cad.onshape.com/documents/7ef2c49c5bb48212a6b180ee/w/d8d5e96ccea2e7e9ddb671f1/e/d311a2bcbeba035c9b61ad60",
-      "error": "APIRequestContext.get: read ECONNRESET\nCall log:\n  - → GET https://cad.onshape.com/api/v14/assemblies/d/7ef2c49c5bb48212a6b180ee/w/2592e9371d9b15210450d516/e/b4f027a73d9910f4920daeca/shadedviews?outputWidth=640&outputHeight=360&pixelSize=0&edges=show&useAntiAliasing=true\n    - user-agent: FIRSTHub p"
-    },
-    {
-      "year": "2026",
-      "team": 4322,
-      "cad": "https://cad.onshape.com/documents/95f806f50e970fb32a3c9990/w/3f309de42e15f651c77dfd24/e/87c1cc7424f75ad809a68c68",
-      "error": "APIRequestContext.get: read ECONNRESET\nCall log:\n  - → GET https://cad.onshape.com/api/v14/assemblies/d/95f806f50e970fb32a3c9990/w/8ae16429d78e14640af250b9/e/87c1cc7424f75ad809a68c68/shadedviews?outputWidth=640&outputHeight=360&pixelSize=0&edges=show&useAntiAliasing=true\n    - user-agent: FIRSTHub p"
-    },
-    {
-      "year": "2026",
-      "team": 2826,
-      "cad": "https://cad.onshape.com/publications/341c28036803057c925caff9/w/9807293a99eff233ff6e7364/e/cd4778ff035d56840b4161a1?renderMode=0&uiState=6972a08ecf32f9f0cf061109",
-      "error": "unsupported CAD URL"
+      "year": "2021",
+      "team": 2220,
+      "cad": "https://cad.onshape.com/documents/1fbea64efe212e58d3ae6fbc/w/98d65bd6e721207a755bef2a/e/49b19d9b60e81f3ed40f9b94",
+      "error": "linked Onshape document appears to contain a field, not a robot"
     }
   ]
 }

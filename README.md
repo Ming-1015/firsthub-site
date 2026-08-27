@@ -108,7 +108,14 @@ python scripts/collect_cad_previews.py --years 2025 2026 --workers 4
 
 Existing images are reused unless `--force` is supplied. The scheduled workflow
 adds at most 30 missing previews per run so a slow or broken external document
-cannot hold the entire public-data refresh indefinitely.
+cannot hold the entire public-data refresh indefinitely. A manual workflow run
+backfills every missing preview. Previews use Onshape's documented isometric
+matrix for a consistent front-upper three-quarter view. If a team modeled its
+robot with a different coordinate convention, add `cadPreviewViewMatrix` to
+that team record as an explicit per-model camera override. Links that resolve
+to a field, a FeatureScript playground, a private document, or another
+non-robot model retain the ordinary CAD button instead of showing a misleading
+image.
 
 Collect one or more known events for a reviewable run:
 

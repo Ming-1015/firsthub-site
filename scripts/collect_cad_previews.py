@@ -43,6 +43,18 @@ ONSHAPE_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Onshape's shaded-view API accepts a 3x4 model-to-view matrix.  This is the
+# documented isometric view: model Z stays up while the camera looks down from
+# the front-right corner.  FRC teams generally model the robot with Z up and
+# the front aligned to a horizontal axis, making this a useful, consistent
+# front three-quarter preview.  Individual records can override it with a
+# ``cadPreviewViewMatrix`` value when a team's coordinate system differs.
+FRONT_UPPER_VIEW_MATRIX = (
+    "0.612,0.612,0,0,"
+    "-0.354,0.354,0.707,0,"
+    "0.707,-0.707,0.707,0"
+)
+
 
 def load_data() -> dict:
     match = DATA_PATTERN.match(DATA_JS.read_text(encoding="utf-8"))
@@ -74,8 +86,11 @@ def element_score(element: dict, requested_eid: str) -> int:
         return -10_000
     name = str(element.get("name", "")).lower()
     score = 200 if element_type == "ASSEMBLY" else 20
+    # The linked tab is a useful hint, but many team posts link to a sketch or
+    # a field tab beside the actual full-robot assembly.  Do not let that hint
+    # outweigh a clearly named robot assembly.
     if element.get("id") == requested_eid:
-        score += 500
+        score += 100
     phrases = {
         "full robot": 400,
         "robot assembly": 350,
@@ -90,7 +105,10 @@ def element_score(element: dict, requested_eid: str) -> int:
     for phrase, points in phrases.items():
         if phrase in name:
             score += points
-    for weak_name in ("bom", "layout", "test", "copy", "bearing", "wheel", "shaft"):
+    for weak_name in (
+        "bom", "layout", "test", "copy", "bearing", "wheel", "shaft",
+        "sketch", "playground", "example", "field", "driver station",
+    ):
         if weak_name in name:
             score -= 80
     return score
@@ -140,32 +158,68 @@ async def collect_one(browser, year: str, team: dict, timeout_ms: int) -> dict:
     page = await context.new_page()
     elements_task: asyncio.Task[str] | None = None
     try:
-        elements_task = asyncio.create_task(wait_for_elements_url(page, timeout_ms))
-        await page.goto(team["cad"], wait_until="domcontentloaded", timeout=timeout_ms)
-        elements_url = await elements_task
+        # Public workspace/version links do not need the heavy CAD editor merely
+        # to resolve their element catalogue. Calling the endpoint directly
+        # makes a full-library refresh several times faster.
+        source_kind = match.group("wv").lower()
+        source_id = match.group("wvid")
+        elements_url = (
+            f"https://cad.onshape.com/api/documents/d/{match.group('did')}"
+            f"/{source_kind}/{source_id}/elements?withThumbnails=true"
+        )
         response = await context.request.get(
             elements_url.replace("withThumbnails=false", "withThumbnails=true"), timeout=timeout_ms
         )
         if not response.ok:
             raise ValueError(f"element catalogue returned HTTP {response.status}")
         elements = await response.json()
+        requested = next(
+            (item for item in elements if item.get("id") == match.group("eid")), None
+        )
+        requested_name = str((requested or {}).get("name", "")).lower()
+        renderable_names = " ".join(
+            str(item.get("name", "")).lower()
+            for item in elements
+            if item.get("elementType") in {"ASSEMBLY", "PARTSTUDIO"}
+        )
+        if (
+            any(word in requested_name for word in ("field", "driver station", "field wall"))
+            and not any(
+                word in renderable_names
+                for word in ("robot", "robot assembly", "chassis", "drivetrain")
+            )
+        ):
+            raise ValueError("linked Onshape document appears to contain a field, not a robot")
+        renderable = [
+            item
+            for item in elements
+            if item.get("elementType") in {"ASSEMBLY", "PARTSTUDIO"}
+        ]
+        if renderable and all(
+            any(
+                word in str(item.get("name", "")).lower()
+                for word in ("feature playground", "test ps", "sandbox")
+            )
+            for item in renderable
+        ):
+            raise ValueError("linked Onshape document contains feature tests, not a robot")
         candidates = sorted(
             elements, key=lambda item: element_score(item, match.group("eid")), reverse=True
         )
         if not candidates or element_score(candidates[0], match.group("eid")) < 0:
             raise ValueError("no renderable assembly or part studio found")
         element = candidates[0]
-        workspace_match = re.search(r"/w/([0-9a-f]{24})/elements", elements_url, re.I)
-        if not workspace_match:
-            raise ValueError("could not resolve the public document workspace")
         kind = "assemblies" if element["elementType"] == "ASSEMBLY" else "partstudios"
         render_url = (
             f"https://cad.onshape.com/api/v14/{kind}/d/{match.group('did')}"
-            f"/w/{workspace_match.group(1)}/e/{element['id']}/shadedviews"
+            f"/{source_kind}/{source_id}/e/{element['id']}/shadedviews"
         )
         rendered = await context.request.get(
             render_url,
             params={
+                "viewMatrix": str(
+                    team.get("cadPreviewViewMatrix", FRONT_UPPER_VIEW_MATRIX)
+                ),
                 "outputWidth": "640",
                 "outputHeight": "360",
                 "pixelSize": "0",
@@ -183,12 +237,14 @@ async def collect_one(browser, year: str, team: dict, timeout_ms: int) -> dict:
         encode_webp(base64.b64decode(images[0]), output)
         team["cadPreview"] = relative
         team["cadPreviewElement"] = element.get("name", "")
+        team["cadPreviewAngle"] = "front-upper-three-quarter"
         return {
             "year": year,
             "team": team["n"],
             "cad": team["cad"],
             "preview": relative,
             "element": element.get("name", ""),
+            "angle": "front-upper-three-quarter",
             "updatedAt": datetime.now(timezone.utc).isoformat(),
             "status": "ok",
         }
@@ -209,10 +265,20 @@ async def run(args: argparse.Namespace) -> int:
         if year not in years:
             continue
         for team in season.get("open", []):
+            if args.teams and str(team.get("n")) not in set(args.teams):
+                continue
             cad = str(team.get("cad", ""))
             if urlparse(cad).hostname != "cad.onshape.com" or not ONSHAPE_PATTERN.match(cad):
                 continue
-            output, _ = preview_path(year, team)
+            output, relative = preview_path(year, team)
+            if args.existing_only and not (team.get("cadPreview") and output.exists()):
+                continue
+            if not args.force and output.exists() and not team.get("cadPreview"):
+                # Recover a completed image after an interrupted long backfill.
+                team["cadPreview"] = relative
+                team["cadPreviewAngle"] = "front-upper-three-quarter"
+                skipped += 1
+                continue
             if not args.force and team.get("cadPreview") and output.exists():
                 skipped += 1
                 continue
@@ -252,11 +318,13 @@ async def run(args: argparse.Namespace) -> int:
                         existing[(year, team["n"])] = entry
                         completed += 1
                         print(f"OK {year} #{team['n']}: {entry['element']}", flush=True)
+                        if args.delay:
+                            await asyncio.sleep(args.delay)
                         return
                     except (ValueError, OSError, PlaywrightError, PlaywrightTimeoutError, asyncio.TimeoutError) as error:
                         last_error = error
                         if attempt < args.retries:
-                            await asyncio.sleep(attempt * 2)
+                            await asyncio.sleep(attempt * 2 + args.delay)
                 failures.append(
                     {
                         "year": year,
@@ -265,6 +333,11 @@ async def run(args: argparse.Namespace) -> int:
                         "error": str(last_error)[:300],
                     }
                 )
+                if args.force:
+                    output, _ = preview_path(year, team)
+                    output.unlink(missing_ok=True)
+                    for field in ("cadPreview", "cadPreviewElement", "cadPreviewAngle"):
+                        team.pop(field, None)
                 print(f"SKIP {year} #{team['n']}: {last_error}", flush=True)
 
         await asyncio.gather(*(guarded(year, team) for year, team in jobs))
@@ -284,11 +357,23 @@ async def run(args: argparse.Namespace) -> int:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--years", nargs="+", help="Only process these season years")
+    parser.add_argument("--teams", nargs="+", help="Only process these team numbers")
     parser.add_argument("--workers", type=int, default=4, help="Concurrent isolated browser contexts")
     parser.add_argument("--limit", type=int, default=0, help="Maximum number of missing previews this run")
     parser.add_argument("--timeout", type=int, default=45, help="Per-request timeout in seconds")
     parser.add_argument("--retries", type=int, default=3, help="Attempts per public CAD link")
+    parser.add_argument(
+        "--delay",
+        type=float,
+        default=1.5,
+        help="Polite delay between public Onshape jobs/retries in seconds",
+    )
     parser.add_argument("--force", action="store_true", help="Regenerate existing previews")
+    parser.add_argument(
+        "--existing-only",
+        action="store_true",
+        help="Only process records that already have a cached preview (use with --force)",
+    )
     parser.add_argument("--executable-path", help="Use an existing Chromium/Edge executable")
     return parser.parse_args()
 
