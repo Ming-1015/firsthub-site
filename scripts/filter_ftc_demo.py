@@ -176,7 +176,8 @@ def enrich_team_links(item: dict) -> list[dict]:
         cooked = payload.get("post_stream", {}).get("posts", [{}])[0].get("cooked", "")
         urls = [unescape(value) for value in re.findall(r'href=["\'](https?://[^"\']+)', cooked)]
         accepted, seen = [], set()
-        rules = (("cad", ("onshape.com", "cad.onshape")), ("code", ("github.com", "gitlab.com")),
+        rules = (("discord", ("discord.gg/", "discord.com/invite/")),
+                 ("cad", ("onshape.com", "cad.onshape")), ("code", ("github.com", "gitlab.com")),
                  ("video", ("youtube.com", "youtu.be", "vimeo.com")), ("website", (".org", ".com", ".net", ".io")))
         for url in urls:
             if "chiefdelphi.com" in url or url in seen:

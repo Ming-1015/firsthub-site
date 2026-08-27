@@ -471,6 +471,7 @@ function renderOpen(){
     if(team.ph) links.push(btn('pres','Photos',team.ph));
     if(team.site) links.push(btn('site',siteLabel,team.site));
     if(team.cd) links.push(btn('cd','Build Thread',team.cd));
+    (team.discordLinks||[]).forEach(url=>links.push(btn('cd','Discord',url)));
     // CAD preview 图标：有 CAD 的队伍在队号旁标一个小图标
     const cadIcon = team.cad ? '<a class="cad-prev" href="'+team.cad+'" target="_blank" rel="noopener" title="'+cadPreviewLabel+'"><span class="cad-dot"></span>3D</a>' : '';
     // 程序方向标签
@@ -813,7 +814,7 @@ function renderFtcCards(){
   $('ftcPanelTotal').textContent=seasonItems.length+t('ftc_records');$('ftcCount').textContent=items.length+' / '+seasonItems.length;$('ftcResultCount').textContent=t('ftc_result_showing')+' '+items.length+' / '+seasonItems.length;
   const renderCard=item=>{
     if(ftcCategory==='open'){
-      const direct=(item.links||[]).slice(0,5).map(link=>'<a class="btn '+({cad:'cad',code:'gh',video:'video',website:'site'}[link.type]||'site')+'" href="'+esc(link.url)+'" target="_blank" rel="noopener">'+esc(ftcLabel(link.type))+'</a>').join('');
+      const direct=(item.links||[]).slice(0,5).map(link=>'<a class="btn '+({cad:'cad',code:'gh',video:'video',website:'site',discord:'cd'}[link.type]||'site')+'" href="'+esc(link.url)+'" target="_blank" rel="noopener">'+(link.type==='discord'?'Discord':esc(ftcLabel(link.type)))+'</a>').join('');
       const tags=(item.tags||[]).filter(tag=>tag!=='build-thread').map(tag=>'<span class="tag-chip">'+esc(ftcLabel(tag))+'</span>').join('');
       const cad=(item.tags||[]).includes('cad')?'<span class="cad-prev"><span class="cad-dot"></span>3D</span>':'';
       const views=item.activity?'<span class="views">'+Number(item.activity).toLocaleString()+' '+(item.sourcePlatform==='youtube'?t('ftc_views'):t('ftc_updates'))+'</span>':'';

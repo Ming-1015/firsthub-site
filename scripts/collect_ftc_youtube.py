@@ -66,6 +66,10 @@ LOOSE_TEAM_PATTERNS = (
 )
 SEASON_YEARS = {2023, 2024, 2025, 2026}
 USER_AGENT = "FIRSTHub FTC YouTube metadata collector/1.0 (+https://firsthub.site/)"
+DISCORD_RE = re.compile(r"https?://(?:discord\.gg|discord\.com/invite)/[A-Za-z0-9-]+", re.I)
+
+def discord_links(text: str) -> list[str]:
+    return list(dict.fromkeys(DISCORD_RE.findall(text or "")))[:3]
 
 
 def explicit_team_number(text: str) -> int | None:
@@ -179,7 +183,7 @@ def collect_fun_robotics(limit: int) -> tuple[list[dict], dict]:
             "source": url,
             "channel": f"https://www.youtube.com/channel/{FUN_ROBOTICS_CHANNEL_ID}",
             "publisher": "FUN Robotics Network",
-            "links": [{"type": "video", "url": url}],
+            "links": [{"type": "video", "url": url}] + [{"type": "discord", "url": invite} for invite in discord_links(str(entry.get("description") or ""))],
         })
     return records, {
         "source": FUN_ROBOTICS_CHANNEL,
@@ -249,7 +253,7 @@ def main() -> None:
                     "sourcePlatform": "youtube",
                     "source": url,
                     "channel": entry.get("channel_url") or entry.get("uploader_url") or "",
-                    "links": [{"type": "video", "url": url}],
+                    "links": [{"type": "video", "url": url}] + [{"type": "discord", "url": invite} for invite in discord_links(blob)],
                 }
                 previous = collected.get(video_id)
                 if previous is None or int(item["views"]) > int(previous.get("views") or 0):

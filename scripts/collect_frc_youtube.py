@@ -31,6 +31,10 @@ DATA_JS = ROOT / "assets" / "js" / "data.js"
 INDEX_HTML = ROOT / "index.html"
 DATA_RE = re.compile(r"const DATA = (.*?);\r?\n")
 USER_AGENT = "FIRSTHub FRC YouTube metadata collector/1.0 (+https://firsthub.site/)"
+DISCORD_RE = re.compile(r"https?://(?:discord\.gg|discord\.com/invite)/[A-Za-z0-9-]+", re.I)
+
+def discord_links(text: str) -> list[str]:
+    return list(dict.fromkeys(DISCORD_RE.findall(text or "")))[:3]
 
 SEASONS = {
     "2021": ("INFINITE RECHARGE at Home", ("infinite recharge",)),
@@ -174,6 +178,7 @@ def merge_into_data(items: list[dict], official_names: dict[int, str], previous_
             added_videos += 1
         videos.sort(key=lambda video: -int(video.get("views") or 0))
         team["ytVideos"] = videos
+        team["discordLinks"] = list(dict.fromkeys((team.get("discordLinks") or []) + (item.get("discordLinks") or [])))[:5]
         team["yt"] = videos[0]["url"]
         team["views"] = max([int(team.get("resourceViews") or 0), *[int(video.get("views") or 0) for video in videos]])
     encoded = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
@@ -225,6 +230,7 @@ def main() -> None:
                     "title": entry.get("title") or f"FRC Team {number} public video",
                     "views": int(entry.get("view_count") or 0), "sourcePlatform": "youtube", "source": url,
                     "channel": entry.get("channel_url") or entry.get("uploader_url") or "",
+                    "discordLinks": discord_links(blob),
                 }
                 accepted += 1
             audit.append({"season": season, "query": query, "results": len(entries), "accepted": accepted})
