@@ -51,6 +51,10 @@ The important files are:
 - `scripts/collect_frc_youtube.py`: applies the same public-video, team-number,
   official-team-page, season, and de-duplication rules to FRC, then merges the
   verified links into each season's Team-Published Resources cards.
+- `scripts/collect_discord_resources.py`: reads only explicitly approved
+  Discord channels through an installed bot and creates an auditable queue of
+  public external team-resource links. It never stores message text, author or
+  member data, attachments, or content from unapproved servers.
 - `scripts/collect_cad_previews.py`: creates compressed static preview images
   for public Onshape robot CAD. It resolves the current public workspace,
   selects a likely full-robot assembly, requests a clean shaded view, validates
@@ -96,6 +100,30 @@ at approximately 03:17 UTC. The workflow can be started manually from the
 repository's Actions tab and commits only public data back to `main`. FTC
 and FRC refreshes are additive, so temporary search-result changes do not erase
 older public team records that are already in the library.
+
+### Optional approved-Discord collection
+
+Discord has no public global search endpoint, so FIRSTHub never attempts to
+scan arbitrary servers. A server administrator must first explicitly approve a
+resource channel, install the FIRSTHub bot, and configure only that channel in
+`data/discord-sources.json` (copy the field shape from
+`data/discord-sources.example.json`). The bot needs only **View Channels** and
+**Read Message History**. Enable Discord's Message Content privileged intent
+for the bot, then add its token as the repository Actions secret
+`DISCORD_BOT_TOKEN`.
+
+The collector retains only an explicit FRC/FTC team number, an external public
+resource URL, its type, and the Discord message permalink for auditing. It does
+not store message bodies, usernames, member lists, attachments, or private
+channels. The three-day workflow writes its findings to
+`data/discord-resources.json` as a review queue; items are not silently merged
+into the public catalogue simply because they appeared in chat.
+
+Test an approved-channel configuration without accessing Discord:
+
+```powershell
+python scripts/collect_discord_resources.py --dry-run
+```
 
 Generate missing public Onshape previews locally (browser automation is used
 only during maintenance; visitors receive ordinary static images):

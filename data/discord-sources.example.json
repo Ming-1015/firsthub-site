@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "name": "Example approved FRC server",
+      "guildId": "SERVER_ID",
+      "program": "frc",
+      "channels": [
+        {
+          "id": "CHANNEL_ID",
+          "name": "public-resources",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Example approved FTC server",
+      "guildId": "SERVER_ID",
+      "program": "ftc",
+      "channels": [
+        {
+          "id": "CHANNEL_ID",
+          "name": "team-showcase",
+          "season": "2025-26"
+        }
+      ]
+    }
+  ]
+}
