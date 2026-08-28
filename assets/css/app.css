@@ -191,7 +191,7 @@ main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
 
 /* views 热度 */
 .card .views{font-size:.72rem;color:var(--muted);margin-left:auto}
-.team-resource-card{overflow:hidden;align-self:start}
+.team-resource-card{overflow:hidden;align-self:stretch;min-height:300px}
 .cad-thumb{display:block;aspect-ratio:16/9;margin:-16px -16px 5px;background:#f7f7f5;border-bottom:1px solid var(--border);overflow:hidden}
 .cad-thumb img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .2s ease}
 .cad-thumb:hover img{transform:scale(1.025)}
