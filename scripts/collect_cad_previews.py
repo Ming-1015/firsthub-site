@@ -80,7 +80,22 @@ def preview_path(year: str, team: dict) -> tuple[Path, str]:
     return ROOT / rel, rel.as_posix()
 
 
-def element_score(element: dict, requested_eid: str) -> int:
+def preview_is_approved(year: str, team: dict) -> bool:
+    """Return whether a preview may be shown without misleading visitors.
+
+    A public Onshape document often contains several years of work, field
+    layouts, or a single mechanism alongside the complete robot.  In
+    particular, a link stored in a 2026 record is *not* proof that the tab is
+    a 2026 full-robot model.  Preview images therefore need an explicit
+    per-record review flag before the collector may publish them.
+    """
+    # The existing archive predates this safeguard.  Apply the stricter gate
+    # to REBUILT (2026), where the current collection is still changing and
+    # the reported cross-season matches were found.
+    return year != "2026" or team.get("cadPreviewVerified") is True
+
+
+def element_score(element: dict, requested_eid: str, target_year: str) -> int:
     element_type = element.get("elementType", "")
     if element_type not in {"ASSEMBLY", "PARTSTUDIO"}:
         return -10_000
@@ -111,6 +126,12 @@ def element_score(element: dict, requested_eid: str) -> int:
     ):
         if weak_name in name:
             score -= 80
+    # A named older year is a strong signal that this is not the requested
+    # season.  This catches tabs such as "2025 Main Robot Assembly" in a
+    # 2026 document before they can become a polished-but-wrong preview.
+    older_years = set(re.findall(r"20(?:1\d|2[0-9])", name)) - {target_year}
+    if older_years:
+        score -= 1_000
     return score
 
 
@@ -204,9 +225,11 @@ async def collect_one(browser, year: str, team: dict, timeout_ms: int) -> dict:
         ):
             raise ValueError("linked Onshape document contains feature tests, not a robot")
         candidates = sorted(
-            elements, key=lambda item: element_score(item, match.group("eid")), reverse=True
+            elements,
+            key=lambda item: element_score(item, match.group("eid"), year),
+            reverse=True,
         )
-        if not candidates or element_score(candidates[0], match.group("eid")) < 0:
+        if not candidates or element_score(candidates[0], match.group("eid"), year) < 0:
             raise ValueError("no renderable assembly or part studio found")
         element = candidates[0]
         kind = "assemblies" if element["elementType"] == "ASSEMBLY" else "partstudios"
@@ -269,6 +292,10 @@ async def run(args: argparse.Namespace) -> int:
                 continue
             cad = str(team.get("cad", ""))
             if urlparse(cad).hostname != "cad.onshape.com" or not ONSHAPE_PATTERN.match(cad):
+                continue
+            if not preview_is_approved(year, team):
+                # Keep the public CAD link available on its card, but do not
+                # turn an unreviewed document into an asserted robot preview.
                 continue
             output, relative = preview_path(year, team)
             if args.existing_only and not (team.get("cadPreview") and output.exists()):

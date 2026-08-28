@@ -480,7 +480,9 @@ function renderOpen(){
     // 访问量
     const views = team.views ? '<span class="views">'+(team.views>=1000?(team.views/1000).toFixed(1)+'k'+viewsSuffix:team.views+viewsSuffix)+'</span>' : '';
     const previewAlt = t('cad_preview_alt').replace('{team}',String(team.n));
-    const preview = team.cadPreview
+    // A record can explicitly withdraw a misleading thumbnail while keeping
+    // its public CAD source link available to visitors.
+    const preview = team.cadPreview && team.cadPreviewVerified !== false
       ? '<a class="cad-thumb" href="'+esc(team.cad)+'" target="_blank" rel="noopener" aria-label="'+esc(previewAlt)+'"><img src="'+esc(team.cadPreview)+'" width="640" height="360" loading="lazy" decoding="async" alt="'+esc(previewAlt)+'"></a>'
       : '';
     return '<article class="card team-resource-card">'+preview+'<div class="num">'+team.n+cadIcon+views+'</div><div class="nm">'+(team.nm||'')+'</div>'+(tags?'<div>'+tags+'</div>':'')+'<div class="links">'+links.join('')+'</div></article>';
