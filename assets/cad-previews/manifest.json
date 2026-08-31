@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T15:24:55.915814+00:00",
+  "generatedAt": "2026-08-31T09:46:40.276152+00:00",
   "entries": [
     {
       "year": "2021",
@@ -2003,6 +2003,16 @@
     },
     {
       "year": "2025",
+      "team": 4276,
+      "cad": "https://cad.onshape.com/documents/efd5bd2ebffe610da00465fd/w/21b3aa43b97d23ba7f059b64/e/48fc419b00d9edcc3ec71484",
+      "preview": "assets/cad-previews/2025/4276-a9d8e450d8.webp",
+      "element": "v1.2 - Main Assembly",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-08-31T09:46:25.495180+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "2025",
       "team": 4322,
       "cad": "https://cad.onshape.com/documents/6009870b4116f0fdf57bed51/w/c56f1ce42b5e91da0846aa7c/e/ba4e9a0cd20d52a2444c37fd?renderMode=0&uiState=6771ea0a46c82e754e712ce4",
       "preview": "assets/cad-previews/2025/4322-0417b3f760.webp",
@@ -2874,16 +2884,16 @@
   ],
   "failures": [
     {
-      "year": "2021",
-      "team": 2220,
-      "cad": "https://cad.onshape.com/documents/1fbea64efe212e58d3ae6fbc/w/98d65bd6e721207a755bef2a/e/49b19d9b60e81f3ed40f9b94",
-      "error": "linked Onshape document appears to contain a field, not a robot"
-    },
-    {
       "year": "2023",
       "team": 6838,
       "cad": "https://cad.onshape.com/documents/f81942eb5ff9791a9325202e/w/4af1ef9b1430d1c20fe6a612/e/4d7fff3ad8b0631c6db4e817",
       "error": "element catalogue returned HTTP 403"
+    },
+    {
+      "year": "2021",
+      "team": 2220,
+      "cad": "https://cad.onshape.com/documents/1fbea64efe212e58d3ae6fbc/w/98d65bd6e721207a755bef2a/e/49b19d9b60e81f3ed40f9b94",
+      "error": "linked Onshape document appears to contain a field, not a robot"
     },
     {
       "year": "2023",
@@ -2899,14 +2909,14 @@
     },
     {
       "year": "2023",
-      "team": 5847,
-      "cad": "https://cad.onshape.com/documents/2b6dadea9394d68eea31bae7/w/4be25253171208bd1ce117ca/e/7350c1020601ebcd4c7a8224",
+      "team": 6081,
+      "cad": "https://cad.onshape.com/documents/a586b338f4d1d1526c79f646/w/447f20d0a595451d9ff5b1f0/e/def0a9873acfbf0918bae5a3",
       "error": "element catalogue returned HTTP 403"
     },
     {
       "year": "2023",
-      "team": 6081,
-      "cad": "https://cad.onshape.com/documents/a586b338f4d1d1526c79f646/w/447f20d0a595451d9ff5b1f0/e/def0a9873acfbf0918bae5a3",
+      "team": 5847,
+      "cad": "https://cad.onshape.com/documents/2b6dadea9394d68eea31bae7/w/4be25253171208bd1ce117ca/e/7350c1020601ebcd4c7a8224",
       "error": "element catalogue returned HTTP 403"
     },
     {
@@ -3027,6 +3037,24 @@
       "year": "2025",
       "team": 2521,
       "cad": "https://cad.onshape.com/documents/a77a44fca3858aa0be280444/w/1e924d71af5aefa2c0b02bd0/e/3f1f1586af79954d780f8a58",
+      "error": "element catalogue returned HTTP 403"
+    },
+    {
+      "year": "2025",
+      "team": 5419,
+      "cad": "https://cad.onshape.com/documents/cbac4d341fde187d6a3df2dd/w/671a22ea8fa734b50685197f/e/7de17960ad8b4f3431fbf947",
+      "error": "element catalogue returned HTTP 403"
+    },
+    {
+      "year": "2025",
+      "team": 2473,
+      "cad": "https://cad.onshape.com/documents/1050ba547f7e2c9216e726c0/w/48726708ba2d6234b9864728/e/93adb69553f9aa11c9b35a55",
+      "error": "element catalogue returned HTTP 403"
+    },
+    {
+      "year": "2025",
+      "team": 1559,
+      "cad": "https://cad.onshape.com/documents/540be85a4d2385fb6d1e0525/w/4b1040f8f2e83009145cf54c/e/21b9c766e479305ae04ec6b4?configuration=List_7MTqPkDlmgKl36%253Dmk5i%253BList_izn2Vkam75av15%253DKraken_X44&renderMode=0&uiState=6946cbb3d3fcd00f9b73a3ac",
       "error": "element catalogue returned HTTP 403"
     }
   ]
