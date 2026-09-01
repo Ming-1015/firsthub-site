@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T09:46:40.276152+00:00",
+  "generatedAt": "2026-09-01T08:42:38.196958+00:00",
   "entries": [
     {
       "year": "2021",
@@ -3055,6 +3055,12 @@
       "year": "2025",
       "team": 1559,
       "cad": "https://cad.onshape.com/documents/540be85a4d2385fb6d1e0525/w/4b1040f8f2e83009145cf54c/e/21b9c766e479305ae04ec6b4?configuration=List_7MTqPkDlmgKl36%253Dmk5i%253BList_izn2Vkam75av15%253DKraken_X44&renderMode=0&uiState=6946cbb3d3fcd00f9b73a3ac",
+      "error": "element catalogue returned HTTP 403"
+    },
+    {
+      "year": "2025",
+      "team": 2423,
+      "cad": "https://cad.onshape.com/documents/42cd5bb2277b762ed1d60d53/w/64d9756f120a33c7575fd59a/e/d23c2f0a5c972777845d5290?renderMode=0&uiState=696162381daa77607ba3201e",
       "error": "element catalogue returned HTTP 403"
     }
   ]
