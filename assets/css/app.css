@@ -14,6 +14,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
 [hidden]{display:none!important}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+html[dir="rtl"] body{direction:rtl}
+html[dir="rtl"] .hero-copy,html[dir="rtl"] .section-head,html[dir="rtl"] .lead,html[dir="rtl"] .info-box{text-align:right}
+html[dir="rtl"] .lang-control{right:auto!important;left:20px!important}
+html[dir="rtl"] .programbar-inner,html[dir="rtl"] .seasonbar-inner,html[dir="rtl"] .ftc-seasonbar-inner{direction:rtl}
+html[dir="rtl"] .card .num,html[dir="rtl"] .card .loc,html[dir="rtl"] .card .note{direction:rtl}
 a{color:var(--primary);text-decoration:none}
 a:hover{text-decoration:underline}
 #langSel option{background:#fff;color:#1e293b}
