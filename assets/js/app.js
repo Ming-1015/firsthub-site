@@ -8,7 +8,7 @@ Object.assign(I18N['zh-TW'],{program_choose:"選擇項目",ftc_tab_overview:"總
 Object.assign(I18N.en,{tech_cat_cad:"Mechanical Design and CAD",tech_cat_code:"Programming and Software",tech_cat_data:"Data and Strategy",tech_cat_learn:"Learning and Training",tech_cat_com:"Community and Platforms"});
 Object.assign(I18N['zh-CN'],{tech_cat_cad:"机械与 CAD",tech_cat_code:"程序与软件",tech_cat_data:"数据与策略",tech_cat_learn:"学习与教学",tech_cat_com:"社区与平台"});
 Object.assign(I18N['zh-TW'],{tech_cat_cad:"機械與 CAD",tech_cat_code:"程式與軟體",tech_cat_data:"資料與策略",tech_cat_learn:"學習與教學",tech_cat_com:"社群與平台"});
-const SUPPORTED_LANGS=['en','zh-CN','zh-TW','es','tr','pt','he'];
+const SUPPORTED_LANGS=['en','zh-CN','zh-TW','es','tr','pt','he','uz'];
 const savedLang=localStorage.getItem('frc_lang');
 let LANG=SUPPORTED_LANGS.includes(savedLang)?savedLang:'en';
 Object.assign(I18N.en,{sort_hot:"By popularity",sort_team:"By team number",teams_sorted_number:" teams (team number order)",sort_label:"Team-resource sorting"});
@@ -89,7 +89,7 @@ function applyI18n(){
   document.documentElement.dir = LANG==='he'?'rtl':'ltr';
 }
 function renderLangSelector(){
-  const names={en:'English','zh-CN':'简体中文','zh-TW':'繁體中文',es:'Español',tr:'Türkçe',pt:'Português',he:'עברית'};
+  const names={en:'English','zh-CN':'简体中文','zh-TW':'繁體中文',es:'Español',tr:'Türkçe',pt:'Português',he:'עברית',uz:'O‘zbekcha'};
   const opts=SUPPORTED_LANGS.map(l=>'<option value="'+l+'"'+(l===LANG?' selected':'')+'>'+names[l]+'</option>').join('');
   const el=document.getElementById('langSel');
   if(el){ el.innerHTML=opts; el.value=LANG; }
