@@ -45,6 +45,8 @@ Object.assign(I18N.tr,{
 
 Object.assign(I18N.es,{tech_cat_cad:"Diseño mecánico y CAD",tech_cat_code:"Programación y software",tech_cat_data:"Datos y estrategia",tech_cat_learn:"Aprendizaje y formación",tech_cat_com:"Comunidad y plataformas"});
 Object.assign(I18N.tr,{tech_cat_cad:"Mekanik tasarım ve CAD",tech_cat_code:"Programlama ve yazılım",tech_cat_data:"Veri ve strateji",tech_cat_learn:"Öğrenme ve eğitim",tech_cat_com:"Topluluk ve platformlar"});
+Object.assign(I18N.es,{ftc_built_by:"FIRSTHub, creado por FRC Team 5449 para la comunidad FTC."});
+Object.assign(I18N.tr,{ftc_built_by:"FTC topluluğu için FRC Team 5449 tarafından oluşturulan FIRSTHub."});
 
 Object.assign(I18N.es,{ftc_tab_style:"Guía de estilo de la temporada",ftc_card_style:"Directrices de marca, logotipos y recursos para redes sociales oficiales de FIRST, organizados por temporada."});
 Object.assign(I18N.tr,{ftc_tab_style:"Sezon stil rehberi",ftc_card_style:"Sezona göre düzenlenmiş resmî FIRST marka yönergeleri, logoları ve sosyal medya materyalleri."});

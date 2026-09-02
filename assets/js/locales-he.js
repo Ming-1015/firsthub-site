@@ -37,5 +37,6 @@ Object.assign(I18N.he,{
 });
 
 const heMissing=Object.keys(I18N.en).filter(key=>!Object.prototype.hasOwnProperty.call(I18N.he,key));
+Object.assign(I18N.he,{ftc_built_by:"FIRSTHub, שנבנה על ידי קבוצת FRC 5449 עבור קהילת FTC."});
 if(heMissing.length)console.error("Hebrew locale incomplete:",heMissing);
 if(typeof setLang==="function"&&typeof LANG!=="undefined"&&LANG==="he")setLang(LANG);

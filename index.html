@@ -57,12 +57,12 @@
     <span class="program-label" data-i18n="program_choose">Choose program</span>
     <div class="program-switch" role="group" aria-label="FRC or FTC">
       <button class="program-btn active" id="programFrc" type="button" onclick="setProgram('frc')"><strong>FRC</strong><small>FIRST Robotics Competition</small></button>
-      <button class="program-btn" id="programFtc" type="button" onclick="setProgram('ftc')"><strong>FTC <span class="program-beta">DEMO</span></strong><small>FIRST Tech Challenge</small></button>
+      <button class="program-btn" id="programFtc" type="button" onclick="setProgram('ftc')"><strong>FTC</strong><small>FIRST Tech Challenge</small></button>
     </div>
   </div>
 </div>
 
-<section class="ftc-demo" id="ftcDemo" aria-label="FTC resource hub demo">
+<section class="ftc-demo" id="ftcDemo" aria-label="FTC resource hub">
   <nav class="ftc-nav" aria-label="FTC sections"><div class="ftc-nav-inner" id="ftcNav"><button class="active" data-i18n="ftc_tab_overview" onclick="renderFtc('overview',this)">总览</button><button data-i18n="ftc_tab_awards" onclick="renderFtc('awards',this)">获奖结果</button><button data-i18n="ftc_tab_portfolios" onclick="renderFtc('portfolios',this)">工程作品集</button><button data-i18n="ftc_tab_open" onclick="renderFtc('open',this)">队伍公开资料</button><button data-i18n="ftc_tab_sites" onclick="renderFtc('sites',this)">技术站</button><button data-i18n="ftc_tab_resources" onclick="renderFtc('resources',this)">技术资源</button><button data-i18n="ftc_tab_style" onclick="renderFtc('style',this)">赛季风格指南</button><span class="ftc-count" id="ftcCount" data-i18n="ftc_featured">精选入口</span></div></nav>
   <div class="ftc-seasonbar" hidden><div class="ftc-seasonbar-inner"><div class="cap" data-i18n="select_season">赛季选择</div><div class="ftc-seasons" id="ftcSeasons"></div></div></div>
   <main class="ftc-main">
@@ -89,7 +89,7 @@
   </main>
   <footer class="ftc-footer"><div class="inner">
     <div><h4 data-i18n="footer_src">数据来源</h4><ul><li><a href="https://ftc-events.firstinspires.org/" target="_blank" rel="noopener">FIRST FTC Event Web</a></li><li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">FTC Documentation</a></li><li><a href="https://www.chiefdelphi.com/c/first/ftc-open-alliance" target="_blank" rel="noopener">Chief Delphi · FTC Open Alliance</a></li></ul></div>
-    <div><h4 data-i18n="footer_contrib">如何贡献 / 扩充数据</h4><ul><li data-i18n="ftc_contrib_process">采集、清洗和筛选流程记录在 GitHub README</li><li><a href="https://github.com/Ming-1015/firsthub-site/tree/ftc-demo" target="_blank" rel="noopener" data-i18n="ftc_demo_branch">查看 FTC Demo 分支</a></li><li><a href="https://github.com/Ming-1015/firsthub-site/issues/new" target="_blank" rel="noopener" data-i18n="contrib_issue">提交数据问题或补充建议</a></li></ul></div>
+    <div><h4 data-i18n="footer_contrib">如何贡献 / 扩充数据</h4><ul><li data-i18n="ftc_contrib_process">采集、清洗和筛选流程记录在 GitHub README</li><li><a href="https://github.com/Ming-1015/firsthub-site" target="_blank" rel="noopener" data-i18n="contrib_repo">查看 GitHub 仓库</a></li><li><a href="https://github.com/Ming-1015/firsthub-site/issues/new" target="_blank" rel="noopener" data-i18n="contrib_issue">提交数据问题或补充建议</a></li></ul></div>
     <div><h4 data-i18n="ftc_data_boundaries">数据边界</h4><ul><li data-i18n="ftc_boundary_public">只收录无需登录即可访问的公开资料</li><li data-i18n="ftc_boundary_labels">资料标签不代表 FIRST 官方认证</li><li data-i18n="ftc_boundary_sources">所有条目保留原始来源链接</li></ul></div>
   </div><div class="copy">FIRSTHub · FTC Open Resource Library · built for the FTC community</div><div class="copy" style="margin-top:6px;opacity:.65;font-size:.78rem">Built by FRC Team 5449</div></footer>
 </section>
@@ -263,11 +263,11 @@
 
 <script src="assets/js/data.js?v=20260901-0842" defer></script>
 <script src="assets/js/i18n.js?v=20260823-2" defer></script>
-<script src="assets/js/app.js?v=20260902-1" defer></script>
-<script src="assets/js/locales-es-tr.js?v=20260827-1" defer></script>
-<script src="assets/js/locales-pt.js?v=20260901-1" defer></script>
-<script src="assets/js/locales-he.js?v=20260901-1" defer></script>
-<script src="assets/js/locales-uz.js?v=20260902-1" defer></script>
+<script src="assets/js/app.js?v=20260902-2" defer></script>
+<script src="assets/js/locales-es-tr.js?v=20260902-1" defer></script>
+<script src="assets/js/locales-pt.js?v=20260902-1" defer></script>
+<script src="assets/js/locales-he.js?v=20260902-1" defer></script>
+<script src="assets/js/locales-uz.js?v=20260902-2" defer></script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"471714dc027b4b71abdb6f6098af33e9"}'></script>
 <!-- End Cloudflare Web Analytics -->

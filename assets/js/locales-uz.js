@@ -18,5 +18,6 @@ Object.assign(I18N.uz,{
 });
 
 const uzMissing=Object.keys(I18N.en).filter(key=>!Object.prototype.hasOwnProperty.call(I18N.uz,key));
+Object.assign(I18N.uz,{ftc_built_by:"FTC hamjamiyati uchun FRC Team 5449 yaratgan FIRSTHub."});
 if(uzMissing.length)console.error("Uzbek locale incomplete:",uzMissing);
 if(typeof setLang==="function"&&typeof LANG!=="undefined"&&LANG==="uz")setLang(LANG);

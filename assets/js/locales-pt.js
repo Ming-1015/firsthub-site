@@ -219,6 +219,7 @@ Object.assign(I18N.pt,{
 });
 
 const ptMissing=Object.keys(I18N.en).filter(key=>!Object.prototype.hasOwnProperty.call(I18N.pt,key));
+Object.assign(I18N.pt,{ftc_built_by:"FIRSTHub, criado pela equipe FRC 5449 para a comunidade FTC."});
 if(ptMissing.length)console.error("Portuguese locale incomplete:",ptMissing);
 
 // Re-render if Portuguese was already stored in this browser.
