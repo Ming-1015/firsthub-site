@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T12:15:27.535811+00:00",
+  "generatedAt": "2026-09-04T08:03:16.889940+00:00",
   "entries": [
     {
       "year": "2021",
@@ -2393,6 +2393,16 @@
     },
     {
       "year": "2026",
+      "team": 418,
+      "cad": "https://cad.onshape.com/documents/ada8ff6f8c5990ca6d2d3794/w/6db7f431e217828ea44730ad/e/92040711896e6cf93b507a03",
+      "preview": "assets/cad-previews/2026/418-team-supplied-2026.png",
+      "element": "2026 robot CAD preview (team-supplied)",
+      "angle": "team-supplied",
+      "updatedAt": "2026-09-02T12:15:27.535811+00:00",
+      "status": "team-supplied"
+    },
+    {
+      "year": "2026",
       "team": 581,
       "cad": "https://cad.onshape.com/documents/766d37b113335d7a60cc2375/w/8b35fc383279c1954cec5b72/e/bd3188f47c23702bef9f1fc8?renderMode=0&uiState=6a284c39e39535e5b60eb5fd",
       "preview": "assets/cad-previews/2026/581-f1ff749adc.webp",
@@ -2880,16 +2890,6 @@
       "angle": "front-upper-three-quarter",
       "updatedAt": "2026-08-27T11:12:04.844282+00:00",
       "status": "ok"
-    },
-    {
-      "year": "2026",
-      "team": 418,
-      "cad": "https://cad.onshape.com/documents/ada8ff6f8c5990ca6d2d3794/w/6db7f431e217828ea44730ad/e/92040711896e6cf93b507a03",
-      "preview": "assets/cad-previews/2026/418-team-supplied-2026.png",
-      "element": "2026 robot CAD preview (team-supplied)",
-      "angle": "team-supplied",
-      "updatedAt": "2026-09-02T12:15:27.535811+00:00",
-      "status": "team-supplied"
     }
   ],
   "failures": [
