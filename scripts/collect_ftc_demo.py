@@ -27,7 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data" / "ftc-demo-raw.json"
 USER_AGENT = "FIRSTHub FTC public-data collector/1.0 (+https://firsthub.site/)"
-GAMES = {2023: "CENTERSTAGE", 2024: "INTO THE DEEP", 2025: "DECODE"}
+GAMES = {2023: "CENTERSTAGE", 2024: "INTO THE DEEP", 2025: "DECODE", 2026: "BIOBUZZ"}
 
 
 def fetch(url: str) -> str:
@@ -148,6 +148,8 @@ def infer_portfolio_season(*values: str) -> tuple[str, str]:
     """Return canonical FTC season metadata, preferring the game name."""
     text = " ".join(value or "" for value in values).lower().replace("_", " ")
     games = (
+        ("biobuzz", "2026", "2026 BioBuzz"),
+        ("bio buzz", "2026", "2026 BioBuzz"),
         ("decode", "2025", "2025 Decode"),
         ("into the deep", "2024", "2024 Into The Deep"),
         ("centerstage", "2023", "2023 Centerstage"),
@@ -240,11 +242,13 @@ def infer_ftc_season(title: str, fallback: str) -> str:
         return "2023"
     if "into the deep" in lowered or re.search(r"2024\s*[-/]\s*25", lowered):
         return "2024"
-    if "decode" in lowered or re.search(r"2025\s*[-/]\s*26", lowered) or "2026" in lowered:
+    if "biobuzz" in lowered or "bio buzz" in lowered or re.search(r"2026\s*[-/]\s*27", lowered):
+        return "2026"
+    if "decode" in lowered or re.search(r"2025\s*[-/]\s*26", lowered):
         return "2025"
     # Calendar-year labels on build threads normally name the season ending in
     # that year ("2025 build thread" = the 2024-25 INTO THE DEEP season).
-    single_year = re.search(r"\b(2024|2025)\b", lowered)
+    single_year = re.search(r"\b(2024|2025|2026)\b", lowered)
     if single_year:
         return str(int(single_year.group(1)) - 1)
     return fallback
@@ -256,6 +260,7 @@ def collect_open_alliance(pages: int = 3) -> tuple[list[dict], list[dict]]:
         ("2023", "#ftc-open-alliance after:2023-01-01 before:2024-09-01"),
         ("2024", "#ftc-open-alliance after:2024-01-01 before:2025-09-01"),
         ("2025", "#ftc-open-alliance after:2025-01-01"),
+        ("2026", "#ftc-open-alliance BIOBUZZ after:2026-09-01"),
     ]
     for fallback_season, query in queries:
       for page_number in range(1, pages + 1):
@@ -333,7 +338,7 @@ def collect_resources() -> tuple[list[dict], dict]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--years", nargs="+", type=int, default=[2023, 2024, 2025])
+    parser.add_argument("--years", nargs="+", type=int, default=[2023, 2024, 2025, 2026])
     parser.add_argument("--chief-pages", type=int, default=3)
     parser.add_argument("--merge", action="store_true", help="Keep award seasons not requested in this run")
     args = parser.parse_args()

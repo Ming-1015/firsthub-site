@@ -40,7 +40,7 @@ jobs:
 
       - name: Refresh FTC public records and YouTube team resources
         run: |
-          python scripts/collect_ftc_demo.py --years 2023 2024 2025 --chief-pages 4 --merge
+          python scripts/collect_ftc_demo.py --years 2023 2024 2025 2026 --chief-pages 4 --merge
           python scripts/collect_ftc_youtube.py --limit-per-query 50
           python scripts/filter_ftc_demo.py --output data/ftc-demo-v6.json --check-links
           cp data/ftc-demo-v6.json data/ftc-demo.json

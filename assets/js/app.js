@@ -666,7 +666,7 @@ const FTC_DEMO_DATA={
     {type:'community',meta:'TELEMETRY',title:'FTC Dashboard',desc:'实时遥测、图表、配置变量与摄像头画面的调试工具。',source:'acmerobotics · GitHub',url:'https://github.com/acmerobotics/ftc-dashboard'}
   ]
 };
-const FTC_SEASONS={2023:'CENTERSTAGE',2024:'INTO THE DEEP',2025:'DECODE'};
+const FTC_SEASONS={2023:'CENTERSTAGE',2024:'INTO THE DEEP',2025:'DECODE',2026:'BIOBUZZ'};
 const FTC_STYLE={
   2023:[
     {title:'CENTERSTAGE Style Guide',kind:'pdf',url:'https://info.firstinspires.org/hubfs/2024%20Season/Season%20Assets/FTC_CENTERSTAGE%20StyleGuide_v3_June.pdf'},
@@ -697,6 +697,11 @@ const FTC_STYLE={
     {title:'REV DUO DECODE StarterBot',kind:'web',url:'https://docs.revrobotics.com/ftc-kickoff-concepts/decode-2025-26'},
     {title:'Studica DECODE StarterBot',kind:'web',url:'https://www.studica.ca/en/ftc-starter-bot-decode-2025-strategy/'},
     {title:'AndyMark DECODE StarterBot',kind:'web',url:'https://andymark.com/pages/decode-robits-starter-bot'}
+  ],
+  2026:[
+    {title:'BIOBUZZ Game & Season Materials',kind:'web',url:'https://ftc-resources.firstinspires.org/ftc/game'},
+    {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'},
+    {title:'FIRST Training — FTC Skill Builders',kind:'web',url:'https://training.firstinspires.org/'}
   ]
 };
 const FTC_LABELS={
@@ -708,7 +713,7 @@ const FTC_LABELS={
 };
 function ftcLabel(value){return (FTC_LABELS[LANG]&&FTC_LABELS[LANG][value])||FTC_LABELS.en[value]||value;}
 const FTC_PANEL_COPY={awards:['ftc_tab_awards','ftc_card_awards'],portfolios:['ftc_tab_portfolios','ftc_card_portfolios'],open:['ftc_tab_open','ftc_card_open'],sites:['ftc_tab_sites','ftc_card_sites'],resources:['ftc_tab_resources','ftc_card_resources'],style:['ftc_tab_style','ftc_card_style']};
-let ftcSeason='2025',ftcCategory='overview',ftcFilter='all',ftcDetailFilter='all',ftcSort='default';
+let ftcSeason='2026',ftcCategory='overview',ftcFilter='all',ftcDetailFilter='all',ftcSort='default';
 let FTC_AUTO_DATA=null,ftcDataLoading=false;
 async function loadFtcAutoData(){
   if(FTC_AUTO_DATA||ftcDataLoading)return;

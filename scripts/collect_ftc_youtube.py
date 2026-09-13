@@ -47,11 +47,18 @@ SEARCHES = {
         "FTC DECODE robot walkthrough team",
         "FTC DECODE engineering portfolio team",
     ],
+    "2026": [
+        "FTC BIOBUZZ robot reveal team",
+        "FTC BIOBUZZ robot walkthrough team",
+        "FTC BIOBUZZ engineering notebook team",
+        "FTC BIOBUZZ build update team",
+    ],
 }
 SEASON_MARKERS = {
     "2023": ("centerstage", "center stage"),
     "2024": ("into the deep",),
     "2025": ("decode",),
+    "2026": ("biobuzz", "bio buzz"),
 }
 
 EXPLICIT_TEAM_PATTERNS = (
