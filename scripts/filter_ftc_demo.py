@@ -91,11 +91,6 @@ CURATED_PORTFOLIOS = [
 ]
 
 CURATED_TEAM_RESOURCES = [
-    # BIOBUZZ: retained only after a direct YouTube search confirms both the
-    # team number and the 2026-27 game in the title/search context.  These are
-    # links to the original public uploads, never copied video files.
-    {"season": "2026", "teamNumber": 11148, "teamName": "Barker Redbacks", "title": "Barker Redbacks FTC 11148 — BIOBUZZ robot reveal", "posts": 0, "sourceType": "team", "sourcePlatform": "youtube", "source": "https://www.youtube.com/watch?v=K358QvTcKBw", "channel": "https://www.youtube.com/@BarkerRedbacks", "links": [{"type": "video", "url": "https://www.youtube.com/watch?v=K358QvTcKBw"}]},
-    {"season": "2026", "teamNumber": 23247, "teamName": "ARES", "title": "ARES FTC 23247 — BIOBUZZ launch party", "posts": 0, "sourceType": "team", "sourcePlatform": "youtube", "source": "https://www.youtube.com/watch?v=827aNTABAho", "channel": "https://www.youtube.com/@ARESFTC", "links": [{"type": "video", "url": "https://www.youtube.com/watch?v=827aNTABAho"}]},
     {"season": "2023", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ CENTERSTAGE CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2024.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2024-cad.zip"}]},
     {"season": "2024", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ INTO THE DEEP CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2025.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2025-cad.zip"}]},
     {"season": "2025", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ DECODE CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2026.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2026-cad.zip"}]},
@@ -107,6 +102,13 @@ CURATED_TEAM_RESOURCES = [
     {"season": "2025", "teamNumber": 14779, "teamName": "Spontaneous Construction", "title": "Team technical wiki and public updates", "posts": 0, "sourceType": "team", "sourcePlatform": "x", "source": "https://x.com/SponConFTC", "links": [{"type": "website", "url": "https://x.com/SponConFTC"}, {"type": "website", "url": "http://projectrobotica.wiki"}]},
     {"season": "2025", "teamNumber": 14291, "teamName": "Small Town Robotics", "title": "Public team updates on X", "posts": 0, "sourceType": "team", "sourcePlatform": "x", "source": "https://x.com/SmallTownFTC", "links": [{"type": "website", "url": "https://x.com/SmallTownFTC"}]},
 ]
+
+# A search-result match is not proof of season affiliation. Keep known false
+# positives out even while previous data is retained across refreshes.
+REJECTED_PUBLIC_VIDEO_URLS = {
+    "https://www.youtube.com/watch?v=K358QvTcKBw",
+    "https://www.youtube.com/watch?v=827aNTABAho",
+}
 
 
 def award_category(name: str) -> str:
@@ -268,7 +270,8 @@ def main() -> None:
     for item in raw_open:
         number, url = item.get("teamNumber"), item.get("source", "")
         # Search titles often contain a season year; do not treat it as a team.
-        if not number or number < 100 or number in (2024, 2025, 2026, 2027) or url in seen_open:
+        if (not number or number < 100 or number in (2024, 2025, 2026, 2027)
+                or url in seen_open or url in REJECTED_PUBLIC_VIDEO_URLS):
             continue
         seen_open.add(url)
         combined_links = item.get("links", []) + previous_links.get(url, []) + enriched.get(url, [])
