@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T08:48:53+00:00",
+  "generatedAt": "2026-09-26T14:42:21+00:00",
   "source": "YouTube public search metadata",
   "policy": "Original URLs only; no video files are downloaded or re-hosted.",
   "items": [
@@ -4188,6 +4188,42 @@
     },
     {
       "season": "2026",
+      "teamNumber": 21689,
+      "teamName": "Team Tesseract",
+      "title": "Team Tesseract Ri3D Day 2",
+      "views": 1169,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=3fOFohrJr4k",
+      "channel": "https://www.youtube.com/channel/UCB_VWLs7YrWKQQISXY0LIvw",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=3fOFohrJr4k"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "teamNumber": 5237,
+      "teamName": "Loose Screws FTC5237",
+      "title": "Testing FTC Biobuzz Match Flow (Human Simulation) 🤖",
+      "views": 940,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=MnRFg2Et3ok",
+      "channel": "https://www.youtube.com/channel/UCIMElZmPqt1eDEZYYyltgOA",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=MnRFg2Et3ok"
+        }
+      ]
+    },
+    {
+      "season": "2026",
       "teamNumber": 5115,
       "teamName": "YISE",
       "title": "5115 & 11308 Alumni Build a FTC Robot in Three Days 26-27 BIOBUZZ",
@@ -4219,6 +4255,24 @@
         {
           "type": "video",
           "url": "https://www.youtube.com/watch?v=q1K4MvxjS2A"
+        }
+      ]
+    },
+    {
+      "season": "2026",
+      "teamNumber": 6547,
+      "teamName": "FTC 6547",
+      "title": "BIOBUZZ: ROBOT IN 3 DAYS -- DAY 2",
+      "views": 263,
+      "posts": 0,
+      "sourceType": "team",
+      "sourcePlatform": "youtube",
+      "source": "https://www.youtube.com/watch?v=siAVKuwzVxw",
+      "channel": "https://www.youtube.com/channel/UCNqU5yogAoxuT7VWRqlmqAA",
+      "links": [
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=siAVKuwzVxw"
         }
       ]
     }
@@ -4320,5 +4374,6 @@
         "unknown-season": 2
       }
     }
-  ]
+  ],
+  "collectionNote": "BIOBUZZ refresh: only official-FTC-validated team numbers and direct season evidence are retained."
 }

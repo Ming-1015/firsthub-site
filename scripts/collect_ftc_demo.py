@@ -32,7 +32,9 @@ GAMES = {2023: "CENTERSTAGE", 2024: "INTO THE DEEP", 2025: "DECODE", 2026: "BIOB
 
 def fetch(url: str) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=180) as response:
+    # Community pages occasionally stall.  A failed source is recorded in the
+    # audit log, so bound each request rather than delaying the whole refresh.
+    with urllib.request.urlopen(request, timeout=45) as response:
         return response.read().decode("utf-8", errors="replace")
 
 

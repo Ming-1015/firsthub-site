@@ -91,6 +91,10 @@ CURATED_PORTFOLIOS = [
 ]
 
 CURATED_TEAM_RESOURCES = [
+    # Reviewed current-season build threads discovered outside the Open
+    # Alliance tag search.  They retain the original Chief Delphi URL.
+    {"season": "2026", "teamNumber": 14343, "teamName": "Escape Velocity", "title": "FTC 14343 Escape Velocity BIOBUZZ Build Thread", "posts": 0, "sourceType": "team", "sourcePlatform": "chief-delphi", "source": "https://www.chiefdelphi.com/t/ftc-14343-escape-velocity-biobuzz-build-thread/524080"},
+    {"season": "2026", "teamNumber": 23619, "teamName": "Overture", "title": "Overture 23619 — FTC BIOBUZZ Build Blog", "posts": 0, "sourceType": "team", "sourcePlatform": "chief-delphi", "source": "https://www.chiefdelphi.com/t/overture-23619-ftc-build-blog-2026-2027-open-alliance/524046"},
     {"season": "2023", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ CENTERSTAGE CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2024.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2024-cad.zip"}]},
     {"season": "2024", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ INTO THE DEEP CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2025.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2025-cad.zip"}]},
     {"season": "2025", "teamNumber": 19705, "teamName": "WXYZ", "title": "WXYZ DECODE CAD package", "posts": 0, "sourceType": "team", "sourcePlatform": "website", "source": "https://wxyz19705.xyz/seasons/2026.html", "links": [{"type": "cad", "url": "https://wxyz19705.xyz/downloads/2026-cad.zip"}]},

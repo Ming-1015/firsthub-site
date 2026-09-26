@@ -52,6 +52,10 @@ SEARCHES = {
         "FTC BIOBUZZ robot walkthrough team",
         "FTC BIOBUZZ engineering notebook team",
         "FTC BIOBUZZ build update team",
+        "FTC BIOBUZZ Ri3D team robot",
+        "FTC BIOBUZZ robot in three days team",
+        "FTC BIOBUZZ CAD reveal team",
+        "FTC BIOBUZZ open alliance team",
     ],
 }
 SEASON_MARKERS = {
@@ -135,7 +139,7 @@ def search(query: str, limit: int) -> list[dict]:
     return [entry for entry in result.get("entries", []) if entry]
 
 
-def collect_fun_robotics(limit: int) -> tuple[list[dict], dict]:
+def collect_fun_robotics(limit: int, seasons: set[str] | None = None) -> tuple[list[dict], dict]:
     """Collect team-specific Behind the Bot videos from FUN Robotics.
 
     FUN Robotics publishes videos about many independent FTC teams. A video is
@@ -171,6 +175,8 @@ def collect_fun_robotics(limit: int) -> tuple[list[dict], dict]:
         )
         if not season:
             rejected["unknown-season"] += 1
+            continue
+        if seasons is not None and season not in seasons:
             continue
         video_id = entry.get("id")
         if not video_id:
@@ -223,12 +229,16 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--limit-per-query", type=int, default=35)
     parser.add_argument("--fun-channel-limit", type=int, default=1500)
+    parser.add_argument("--seasons", nargs="+", choices=sorted(SEARCHES), help="Only query these FTC season start years")
     parser.add_argument("--skip-team-validation", action="store_true")
     args = parser.parse_args()
 
     collected: dict[str, dict] = {}
     audit = []
+    selected_seasons = set(args.seasons) if args.seasons else None
     for season, queries in SEARCHES.items():
+        if selected_seasons is not None and season not in selected_seasons:
+            continue
         for query in queries:
             entries = search(query, args.limit_per_query)
             accepted = 0
@@ -268,7 +278,7 @@ def main() -> None:
                 accepted += 1
             audit.append({"season": season, "query": query, "results": len(entries), "accepted": accepted})
 
-    fun_items, fun_audit = collect_fun_robotics(args.fun_channel_limit)
+    fun_items, fun_audit = collect_fun_robotics(args.fun_channel_limit, selected_seasons)
     for item in fun_items:
         video_id = item["source"].rsplit("=", 1)[-1]
         collected[video_id] = item
