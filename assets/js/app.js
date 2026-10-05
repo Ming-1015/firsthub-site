@@ -9,8 +9,9 @@ Object.assign(I18N.en,{tech_cat_cad:"Mechanical Design and CAD",tech_cat_code:"P
 Object.assign(I18N['zh-CN'],{tech_cat_cad:"机械与 CAD",tech_cat_code:"程序与软件",tech_cat_data:"数据与策略",tech_cat_learn:"学习与教学",tech_cat_com:"社区与平台"});
 Object.assign(I18N['zh-TW'],{tech_cat_cad:"機械與 CAD",tech_cat_code:"程式與軟體",tech_cat_data:"資料與策略",tech_cat_learn:"學習與教學",tech_cat_com:"社群與平台"});
 const SUPPORTED_LANGS=['en','zh-CN','zh-TW','ja','es','tr','pt','he','uz'];
-const savedLang=localStorage.getItem('frc_lang');
-let LANG=SUPPORTED_LANGS.includes(savedLang)?savedLang:'en';
+// Always greet a new page load in English. Visitors can still switch languages
+// for the current visit, but an earlier browser choice does not override it.
+let LANG='en';
 Object.assign(I18N.en,{sort_hot:"By popularity",sort_team:"By team number",teams_sorted_number:" teams (team number order)",sort_label:"Team-resource sorting"});
 Object.assign(I18N['zh-CN'],{sort_hot:"按热度排序",sort_team:"按队号排序",teams_sorted_number:" 支队伍（按队号顺序）",sort_label:"队伍公开资料排序方式"});
 Object.assign(I18N['zh-TW'],{sort_hot:"依熱度排序",sort_team:"依隊號排序",teams_sorted_number:" 支隊伍（依隊號順序）",sort_label:"隊伍公開資源排序方式"});
@@ -99,7 +100,7 @@ function renderLangSelector(){
 }
 function setLang(l){
   if(!I18N[l]) return;
-  LANG=l; localStorage.setItem('frc_lang',l);
+  LANG=l;
   applyI18n(); renderLangSelector();
   renderStats(); renderImpact(); fillAwardScriptFilters(); renderAwardScripts(); renderOpen(); renderHall(); renderTech(); renderTsChips(); renderTsite(); renderSeasonGuide(); renderChampBox();
   if(document.body.classList.contains('ftc-mode')){
