@@ -1,0 +1,43 @@
+/* Japanese copy for the FRC and FTC areas. */
+Object.assign(I18N.ja,{
+  site_title:"FIRSTHub · FRC オープン・リソースライブラリ",
+  site_subtitle:"チームからチームへ。公開リソースをひとつに。",
+  built_by:"FRC Team 5449 が FRC コミュニティのために制作しました。",
+  footer_built_by:"FRC Team 5449 が制作",
+  hero_kicker:"FRC · FIRST Robotics Competition · コミュニティに開かれた資料庫",
+  hero_sub:"2021〜2026年の Impact Award 受賞資料、チームが公開した CAD／コード／Build Thread、Hall of Fame チーム、技術リソースを集約しています。",
+  select_season:"シーズンを選択",
+  tab_home:"概要", tab_impact:"Impact 資料庫", tab_scripts:"受賞結果と表彰文", tab_open:"チーム公開資料", tab_tech:"技術リソース", tab_tsite:"チーム技術サイト", tab_style:"シーズン・スタイルガイド",
+  stat_impact:"Impact Award 受賞チーム", stat_open:"チーム公開資料", stat_hall:"Hall of Fame チーム", stat_tech:"技術リソース",
+  home_what:"収録内容", home_lead:"6シーズン分の Impact Award のエッセイ・動画・プレゼンテーション、チーム公開の CAD・コード・Build Thread、FIRST 公式 Hall of Fame、技術・学習リソースを探せます。",
+  home_usage:"Impact 資料庫、受賞結果と表彰文、またはチーム公開資料を開いてシーズンを選んでください。チーム資料は Build Thread の閲覧数またはチーム番号で並べ替えられ、技術リソースはカテゴリで絞り込めます。#2024 のようなアンカーを付ければ特定シーズンを共有できます。",
+  home_impact_t:"Impact 資料庫", home_impact_d:"2021〜2026年に表彰されたチームのエッセイ、動画、プレゼンテーション。",
+  home_scripts_t:"受賞結果と表彰文", home_scripts_d:"チーム、賞、イベントから FIRST 公式の受賞結果を検索できます。FIRST が公開している場合は表彰文も表示します。",
+  home_open_t:"チーム公開資料", home_open_d:"Build Thread、CAD、コード、動画など、チームが公開した資料を収録しています。",
+  home_tech_t:"技術リソース", home_tech_d:"CAD、ソフトウェア、データ、戦略、学習に関する厳選リソースをカテゴリ別に閲覧できます。",
+  sources_head:"データソース", src_impact_n:"FIRST 公式の受賞チーム資料（PDF）と評価資料。", src_hof_n:"1992〜2026年の Championship Chairman’s Award／FIRST Impact Award 受賞チームの公式一覧。", src_cd_n:"各シーズンのコミュニティ運営 Open Alliance ディレクトリ。", src_tba_n:"大会、試合、結果、チーム情報を提供する公開 API。",
+  impact_lead:"エッセイは FIRST 公式 PDF、動画は各チームの YouTube／Instagram、プレゼンテーションは公開された Google Drive／Canva 資料へリンクします。",
+  open_lead:"Build Thread の閲覧数をコミュニティでの関心の目安として並べています。CAD アイコンはロボット CAD を公開したチームを示し、利用できる場合は Onshape のプレビューも表示します。公開 GitHub リポジトリは確認できる範囲でサブシステムやソフトウェア領域を記載します。",
+  hall_head:"FIRST Hall of Fame", hall_lead:"Championship で Chairman’s Award（1992〜2022）または FIRST Impact Award（2023年以降）を受賞し、FIRST により公式に認定されたチームです。",
+  tech_head:"FRC 技術リソース", tech_lead:"公式ドキュメント、ソフトウェア・フレームワーク、設計ツール、データプラットフォーム、コミュニティの学習リソース。",
+  f_all:"すべて", f_cad:"公開 CAD", f_code:"公開コード", f_video:"公開動画", f_site:"ウェブサイトあり", imp_f_all:"すべて", imp_f_video:"動画あり", imp_f_pres:"プレゼン資料あり", imp_f_champ:"Championship",
+  search_ph:"チーム番号またはチーム名を検索…", op_search_ph:"チーム番号、名前、タグを検索…", site_label:"サイト", champ_prefix:"Championship FIRST Impact Award 受賞チーム：", champ_finalists:"ファイナリスト 5チーム： ",
+  teams_suffix:" チーム", teams_sorted:" チーム（Build Thread 閲覧数順）", teams_sorted_number:" チーム（チーム番号順）", showing:"表示中", hall_count:" チーム（1992〜2026）", tech_count:" 件のリソース",
+  footer_src:"データソース", footer_contrib:"データに協力する", footer_roadmap:"ロードマップ", c1:"貢献方法とデータ管理については GitHub README をご覧ください。", c2:"Impact Award またはチーム公開資料の追加は GitHub から送信できます。", c3:"GitHub、Onshape、YouTube など、チームが公開した資料へのリンクを歓迎します。", c4:"誤りや不足資料を見つけましたか？Issue を作成して資料庫の改善にご協力ください。", contrib_repo:"GitHub リポジトリを見る", contrib_issue:"データの問題を報告／追加を提案", r1:"2020年以前の Impact Award データを追加。", r2:"Dean’s List、Woodie Flowers、Engineering Excellence などの賞を追加。", r3:"中国チーム向けの資料と中国語オープンソースチュートリアルを拡充。", r4:"機構ごとのチーム公開 CAD／コード索引を作成。",
+  footer_copy:"FIRSTHub · FRC オープン・リソースライブラリ · 2021〜2026 FRC シーズンのコミュニティ資料 · オープンデータ、オープンコラボレーション", directory_zh:"中国語検索ディレクトリ", directory_en:"英語検索ディレクトリ", sitemap_label:"サイトマップ", resource_open:"リソースを開く", team_page:"FIRST のチームページ", cad_preview:"CAD プレビュー", cad_preview_alt:"チーム {team} の CAD プレビュー", views_suffix:" 回閲覧", lang_label:"言語",
+  tag_chassis:"シャーシ", tag_vision:"ビジョン", tag_intake:"インテーク", tag_shooter:"シューター", tag_climb:"クライム", tag_auto:"自律", tag_scout:"スカウティング",
+  scripts_award_filter:"賞で絞り込む", scripts_event_filter:"イベントで絞り込む", scripts_lead:"FIRST のイベントページに掲載された、チームへの公式受賞結果です。個人賞および競技の進出結果は除外し、FIRST が公開している場合は表彰文を表示します。", scripts_original:"チーム名と賞名は FIRST の公式イベントページに基づいています。公開された表彰文は原文の英語のまま表示し、各カードから FIRST のページで確認できます。", scripts_search:"チーム、賞、イベント、表彰文を検索…", scripts_all_awards:"すべての賞", scripts_all_events:"すべてのイベント", scripts_title:"チーム受賞結果と表彰文", scripts_records:" 件の受賞記録", scripts_originals:" 件の公式表彰文", scripts_citations:" 件の公開表彰文", scripts_events:" イベント", scripts_showing:"表示中", scripts_load_more:"さらに読み込む", scripts_remaining:" 件残り", scripts_empty:"現在の絞り込みに一致する受賞記録はありません。", scripts_no_citation:"FIRST はこの受賞記録の表彰文を公開していません。", scripts_result_label:"公式受賞結果", scripts_official_en:"公式英語原文", scripts_source:"FIRST イベントページを見る", scripts_loading:"受賞結果を読み込み中…", scripts_load_failed:"受賞結果を読み込めませんでした。", scripts_retry:"再試行", scripts_no_data:"信頼できる公開データはありません", scripts_no_data_lead:"2021年シーズンの FIRST イベントページには、チーム受賞表彰文の信頼できる記録がありません。このためこのセクションは意図的に空にしています。", scripts_no_data_box:"このシーズンには信頼できる公式受賞表彰文がありません。Impact Award の資料は Impact 資料庫で引き続きご利用いただけます。",
+  ts_head:"チーム技術サイト", ts_lead:"FRC チームが制作・維持している、CAD、電気、プログラミング、トレーニングのための独立した技術サイトです。", ts_n:"チーム", ts_visit:"サイトを見る", ts_all:"すべて", ts_cat_cad:"CAD／機構", ts_cat_elect:"電気", ts_cat_code:"プログラミング", ts_cat_train:"トレーニング", ts_community:"コミュニティプロジェクト", ts_resource_note:"FRC チームまたはコミュニティが維持する独立した技術サイトです。",
+  sg_head:"シーズン・スタイルガイド", sg_lead:"各シーズンの FIRST 公式ブランド素材とビジュアルガイドです。スタイルガイド、ロゴ、SNS テンプレート、壁紙を収録しています。", sg_open:"公式ページ", sg_pdf:"PDF", sg_zip:"ZIP", sg_ppt:"PPT", sg_img:"画像", sg_count:" サイト", sg_count2:" 件のリソース", sg_resource_note:"このシーズンに FIRST が公開している公式素材とガイドラインを確認できます。",
+  tech_cat_cad:"機構設計と CAD", tech_cat_code:"プログラミングとソフトウェア", tech_cat_data:"データと戦略", tech_cat_learn:"学習とトレーニング", tech_cat_com:"コミュニティとプラットフォーム", tech_resource_note:"詳しい説明とドキュメントは元の情報源でご確認ください。",
+  program_choose:"プログラムを選択", ftc_tab_overview:"概要", ftc_tab_awards:"受賞結果", ftc_tab_portfolios:"エンジニアリング・ポートフォリオ", ftc_tab_open:"チーム公開資料", ftc_tab_sites:"技術サイト", ftc_tab_resources:"技術リソース", ftc_tab_style:"シーズン・スタイルガイド", ftc_featured:"主なセクション",
+  ftc_overview_title:"FTC リソースライブラリを探す", ftc_overview_lead:"シーズンごとの FTC 公式受賞結果、公開エンジニアリング・ポートフォリオ、チーム公開資料を閲覧できます。シーズンに依存しない技術サイトとツールには専用セクションがあります。", ftc_overview_usage:"最初にセクションを選んでください。受賞結果、エンジニアリング・ポートフォリオ、チーム公開資料ではシーズンを選べます。チーム資料は活動量またはチーム番号で並べ替え、CAD、コード、動画、サイトなどで絞り込めます。",
+  ftc_card_awards:"シーズンとイベントごとに整理された FIRST 公式の受賞結果。イベント、賞、元のページを保持しています。", ftc_card_portfolios:"チームが公開したエンジニアリング・ポートフォリオを、シーズンと賞で絞り込めます。", ftc_card_open:"公開 Build Thread、CAD、コード、動画、チームサイトへの直接リンク。", ftc_card_sites:"継続的に維持される FTC チュートリアル、チームのナレッジベース、コミュニティのオープンツール。", ftc_card_resources:"プログラミング、軌道、ビジョン、戦略などの分野に整理した公式ドキュメントとコミュニティツール。", ftc_card_style:"シーズンごとに整理した FIRST 公式のブランドガイド、ロゴ、SNS 素材。",
+  ftc_source_note:"すべての記録に公開された元の情報源を残しています。資料タグは閲覧可能な内容を示すもので、FIRST の推薦や順位を意味しません。", ftc_search:"チーム番号、名前、イベント、資料を検索…", ftc_contrib_process:"収集、整理、絞り込みの方法は GitHub README に記載しています。", ftc_demo_branch:"FTC デモブランチを見る", ftc_data_boundaries:"データの範囲", ftc_boundary_public:"ログインなしで閲覧できる公開資料のみを収録しています。", ftc_boundary_labels:"資料タグは FIRST の推薦を意味しません。", ftc_boundary_sources:"すべての記録に元の情報源へのリンクを残しています。", ftc_loading:"自動収集データを読み込み中…", ftc_load_failed:"自動収集データを読み込めませんでした", ftc_auto_records:" 件の自動収集記録", ftc_records:" 件の記録", ftc_official:"公式", ftc_community:"コミュニティ", ftc_all_awards:"すべての賞", ftc_all_levels:"すべてのレベル／賞", ftc_all_types:"すべての種類", ftc_result_showing:"表示中", ftc_source_label:"情報源：", ftc_view_source:"情報源を見る", ftc_render_limit:"先頭 {visible} 件を表示しています。検索と絞り込みは全 {total} 件に適用されます。", ftc_empty:"このシーズンと絞り込み条件に一致する公開資料はありません。", ftc_views:"閲覧", ftc_updates:"更新", ftc_public_portfolio:"公開エンジニアリング・ポートフォリオ", ftc_public_video:"FTC チームが公開した動画です。リンク先は元の YouTube ページです。", ftc_public_team_resource:"チームが公開した資料です。タグは確認できた内容を示すもので、FIRST の推薦を意味しません。", ftc_reviewed_site:"確認済み公開サイト", ftc_official_project:"FIRST／公式プロジェクト", ftc_community_project:"FTC コミュニティプロジェクト", ftc_resource_note:"詳しい説明とドキュメントは元の情報源でご確認ください。",
+  ftc_hero_kicker:"FTC · FIRST Tech Challenge · コミュニティに開かれた資料庫", ftc_site_title:"FTC リソースライブラリ", ftc_site_subtitle:"FIRSTHub · FTC オープン・リソースライブラリ", ftc_hero_sub:"FTC の受賞結果、公開エンジニアリング・ポートフォリオ、チーム公開資料、技術サイトとツールを、元の情報源とともに整理しています。", ftc_built_by:"FRC Team 5449 が FTC コミュニティのために制作した FIRSTHub です。", ftc_stat_directions:"資料カテゴリ", ftc_stat_seasons:"収録シーズン", ftc_stat_traceable:"追跡可能な情報源", ftc_stat_fabricated:"架空の記録", ftc_stat_open:"チーム公開資料", ftc_stat_resources:"技術リソース", ftc_stat_sites:"チーム自作サイト", ftc_stat_portfolios:"エンジニアリング・ノート", ftc_tech_resource_note:"技術的な詳細は元の情報源でご確認ください。", ftc_style_note:"このシーズンに FIRST が公開している公式素材を確認できます。", ftc_team_site_note:"FRC チームまたはコミュニティが維持する技術サイトです。",
+  sort_hot:"人気順", sort_team:"チーム番号順", sort_label:"チーム公開資料の並び順"
+});
+
+const jaMissing=Object.keys(I18N.en).filter(key=>!Object.prototype.hasOwnProperty.call(I18N.ja,key));
+if(jaMissing.length)console.error("Japanese locale incomplete:",jaMissing);
+if(typeof setLang==="function"&&typeof LANG!=="undefined"&&LANG==="ja")setLang(LANG);

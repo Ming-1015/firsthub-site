@@ -8,7 +8,7 @@ Object.assign(I18N['zh-TW'],{program_choose:"選擇項目",ftc_tab_overview:"總
 Object.assign(I18N.en,{tech_cat_cad:"Mechanical Design and CAD",tech_cat_code:"Programming and Software",tech_cat_data:"Data and Strategy",tech_cat_learn:"Learning and Training",tech_cat_com:"Community and Platforms"});
 Object.assign(I18N['zh-CN'],{tech_cat_cad:"机械与 CAD",tech_cat_code:"程序与软件",tech_cat_data:"数据与策略",tech_cat_learn:"学习与教学",tech_cat_com:"社区与平台"});
 Object.assign(I18N['zh-TW'],{tech_cat_cad:"機械與 CAD",tech_cat_code:"程式與軟體",tech_cat_data:"資料與策略",tech_cat_learn:"學習與教學",tech_cat_com:"社群與平台"});
-const SUPPORTED_LANGS=['en','zh-CN','zh-TW','es','tr','pt','he','uz'];
+const SUPPORTED_LANGS=['en','zh-CN','zh-TW','ja','es','tr','pt','he','uz'];
 const savedLang=localStorage.getItem('frc_lang');
 let LANG=SUPPORTED_LANGS.includes(savedLang)?savedLang:'en';
 Object.assign(I18N.en,{sort_hot:"By popularity",sort_team:"By team number",teams_sorted_number:" teams (team number order)",sort_label:"Team-resource sorting"});
@@ -92,7 +92,7 @@ function applyI18n(){
   document.documentElement.dir = LANG==='he'?'rtl':'ltr';
 }
 function renderLangSelector(){
-  const names={en:'English','zh-CN':'简体中文','zh-TW':'繁體中文',es:'Español',tr:'Türkçe',pt:'Português',he:'עברית',uz:'O‘zbekcha'};
+  const names={en:'English','zh-CN':'简体中文','zh-TW':'繁體中文',ja:'日本語',es:'Español',tr:'Türkçe',pt:'Português',he:'עברית',uz:'O‘zbekcha'};
   const opts=SUPPORTED_LANGS.map(l=>'<option value="'+l+'"'+(l===LANG?' selected':'')+'>'+names[l]+'</option>').join('');
   const el=document.getElementById('langSel');
   if(el){ el.innerHTML=opts; el.value=LANG; }
@@ -710,6 +710,7 @@ const FTC_LABELS={
   'zh-TW':{alliance:'聯盟',connect:'Connect Award',control:'Control Award',design:'Design Award',innovate:'Innovate Award',inspire:'Inspire Award',judges:'評審選擇獎',motivate:'Motivate Award',other:'其他',think:'Think Award',Nationals:'全國賽',"Not specifies":'未註明',"Premier Event":'頂級賽事',Regional:'區域賽',Regionals:'區域賽',"Team-published":'隊伍公開',Worlds:'世界錦標賽',"build-thread":'研發記錄',cad:'CAD',code:'程式碼',portfolio:'作品集',video:'影片',website:'網站',awards:'獎項',learning:'學習',mechanical:'機械',motion:'運動控制',programming:'程式設計',strategy:'策略',vision:'視覺',community:'社群',official:'官方'},
   es:{alliance:'Alianza',connect:'Premio Connect',control:'Premio Control',design:'Premio Design',innovate:'Premio Innovate',inspire:'Premio Inspire',judges:'Premio Elección de los Jueces',motivate:'Premio Motivate',other:'Otros',think:'Premio Think',Nationals:'Nacional',"Not specifies":'Sin especificar',"Premier Event":'Evento Premier',Regional:'Regional',Regionals:'Regionales',"Team-published":'Publicado por el equipo',Worlds:'Campeonato Mundial',"build-thread":'Build Thread',cad:'CAD',code:'Código',portfolio:'Portafolio',video:'Video',website:'Sitio web',awards:'Premios',learning:'Aprendizaje',mechanical:'Mecánica',motion:'Movimiento',programming:'Programación',strategy:'Estrategia',vision:'Visión',community:'Comunidad',official:'Oficial'},
   tr:{alliance:'İttifak',connect:'Connect Ödülü',control:'Control Ödülü',design:'Design Ödülü',innovate:'Innovate Ödülü',inspire:'Inspire Ödülü',judges:'Jüri Özel Ödülü',motivate:'Motivate Ödülü',other:'Diğer',think:'Think Ödülü',Nationals:'Ulusal Şampiyona',"Not specifies":'Belirtilmemiş',"Premier Event":'Premier Etkinlik',Regional:'Bölgesel',Regionals:'Bölgesel Etkinlikler',"Team-published":'Takım tarafından yayımlanan',Worlds:'Dünya Şampiyonası',"build-thread":'Build Thread',cad:'CAD',code:'Kod',portfolio:'Portfolyo',video:'Video',website:'Web sitesi',awards:'Ödüller',learning:'Öğrenme',mechanical:'Mekanik',motion:'Hareket',programming:'Programlama',strategy:'Strateji',vision:'Görüntü işleme',community:'Topluluk',official:'Resmî'}
+  ,ja:{alliance:'アライアンス',connect:'Connect Award',control:'Control Award',design:'Design Award',innovate:'Innovate Award',inspire:'Inspire Award',judges:'Judges Choice Award',motivate:'Motivate Award',other:'その他',think:'Think Award',Nationals:'全国大会',"Not specifies":'未指定',"Premier Event":'プレミアイベント',Regional:'地区大会',Regionals:'地区大会',"Team-published":'チーム公開',Worlds:'世界選手権',"build-thread":'Build Thread',cad:'CAD',code:'コード',portfolio:'ポートフォリオ',video:'動画',website:'ウェブサイト',awards:'表彰',learning:'学習',mechanical:'機構',motion:'モーション',programming:'プログラミング',strategy:'戦略',vision:'ビジョン',community:'コミュニティ',official:'公式'}
 };
 function ftcLabel(value){return (FTC_LABELS[LANG]&&FTC_LABELS[LANG][value])||FTC_LABELS.en[value]||value;}
 const FTC_PANEL_COPY={awards:['ftc_tab_awards','ftc_card_awards'],portfolios:['ftc_tab_portfolios','ftc_card_portfolios'],open:['ftc_tab_open','ftc_card_open'],sites:['ftc_tab_sites','ftc_card_sites'],resources:['ftc_tab_resources','ftc_card_resources'],style:['ftc_tab_style','ftc_card_style']};
