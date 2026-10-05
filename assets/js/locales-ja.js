@@ -38,6 +38,64 @@ Object.assign(I18N.ja,{
   sort_hot:"人気順", sort_team:"チーム番号順", sort_label:"チーム公開資料の並び順"
 });
 
+/* Editorial pass: use one natural Japanese naming system across headings and navigation.
+   FIRST's award and program names remain in their official English form. */
+Object.assign(I18N.ja,{
+  site_title:"FIRSTHub：FRC オープンリソース集",
+  site_subtitle:"チームが公開した資料を、チームのためにひとつに。",
+  hero_kicker:"FRC · FIRST Robotics Competition · コミュニティのオープンリソース集",
+  hero_sub:"2021〜2026年の Impact Award 受賞資料、チーム公開の CAD・コード・Build Thread、Hall of Fame チーム、技術リソースを集めました。",
+  tab_impact:"Impact Award アーカイブ",
+  tab_open:"チーム公開リソース",
+  tab_tech:"技術リソース集",
+  tab_tsite:"チームの技術サイト",
+  tab_style:"シーズン・ブランドガイド",
+  stat_impact:"Impact Award 受賞チーム",
+  stat_open:"チーム公開リソース",
+  stat_tech:"技術リソース",
+  home_what:"FIRSTHub でできること",
+  home_lead:"6シーズン分の Impact Award のエッセイ・動画・プレゼンテーション、チーム公開の CAD・コード・Build Thread、FIRST 公式 Hall of Fame、技術・学習リソースをまとめて探せます。",
+  home_usage:"見たいセクションを選び、必要に応じてシーズンを切り替えてください。チーム公開リソースは Build Thread の閲覧数またはチーム番号で並べ替えられ、技術リソースはカテゴリで絞り込めます。#2024 のような URL を共有すると、特定のシーズンを直接開けます。",
+  home_impact_t:"Impact Award アーカイブ",
+  home_open_t:"チーム公開リソース",
+  home_tech_t:"技術リソース集",
+  home_open_d:"Build Thread、CAD、コード、動画など、チームが公開したリソースを収録しています。",
+  sources_head:"情報源",
+  impact_lead:"エッセイは FIRST 公式 PDF、動画は各チームの YouTube／Instagram、プレゼンテーションは公開された Google Drive／Canva の資料にリンクしています。",
+  open_lead:"Build Thread の閲覧数を、コミュニティでの関心の目安として並べています。CAD アイコンはロボット CAD を公開したチームを示し、利用可能な場合は Onshape のプレビューも表示します。公開 GitHub リポジトリは、確認できる範囲でサブシステムやソフトウェア領域を記載しています。",
+  tech_head:"FRC 技術リソース集",
+  tech_lead:"公式ドキュメント、ソフトウェアフレームワーク、設計ツール、データプラットフォーム、コミュニティの学習リソースを集めています。",
+  footer_src:"情報源", footer_contrib:"データの追加・修正", footer_roadmap:"今後の予定",
+  footer_copy:"FIRSTHub：FRC オープンリソース集 · 2021〜2026年の FRC コミュニティ資料 · オープンデータ、オープンコラボレーション",
+  resource_open:"開く", team_page:"FIRST のチームページ", cad_preview:"CAD のプレビュー",
+  scripts_title:"チームの受賞結果と表彰文",
+  ts_head:"チームの技術サイト", ts_lead:"FRC チームが制作・維持している、CAD、電気、プログラミング、トレーニング向けの独立した技術サイトです。", ts_visit:"サイトを開く",
+  sg_head:"シーズン・ブランドガイド", sg_lead:"各シーズンの FIRST 公式ブランド素材とビジュアルガイドです。スタイルガイド、ロゴ、SNS テンプレート、壁紙をまとめています。", sg_open:"公式ページを開く",
+  program_choose:"プログラムを選択",
+  ftc_tab_portfolios:"エンジニアリングポートフォリオ",
+  ftc_tab_open:"チーム公開リソース",
+  ftc_tab_sites:"チームの技術サイト",
+  ftc_tab_resources:"技術リソース集",
+  ftc_tab_style:"シーズン・ブランドガイド",
+  ftc_overview_title:"FTC リソース集を探す",
+  ftc_overview_lead:"シーズンごとの FTC 公式受賞結果、公開エンジニアリングポートフォリオ、チーム公開リソースを探せます。シーズンに左右されない技術サイトとツールには専用セクションがあります。",
+  ftc_overview_usage:"まずセクションを選んでください。受賞結果、エンジニアリングポートフォリオ、チーム公開リソースではシーズンを選べます。チーム公開リソースは活動量またはチーム番号で並べ替え、CAD、コード、動画、ウェブサイトなどで絞り込めます。",
+  ftc_card_portfolios:"チームが公開したエンジニアリングポートフォリオを、シーズンと賞で絞り込めます。",
+  ftc_card_open:"公開 Build Thread、CAD、コード、動画、チームサイトへの直接リンクです。",
+  ftc_card_sites:"FTC のチュートリアルサイト、チームのナレッジベース、コミュニティのオープンツールを収録しています。",
+  ftc_card_resources:"プログラミング、パス計画、ビジョン、戦略などの分野ごとに整理した公式ドキュメントとコミュニティツールです。",
+  ftc_card_style:"シーズンごとに整理した FIRST 公式のブランドガイド、ロゴ、SNS 素材です。",
+  ftc_source_note:"すべての記録に公開された元の情報源を残しています。リソースタグは閲覧できる内容を示すもので、FIRST の推薦や順位を意味しません。",
+  ftc_public_portfolio:"公開エンジニアリングポートフォリオ",
+  ftc_hero_kicker:"FTC · FIRST Tech Challenge · コミュニティのオープンリソース集",
+  ftc_site_title:"FTC オープンリソース集",
+  ftc_site_subtitle:"FIRSTHub：FTC オープンリソース集",
+  ftc_hero_sub:"FTC の受賞結果、公開エンジニアリングポートフォリオ、チーム公開リソース、技術サイトとツールを、元の情報源とともに整理しています。",
+  ftc_stat_open:"チーム公開リソース", ftc_stat_resources:"技術リソース", ftc_stat_sites:"チーム運営サイト", ftc_stat_portfolios:"エンジニアリングノート",
+  ftc_team_site_note:"FTC チームまたはコミュニティが維持する技術サイトです。",
+  sort_label:"チーム公開リソースの並び順"
+});
+
 const jaMissing=Object.keys(I18N.en).filter(key=>!Object.prototype.hasOwnProperty.call(I18N.ja,key));
 if(jaMissing.length)console.error("Japanese locale incomplete:",jaMissing);
 if(typeof setLang==="function"&&typeof LANG!=="undefined"&&LANG==="ja")setLang(LANG);
