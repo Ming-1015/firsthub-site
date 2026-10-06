@@ -1,0 +1,122 @@
+{
+  "entries": [
+    {
+      "year": "ftc/2023",
+      "team": 23619,
+      "cad": "https://cad.onshape.com/documents/3118dba012f7b01a185b682e/w/c2cf783002ba68b893c35c99/e/c515736f5cc04815a149d76d?renderMode=0&uiState=671755a7ae1b6946a8e41e4d",
+      "preview": "assets/cad-previews/ftc/2023/23619-111502ed50.webp",
+      "element": "23619-24-A-0000 | Main |",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-10-06T05:31:14.249980+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "ftc/2025",
+      "team": 23511,
+      "cad": "https://cad.onshape.com/documents/c021b03986672773c2100272/w/74f0a8f10b4c93fb8fe556c1/e/b8bffd930c2a2d8248794936",
+      "preview": "assets/cad-previews/ftc/2025/23511-c09071f639.webp",
+      "element": "Full",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-10-06T05:31:15.641049+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "ftc/2025",
+      "team": 6347,
+      "cad": "https://cad.onshape.com/documents/b0eab8101462a01216bfbff4/w/bdb4f7edfe03e244a5fecaf2/e/7e73f2cb9bc0ed585f902053?renderMode=0&uiState=6711b0d615dc976491ee3582",
+      "preview": "assets/cad-previews/ftc/2025/6347-d0fd55e6d6.webp",
+      "element": "Robot Name",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-10-06T05:31:15.934566+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "ftc/2024",
+      "team": 11285,
+      "cad": "https://cad.onshape.com/documents/a7b1da28b8e3acfcd89bb139/w/8f3e036bd754c5930541ff59/e/373937afed146b3a8e324c90?renderMode=0",
+      "preview": "assets/cad-previews/ftc/2024/11285-1a4e2232b4.webp",
+      "element": "Main",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-10-06T05:31:18.505731+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "ftc/2024",
+      "team": 23619,
+      "cad": "https://cad.onshape.com/documents/7277e04136a3819938e37df3/w/7ab5082c987248f1c211a53a/e/a49395ea5f1eccc4bc12e446?renderMode=0&uiState=6913c5cdb368bfe4b7119798",
+      "preview": "assets/cad-previews/ftc/2024/23619-2dd7db80b8.webp",
+      "element": "23619-25-A-0000 | Main |",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-10-06T05:31:31.293287+00:00",
+      "status": "ok"
+    },
+    {
+      "year": "ftc/2024",
+      "team": 30030,
+      "cad": "https://cad.onshape.com/documents/49cd4bc4d188cf9592aaf817/w/f5d5bfaeb0fe6538bb09b024/e/0e47d121a4ce7c079c69fb56",
+      "preview": "assets/cad-previews/ftc/2024/30030-9c44eb6f9f.webp",
+      "element": "Extended Fuel",
+      "angle": "front-upper-three-quarter",
+      "updatedAt": "2026-10-06T05:31:45.731052+00:00",
+      "status": "ok"
+    }
+  ],
+  "failures": [
+    {
+      "season": "2026",
+      "team": 23619,
+      "cad": "https://cad.onshape.com/documents/e7e7665d44ea06dec7272c2c/w/c0a9d4ca8aed0e86f2df057e/e/102406d20c6494e8694d3807?renderMode=0&uiState=6aa482b4d5f91b2fe0956b40",
+      "error": "rendered image is fully transparent"
+    },
+    {
+      "season": "2024",
+      "team": 17012,
+      "cad": "https://cad.onshape.com/documents/cea51022bc9934ec1f41628c/w/c29724c995248e668a96acf9/e/8a25f273dcdc0fa92679d428?renderMode=0&uiState=68c0224491e7c892fb892384",
+      "error": "rendered image is fully transparent"
+    },
+    {
+      "season": "2023",
+      "team": 23513,
+      "cad": "https://cad.onshape.com/documents/d36c0553982bb46b661a7191/w/86707e0994c52149ce58e1a7/e/28c472823e4465f061b942d6?renderMode=0&uiState=66d53f7b3e38d94884c127a6",
+      "error": "no renderable assembly or part studio found"
+    },
+    {
+      "season": "2025",
+      "team": 26154,
+      "cad": "https://cad.onshape.com/documents/8e4c7ef07c340d9a47c1ff17/w/4e4fbc72fe879e3221868ff6/e/e05c988a941659dff1592805?renderMode=0&uiState=68bce8351a1cdb60092ae073",
+      "error": "element catalogue returned HTTP 404"
+    },
+    {
+      "season": "2025",
+      "team": 17012,
+      "cad": "https://cad.onshape.com/documents/5fb2d19e001ab6d2d16b4e4a/w/420b09c87a8fc1c1972f08b8/e/7c4509066a5287026858cb57?renderMode=0&uiState=66d71a3bd73c575d1b48886a",
+      "error": "no renderable assembly or part studio found"
+    },
+    {
+      "season": "2024",
+      "team": 13598,
+      "cad": "https://cad.onshape.com/documents/10c6be6ce83ce1f57b9b8dce/w/3251b0448c8d147db2e31361/e/52da86b8db2fc50be5aaadae?renderMode=0&uiState=68a351ca1c0b6f220f3098c4",
+      "error": "element catalogue returned HTTP 403"
+    },
+    {
+      "season": "2025",
+      "team": 32154,
+      "cad": "https://cad.onshape.com/documents/c781fb6b3a618994de3bc66e/w/915a14be94b1eeec0b1c680b/e/994180b94e6173b4954057f4?renderMode=0&uiState=68ec2d8f6c87daa1a1427080",
+      "error": "APIRequestContext.get: read ECONNRESET\nCall log:\n  - → GET https://cad.onshape.com/api/v14/assemblies/d/c781fb6b3a618994de3bc66e/w/915a14be94b1eeec0b1c680b/e/994180b94e6173b4954057f4/shadedviews?viewMatrix=0.612%2C0.612%2C0%2C0%2C-0.354%2C0.354%2C0.707%2C0%2C0.707%2C-0.707%2C0.707%2C0&outputWidth=64"
+    },
+    {
+      "season": "2025",
+      "team": 30501,
+      "cad": "https://cad.onshape.com/documents/93a0ee77c6ac5826d4d06640/w/c20c0341c62dab312c94f545/e/aa50fbd6428383d34fa438a4",
+      "error": "APIRequestContext.get: read ECONNRESET\nCall log:\n  - → GET https://cad.onshape.com/api/v14/assemblies/d/93a0ee77c6ac5826d4d06640/w/c20c0341c62dab312c94f545/e/aa50fbd6428383d34fa438a4/shadedviews?viewMatrix=0.612%2C0.612%2C0%2C0%2C-0.354%2C0.354%2C0.707%2C0%2C0.707%2C-0.707%2C0.707%2C0&outputWidth=64"
+    },
+    {
+      "season": "2024",
+      "team": 788,
+      "cad": "https://cad.onshape.com/documents/f9edc7d2e720ea86e4e3997f/w/e9e7b7ad4a827477f1f358b1/e/897cd1fa3206b87e7a2f8f9f",
+      "error": "APIRequestContext.get: read ECONNRESET\nCall log:\n  - → GET https://cad.onshape.com/api/v14/assemblies/d/f9edc7d2e720ea86e4e3997f/w/e9e7b7ad4a827477f1f358b1/e/897cd1fa3206b87e7a2f8f9f/shadedviews?viewMatrix=0.612%2C0.612%2C0%2C0%2C-0.354%2C0.354%2C0.707%2C0%2C0.707%2C-0.707%2C0.707%2C0&outputWidth=64"
+    }
+  ],
+  "generatedAt": "2026-10-06T05:32:01.323024+00:00",
+  "totalPreviews": 7
+}

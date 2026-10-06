@@ -54,12 +54,15 @@ jobs:
             python scripts/collect_cad_previews.py --workers 2 --limit 30 --retries 4
           fi
 
+      - name: Add FTC public CAD previews
+        run: python scripts/collect_ftc_cad_previews.py --timeout 45
+
       - name: Commit changed public data
         shell: bash
         run: |
           git config user.name "FIRSTHub data bot"
           git config user.email "actions@users.noreply.github.com"
-          git add assets/js/data.js assets/cad-previews index.html data/frc-youtube.json data/ftc-youtube.json data/ftc-demo-raw.json data/ftc-demo.json data/ftc-demo-v6.json
+          git add assets/js/data.js assets/cad-previews index.html data/frc-youtube.json data/ftc-youtube.json data/ftc-demo-raw.json data/ftc-demo.json data/ftc-demo-v6.json data/ftc-cad-previews-report.json
           if git diff --cached --quiet; then
             echo "No public-data changes to commit."
             exit 0

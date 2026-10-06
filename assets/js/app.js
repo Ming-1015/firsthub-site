@@ -834,7 +834,11 @@ function renderFtcCards(){
       const hasDirectSource=(item.links||[]).some(link=>link.url===item.url);
       const sourceButton=hasDirectSource?'':'<a class="btn cd" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+(item.sourcePlatform==='youtube'?'YouTube':item.sourcePlatform==='github'?'GitHub':'Build Thread')+'</a>';
       const sourceLine=item.sourcePlatform==='youtube'?'<div class="loc">'+t('ftc_source_label')+' '+esc(item.source)+'</div>':'';
-      return '<div class="card"><div class="num">'+item.number+cad+views+'</div><div class="nm">'+esc(item.title)+'</div>'+(tags?'<div>'+tags+'</div>':'')+sourceLine+'<div class="links">'+direct+sourceButton+'</div></div>';
+      const original=FTC_AUTO_DATA.openTeams.find(record=>record.season===item.season&&record.source===item.url&&record.teamNumber===item.number);
+      const previewAlt=t('cad_preview_alt').replace('{team}',String(item.number));
+      const preview=original&&original.cadPreview&&original.cadPreviewUrl&&(item.links||[]).some(link=>link.type==='cad'&&link.url===original.cadPreviewUrl)
+        ? '<a class="cad-thumb" href="'+esc(original.cadPreviewUrl)+'" target="_blank" rel="noopener" aria-label="'+esc(previewAlt)+'"><img src="'+esc(original.cadPreview)+'" width="640" height="360" loading="lazy" decoding="async" alt="'+esc(previewAlt)+'" onerror="this.parentElement.hidden=true"></a>' : '';
+      return '<div class="card team-resource-card">'+preview+'<div class="num">'+item.number+cad+views+'</div><div class="nm">'+esc(item.title)+'</div>'+(tags?'<div>'+tags+'</div>':'')+sourceLine+'<div class="links">'+direct+sourceButton+'</div></div>';
     }
     const tags=item.tags&&item.tags.length?'<div>'+item.tags.map(tag=>'<span class="tag-chip">'+esc(ftcLabel(tag))+'</span>').join('')+'</div>':'';
     const awardHeading=ftcCategory==='awards'?'<div class="award-name">'+esc(item.meta)+'</div>':'';
