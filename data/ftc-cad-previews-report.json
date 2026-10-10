@@ -1,37 +1,23 @@
 {
   "entries": [
     {
-      "year": "ftc/2025",
-      "team": 32154,
-      "cad": "https://cad.onshape.com/documents/c781fb6b3a618994de3bc66e/w/915a14be94b1eeec0b1c680b/e/994180b94e6173b4954057f4?renderMode=0&uiState=68ec2d8f6c87daa1a1427080",
-      "preview": "assets/cad-previews/ftc/2025/32154-fddd6a91e8.webp",
-      "element": "drivetrain",
-      "angle": "front-upper-three-quarter",
-      "updatedAt": "2026-10-07T10:19:25.626270+00:00",
-      "status": "ok"
-    },
-    {
-      "year": "ftc/2025",
-      "team": 30501,
-      "cad": "https://cad.onshape.com/documents/93a0ee77c6ac5826d4d06640/w/c20c0341c62dab312c94f545/e/aa50fbd6428383d34fa438a4",
-      "preview": "assets/cad-previews/ftc/2025/30501-ac8a8ced91.webp",
-      "element": "BOT V3",
-      "angle": "front-upper-three-quarter",
-      "updatedAt": "2026-10-07T10:19:25.651886+00:00",
-      "status": "ok"
-    },
-    {
       "year": "ftc/2024",
-      "team": 788,
-      "cad": "https://cad.onshape.com/documents/f9edc7d2e720ea86e4e3997f/w/e9e7b7ad4a827477f1f358b1/e/897cd1fa3206b87e7a2f8f9f",
-      "preview": "assets/cad-previews/ftc/2024/788-96e9e7e91e.webp",
-      "element": "Robot MAX DETAIL (Retracted)",
+      "team": 6347,
+      "cad": "https://cad.onshape.com/documents/b0eab8101462a01216bfbff4/w/bdb4f7edfe03e244a5fecaf2/e/7e73f2cb9bc0ed585f902053?renderMode=0&uiState=6711b0d615dc976491ee3582",
+      "preview": "assets/cad-previews/ftc/2024/6347-d0fd55e6d6.webp",
+      "element": "Robot Name",
       "angle": "front-upper-three-quarter",
-      "updatedAt": "2026-10-07T10:19:26.166227+00:00",
+      "updatedAt": "2026-10-10T09:53:27.879945+00:00",
       "status": "ok"
     }
   ],
   "failures": [
+    {
+      "season": "2024",
+      "team": 13598,
+      "cad": "https://cad.onshape.com/documents/10c6be6ce83ce1f57b9b8dce/w/3251b0448c8d147db2e31361/e/52da86b8db2fc50be5aaadae?renderMode=0&uiState=68a351ca1c0b6f220f3098c4",
+      "error": "element catalogue returned HTTP 403"
+    },
     {
       "season": "2023",
       "team": 23513,
@@ -39,15 +25,15 @@
       "error": "no renderable assembly or part studio found"
     },
     {
-      "season": "2026",
-      "team": 23619,
-      "cad": "https://cad.onshape.com/documents/e7e7665d44ea06dec7272c2c/w/c0a9d4ca8aed0e86f2df057e/e/102406d20c6494e8694d3807?renderMode=0&uiState=6aa482b4d5f91b2fe0956b40",
-      "error": "rendered image is fully transparent"
-    },
-    {
       "season": "2024",
       "team": 17012,
       "cad": "https://cad.onshape.com/documents/cea51022bc9934ec1f41628c/w/c29724c995248e668a96acf9/e/8a25f273dcdc0fa92679d428?renderMode=0&uiState=68c0224491e7c892fb892384",
+      "error": "rendered image is fully transparent"
+    },
+    {
+      "season": "2026",
+      "team": 23619,
+      "cad": "https://cad.onshape.com/documents/e7e7665d44ea06dec7272c2c/w/c0a9d4ca8aed0e86f2df057e/e/102406d20c6494e8694d3807?renderMode=0&uiState=6aa482b4d5f91b2fe0956b40",
       "error": "rendered image is fully transparent"
     },
     {
@@ -58,17 +44,11 @@
     },
     {
       "season": "2024",
-      "team": 13598,
-      "cad": "https://cad.onshape.com/documents/10c6be6ce83ce1f57b9b8dce/w/3251b0448c8d147db2e31361/e/52da86b8db2fc50be5aaadae?renderMode=0&uiState=68a351ca1c0b6f220f3098c4",
-      "error": "element catalogue returned HTTP 403"
-    },
-    {
-      "season": "2025",
       "team": 17012,
       "cad": "https://cad.onshape.com/documents/5fb2d19e001ab6d2d16b4e4a/w/420b09c87a8fc1c1972f08b8/e/7c4509066a5287026858cb57?renderMode=0&uiState=66d71a3bd73c575d1b48886a",
       "error": "no renderable assembly or part studio found"
     }
   ],
-  "generatedAt": "2026-10-07T10:19:27.684592+00:00",
+  "generatedAt": "2026-10-10T09:53:30.163372+00:00",
   "totalPreviews": 10
 }
