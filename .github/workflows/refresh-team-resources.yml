@@ -1,12 +1,19 @@
-name: Refresh public team resources
+name: FIRSTHub full-site refresh
 
 on:
   schedule:
-    - cron: "17 3 */3 * *"
+    - cron: '17 3 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh-team-resources.yml'
+      - 'scripts/refresh_firsthub.py'
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: refresh-public-team-resources
@@ -15,58 +22,69 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    # A manual run backfills every missing public Onshape preview. Scheduled
-    # runs stay small so the regular three-day refresh remains inexpensive.
     timeout-minutes: 330
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Check out main
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-
-      - name: Install public metadata and CAD preview collectors
+          python-version: '3.12'
+      - name: Check 72-hour interval
+        id: interval
+        run: |
+          if [[ '${{ github.event_name }}' == 'schedule' ]]; then
+            echo "due=$(python scripts/refresh_firsthub.py --check-due)" >> "$GITHUB_OUTPUT"
+          else
+            echo 'due=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install collectors
+        if: steps.interval.outputs.due == 'true'
         run: |
           python -m pip install --disable-pip-version-check yt-dlp playwright Pillow
           python -m playwright install --with-deps chromium
-
-      - name: Refresh FRC YouTube team resources
-        run: python scripts/collect_frc_youtube.py --limit-per-query 50
-
-      - name: Refresh FTC public records and YouTube team resources
+      - name: Refresh public data and search pages
+        if: steps.interval.outputs.due == 'true'
+        run: python scripts/refresh_firsthub.py
+      - name: Upload refresh report
+        if: always() && steps.interval.outputs.due == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: firsthub-refresh-report
+          path: data/firsthub-refresh-report.json
+          if-no-files-found: ignore
+      - name: Publish updated data to main
+        if: steps.interval.outputs.due == 'true'
         run: |
-          python scripts/collect_ftc_demo.py --years 2023 2024 2025 2026 --chief-pages 4 --merge
-          python scripts/collect_ftc_youtube.py --limit-per-query 50
-          python scripts/filter_ftc_demo.py --output data/ftc-demo-v6.json --check-links
-          cp data/ftc-demo-v6.json data/ftc-demo.json
-
-      - name: Add new public Onshape CAD previews
-        shell: bash
-        run: |
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            python scripts/collect_cad_previews.py --workers 1 --retries 4
-          else
-            python scripts/collect_cad_previews.py --workers 2 --limit 30 --retries 4
+          git config user.name 'FIRSTHub data bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add assets/js/data.js assets/cad-previews index.html data en zh sitemap.xml robots.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(data): refresh FIRSTHub full site'
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
-
-      - name: Add FTC public CAD previews
-        run: python scripts/collect_ftc_cad_previews.py --timeout 45
-
-      - name: Commit changed public data
-        shell: bash
+      - name: Configure Pages
+        if: steps.interval.outputs.due == 'true'
+        uses: actions/configure-pages@v5
+      - name: Stage public site
+        if: steps.interval.outputs.due == 'true'
         run: |
-          git config user.name "FIRSTHub data bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add assets/js/data.js assets/cad-previews index.html data/frc-youtube.json data/ftc-youtube.json data/ftc-demo-raw.json data/ftc-demo.json data/ftc-demo-v6.json data/ftc-cad-previews-report.json
-          if git diff --cached --quiet; then
-            echo "No public-data changes to commit."
-            exit 0
-          fi
-          git commit -m "chore(data): refresh FRC and FTC public resources"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          mkdir "$RUNNER_TEMP/firsthub-site"
+          cp -r assets data en zh index.html CNAME robots.txt sitemap.xml og-cover.png team-5449-logo-transparent.png "$RUNNER_TEMP/firsthub-site/"
+          for file in google*.html; do
+            if [[ -f "$file" ]]; then cp "$file" "$RUNNER_TEMP/firsthub-site/"; fi
+          done
+      - name: Upload Pages site
+        if: steps.interval.outputs.due == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/firsthub-site
+      - name: Deploy Pages
+        id: deployment
+        if: steps.interval.outputs.due == 'true'
+        uses: actions/deploy-pages@v4

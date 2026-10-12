@@ -193,6 +193,29 @@ by itself proof that every record is correct.
 
 ## Known limitations
 
+### Full-site scheduled refresh
+
+`.github/workflows/refresh-team-resources.yml` checks daily at 03:17 UTC
+(11:17 China time). `scripts/refresh_firsthub.py` runs the collectors only
+when at least 72 hours have passed since the last successful data refresh.
+Manual dispatch always runs immediately. GitHub scheduling may be delayed.
+
+The batch refreshes FRC public videos, existing Impact team/event metadata,
+official team awards for stored seasons from 2022 onwards, FTC official results,
+portfolios, team videos, public resources and both programs' CAD previews. It
+then rebuilds search directories and the sitemap. Existing curated resource
+catalogues and brand-guide links are reused; this is not automatic discovery
+of every resource on the internet or a translation/UI rewrite.
+
+Failed collectors stop publication. Partial official FRC award collections also
+stop publication, preserving the deployed site. A JSON report is uploaded in
+Actions, and successful runs commit data to main and explicitly deploy GitHub
+Pages (bot commits alone do not reliably trigger another workflow).
+
+Preview the commands with `python scripts/refresh_firsthub.py --dry-run`.
+Check eligibility with `python scripts/refresh_firsthub.py --check-due`.
+Run **FIRSTHub full-site refresh** in GitHub Actions for an immediate refresh.
+
 - FIRST Event Web is the source of truth for official event results and team
   names, but its page structure can change; collectors may therefore require
   maintenance.
