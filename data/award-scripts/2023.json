@@ -6,1110 +6,1295 @@
     {
       "code": "ALHU",
       "name": "Rocket City Regional",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "ARLI",
       "name": "Arkansas Regional",
+      "sourceRows": 26,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "ARPKY",
       "name": "FIRST Championship - FIRST Robotics Competition - Archimedes Division presented by Kettering University",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "AUSC",
       "name": "Southern Cross Regional",
+      "sourceRows": 26,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "AZGL",
       "name": "Arizona West Regional",
+      "sourceRows": 24,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "AZVA",
       "name": "Arizona East Regional",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "BCVI",
       "name": "Canadian Pacific Regional",
+      "sourceRows": 28,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "BRBR",
       "name": "Brazil Regional",
+      "sourceRows": 26,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "CAAV",
       "name": "Aerospace Valley Regional",
+      "sourceRows": 23,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "CADA",
       "name": "Sacramento Regional",
+      "sourceRows": 25,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "CAFR",
       "name": "Central Valley Regional",
+      "sourceRows": 26,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "CALA",
       "name": "Los Angeles Regional",
+      "sourceRows": 24,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "CAMB",
       "name": "Monterey Bay Regional",
+      "sourceRows": 26,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "CAOC",
       "name": "Orange County Regional",
+      "sourceRows": 24,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "CAPH",
       "name": "Hueneme Port Regional",
+      "sourceRows": 22,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "CASD",
       "name": "San Diego Regional presented by Qualcomm",
+      "sourceRows": 25,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "CASF",
       "name": "San Francisco Regional",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "CASJ",
       "name": "Silicon Valley Regional",
+      "sourceRows": 29,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "CAVE",
       "name": "Ventura County Regional",
+      "sourceRows": 28,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "CHCMP",
       "name": "FIRST Chesapeake District Championship",
+      "sourceRows": 29,
       "records": 18,
       "scripts": 17
     },
     {
       "code": "CMPTX",
       "name": "FIRST Championship - FIRST Robotics Competition",
+      "sourceRows": 26,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "CODE",
       "name": "Colorado Regional",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "CPRA",
       "name": "FIRST Championship - FIRST Robotics Competition - Curie Division presented by Rockwell Automation",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "CTHAR",
       "name": "NE District Hartford Event",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 14
     },
     {
       "code": "CTWAT",
       "name": "NE District Waterbury Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "DCMP",
       "name": "FIRST Championship - FIRST Robotics Competition - Daly Division",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "FLOR",
       "name": "Orlando Regional",
+      "sourceRows": 28,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "FLTA",
       "name": "Tallahassee Regional",
+      "sourceRows": 28,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "FLWP",
       "name": "South Florida Regional",
+      "sourceRows": 24,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "GAALB",
       "name": "PCH District Albany Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "GACAR",
       "name": "PCH District Carrollton Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "GACMP",
       "name": "Peachtree District Championship",
+      "sourceRows": 30,
       "records": 19,
       "scripts": 17
     },
     {
       "code": "GADAL",
       "name": "PCH District Dalton Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 0
     },
     {
       "code": "GAGWI",
       "name": "PCH District Gwinnett Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "GAMAC",
       "name": "PCH District Macon Event",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 14
     },
     {
       "code": "GCMP",
       "name": "FIRST Championship - FIRST Robotics Competition - Galileo Division",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "HCMP",
       "name": "FIRST Championship - FIRST Robotics Competition - Hopper Division",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "HIHO",
       "name": "Hawaii Regional",
+      "sourceRows": 29,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "IACF",
       "name": "Iowa Regional",
+      "sourceRows": 30,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "IDBO",
       "name": "Idaho Regional",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "ILCH",
       "name": "Midwest Regional",
+      "sourceRows": 23,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "ILPE",
       "name": "Central Illinois Regional",
+      "sourceRows": 24,
       "records": 13,
       "scripts": 0
     },
     {
       "code": "INCMP",
       "name": "FIRST Indiana State Championship",
+      "sourceRows": 23,
       "records": 14,
       "scripts": 13
     },
     {
       "code": "INGRE",
       "name": "FIN District Greenwood Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "INMIS",
       "name": "FIN District Mishawaka Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "INPRI",
       "name": "FIN District Princeton Event presented by Toyota",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "INWLA",
       "name": "FIN District Tippecanoe Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "ISCMP",
       "name": "FIRST Israel District Championship",
+      "sourceRows": 22,
       "records": 13,
       "scripts": 0
     },
     {
       "code": "ISDE1",
       "name": "ISR District Event #1",
+      "sourceRows": 21,
       "records": 14,
       "scripts": 0
     },
     {
       "code": "ISDE2",
       "name": "ISR District Event #2",
+      "sourceRows": 20,
       "records": 14,
       "scripts": 0
     },
     {
       "code": "ISDE3",
       "name": "ISR District Event #3",
+      "sourceRows": 19,
       "records": 13,
       "scripts": 0
     },
     {
       "code": "ISDE4",
       "name": "ISR District Event #4",
+      "sourceRows": 21,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "JCMP",
       "name": "FIRST Championship - FIRST Robotics Competition - Johnson Division",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "KSLA",
       "name": "Heartland Regional",
+      "sourceRows": 23,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "LAKE",
       "name": "Bayou Regional",
+      "sourceRows": 28,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MABOS",
       "name": "NE District Greater Boston Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "MABRI",
       "name": "NE District SE Mass Event",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 14
     },
     {
       "code": "MAREA",
       "name": "NE District North Shore Event",
+      "sourceRows": 22,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "MAWNE",
       "name": "NE District Western NE Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "MAWOR",
       "name": "NE District WPI Event",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 14
     },
     {
       "code": "MDBET",
       "name": "CHS District Bethesda MD Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "MDTIM",
       "name": "CHS District Timonium MD Event",
+      "sourceRows": 23,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "MIBEL",
       "name": "FIM District Belleville Event presented by Belleville Yacht Club",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MICMP",
       "name": "FIRST in Michigan State Championship presented by DTE Foundation",
+      "sourceRows": 31,
       "records": 8,
       "scripts": 7
     },
     {
       "code": "MICMP1",
       "name": "FIRST in Michigan State Championship presented by DTE Foundation - DTE ENERGY FOUNDATION Division",
+      "sourceRows": 18,
       "records": 12,
       "scripts": 12
     },
     {
       "code": "MICMP2",
       "name": "FIRST in Michigan State Championship presented by DTE Foundation - FORD Division",
+      "sourceRows": 18,
       "records": 12,
       "scripts": 12
     },
     {
       "code": "MICMP3",
       "name": "FIRST in Michigan State Championship presented by DTE Foundation - APTIV Division",
+      "sourceRows": 19,
       "records": 13,
       "scripts": 12
     },
     {
       "code": "MICMP4",
       "name": "FIRST in Michigan State Championship presented by DTE Foundation - CONSUMERS ENERGY Division",
+      "sourceRows": 19,
       "records": 13,
       "scripts": 12
     },
     {
       "code": "MIDET",
       "name": "FIM District Detroit Event presented by DTE",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "MIDTR",
       "name": "FIM District Wayne State University Event presented by Magna",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIESC",
       "name": "FIM District Escanaba Event presented by Highline Fast",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIFOR",
       "name": "FIM District Calvin University Event presented by Amway",
+      "sourceRows": 21,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "MIJAC",
       "name": "FIM District Jackson Event presented by Consumers Energy Foundation",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIKE2",
       "name": "FIM District Kettering University Event #2 presented by Ford",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIKEN",
       "name": "FIM District Kentwood Event presented by Dematic",
+      "sourceRows": 22,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIKET",
       "name": "FIM District Kettering University Event #1 presented by Ford",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MILA2",
       "name": "FIM District Lakeview Event #2",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MILAK",
       "name": "FIM District Lakeview Event #1 presented by Parker-Hannifin",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MILAN",
       "name": "FIM District Lansing Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MILIV",
       "name": "FIM District Livonia Event presented by Aisin",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MILSU",
       "name": "FIM District LSSU Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIMCC",
       "name": "FIM District Macomb Community College Event presented by DTE",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIMID",
       "name": "FIM District Midland Event presented by Dow",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIMIL",
       "name": "FIM District Milford Event presented by GM Proving Grounds",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MIMUS",
       "name": "FIM District Muskegon Event presented by RENK",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MISAL",
       "name": "FIM District Saline Event",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MISJO",
       "name": "FIM District St. Joseph Event presented by Whirlpool Corporation",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "MISTA",
       "name": "FIM District Standish-Sterling Event",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MITR2",
       "name": "FIM District Troy Event #2 presented by Magna",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MITRY",
       "name": "FIM District Troy Event #1 presented by Aptiv",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MITVC",
       "name": "FIM District Traverse City Event presented by \"Cone Drive by Timken\"",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "MIWMI",
       "name": "FIM District West Michigan Event",
+      "sourceRows": 23,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MNDU",
       "name": "Lake Superior Regional",
+      "sourceRows": 24,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "MNDU2",
       "name": "Northern Lights Regional",
+      "sourceRows": 22,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "MNMI",
       "name": "Minnesota 10,000 Lakes Regional presented by Medtronic",
+      "sourceRows": 26,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "MNMI2",
       "name": "Minnesota North Star Regional at La Crosse",
+      "sourceRows": 23,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "MOKC",
       "name": "Greater Kansas City Regional",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MOSE",
       "name": "Central Missouri Regional",
+      "sourceRows": 25,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "MOSL",
       "name": "St. Louis Regional",
+      "sourceRows": 24,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "MPCIA",
       "name": "FIRST Championship - FIRST Robotics Competition - Milstein Division presented by CIA",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "MRCMP",
       "name": "FIRST Mid-Atlantic District Championship",
+      "sourceRows": 30,
       "records": 18,
       "scripts": 0
     },
     {
       "code": "MSLR",
       "name": "Magnolia Regional",
+      "sourceRows": 23,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "MXMO",
       "name": "Regional Monterrey",
+      "sourceRows": 26,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "MXPU",
       "name": "Regional Puebla",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "MXTO",
       "name": "Regional Laguna",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NCASH",
       "name": "FNC District UNC Asheville Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NCCMP",
       "name": "FIRST North Carolina District State Championship",
+      "sourceRows": 27,
       "records": 18,
       "scripts": 16
     },
     {
       "code": "NCJOH",
       "name": "FNC District Johnston County Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NCMEC",
       "name": "FNC District Mecklenburg County Event",
+      "sourceRows": 26,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NCPEM",
       "name": "FNC District UNC Pembroke Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "NCWAK",
       "name": "FNC District Wake County Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NDGF",
       "name": "Great Northern Regional",
+      "sourceRows": 23,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "NECMP",
       "name": "New England FIRST District Championship",
+      "sourceRows": 21,
       "records": 7,
       "scripts": 6
     },
     {
       "code": "NECMP1",
       "name": "New England FIRST District Championship - MEIR Division",
+      "sourceRows": 17,
       "records": 11,
       "scripts": 11
     },
     {
       "code": "NECMP2",
       "name": "New England FIRST District Championship - WILSON Division",
+      "sourceRows": 18,
       "records": 12,
       "scripts": 11
     },
     {
       "code": "NHDUR",
       "name": "NE District UNH Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NHGRS",
       "name": "NE District Granite State Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "NJFLA",
       "name": "FMA District Mount Olive Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 0
     },
     {
       "code": "NJROB",
       "name": "FMA District Robbinsville Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 1
     },
     {
       "code": "NJSKI",
       "name": "FMA District Montgomery Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "NJTAB",
       "name": "FMA District Seneca Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "NJWAS",
       "name": "FMA District Warren Hills Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 0
     },
     {
       "code": "NPFCMP",
       "name": "FIRST Championship - FIRST Robotics Competition - Newton Division presented by Ford",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 0
     },
     {
       "code": "NVLV",
       "name": "Las Vegas Regional",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NYLI",
       "name": "FIRST Long Island Regional #1",
+      "sourceRows": 24,
       "records": 14,
       "scripts": 0
     },
     {
       "code": "NYLI2",
       "name": "FIRST Long Island Regional #2",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NYNY",
       "name": "New York City Regional",
+      "sourceRows": 29,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "NYRO",
       "name": "Finger Lakes Regional",
+      "sourceRows": 25,
       "records": 14,
       "scripts": 13
     },
     {
       "code": "NYTR",
       "name": "New York Tech Valley Regional",
+      "sourceRows": 27,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "OHCL",
       "name": "Buckeye Regional",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "OHMV",
       "name": "Miami Valley Regional",
+      "sourceRows": 26,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "OKOK",
       "name": "Oklahoma Regional",
+      "sourceRows": 26,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "OKTU",
       "name": "Green Country Regional",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "ONBAR",
       "name": "ONT District Georgian Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 0
     },
     {
       "code": "ONCMP",
       "name": "FIRST Ontario Provincial Championship",
+      "sourceRows": 17,
       "records": 5,
       "scripts": 0
     },
     {
       "code": "ONCMP1",
       "name": "FIRST Ontario Provincial Championship - TECHNOLOGY Division",
+      "sourceRows": 19,
       "records": 13,
       "scripts": 0
     },
     {
       "code": "ONCMP2",
       "name": "FIRST Ontario Provincial Championship - SCIENCE Division",
+      "sourceRows": 18,
       "records": 12,
       "scripts": 0
     },
     {
       "code": "ONHAM",
       "name": "ONT District McMaster University",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "ONLON",
       "name": "ONT District Western University Engineering Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "ONNEW",
       "name": "ONT District Newmarket Complex Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "ONNOB",
       "name": "ONT District North Bay Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 0
     },
     {
       "code": "ONTOR",
       "name": "ONT District Humber College Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "ONWAT",
       "name": "ONT District University of Waterloo Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "ONWIN",
       "name": "ONT District Windsor Essex Great Lakes Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "ORORE",
       "name": "PNW District Clackamas Academy Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "ORSAL",
       "name": "PNW District Oregon State Fairgrounds Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "ORWIL",
       "name": "PNW District Wilsonville Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "PABEN",
       "name": "FMA District Bensalem Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "PACA",
       "name": "Greater Pittsburgh Regional presented by Argo AI",
+      "sourceRows": 27,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "PAHAT",
       "name": "FMA District Hatboro-Horsham Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 0
     },
     {
       "code": "PAPHI",
       "name": "FMA District Springside Chestnut Hill Academy Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "PNCMP",
       "name": "Pacific Northwest FIRST District Championship",
+      "sourceRows": 31,
       "records": 17,
       "scripts": 14
     },
     {
       "code": "QCMO",
       "name": "Festival de Robotique Regional",
+      "sourceRows": 26,
       "records": 16,
       "scripts": 1
     },
     {
       "code": "RINSC",
       "name": "NE District Rhode Island Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "SCAND",
       "name": "PCH District Anderson Event presented by Magna",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "SCHAR",
       "name": "PCH District Hartsville Event presented by South Carolina Department of Education",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "TNKN",
       "name": "Smoky Mountains Regional",
+      "sourceRows": 24,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "TUHC",
       "name": "Halic Regional",
+      "sourceRows": 28,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "TUIS",
       "name": "Istanbul Regional",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "TUIS2",
       "name": "Bosphorus Regional",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 0
     },
     {
       "code": "TUIS3",
       "name": "Izmir Regional",
+      "sourceRows": 0,
       "records": 0,
       "scripts": 0
     },
     {
       "code": "TXAMA",
       "name": "FIT District Amarillo Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "TXBEL",
       "name": "FIT District Belton Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "TXCHA",
       "name": "FIT District Channelview Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "TXCLE",
       "name": "FIT District Space City @ Clear Lake Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "TXCMP",
       "name": "FIRST In Texas District Championship presented by Phillips 66",
+      "sourceRows": 20,
       "records": 7,
       "scripts": 7
     },
     {
       "code": "TXCMP1",
       "name": "FIRST In Texas District Championship presented by Phillips 66 - APOLLO Division",
+      "sourceRows": 20,
       "records": 13,
       "scripts": 12
     },
     {
       "code": "TXCMP2",
       "name": "FIRST In Texas District Championship presented by Phillips 66 - MERCURY Division",
+      "sourceRows": 20,
       "records": 13,
       "scripts": 12
     },
     {
       "code": "TXDAL",
       "name": "FIT District Dallas Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "TXFOR",
       "name": "FIT District Fort Worth Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "TXHOU",
       "name": "FIT District Houston Event",
+      "sourceRows": 26,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "TXSAN",
       "name": "FIT District San Antonio Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "TXWAC",
       "name": "FIT District Waco Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "UTWV",
       "name": "Utah Regional",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "VAALE",
       "name": "CHS District Alexandria VA Event",
+      "sourceRows": 24,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "VABLA",
       "name": "CHS District Blacksburg VA Event",
+      "sourceRows": 25,
       "records": 16,
       "scripts": 15
     },
     {
       "code": "VAGLE",
       "name": "CHS District Glen Allen VA Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "VAPOR",
       "name": "CHS District Portsmouth VA Event",
+      "sourceRows": 23,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "WAAHS",
       "name": "PNW District Auburn Event",
+      "sourceRows": 22,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "WABON",
       "name": "PNW District Bonney Lake Event",
+      "sourceRows": 23,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "WASAM",
       "name": "PNW District Sammamish Event",
+      "sourceRows": 23,
       "records": 15,
       "scripts": 14
     },
     {
       "code": "WASNO",
       "name": "PNW District Glacier Peak Event",
+      "sourceRows": 22,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "WAYAK",
       "name": "PNW District SunDome Event",
+      "sourceRows": 21,
       "records": 13,
       "scripts": 13
     },
     {
       "code": "WILA",
       "name": "Seven Rivers Regional",
+      "sourceRows": 25,
       "records": 14,
       "scripts": 14
     },
     {
       "code": "WIMI",
       "name": "Wisconsin Regional",
+      "sourceRows": 23,
       "records": 13,
       "scripts": 13
     }

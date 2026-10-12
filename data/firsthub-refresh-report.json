@@ -1,0 +1,141 @@
+{
+  "startedAt": "2026-10-12T15:33:59.835319+00:00",
+  "status": "success",
+  "steps": [
+    {
+      "command": [
+        "collect_frc_youtube.py",
+        "--limit-per-query",
+        "50"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "enrich_impact_teams.py"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_award_scripts.py",
+        "--year",
+        "2022",
+        "--all-events",
+        "--workers",
+        "8"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_award_scripts.py",
+        "--year",
+        "2023",
+        "--all-events",
+        "--workers",
+        "8"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_award_scripts.py",
+        "--year",
+        "2024",
+        "--all-events",
+        "--workers",
+        "8"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_award_scripts.py",
+        "--year",
+        "2025",
+        "--all-events",
+        "--workers",
+        "8"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_award_scripts.py",
+        "--year",
+        "2026",
+        "--all-events",
+        "--workers",
+        "8"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "clean_award_scripts.py"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_ftc_demo.py",
+        "--years",
+        "2023",
+        "2024",
+        "2025",
+        "2026",
+        "--chief-pages",
+        "4",
+        "--merge"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_ftc_youtube.py",
+        "--limit-per-query",
+        "50"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "filter_ftc_demo.py",
+        "--output",
+        "data/ftc-demo-v6.json",
+        "--check-links"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_cad_previews.py",
+        "--workers",
+        "2",
+        "--limit",
+        "30",
+        "--retries",
+        "2"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "collect_ftc_cad_previews.py",
+        "--timeout",
+        "45",
+        "--workers",
+        "2"
+      ],
+      "returnCode": 0
+    },
+    {
+      "command": [
+        "generate_seo_pages.py"
+      ],
+      "returnCode": 0
+    }
+  ],
+  "finishedAt": "2026-10-12T15:42:35.438156+00:00"
+}
