@@ -2,15 +2,15 @@
   "entries": [],
   "failures": [
     {
-      "season": "2026",
-      "team": 23619,
-      "cad": "https://cad.onshape.com/documents/e7e7665d44ea06dec7272c2c/w/c0a9d4ca8aed0e86f2df057e/e/102406d20c6494e8694d3807?renderMode=0&uiState=6aa482b4d5f91b2fe0956b40",
-      "error": "rendered image is fully transparent"
+      "season": "2023",
+      "team": 23513,
+      "cad": "https://cad.onshape.com/documents/d36c0553982bb46b661a7191/w/86707e0994c52149ce58e1a7/e/28c472823e4465f061b942d6?renderMode=0&uiState=66d53f7b3e38d94884c127a6",
+      "error": "no renderable assembly or part studio found"
     },
     {
       "season": "2026",
-      "team": 21802,
-      "cad": "https://cad.onshape.com/documents/96463c095bbcf3fee4e7025c/w/6791b903ce6cc8148e92d23f/e/8b089ee501ed884cb8b0fd84?renderMode=0&uiState=6ab81def1c496911d9dbbefd",
+      "team": 23619,
+      "cad": "https://cad.onshape.com/documents/e7e7665d44ea06dec7272c2c/w/c0a9d4ca8aed0e86f2df057e/e/102406d20c6494e8694d3807?renderMode=0&uiState=6aa482b4d5f91b2fe0956b40",
       "error": "rendered image is fully transparent"
     },
     {
@@ -20,16 +20,16 @@
       "error": "element catalogue returned HTTP 404"
     },
     {
+      "season": "2026",
+      "team": 21802,
+      "cad": "https://cad.onshape.com/documents/96463c095bbcf3fee4e7025c/w/6791b903ce6cc8148e92d23f/e/8b089ee501ed884cb8b0fd84?renderMode=0&uiState=6ab81def1c496911d9dbbefd",
+      "error": "rendered image is fully transparent"
+    },
+    {
       "season": "2024",
       "team": 13598,
       "cad": "https://cad.onshape.com/documents/10c6be6ce83ce1f57b9b8dce/w/3251b0448c8d147db2e31361/e/52da86b8db2fc50be5aaadae?renderMode=0&uiState=68a351ca1c0b6f220f3098c4",
       "error": "element catalogue returned HTTP 403"
-    },
-    {
-      "season": "2023",
-      "team": 23513,
-      "cad": "https://cad.onshape.com/documents/d36c0553982bb46b661a7191/w/86707e0994c52149ce58e1a7/e/28c472823e4465f061b942d6?renderMode=0&uiState=66d53f7b3e38d94884c127a6",
-      "error": "no renderable assembly or part studio found"
     },
     {
       "season": "2024",
@@ -44,6 +44,6 @@
       "error": "no renderable assembly or part studio found"
     }
   ],
-  "generatedAt": "2026-10-16T08:18:06.065943+00:00",
+  "generatedAt": "2026-10-19T09:01:30.013755+00:00",
   "totalPreviews": 11
 }
