@@ -227,6 +227,25 @@ def catalogue(rows: list[tuple], check_links: bool) -> list[dict]:
     return output
 
 
+def merge_portfolios(previous, incoming):
+    """Historical published records are immutable during automatic refreshes."""
+    def identity(item):
+        return item.get('id') or (item.get('season'), item.get('teamNumber'), item.get('pdf'))
+    merged = {identity(item): item.copy() for item in previous}
+    conflicts = []
+    for item in incoming:
+        key = identity(item)
+        if key in merged:
+            changes = {field: {'old': merged[key].get(field), 'new': item.get(field)}
+                       for field in ('season', 'teamNumber', 'pdf')
+                       if merged[key].get(field) != item.get(field)}
+            if changes:
+                conflicts.append({'id': item.get('id'), 'changes': changes})
+        else:
+            merged[key] = item
+    return list(merged.values()), conflicts
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
@@ -258,6 +277,16 @@ def main() -> None:
                 item["pdf"] = item["pdf"][1:]
             item["category"] = "portfolio"
             portfolios.append(item)
+
+    portfolios, portfolio_conflicts = merge_portfolios(previous.get('portfolios', []), portfolios)
+    payload.setdefault('audit', []).append({
+        'source': 'portfolio-history', 'status': 'review' if portfolio_conflicts else 'ok',
+        'preserved': len(previous.get('portfolios', [])), 'records': len(portfolios),
+        'conflicts': portfolio_conflicts,
+    })
+    for entry in payload['audit']:
+        if entry.get('status') in ('failed', 'review'):
+            print('Refresh warning: ' + json.dumps(entry, ensure_ascii=True))
 
     open_teams, seen_open = [], set()
     youtube_items = []

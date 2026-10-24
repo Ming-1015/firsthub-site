@@ -1,0 +1,25 @@
+name: Test portfolio refresh preservation
+on:
+  push:
+    paths:
+      - 'scripts/collect_ftc_demo.py'
+      - 'scripts/filter_ftc_demo.py'
+      - 'scripts/test_portfolio_refresh.py'
+      - '.github/workflows/test-portfolio-refresh.yml'
+  pull_request:
+    paths:
+      - 'scripts/collect_ftc_demo.py'
+      - 'scripts/filter_ftc_demo.py'
+      - 'scripts/test_portfolio_refresh.py'
+      - '.github/workflows/test-portfolio-refresh.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s scripts -p test_portfolio_refresh.py -v

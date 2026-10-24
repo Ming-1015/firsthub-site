@@ -168,36 +168,63 @@ def infer_portfolio_season(*values: str) -> tuple[str, str]:
     return (year.group(1), values[0]) if year else ("", values[0] if values else "")
 
 
+def parse_portfolio_lab(page: str) -> list[dict]:
+    """Decode Next.js JSON strings, then read objects without field-order assumptions."""
+    decoder = json.JSONDecoder()
+    chunks = [page]
+    for match in re.finditer(r'self\.__next_f\.push\(', page):
+        try:
+            value, _ = decoder.raw_decode(page, match.end())
+            chunks.extend(part for part in value if isinstance(part, str))
+        except (ValueError, TypeError):
+            continue
+    records = {}
+    for chunk in chunks:
+        for match in re.finditer(r'\{', chunk):
+            try:
+                item, _ = decoder.raw_decode(chunk, match.start())
+            except ValueError:
+                continue
+            if not isinstance(item, dict) or not all(k in item for k in ('id', 'teamName', 'teamNumber', 'season', 'pdf')):
+                continue
+            if str(item.get('program', 'FTC')).upper() != 'FTC':
+                continue
+            try:
+                number = int(item['teamNumber'])
+            except (TypeError, ValueError):
+                continue
+            pdf = item['pdf']
+            if not isinstance(pdf, str) or not pdf or not isinstance(item['season'], str):
+                continue
+            if pdf.startswith('/http'):
+                pdf = pdf[1:]
+            year, label = infer_portfolio_season(item['season'], pdf)
+            if not year:
+                continue
+            records[str(item['id'])] = {
+                'id': 'portfoliolab-' + str(item['id']), 'season': year,
+                'teamNumber': number, 'teamName': item['teamName'], 'seasonLabel': label,
+                'level': item.get('level', ''), 'award': item.get('award', ''),
+                'rating': item.get('stars', ''), 'score': item.get('score', ''),
+                'pdf': urllib.parse.urljoin('https://www.ftcportfoliolab.org', pdf),
+                'sourceType': 'community', 'source': 'https://www.ftcportfoliolab.org/portfolio',
+            }
+    return list(records.values())
+
+
 def collect_portfolio_lab() -> tuple[list[dict], dict]:
-    url = "https://www.ftcportfoliolab.org/portfolio"
-    page = fetch(url)
-    pattern = re.compile(
-        r'\\"id\\":\\"(?P<id>[^\"]+)\\",\\"teamName\\":\\"(?P<name>.*?)\\",'
-        r'\\"teamNumber\\":(?P<number>\d+),(?P<middle>.*?)'
-        r'\\"season\\":\\"(?P<season>.*?)\\",\\"level\\":\\"(?P<level>.*?)\\",'
-        r'\\"stars\\":\\"(?P<stars>.*?)\\",\\"score\\":\\"(?P<score>.*?)\\",'
-        r'\\"award\\":\\"(?P<award>.*?)\\",\\"cover\\":\\"(?P<cover>.*?)\\",'
-        r'\\"pdf\\":\\"(?P<pdf>.*?)\\"', re.S
-    )
-    records = []
-    for match in pattern.finditer(page):
-        season_year, season_label = infer_portfolio_season(match.group("season"), match.group("pdf"))
-        records.append({
-            "id": "portfoliolab-" + match.group("id"),
-            "season": season_year,
-            "teamNumber": int(match.group("number")),
-            "teamName": bytes(match.group("name"), "utf-8").decode("unicode_escape"),
-            "seasonLabel": season_label,
-            "level": match.group("level"),
-            "award": match.group("award"),
-            "rating": match.group("stars"),
-            "score": match.group("score"),
-            "pdf": match.group("pdf").replace(r"\u0026", "&"),
-            "sourceType": "community",
-            "source": url,
-        })
-    print(f"PortfolioLab: {len(records)}")
-    return records, {"source": url, "status": "ok", "records": len(records)}
+    url = 'https://www.ftcportfoliolab.org/portfolio'
+    try:
+        records = parse_portfolio_lab(fetch(url))
+        if not records:
+            raise ValueError('No valid FTC portfolios parsed; retain historical records')
+        print(f'PortfolioLab: {len(records)}')
+        return records, {'source': url, 'status': 'ok', 'records': len(records)}
+    except Exception as error:
+        print(f'PortfolioLab: FAILED {error}')
+        return [], {'source': url, 'status': 'failed', 'error': str(error), 'records': 0}
+
+
 
 
 def collect_openvault() -> tuple[list[dict], dict]:
