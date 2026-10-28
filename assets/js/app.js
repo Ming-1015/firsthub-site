@@ -700,6 +700,13 @@ const FTC_STYLE={
     {title:'AndyMark DECODE StarterBot',kind:'web',url:'https://andymark.com/pages/decode-robits-starter-bot'}
   ],
   2026:[
+    {title:'BIOBUZZ Style Guide & Color Palette',kind:'pdf',url:'https://www.firstinspires.org/hubfs/web/brand/season/2027/downloads/ftc-biobuzz-styleguide.pdf'},
+    {title:'BIOBUZZ Logo Files',kind:'zip',url:'https://www.firstinspires.org/hubfs/web/brand/season/2027/downloads/first-biobuzz-logos.zip'},
+    {title:'BIOBUZZ Social Media Toolkit',kind:'ppt',url:'https://www.firstinspires.org/hubfs/web/brand/season/2027/downloads/ftc-biobuzz-social-media-toolkit.pptx'},
+    {title:'BIOBUZZ Reels & Stories Templates',kind:'zip',url:'https://www.firstinspires.org/hubfs/web/brand/season/2027/downloads/first-biobuzz-reels-templates.zip'},
+    {title:'BIOBUZZ Blank Post Templates',kind:'zip',url:'https://www.firstinspires.org/hubfs/web/brand/season/2027/downloads/first-biobuzz-posts-templates.zip'},
+    {title:'BIOBUZZ Wallpaper — Version 1',kind:'img',url:'https://www.firstinspires.org/hubfs/web/brand/season/2027/downloads/first-biobuzz-wallpaper-v1.png'},
+    {title:'BIOBUZZ Wallpaper — Version 2',kind:'img',url:'https://www.firstinspires.org/hubfs/web/brand/season/2027/downloads/first-biobuzz-wallpaper-v2.png'},
     {title:'BIOBUZZ Game & Season Materials',kind:'web',url:'https://ftc-resources.firstinspires.org/ftc/game'},
     {title:'FIRST Season Brand Downloads',kind:'web',url:'https://www.firstinspires.org/resources/library/season-brand-downloads'},
     {title:'FIRST Training — FTC Skill Builders',kind:'web',url:'https://training.firstinspires.org/'}
@@ -794,7 +801,7 @@ function renderFtcCards(){
     $('ftcCount').textContent=items.length+t('sg_count2');
     $('ftcResultCount').textContent='';
     $('ftcFilters').innerHTML='';
-    $('ftcContent').innerHTML=items.map(item=>'<div class="card"><div class="num"><span class="badge gray">'+item.kind.toUpperCase()+'</span></div><div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(t('sg_resource_note'))+'</div><div class="links"><a class="btn '+(item.kind==='web'?'site':'essay')+'" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+(item.kind==='web'?t('sg_open'):t('sg_pdf'))+'</a></div></div>').join('');
+    $('ftcContent').innerHTML=items.map(item=>'<div class="card"><div class="num"><span class="badge gray">'+item.kind.toUpperCase()+'</span></div><div class="nm">'+esc(item.title)+'</div><div class="note">'+esc(t('sg_resource_note'))+'</div><div class="links"><a class="btn '+(item.kind==='web'?'site':'essay')+'" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+(item.kind==='web'?t('sg_open'):SG_LABEL(item.kind))+'</a></div></div>').join('');
     return;
   }
   $('ftcSearch').closest('.filter-bar').hidden=false;
