@@ -737,6 +737,20 @@ const FTC_LABELS={
 function ftcLabel(value){return (FTC_LABELS[LANG]&&FTC_LABELS[LANG][value])||FTC_LABELS.en[value]||value;}
 const FTC_PANEL_COPY={awards:['ftc_tab_awards','ftc_card_awards'],portfolios:['ftc_tab_portfolios','ftc_card_portfolios'],open:['ftc_tab_open','ftc_card_open'],sites:['ftc_tab_sites','ftc_card_sites'],resources:['ftc_tab_resources','ftc_card_resources'],style:['ftc_tab_style','ftc_card_style']};
 let ftcSeason='2026',ftcCategory='overview',ftcFilter='all',ftcDetailFilter='all',ftcSort='default';
+let ftcFeatures=new Set();
+function matchesFtcFeatures(item,features=ftcFeatures){
+  return [...features].every(feature=>feature==='preview'?item.previewAvailable:(item.tags||[]).includes(feature));
+}
+function toggleFtcFeature(feature){
+  if(feature==='all')ftcFeatures.clear();
+  else if(ftcFeatures.has(feature))ftcFeatures.delete(feature);
+  else ftcFeatures.add(feature);
+  renderFtcCards();
+}
+function ftcFeatureHint(){
+  const hints={en:'Match all selected features. “All” clears the selection.','zh-CN':'可多选，卡片需同时满足所选条件；点击“全部”清除。','zh-TW':'可複選，卡片需同時符合所選條件；點擊「全部」清除。',ja:'複数選択した条件をすべて満たすカードを表示。「すべて」で解除。',es:'Las tarjetas deben cumplir todos los filtros seleccionados. «Todos» los borra.',tr:'Kartlar seçilen tüm koşulları karşılar. “Tümü” seçimi temizler.',pt:'Os cartões devem atender a todos os filtros selecionados. “Todos” limpa a seleção.',he:'הכרטיסים חייבים להתאים לכל התנאים שנבחרו. ״הכול״ מנקה את הבחירה.',uz:'Kartalar tanlangan barcha shartlarga mos kelishi kerak. “Barchasi” tanlovni tozalaydi.',ro:'Cardurile trebuie să îndeplinească toate condițiile selectate. „Toate” șterge selecția.'};
+  return hints[LANG]||hints.en;
+}
 let FTC_AUTO_DATA=null,ftcDataLoading=false;
 async function loadFtcAutoData(){
   if(FTC_AUTO_DATA||ftcDataLoading)return;
@@ -768,7 +782,7 @@ function renderFtcSeasons(){
 function selectFtcSeason(y){ftcSeason=y;renderFtcSeasons();renderFtcStats();if(ftcCategory!=='overview')renderFtcCards();}
 function renderFtcFromCard(category){const button=[...document.querySelectorAll('#ftcNav button')].find(node=>node.getAttribute('onclick')?.includes("'"+category+"'"));if(button)renderFtc(category,button);}
 function renderFtc(category,button){
-  const overview=$('ftcOverview'),panel=$('ftcPanel');ftcCategory=category;ftcFilter='all';ftcDetailFilter='all';ftcSort='default';
+  const overview=$('ftcOverview'),panel=$('ftcPanel');ftcCategory=category;ftcFilter='all';ftcDetailFilter='all';ftcSort='default';ftcFeatures.clear();
   document.querySelector('.ftc-seasonbar').hidden=(category==='overview'||category==='resources'||category==='sites');
   document.querySelectorAll('#ftcNav button').forEach(b=>b.classList.toggle('active',b===button));
   if(category==='overview'){
@@ -803,7 +817,7 @@ function ftcAutoItems(){
     const score=clean(x.score);
     return {season:x.season,type:x.sourceType==='official'?'official':'community',detail:x.level||award,number:x.teamNumber,meta:(x.seasonLabel||'Season')+(x.level?' · '+x.level:''),title:'#'+x.teamNumber+' '+(x.teamName||x.title||'FTC Team'),desc:[award,rating,score].filter(Boolean).join(' · ')||t('ftc_public_portfolio'),source:String(x.source||'').includes('portfoliolab')?'FTC PortfolioLab':String(x.source||'').includes('open-vault-ftc')?'OpenVault':ftcLabel('Team-published'),url:x.pdf||x.source};
   });
-  if(ftcCategory==='open')return FTC_AUTO_DATA.openTeams.map(x=>({season:x.season,type:'team',detail:(x.tags||['build-thread'])[0],tags:x.tags||['build-thread'],links:x.links||[],number:x.teamNumber||999999,numberLabel:x.teamProgram?x.teamProgram+' '+x.teamNumber:null,activity:x.activity||x.views||x.posts||0,sourcePlatform:x.sourcePlatform||'chief-delphi',meta:(x.teamNumber?t('ts_n')+' '+x.teamNumber+' · ':'')+(x.views?Number(x.views).toLocaleString()+' '+t('ftc_views'):(x.posts||0).toLocaleString()+' '+t('ftc_updates')),title:(x.teamName?x.teamName+' — ':'')+x.title,desc:x.sourcePlatform==='youtube'?t('ftc_public_video'):t('ftc_public_team_resource'),source:x.sourcePlatform==='youtube'?(x.publisher?'YouTube · '+x.publisher:'YouTube'):x.sourcePlatform==='github'?'GitHub':'Chief Delphi',url:x.source}));
+  if(ftcCategory==='open')return FTC_AUTO_DATA.openTeams.map(x=>({season:x.season,type:'team',detail:(x.tags||['build-thread'])[0],tags:x.tags||['build-thread'],previewAvailable:(x.cadPreviews||[]).some(p=>p.status==='ok'&&p.image)||!!(x.cadPreview&&x.cadPreviewVerified!==false),links:x.links||[],number:x.teamNumber||999999,numberLabel:x.teamProgram?x.teamProgram+' '+x.teamNumber:null,activity:x.activity||x.views||x.posts||0,sourcePlatform:x.sourcePlatform||'chief-delphi',meta:(x.teamNumber?t('ts_n')+' '+x.teamNumber+' · ':'')+(x.views?Number(x.views).toLocaleString()+' '+t('ftc_views'):(x.posts||0).toLocaleString()+' '+t('ftc_updates')),title:(x.teamName?x.teamName+' — ':'')+x.title,desc:x.sourcePlatform==='youtube'?t('ftc_public_video'):t('ftc_public_team_resource'),source:x.sourcePlatform==='youtube'?(x.publisher?'YouTube · '+x.publisher:'YouTube'):x.sourcePlatform==='github'?'GitHub':'Chief Delphi',url:x.source}));
   if(ftcCategory==='sites')return (FTC_AUTO_DATA.sites||[]).map(x=>({season:'all',type:x.owner==='official'?'official':'community',detail:x.category,tags:[x.category],meta:ftcLabel(x.owner||'community')+' · '+ftcLabel(x.category),title:x.title,desc:LANG==='zh-CN'?x.description:t('ftc_resource_note'),source:t('ftc_reviewed_site'),url:x.url}));
   if(ftcCategory==='resources')return FTC_AUTO_DATA.resources.map(x=>({season:'all',type:x.sourceType==='official'?'official':'community',detail:x.category,tags:[x.category],meta:ftcLabel(x.sourceType==='official'?'official':'community')+' · '+ftcLabel(x.category),title:x.title,desc:LANG==='zh-CN'?x.description:t('ftc_resource_note'),source:x.sourceType==='official'?t('ftc_official_project'):t('ftc_community_project'),url:x.url}));
   return [];
@@ -826,11 +840,18 @@ function renderFtcCards(){
   const details=[...new Set(seasonItems.flatMap(x=>ftcCategory==='open'?(x.tags||[]):[x.detail]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b)));
   let controls='';
   if(ftcCategory==='open')controls+='<div class="sort-toggle"><button type="button" class="sort-btn'+(ftcSort==='default'?' active':'')+'" onclick="setFtcSort(\'default\')">'+t('sort_hot')+'</button><button type="button" class="sort-btn'+(ftcSort==='number'?' active':'')+'" onclick="setFtcSort(\'number\')">'+t('sort_team')+'</button></div>';
-  controls+='<button class="chip'+(ftcFilter==='all'?' active':'')+'" onclick="setFtcFilter(\'all\',this)">'+t('f_all')+'</button>';
+  if(ftcCategory==='open'){
+    controls+='<div class="ftc-feature-options" role="group" aria-label="'+esc(ftcFeatureHint())+'"><button type="button" class="chip'+(!ftcFeatures.size?' active':'')+'" aria-pressed="'+(!ftcFeatures.size)+'" onclick="toggleFtcFeature(\'all\')">'+t('f_all')+'</button>';
+    const options=[['cad',t('f_cad')],['code',t('f_code')],['video',t('f_video')],['website',t('f_site')],['build-thread',ftcLabel('build-thread')],['preview',t('cad_preview')]];
+    controls+=options.map(([feature,label])=>{
+      const count=seasonItems.filter(item=>matchesFtcFeatures(item,new Set([feature]))).length;
+      return '<button type="button" class="chip'+(ftcFeatures.has(feature)?' active':'')+'" aria-pressed="'+ftcFeatures.has(feature)+'" onclick="toggleFtcFeature(\''+feature+'\')">'+esc(label)+' <span class="feature-count">'+count+'</span></button>';
+    }).join('')+'</div><span class="ftc-feature-hint">'+esc(ftcFeatureHint())+'</span>';
+  }else controls+='<button class="chip'+(ftcFilter==='all'?' active':'')+'" onclick="setFtcFilter(\'all\',this)">'+t('f_all')+'</button>';
   if(ftcCategory==='resources'||ftcCategory==='sites'||ftcCategory==='portfolios')controls+='<button class="chip'+(ftcFilter==='official'?' active':'')+'" onclick="setFtcFilter(\'official\',this)">'+t('ftc_official')+'</button><button class="chip'+(ftcFilter==='community'?' active':'')+'" onclick="setFtcFilter(\'community\',this)">'+t('ftc_community')+'</button>';
-  if(details.length)controls+='<select onchange="setFtcDetail(this.value)"><option value="all">'+(ftcCategory==='awards'?t('ftc_all_awards'):ftcCategory==='portfolios'?t('ftc_all_levels'):t('ftc_all_types'))+'</option>'+details.map(x=>'<option value="'+esc(x)+'"'+(x===ftcDetailFilter?' selected':'')+'>'+esc(ftcLabel(x))+'</option>').join('')+'</select>';
+  if(details.length&&ftcCategory!=='open')controls+='<select onchange="setFtcDetail(this.value)"><option value="all">'+(ftcCategory==='awards'?t('ftc_all_awards'):ftcCategory==='portfolios'?t('ftc_all_levels'):t('ftc_all_types'))+'</option>'+details.map(x=>'<option value="'+esc(x)+'"'+(x===ftcDetailFilter?' selected':'')+'>'+esc(ftcLabel(x))+'</option>').join('')+'</select>';
   $('ftcFilters').innerHTML=controls;
-  let items=seasonItems.filter(item=>(ftcFilter==='all'||ftcSourceGroup(item)===ftcFilter)&&(ftcDetailFilter==='all'||item.detail===ftcDetailFilter||(ftcCategory==='open'&&(item.tags||[]).includes(ftcDetailFilter)))&&(!q||(item.meta+' '+item.title+' '+item.desc+' '+item.source).toLowerCase().includes(q)));
+  let items=seasonItems.filter(item=>(ftcFilter==='all'||ftcSourceGroup(item)===ftcFilter)&&(ftcCategory==='open'?matchesFtcFeatures(item):(ftcDetailFilter==='all'||item.detail===ftcDetailFilter))&&(!q||(item.meta+' '+item.title+' '+item.desc+' '+item.source).toLowerCase().includes(q)));
   if(ftcCategory==='open')items.sort((a,b)=>{
     if(ftcSort==='number')return a.number-b.number;
     if(ftcSort==='title')return a.title.localeCompare(b.title);

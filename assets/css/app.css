@@ -208,6 +208,9 @@ main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
 .cad-preview-item figcaption{padding:6px 8px;font-size:.72rem;line-height:1.4;overflow-wrap:anywhere;border-top:1px solid var(--border)}
 .cad-preview-status{display:grid;place-content:center;aspect-ratio:16/9;padding:12px;box-sizing:border-box;text-align:center;font-size:.75rem;line-height:1.5;color:#656579}
 .cad-preview-status[hidden],.cad-preview-item img[hidden]{display:none}
+.ftc-feature-options{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ftc-feature-hint{flex-basis:100%;font-size:.75rem;line-height:1.5;color:#656579}
+.feature-count{font-size:.72rem;opacity:.75;margin-inline-start:3px}
 .cad-thumb:focus-visible{outline:3px solid var(--primary);outline-offset:-3px}
 
 /* Award Scripts demo */
