@@ -264,6 +264,33 @@ def merge_portfolios(previous, incoming):
     return list(merged.values()), conflicts
 
 
+def split_stuy_cards(records):
+    """Keep the four teams' CAD, code and images on their own cards."""
+    teams = [
+        (37244, '83de7c0663bf81a8217ff2e4', 'https://github.com/lucas01b0x/StuyTown-2027'),
+        (37245, '2133dd596725f9288a16be01', 'https://github.com/ryanyu32/stuypoofs-2027'),
+        (37246, 'e9e06fbc5658c4e596404573', 'https://github.com/aabdullahjaami71-afk/StuyTide2027'),
+        (37247, '930a2d441a45b8af0626adde', 'https://github.com/Banditos767/Stuybit-2027'),
+    ]
+    result = []
+    for record in records:
+        if not record.get('source', '').endswith('/525071'):
+            result.append(record)
+            continue
+        for number, document, code in teams:
+            links = [link for link in record.get('links', []) if link.get('type') == 'cad' and document in link['url']]
+            if not links:
+                continue
+            links.append({'type': 'code', 'url': code})
+            urls = {link['url'] for link in links if link['type'] == 'cad'}
+            card = {**record, 'teamNumber': number, 'teamName': 'Stuy',
+                    'title': f'FTC {number} · BIOBUZZ Build Blog', 'links': links,
+                    'cadPreviews': [p for p in record.get('cadPreviews', []) if p['url'] in urls]}
+            card['tags'] = open_tags(card)
+            result.append(card)
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
@@ -273,8 +300,13 @@ def main() -> None:
     args = parser.parse_args()
     payload = json.loads(args.input.read_text(encoding="utf-8"))
     previous = json.loads(args.output.read_text(encoding="utf-8")) if args.output.exists() else {}
-    previous_links = {item.get("source", ""): item.get("links", []) for item in previous.get("openTeams", [])}
-    previous_records = {item.get('source', ''): item for item in previous.get('openTeams', [])}
+    previous_records = {}
+    for item in previous.get('openTeams', []):
+        source = item.get('source', '')
+        grouped = previous_records.setdefault(source, {**item, 'links': [], 'cadPreviews': []})
+        grouped['links'].extend(item.get('links', []))
+        grouped['cadPreviews'].extend(item.get('cadPreviews', []))
+    previous_links = {source: item['links'] for source, item in previous_records.items()}
 
     awards, seen_awards = [], set()
     for item in payload.get("awards", []):
@@ -343,6 +375,7 @@ def main() -> None:
         item["activity"] = int(item.get("views") or item.get("posts") or 0)
         open_teams.append(item)
 
+    open_teams = split_stuy_cards(open_teams)
     resources = catalogue(RESOURCE_CATALOGUE, args.check_links)
     sites = catalogue(SITE_CATALOGUE, args.check_links)
     result = {
