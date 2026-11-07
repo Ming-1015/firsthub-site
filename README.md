@@ -125,14 +125,24 @@ Test an approved-channel configuration without accessing Discord:
 python scripts/collect_discord_resources.py --dry-run
 ```
 
-Generate missing public Onshape previews locally (browser automation is used
-only during maintenance; visitors receive ordinary static images):
+Refresh per-link CAD previews across both FRC and FTC (browser automation is
+used only during maintenance; visitors receive ordinary static images):
 
 ```powershell
 python -m pip install playwright Pillow
 python -m playwright install chromium
-python scripts/collect_cad_previews.py --years 2025 2026 --workers 4
+python scripts/refresh_all_cad_previews.py --workers 4
 ```
+
+Each CAD URL has its own `cadPreviews` entry, including its source URL,
+resolved model tab, image and status. Multiple FTC CAD links display as a
+gallery. Failed/private/deleted sources retain their original link and an
+unavailable state, rather than borrowing another model's image. Field/layout
+tabs and visually reviewed placeholder models are excluded from robot previews.
+On Windows, the script can use an installed Chrome executable; pass
+`--executable-path` to select a different Chromium installation. The scheduled
+FTC preview entry point delegates to this shared collector. Results and concrete
+failures are recorded in `data/all-cad-previews-report.json`.
 
 Existing images are reused unless `--force` is supplied. The scheduled workflow
 adds at most 30 missing previews per run so a slow or broken external document

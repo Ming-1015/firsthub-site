@@ -200,6 +200,14 @@ main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
 .cad-thumb{display:block;aspect-ratio:16/9;margin:-16px -16px 5px;background:#f7f7f5;border-bottom:1px solid var(--border);overflow:hidden}
 .cad-thumb img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .2s ease}
 .cad-thumb:hover img{transform:scale(1.025)}
+.cad-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:-8px -8px 12px}
+.cad-gallery.single{grid-template-columns:minmax(0,1fr)}
+.cad-preview-item{margin:0;min-width:0;background:#f7f7f5;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.cad-preview-item a{display:block;color:inherit;text-decoration:none}
+.cad-preview-item img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.cad-preview-item figcaption{padding:6px 8px;font-size:.72rem;line-height:1.4;overflow-wrap:anywhere;border-top:1px solid var(--border)}
+.cad-preview-status{display:grid;place-content:center;aspect-ratio:16/9;padding:12px;box-sizing:border-box;text-align:center;font-size:.75rem;line-height:1.5;color:#656579}
+.cad-preview-status[hidden],.cad-preview-item img[hidden]{display:none}
 .cad-thumb:focus-visible{outline:3px solid var(--primary);outline-offset:-3px}
 
 /* Award Scripts demo */

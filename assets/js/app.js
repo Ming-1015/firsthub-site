@@ -246,6 +246,20 @@ function esc(value){
   return String(value==null?'':value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 }
 
+function renderCadPreviews(previews, alt){
+  if(!previews || !previews.length)return '';
+  const unavailable={en:'Preview unavailable — open CAD','zh-CN':'预览暂不可用 · 打开 CAD','zh-TW':'預覽暫不可用 · 開啟 CAD',ja:'プレビューを取得できません · CADを開く',es:'Vista previa no disponible · Abrir CAD',tr:'Önizleme kullanılamıyor · CAD aç',pt:'Prévia indisponível · Abrir CAD',he:'התצוגה אינה זמינה · פתיחת CAD',uz:'Oldindan ko‘rish mavjud emas · CADni ochish',ro:'Previzualizare indisponibilă · Deschide CAD'};
+  const message=unavailable[LANG]||unavailable.en;
+  return '<div class="cad-gallery'+(previews.length===1?' single':'')+'">'+previews.map((entry,index)=>{
+    const label=entry.label||('CAD '+(index+1)+(entry.element?' · '+entry.element:''));
+    const url=entry.modelUrl||entry.url;
+    const visual=entry.status==='ok'&&entry.image
+      ? '<img src="'+esc(entry.image)+'" width="640" height="360" loading="lazy" decoding="async" alt="'+esc(alt+' · '+label)+'" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="cad-preview-status" hidden>'+esc(message)+'</span>'
+      : '<span class="cad-preview-status">'+esc(message)+'</span>';
+    return '<figure class="cad-preview-item"><a href="'+esc(url)+'" target="_blank" rel="noopener">'+visual+'<figcaption>'+esc(label)+'</figcaption></a></figure>';
+  }).join('')+'</div>';
+}
+
 /* ---- Tab 切换 ---- */
 document.querySelectorAll('.tab-btn').forEach(b=>{
   b.addEventListener('click',()=>switchTab(b.dataset.tab));
@@ -487,7 +501,7 @@ function renderOpen(){
     const previewAlt = t('cad_preview_alt').replace('{team}',String(team.n));
     // A record can explicitly withdraw a misleading thumbnail while keeping
     // its public CAD source link available to visitors.
-    const preview = team.cadPreview && team.cadPreviewVerified !== false
+    const preview = team.cadPreviews ? renderCadPreviews(team.cadPreviews,previewAlt) : team.cadPreview && team.cadPreviewVerified !== false
       ? '<a class="cad-thumb" href="'+esc(team.cad)+'" target="_blank" rel="noopener" aria-label="'+esc(previewAlt)+'"><img src="'+esc(team.cadPreview)+'" width="640" height="360" loading="lazy" decoding="async" alt="'+esc(previewAlt)+'"></a>'
       : '';
     return '<article class="card team-resource-card">'+preview+'<div class="num">'+team.n+cadIcon+views+'</div><div class="nm">'+(team.nm||'')+'</div>'+(tags?'<div>'+tags+'</div>':'')+'<div class="links">'+links.join('')+'</div></article>';
@@ -834,16 +848,21 @@ function renderFtcCards(){
   $('ftcPanelTotal').textContent=seasonItems.length+t('ftc_records');$('ftcCount').textContent=items.length+' / '+seasonItems.length;$('ftcResultCount').textContent=t('ftc_result_showing')+' '+items.length+' / '+seasonItems.length;
   const renderCard=item=>{
     if(ftcCategory==='open'){
-      const direct=(item.links||[]).slice(0,5).map(link=>'<a class="btn '+({cad:'cad',code:'gh',video:'video',website:'site',discord:'cd'}[link.type]||'site')+'" href="'+esc(link.url)+'" target="_blank" rel="noopener">'+(link.type==='discord'?'Discord':esc(ftcLabel(link.type)))+'</a>').join('');
+      const original=FTC_AUTO_DATA.openTeams.find(record=>record.season===item.season&&record.source===item.url&&record.teamNumber===item.number);
+      const direct=(item.links||[]).filter((link,index)=>link.type==='cad'||index<5).map(link=>{
+        const model=link.type==='cad'&&original&&(original.cadPreviews||[]).find(entry=>entry.url===link.url);
+        const href=model&&model.status==='ok'&&model.modelUrl?model.modelUrl:link.url;
+        const label=model&&model.label?'CAD '+model.label.split(' · ')[0]:link.label|| (link.type==='discord'?'Discord':ftcLabel(link.type));
+        return '<a class="btn '+({cad:'cad',code:'gh',video:'video',website:'site',discord:'cd'}[link.type]||'site')+'" href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(label)+'</a>';
+      }).join('');
       const tags=(item.tags||[]).filter(tag=>tag!=='build-thread').map(tag=>'<span class="tag-chip">'+esc(ftcLabel(tag))+'</span>').join('');
       const cad=(item.tags||[]).includes('cad')?'<span class="cad-prev"><span class="cad-dot"></span>3D</span>':'';
       const views=item.activity?'<span class="views">'+Number(item.activity).toLocaleString()+' '+(item.sourcePlatform==='youtube'?t('ftc_views'):t('ftc_updates'))+'</span>':'';
       const hasDirectSource=(item.links||[]).some(link=>link.url===item.url);
       const sourceButton=hasDirectSource?'':'<a class="btn cd" href="'+esc(item.url)+'" target="_blank" rel="noopener">'+(item.sourcePlatform==='youtube'?'YouTube':item.sourcePlatform==='github'?'GitHub':'Build Thread')+'</a>';
       const sourceLine=item.sourcePlatform==='youtube'?'<div class="loc">'+t('ftc_source_label')+' '+esc(item.source)+'</div>':'';
-      const original=FTC_AUTO_DATA.openTeams.find(record=>record.season===item.season&&record.source===item.url&&record.teamNumber===item.number);
       const previewAlt=t('cad_preview_alt').replace('{team}',String(item.number));
-      const preview=original&&original.cadPreview&&original.cadPreviewUrl&&(item.links||[]).some(link=>link.type==='cad'&&link.url===original.cadPreviewUrl)
+      const preview=original&&original.cadPreviews ? renderCadPreviews(original.cadPreviews,previewAlt) : original&&original.cadPreview&&original.cadPreviewUrl&&(item.links||[]).some(link=>link.type==='cad'&&link.url===original.cadPreviewUrl)
         ? '<a class="cad-thumb" href="'+esc(original.cadPreviewUrl)+'" target="_blank" rel="noopener" aria-label="'+esc(previewAlt)+'"><img src="'+esc(original.cadPreview)+'" width="640" height="360" loading="lazy" decoding="async" alt="'+esc(previewAlt)+'" onerror="this.parentElement.hidden=true"></a>' : '';
       return '<div class="card team-resource-card">'+preview+'<div class="num">'+esc(item.numberLabel||item.number)+cad+views+'</div><div class="nm">'+esc(item.title)+'</div>'+(tags?'<div>'+tags+'</div>':'')+sourceLine+'<div class="links">'+direct+sourceButton+'</div></div>';
     }

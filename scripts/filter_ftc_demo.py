@@ -332,6 +332,9 @@ def main() -> None:
         priority = {'cad': 0, 'code': 1, 'video': 2, 'website': 3, 'discord': 4}
         item['links'].sort(key=lambda link: priority.get(link.get('type'), 5))
         prior = previous_records.get(url, {})
+        if prior.get('cadPreviews'):
+            current_cad_urls = {link['url'] for link in item['links'] if link.get('type') == 'cad'}
+            item['cadPreviews'] = [preview for preview in prior['cadPreviews'] if preview.get('url') in current_cad_urls]
         if prior.get('cadPreview') and any(link.get('type') == 'cad' and link.get('url') == prior.get('cadPreviewUrl') for link in item['links']):
             for field in ('cadPreview', 'cadPreviewUrl', 'cadPreviewElement'):
                 if field in prior and not item.get(field):
