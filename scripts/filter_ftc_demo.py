@@ -26,7 +26,6 @@ YOUTUBE_INPUT = ROOT / "data" / "ftc-youtube.json"
 USER_AGENT = "FIRSTHub FTC resource filter/1.0 (+https://firsthub.site/)"
 
 RESOURCE_CATALOGUE = [
-    ("BIOBUZZ Robonauts FTC Everybot CAD", "cad", "community", "2026–2027 BIOBUZZ 低资源参考机器人；原帖提供公开 Onshape CAD、制作说明与后续更新。", "https://www.chiefdelphi.com/t/the-2026-2027-robonauts-ftc-everybot-low-resource-build/524058"),
     ("BIOBUZZ Crossbotics Turret CAD", "cad", "community", "BIOBUZZ 炮塔原型：公开参数化模型、STEP/STL/DXF 下载与设计记录；作者标注仍在开发、部分尚未实机验证。", "https://github.com/crossbotics/ftc-part-designs/blob/main/2026-2027-BioBuzz/turret/README.md"),
     ("FTC Documentation", "official", "official", "FIRST 官方控制系统、硬件、编程与赛季技术文档。", "https://ftc-docs.firstinspires.org/"),
     ("FTC Robot Controller SDK", "programming", "official", "FIRST 官方 Android Studio SDK、示例 OpMode 与版本说明。", "https://github.com/FIRST-Tech-Challenge/FtcRobotController"),
@@ -94,6 +93,7 @@ CURATED_PORTFOLIOS = [
 ]
 
 CURATED_TEAM_RESOURCES = [
+    {"season": "2026", "teamNumber": 118, "teamProgram": "FRC", "teamName": "Robonauts (FRC 118)", "title": "BIOBUZZ FTC Everybot — Low Resource Build", "sourceType": "team", "sourcePlatform": "chief-delphi", "source": "https://www.chiefdelphi.com/t/the-2026-2027-robonauts-ftc-everybot-low-resource-build/524058", "links": [{"type": "cad", "url": "https://cad.onshape.com/documents/c40bc43ecc02e7dfec90dc2c/w/9992f4c6dc5bd529d4dfe21f/e/055657638df373143b51c6b2"}]},
     # Reviewed current-season build threads discovered outside the Open
     # Alliance tag search.  They retain the original Chief Delphi URL.
     {"season": "2026", "teamNumber": 14343, "teamName": "Escape Velocity", "title": "FTC 14343 Escape Velocity BIOBUZZ Build Thread", "posts": 0, "sourceType": "team", "sourcePlatform": "chief-delphi", "source": "https://www.chiefdelphi.com/t/ftc-14343-escape-velocity-biobuzz-build-thread/524080"},
