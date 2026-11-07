@@ -1,27 +1,27 @@
 {
-  "finishedAt": "2026-11-07T15:24:53.136Z",
+  "finishedAt": "2026-11-07T15:35:07.635269+00:00",
   "status": "success",
-  "scope": "FTC collection, filtering and CAD previews",
+  "scope": "Chief Delphi discovery and all-public-post resource extraction",
   "before": {
-    "awards": 33358,
-    "portfolios": 72,
-    "openTeams": 370,
-    "sites": 14,
-    "resources": 16
-  },
-  "after": {
     "awards": 33366,
     "portfolios": 72,
     "openTeams": 371,
     "sites": 14,
     "resources": 16
   },
-  "correctedHistoricalSeasons": 16,
+  "after": {
+    "awards": 33366,
+    "portfolios": 72,
+    "openTeams": 374,
+    "sites": 14,
+    "resources": 16
+  },
+  "newThreadRecords": 3,
+  "addedResourceLinks": 416,
+  "recordsWithAdditionalCadLinks": 21,
   "sourceFailures": [],
-  "historicalPortfoliosPreserved": true,
-  "historicalTeamResourcesPreserved": true,
-  "newCadPreviews": 1,
-  "cadPreviewFailures": 8,
-  "cadFailureBehavior": "Original CAD links remain available",
-  "tests": "9 unit tests passed; source audit, count safeguards and historical preservation passed"
+  "verifiedSharedThread": "https://www.chiefdelphi.com/t/ftc-12527-16095-build-thread-2027-biobuzz/525608",
+  "verifiedCadPost": "https://www.chiefdelphi.com/t/ftc-12527-16095-build-thread-2027-biobuzz/525608/4",
+  "verifiedCadPreview": "assets/cad-previews/ftc/2026/12527-3ca7fc33d5.webp",
+  "tests": "12 unit tests passed; historical records preserved; official awards and portfolios unchanged"
 }

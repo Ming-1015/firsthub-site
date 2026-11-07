@@ -18,6 +18,7 @@ import datetime as dt
 import html
 import json
 import re
+import time
 import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
@@ -290,22 +291,36 @@ def collect_open_alliance(pages: int = 3) -> tuple[list[dict], list[dict]]:
         ("2024", "#ftc-open-alliance after:2024-01-01 before:2025-09-01"),
         ("2025", "#ftc-open-alliance after:2025-01-01"),
         ("2026", "#ftc-open-alliance BIOBUZZ after:2026-09-01"),
+        # Build threads need not opt into the Open Alliance tag.
+        ("2026", 'FTC "build thread" after:2023-01-01 order:latest'),
+        ("2026", 'FTC "build blog" after:2023-01-01 order:latest'),
+        ("2026", '12527 16095'),
     ]
     for fallback_season, query in queries:
       for page_number in range(1, pages + 1):
         url = "https://www.chiefdelphi.com/search.json?" + urllib.parse.urlencode({"q": query, "page": page_number})
         try:
+            time.sleep(2)
             payload = json.loads(fetch(url))
+            if not payload.get("topics"):
+                audit.append({"source": url, "status": "ok", "records": 0})
+                break
             accepted = 0
             for topic in payload.get("topics", []):
                 title = topic.get("title", "")
                 lowered = title.lower()
+                if not query.startswith('#') and (not re.search(r'\bftc\b|first tech challenge', lowered) or re.search(r'\bfrc\b', lowered)):
+                    continue
                 if topic.get("id") in seen or not any(term in lowered for term in ("open alliance", "build thread", "build blog")):
                     continue
                 seen.add(topic["id"])
                 number = re.search(r"(?:FTC|Team)?\s*#?(\d{3,5})", title, re.I)
+                topic_fallback = fallback_season
+                if not query.startswith('#') and topic.get('created_at'):
+                    created = dt.datetime.fromisoformat(topic['created_at'].replace('Z', '+00:00'))
+                    topic_fallback = str(created.year if created.month >= 9 else created.year - 1)
                 records.append({
-                    "season": infer_ftc_season(title, fallback_season),
+                    "season": infer_ftc_season(title, topic_fallback),
                     "teamNumber": int(number.group(1)) if number else None,
                     "teamName": "",
                     "title": title,

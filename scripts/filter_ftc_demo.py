@@ -14,6 +14,7 @@ import datetime as dt
 import json
 import re
 import urllib.request
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from html import unescape
 from pathlib import Path
@@ -177,7 +178,7 @@ def open_tags(item: dict) -> list[str]:
 
 
 def enrich_team_links(item: dict) -> list[dict]:
-    """Read only the public first post and retain recognized resource links."""
+    """Read public thread posts, including releases after the first post."""
     source = item.get("source", "")
     if "chiefdelphi.com/t/" not in source:
         return []
@@ -186,7 +187,20 @@ def enrich_team_links(item: dict) -> list[dict]:
         request = urllib.request.Request(topic_json, headers={"User-Agent": USER_AGENT})
         with urllib.request.urlopen(request, timeout=20) as response:
             payload = json.load(response)
-        cooked = payload.get("post_stream", {}).get("posts", [{}])[0].get("cooked", "")
+        stream = payload.get("post_stream", {})
+        posts = list(stream.get("posts", []))
+        loaded = {post.get("id") for post in posts}
+        remaining = [post_id for post_id in stream.get("stream", []) if post_id not in loaded]
+        topic_id = payload.get("id")
+        # Discourse only embeds the first page. Fetch the remaining public posts
+        # in small batches so a late CAD release is not silently omitted.
+        for offset in range(0, len(remaining), 20):
+            query = urllib.parse.urlencode({'post_ids[]': remaining[offset:offset + 20]}, doseq=True)
+            url = f'https://www.chiefdelphi.com/t/{topic_id}/posts.json?{query}'
+            request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(request, timeout=20) as response:
+                posts.extend(json.load(response).get('post_stream', {}).get('posts', []))
+        cooked = '\n'.join(post.get('cooked', '') for post in posts)
         urls = [unescape(value) for value in re.findall(r'href=["\'](https?://[^"\']+)', cooked)]
         accepted, seen = [], set()
         rules = (("discord", ("discord.gg/", "discord.com/invite/")),
@@ -199,7 +213,9 @@ def enrich_team_links(item: dict) -> list[dict]:
             if kind:
                 seen.add(url)
                 accepted.append({"type": kind, "url": url})
-        return accepted[:8]
+        # Put directly reusable assets first; the UI displays five links.
+        priority = {'cad': 0, 'code': 1, 'video': 2, 'website': 3, 'discord': 4}
+        return sorted(accepted, key=lambda link: priority[link['type']])
     except Exception:
         return []
 
@@ -298,8 +314,9 @@ def main() -> None:
     raw_open = payload.get("openTeams", []) + CURATED_TEAM_RESOURCES + youtube_items + previous.get("openTeams", [])
     enriched = {}
     if not args.skip_team_links:
-        with ThreadPoolExecutor(max_workers=6) as pool:
-            enriched = {item.get("source", ""): links for item, links in zip(raw_open, pool.map(enrich_team_links, raw_open))}
+        unique_sources = list({item.get('source', ''): item for item in raw_open}.values())
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            enriched = {item.get("source", ""): links for item, links in zip(unique_sources, pool.map(enrich_team_links, unique_sources))}
     for item in raw_open:
         number, url = item.get("teamNumber"), item.get("source", "")
         # Search titles often contain a season year; do not treat it as a team.
@@ -309,6 +326,8 @@ def main() -> None:
         seen_open.add(url)
         combined_links = item.get("links", []) + previous_links.get(url, []) + enriched.get(url, [])
         item["links"] = list({(link.get("type"), link.get("url")): link for link in combined_links if link.get("url")}.values())
+        priority = {'cad': 0, 'code': 1, 'video': 2, 'website': 3, 'discord': 4}
+        item['links'].sort(key=lambda link: priority.get(link.get('type'), 5))
         item["tags"] = open_tags(item)
         item["activity"] = int(item.get("views") or item.get("posts") or 0)
         open_teams.append(item)
