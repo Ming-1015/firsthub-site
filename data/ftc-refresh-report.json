@@ -1,0 +1,27 @@
+{
+  "finishedAt": "2026-11-07T15:24:53.136Z",
+  "status": "success",
+  "scope": "FTC collection, filtering and CAD previews",
+  "before": {
+    "awards": 33358,
+    "portfolios": 72,
+    "openTeams": 370,
+    "sites": 14,
+    "resources": 16
+  },
+  "after": {
+    "awards": 33366,
+    "portfolios": 72,
+    "openTeams": 371,
+    "sites": 14,
+    "resources": 16
+  },
+  "correctedHistoricalSeasons": 16,
+  "sourceFailures": [],
+  "historicalPortfoliosPreserved": true,
+  "historicalTeamResourcesPreserved": true,
+  "newCadPreviews": 1,
+  "cadPreviewFailures": 8,
+  "cadFailureBehavior": "Original CAD links remain available",
+  "tests": "9 unit tests passed; source audit, count safeguards and historical preservation passed"
+}

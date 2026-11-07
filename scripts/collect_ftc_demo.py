@@ -267,13 +267,13 @@ def collect_openvault() -> tuple[list[dict], dict]:
 def infer_ftc_season(title: str, fallback: str) -> str:
     """Map a public thread title to the FTC season start year."""
     lowered = title.lower().replace("–", "-")
-    if "centerstage" in lowered or re.search(r"2023\s*[-/]\s*24", lowered):
+    if "centerstage" in lowered or re.search(r"2023\s*[-/]\s*(?:20)?24\b", lowered):
         return "2023"
-    if "into the deep" in lowered or re.search(r"2024\s*[-/]\s*25", lowered):
+    if "into the deep" in lowered or re.search(r"2024\s*[-/]\s*(?:20)?25\b", lowered):
         return "2024"
-    if "biobuzz" in lowered or "bio buzz" in lowered or re.search(r"2026\s*[-/]\s*27", lowered):
+    if "biobuzz" in lowered or "bio buzz" in lowered or re.search(r"2026\s*[-/]\s*(?:20)?27\b", lowered):
         return "2026"
-    if "decode" in lowered or re.search(r"2025\s*[-/]\s*26", lowered):
+    if "decode" in lowered or re.search(r"2025\s*[-/]\s*(?:20)?26\b", lowered):
         return "2025"
     # Calendar-year labels on build threads normally name the season ending in
     # that year ("2025 build thread" = the 2024-25 INTO THE DEEP season).
