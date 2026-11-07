@@ -16,6 +16,10 @@ class ThreadSeasonTests(unittest.TestCase):
         self.assertEqual(infer_ftc_season('FTC 30358 2026 Build Thread', '2023'), '2025')
         self.assertEqual(infer_ftc_season('FTC 30358 Build Thread', '2026'), '2026')
 
+    def test_two_digit_season_range(self):
+        self.assertEqual(infer_ftc_season('Stuy FTC 37244 | Build Blog 26-27', '2025'), '2026')
+        self.assertEqual(infer_ftc_season('FTC 12345 Build Blog 25/26', '2026'), '2025')
+
 
 if __name__ == '__main__':
     unittest.main()

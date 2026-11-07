@@ -26,6 +26,8 @@ YOUTUBE_INPUT = ROOT / "data" / "ftc-youtube.json"
 USER_AGENT = "FIRSTHub FTC resource filter/1.0 (+https://firsthub.site/)"
 
 RESOURCE_CATALOGUE = [
+    ("BIOBUZZ Robonauts FTC Everybot CAD", "cad", "community", "2026–2027 BIOBUZZ 低资源参考机器人；原帖提供公开 Onshape CAD、制作说明与后续更新。", "https://www.chiefdelphi.com/t/the-2026-2027-robonauts-ftc-everybot-low-resource-build/524058"),
+    ("BIOBUZZ Crossbotics Turret CAD", "cad", "community", "BIOBUZZ 炮塔原型：公开参数化模型、STEP/STL/DXF 下载与设计记录；作者标注仍在开发、部分尚未实机验证。", "https://github.com/crossbotics/ftc-part-designs/blob/main/2026-2027-BioBuzz/turret/README.md"),
     ("FTC Documentation", "official", "official", "FIRST 官方控制系统、硬件、编程与赛季技术文档。", "https://ftc-docs.firstinspires.org/"),
     ("FTC Robot Controller SDK", "programming", "official", "FIRST 官方 Android Studio SDK、示例 OpMode 与版本说明。", "https://github.com/FIRST-Tech-Challenge/FtcRobotController"),
     ("FTC Game & Season Materials", "season", "official", "当季比赛手册、场地图纸、评审与赛季资料入口。", "https://www.firstinspires.org/resource-library/ftc/game-and-season-info"),
@@ -272,6 +274,7 @@ def main() -> None:
     payload = json.loads(args.input.read_text(encoding="utf-8"))
     previous = json.loads(args.output.read_text(encoding="utf-8")) if args.output.exists() else {}
     previous_links = {item.get("source", ""): item.get("links", []) for item in previous.get("openTeams", [])}
+    previous_records = {item.get('source', ''): item for item in previous.get('openTeams', [])}
 
     awards, seen_awards = [], set()
     for item in payload.get("awards", []):
@@ -328,6 +331,11 @@ def main() -> None:
         item["links"] = list({(link.get("type"), link.get("url")): link for link in combined_links if link.get("url")}.values())
         priority = {'cad': 0, 'code': 1, 'video': 2, 'website': 3, 'discord': 4}
         item['links'].sort(key=lambda link: priority.get(link.get('type'), 5))
+        prior = previous_records.get(url, {})
+        if prior.get('cadPreview') and any(link.get('type') == 'cad' and link.get('url') == prior.get('cadPreviewUrl') for link in item['links']):
+            for field in ('cadPreview', 'cadPreviewUrl', 'cadPreviewElement'):
+                if field in prior and not item.get(field):
+                    item[field] = prior[field]
         item["tags"] = open_tags(item)
         item["activity"] = int(item.get("views") or item.get("posts") or 0)
         open_teams.append(item)

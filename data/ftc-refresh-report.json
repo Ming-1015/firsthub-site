@@ -1,27 +1,22 @@
 {
-  "finishedAt": "2026-11-07T15:35:07.635269+00:00",
+  "finishedAt": "2026-11-07T15:42:44.328876+00:00",
   "status": "success",
-  "scope": "Chief Delphi discovery and all-public-post resource extraction",
-  "before": {
-    "awards": 33366,
-    "portfolios": 72,
-    "openTeams": 371,
-    "sites": 14,
-    "resources": 16
-  },
+  "scope": "BIOBUZZ CAD coverage and preview preservation",
   "after": {
     "awards": 33366,
     "portfolios": 72,
     "openTeams": 374,
     "sites": 14,
-    "resources": 16
+    "resources": 18
   },
-  "newThreadRecords": 3,
-  "addedResourceLinks": 416,
-  "recordsWithAdditionalCadLinks": 21,
-  "sourceFailures": [],
-  "verifiedSharedThread": "https://www.chiefdelphi.com/t/ftc-12527-16095-build-thread-2027-biobuzz/525608",
-  "verifiedCadPost": "https://www.chiefdelphi.com/t/ftc-12527-16095-build-thread-2027-biobuzz/525608/4",
-  "verifiedCadPreview": "assets/cad-previews/ftc/2026/12527-3ca7fc33d5.webp",
-  "tests": "12 unit tests passed; historical records preserved; official awards and portfolios unchanged"
+  "biobuzzCadRecords": 6,
+  "biobuzzCadLinks": 10,
+  "biobuzzPreviews": 3,
+  "restoredHistoricalPreviews": 8,
+  "totalPreviews": 12,
+  "addedCommunityCadResourcePages": [
+    "https://www.chiefdelphi.com/t/524058",
+    "https://github.com/crossbotics/ftc-part-designs/blob/main/2026-2027-BioBuzz/turret/README.md"
+  ],
+  "tests": "13 unit tests passed; all 12 cached previews survive a normalization refresh"
 }

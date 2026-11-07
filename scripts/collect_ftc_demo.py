@@ -268,6 +268,9 @@ def collect_openvault() -> tuple[list[dict], dict]:
 def infer_ftc_season(title: str, fallback: str) -> str:
     """Map a public thread title to the FTC season start year."""
     lowered = title.lower().replace("–", "-")
+    short_range = re.search(r'\b(23|24|25|26)\s*[-/]\s*(24|25|26|27)\b', lowered)
+    if short_range and int(short_range.group(2)) == int(short_range.group(1)) + 1:
+        return '20' + short_range.group(1)
     if "centerstage" in lowered or re.search(r"2023\s*[-/]\s*(?:20)?24\b", lowered):
         return "2023"
     if "into the deep" in lowered or re.search(r"2024\s*[-/]\s*(?:20)?25\b", lowered):
@@ -295,6 +298,7 @@ def collect_open_alliance(pages: int = 3) -> tuple[list[dict], list[dict]]:
         ("2026", 'FTC "build thread" after:2023-01-01 order:latest'),
         ("2026", 'FTC "build blog" after:2023-01-01 order:latest'),
         ("2026", '12527 16095'),
+        ("2026", 'BIOBUZZ CAD after:2026-09-01'),
     ]
     for fallback_season, query in queries:
       for page_number in range(1, pages + 1):
