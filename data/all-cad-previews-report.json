@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-08T10:33:15.980724+00:00",
+  "generatedAt": "2026-11-11T11:07:39.836355+00:00",
   "total": 490,
-  "ok": 341,
+  "ok": 343,
   "unavailable": [
     {
       "program": "frc",
@@ -321,16 +321,16 @@
     {
       "program": "frc",
       "year": "2023",
-      "url": "https://cad.onshape.com/documents/025c7f8286f7bc12b9a5687f/w/c4c805dce1765a4553e2e975/e/46b57c164a385ce525078a4a",
+      "url": "https://cad.onshape.com/documents/230339548ba1828471e00cef/w/7608c62ea34bc84ee4acccd[…]ec5e1812bae3918?renderMode=0&uiState=6436b79f99bcb7580ba64f8e",
       "status": "unavailable",
-      "reason": "Field structure, not a robot model"
+      "reason": "Public CAD page HTTP 400"
     },
     {
       "program": "frc",
       "year": "2023",
-      "url": "https://cad.onshape.com/documents/230339548ba1828471e00cef/w/7608c62ea34bc84ee4acccd[…]ec5e1812bae3918?renderMode=0&uiState=6436b79f99bcb7580ba64f8e",
+      "url": "https://cad.onshape.com/documents/025c7f8286f7bc12b9a5687f/w/c4c805dce1765a4553e2e975/e/46b57c164a385ce525078a4a",
       "status": "unavailable",
-      "reason": "Public CAD page HTTP 400"
+      "reason": "Field structure, not a robot model"
     },
     {
       "program": "frc",
@@ -356,11 +356,9 @@
     {
       "program": "frc",
       "year": "2023",
-      "url": "https://cad.onshape.com/documents/f4d7887f5c15200e52717dea/w/413dcbdc27297173129bd6fd/e/3d402f0c641fef3932e5ecca",
+      "url": "https://github.com/t3team-laptop/T3-CAD",
       "status": "unavailable",
-      "element": "D[0.5]-A[0]",
-      "modelUrl": "https://cad.onshape.com/documents/f4d7887f5c15200e52717dea/w/413dcbdc27297173129bd6fd/e/3d402f0c641fef3932e5ecca",
-      "reason": "rendered image is fully transparent"
+      "reason": "CAD download page does not expose a model-specific public render"
     },
     {
       "program": "frc",
@@ -375,6 +373,15 @@
       "url": "https://cad.onshape.com/documents?nodeId=f06001a1c60020a0aa7d0c29&resourceType=folder",
       "status": "unavailable",
       "reason": "Source does not expose a model-specific public preview"
+    },
+    {
+      "program": "frc",
+      "year": "2023",
+      "url": "https://cad.onshape.com/documents/f4d7887f5c15200e52717dea/w/413dcbdc27297173129bd6fd/e/3d402f0c641fef3932e5ecca",
+      "status": "unavailable",
+      "element": "D[0.5]-A[0]",
+      "modelUrl": "https://cad.onshape.com/documents/f4d7887f5c15200e52717dea/w/413dcbdc27297173129bd6fd/e/3d402f0c641fef3932e5ecca",
+      "reason": "rendered image is fully transparent"
     },
     {
       "program": "frc",
@@ -414,14 +421,21 @@
     {
       "program": "frc",
       "year": "2023",
+      "url": "https://grabcad.com/library/frc-3739-2023-robot-1",
+      "status": "unavailable",
+      "reason": "Public CAD page HTTP 403"
+    },
+    {
+      "program": "frc",
+      "year": "2023",
       "url": "https://cad.onshape.com/documents/349b073a02a2b288c2e744cd/w/765ccc8029ae3eafcda20a6c/e/1b862aa5049bab7c845c2182",
       "status": "unavailable",
       "reason": "Public model access returned HTTP 403"
     },
     {
       "program": "frc",
-      "year": "2023",
-      "url": "https://grabcad.com/library/frc-3739-2023-robot-1",
+      "year": "2024",
+      "url": "https://grabcad.com/team.rembrandts.4481-1",
       "status": "unavailable",
       "reason": "Public CAD page HTTP 403"
     },
@@ -431,13 +445,6 @@
       "url": "http://2024cad.spectrum3847.org",
       "status": "unavailable",
       "reason": "Source does not expose a model-specific public preview"
-    },
-    {
-      "program": "frc",
-      "year": "2024",
-      "url": "https://grabcad.com/team.rembrandts.4481-1",
-      "status": "unavailable",
-      "reason": "Public CAD page HTTP 403"
     },
     {
       "program": "frc",
@@ -456,14 +463,14 @@
     {
       "program": "frc",
       "year": "2024",
-      "url": "https://cad.onshape.com/documents/301d1509d49ed7de7df54bc7",
+      "url": "https://cad.onshape.com/documents/428d6c6ce712e814915d7aa5/w/042098ee4f3eff7f16ca395%5B%E2%80%A6%5Dad04cb6fa750860?renderMode=0&uiState=65a55496bee92c73244825c9",
       "status": "unavailable",
       "reason": "Source does not expose a model-specific public preview"
     },
     {
       "program": "frc",
       "year": "2024",
-      "url": "https://cad.onshape.com/documents/428d6c6ce712e814915d7aa5/w/042098ee4f3eff7f16ca395%5B%E2%80%A6%5Dad04cb6fa750860?renderMode=0&uiState=65a55496bee92c73244825c9",
+      "url": "https://cad.onshape.com/documents/301d1509d49ed7de7df54bc7",
       "status": "unavailable",
       "reason": "Source does not expose a model-specific public preview"
     },
@@ -494,13 +501,6 @@
       "url": "https://a360.co/3vsZjHK",
       "status": "unavailable",
       "reason": "Public CAD page HTTP 403"
-    },
-    {
-      "program": "frc",
-      "year": "2023",
-      "url": "https://github.com/t3team-laptop/T3-CAD",
-      "status": "unavailable",
-      "reason": "CAD download page does not expose a model-specific public render"
     },
     {
       "program": "frc",
@@ -582,13 +582,6 @@
     {
       "program": "frc",
       "year": "2024",
-      "url": "https://cad.onshape.com/documents/bcbf24dd5a87e45bf4e7feb1/w/ffa6c81a1dfe71234cde9aca/e/e925d7cf2a2b03135bc67046",
-      "status": "unavailable",
-      "reason": "APIRequestContext.get: read ETIMEDOUT\n"
-    },
-    {
-      "program": "frc",
-      "year": "2024",
       "url": "https://cad.onshape.com/documents/11393533f241a1bac47fac04/w/54cb75f426d800e19ae27e1b/e/551c742fd59451c1f2fbfc42?renderMode=0&uiState=65a6f1f83bf5b4311bb3cbbb",
       "status": "unavailable",
       "reason": "Public model access returned HTTP 403"
@@ -613,13 +606,6 @@
       "url": "https://cad.onshape.com/documents/636f96ae28d7037e614c0436",
       "status": "unavailable",
       "reason": "Source does not expose a model-specific public preview"
-    },
-    {
-      "program": "frc",
-      "year": "2024",
-      "url": "https://anglebotics.org/onshape",
-      "status": "unavailable",
-      "reason": "APIRequestContext.get: Timeout 45000ms exceeded.\n"
     },
     {
       "program": "frc",
@@ -662,6 +648,13 @@
       "url": "https://grabcad.com/library/robonauts-118-2025-robot-firefly-1",
       "status": "unavailable",
       "reason": "Public CAD page HTTP 403"
+    },
+    {
+      "program": "frc",
+      "year": "2024",
+      "url": "https://anglebotics.org/onshape",
+      "status": "unavailable",
+      "reason": "APIRequestContext.get: Timeout 45000ms exceeded.\n"
     },
     {
       "program": "frc",
@@ -805,13 +798,6 @@
     },
     {
       "program": "frc",
-      "year": "2025",
-      "url": "https://cad.onshape.com/documents/4c5e2ea12b5cd01cf3661d92/w/b89d262a51dc00d48009a6da/e/022b3839db0b9eb6d8878a1b?configuration=default&renderMode=0&uiState=680e5d4b93a2077c70aad2de",
-      "status": "unavailable",
-      "reason": "APIRequestContext.get: read ETIMEDOUT\n"
-    },
-    {
-      "program": "frc",
       "year": "2026",
       "url": "https://grabcad.com/library/frc-2025-offseason-robot-1/details?folder_id=14202111",
       "status": "unavailable",
@@ -926,6 +912,55 @@
     },
     {
       "program": "ftc",
+      "year": "2024",
+      "url": "https://cad.onshape.com/documents/10c6be6ce83ce1f57b9b8dce/w/3251b0448c8d147db2e31361/e/52da86b8db2fc50be5aaadae?renderMode=0&uiState=68a351ca1c0b6f220f3098c4",
+      "status": "unavailable",
+      "reason": "Public model access returned HTTP 403"
+    },
+    {
+      "program": "ftc",
+      "year": "2024",
+      "url": "https://cad.onshape.com/documents/39be2df531bda23449787a7a/w/215a1aec7fc001ee4c2b52f4/e/a0f16a0235e05a769927b1aa",
+      "status": "unavailable",
+      "reason": "Public model access returned HTTP 403"
+    },
+    {
+      "program": "ftc",
+      "year": "2024",
+      "url": "https://cad.onshape.com/documents/115f7980e788d80d7d44a863/w/2957574a9dbbc10ee7accf32/e/2976eb906ad2b4b7962a0d67",
+      "status": "unavailable",
+      "reason": "Public model access returned HTTP 403"
+    },
+    {
+      "program": "ftc",
+      "year": "2024",
+      "url": "https://cad.onshape.com/documents/360b78d96bf4ca122ef74d36/w/7f6729601f1a681e06ef87f7/e/69c2d880f2c15205be32e701",
+      "status": "unavailable",
+      "reason": "Public model access returned HTTP 403"
+    },
+    {
+      "program": "ftc",
+      "year": "2023",
+      "url": "https://cad.onshape.com/documents/caf129466649d4d73a1cb931/w/a1cef9f47a7b0c356bb0030a/e/e3d790905dc0b6aeecf218c0?renderMode=0&uiState=6711a789067ce3720186c118",
+      "status": "unavailable",
+      "reason": "Linked tab is a field/layout or design sketch, not a robot model"
+    },
+    {
+      "program": "ftc",
+      "year": "2024",
+      "url": "https://cad.onshape.com/documents/5fb2d19e001ab6d2d16b4e4a/w/420b09c87a8fc1c1972f08b8/e/7c4509066a5287026858cb57?renderMode=0&uiState=66d71a3bd73c575d1b48886a",
+      "status": "unavailable",
+      "reason": "Linked CAD tab is missing or is not a renderable model"
+    },
+    {
+      "program": "ftc",
+      "year": "2023",
+      "url": "https://cad.onshape.com/documents/d36c0553982bb46b661a7191/w/86707e0994c52149ce58e1a7/e/28c472823e4465f061b942d6?renderMode=0&uiState=66d53f7b3e38d94884c127a6",
+      "status": "unavailable",
+      "reason": "Linked CAD tab is missing or is not a renderable model"
+    },
+    {
+      "program": "ftc",
       "year": "2026",
       "url": "https://cad.onshape.com/documents/6cfb9b102665af9a32750773/w/587f90795fdc29b9fec01353/e/f2553662791f9a645101eeae",
       "status": "unavailable",
@@ -943,18 +978,18 @@
     {
       "program": "ftc",
       "year": "2026",
+      "url": "https://cad.onshape.com/documents/e7e7665d44ea06dec7272c2c/w/c0a9d4ca8aed0e86f2df057e/e/102406d20c6494e8694d3807?renderMode=0&uiState=6aa482b4d5f91b2fe0956b40",
+      "status": "unavailable",
+      "reason": "Linked CAD tab is missing or is not a renderable model"
+    },
+    {
+      "program": "ftc",
+      "year": "2026",
       "url": "https://cad.onshape.com/documents/96463c095bbcf3fee4e7025c/w/6791b903ce6cc8148e92d23f/e/8b089ee501ed884cb8b0fd84?renderMode=0&uiState=6ab81def1c496911d9dbbefd",
       "status": "unavailable",
       "element": "Part Studio 1",
       "modelUrl": "https://cad.onshape.com/documents/96463c095bbcf3fee4e7025c/w/6791b903ce6cc8148e92d23f/e/8b089ee501ed884cb8b0fd84",
       "reason": "rendered image is fully transparent"
-    },
-    {
-      "program": "ftc",
-      "year": "2026",
-      "url": "https://cad.onshape.com/documents/e7e7665d44ea06dec7272c2c/w/c0a9d4ca8aed0e86f2df057e/e/102406d20c6494e8694d3807?renderMode=0&uiState=6aa482b4d5f91b2fe0956b40",
-      "status": "unavailable",
-      "reason": "Linked CAD tab is missing or is not a renderable model"
     },
     {
       "program": "ftc",
@@ -972,13 +1007,6 @@
     },
     {
       "program": "ftc",
-      "year": "2024",
-      "url": "https://cad.onshape.com/documents/10c6be6ce83ce1f57b9b8dce/w/3251b0448c8d147db2e31361/e/52da86b8db2fc50be5aaadae?renderMode=0&uiState=68a351ca1c0b6f220f3098c4",
-      "status": "unavailable",
-      "reason": "Public model access returned HTTP 403"
-    },
-    {
-      "program": "ftc",
       "year": "2025",
       "url": "https://cad.onshape.com/documents/cea51022bc9934ec1f41628c/w/c29724c995248e668a96acf9/e/8a25f273dcdc0fa92679d428?renderMode=0&uiState=68c0224491e7c892fb892384",
       "status": "unavailable",
@@ -988,66 +1016,24 @@
     },
     {
       "program": "ftc",
-      "year": "2025",
-      "url": "https://cad.onshape.com/documents/39be2df531bda23449787a7a/w/215a1aec7fc001ee4c2b52f4/e/a0f16a0235e05a769927b1aa",
-      "status": "unavailable",
-      "reason": "Public model access returned HTTP 403"
-    },
-    {
-      "program": "ftc",
-      "year": "2025",
-      "url": "https://cad.onshape.com/documents/115f7980e788d80d7d44a863/w/2957574a9dbbc10ee7accf32/e/2976eb906ad2b4b7962a0d67",
-      "status": "unavailable",
-      "reason": "Public model access returned HTTP 403"
-    },
-    {
-      "program": "ftc",
-      "year": "2025",
-      "url": "https://cad.onshape.com/documents/360b78d96bf4ca122ef74d36/w/7f6729601f1a681e06ef87f7/e/69c2d880f2c15205be32e701",
-      "status": "unavailable",
-      "reason": "Public model access returned HTTP 403"
-    },
-    {
-      "program": "ftc",
-      "year": "2023",
-      "url": "https://cad.onshape.com/documents/caf129466649d4d73a1cb931/w/a1cef9f47a7b0c356bb0030a/e/e3d790905dc0b6aeecf218c0?renderMode=0&uiState=6711a789067ce3720186c118",
-      "status": "unavailable",
-      "reason": "Linked tab is a field/layout or design sketch, not a robot model"
-    },
-    {
-      "program": "ftc",
-      "year": "2023",
-      "url": "https://cad.onshape.com/documents/d36c0553982bb46b661a7191/w/86707e0994c52149ce58e1a7/e/28c472823e4465f061b942d6?renderMode=0&uiState=66d53f7b3e38d94884c127a6",
-      "status": "unavailable",
-      "reason": "Linked CAD tab is missing or is not a renderable model"
-    },
-    {
-      "program": "ftc",
-      "year": "2025",
-      "url": "https://cad.onshape.com/documents/5fb2d19e001ab6d2d16b4e4a/w/420b09c87a8fc1c1972f08b8/e/7c4509066a5287026858cb57?renderMode=0&uiState=66d71a3bd73c575d1b48886a",
-      "status": "unavailable",
-      "reason": "Linked CAD tab is missing or is not a renderable model"
-    },
-    {
-      "program": "ftc",
       "year": "2024",
       "url": "https://wxyz19705.xyz/downloads/2025-cad.zip",
       "status": "unavailable",
-      "reason": "'utf-8' codec can't decode byte 0x95 in position 11: invalid start byte"
+      "reason": "Source does not expose a model-specific public preview"
     },
     {
       "program": "ftc",
       "year": "2023",
       "url": "https://wxyz19705.xyz/downloads/2024-cad.zip",
       "status": "unavailable",
-      "reason": "'utf-8' codec can't decode byte 0xf5 in position 61: invalid start byte"
+      "reason": "Source does not expose a model-specific public preview"
     },
     {
       "program": "ftc",
       "year": "2025",
       "url": "https://wxyz19705.xyz/downloads/2026-cad.zip",
       "status": "unavailable",
-      "reason": "'utf-8' codec can't decode byte 0xe2 in position 12: invalid continuation byte"
+      "reason": "Source does not expose a model-specific public preview"
     },
     {
       "program": "ftc",
