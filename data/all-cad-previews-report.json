@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-11T11:07:39.836355+00:00",
+  "generatedAt": "2026-11-15T11:05:01.794642+00:00",
   "total": 490,
-  "ok": 343,
+  "ok": 341,
   "unavailable": [
     {
       "program": "frc",
@@ -321,16 +321,16 @@
     {
       "program": "frc",
       "year": "2023",
-      "url": "https://cad.onshape.com/documents/230339548ba1828471e00cef/w/7608c62ea34bc84ee4acccd[…]ec5e1812bae3918?renderMode=0&uiState=6436b79f99bcb7580ba64f8e",
+      "url": "https://cad.onshape.com/documents/025c7f8286f7bc12b9a5687f/w/c4c805dce1765a4553e2e975/e/46b57c164a385ce525078a4a",
       "status": "unavailable",
-      "reason": "Public CAD page HTTP 400"
+      "reason": "Field structure, not a robot model"
     },
     {
       "program": "frc",
       "year": "2023",
-      "url": "https://cad.onshape.com/documents/025c7f8286f7bc12b9a5687f/w/c4c805dce1765a4553e2e975/e/46b57c164a385ce525078a4a",
+      "url": "https://cad.onshape.com/documents/230339548ba1828471e00cef/w/7608c62ea34bc84ee4acccd[…]ec5e1812bae3918?renderMode=0&uiState=6436b79f99bcb7580ba64f8e",
       "status": "unavailable",
-      "reason": "Field structure, not a robot model"
+      "reason": "Public CAD page HTTP 400"
     },
     {
       "program": "frc",
@@ -463,14 +463,14 @@
     {
       "program": "frc",
       "year": "2024",
-      "url": "https://cad.onshape.com/documents/428d6c6ce712e814915d7aa5/w/042098ee4f3eff7f16ca395%5B%E2%80%A6%5Dad04cb6fa750860?renderMode=0&uiState=65a55496bee92c73244825c9",
+      "url": "https://cad.onshape.com/documents/301d1509d49ed7de7df54bc7",
       "status": "unavailable",
       "reason": "Source does not expose a model-specific public preview"
     },
     {
       "program": "frc",
       "year": "2024",
-      "url": "https://cad.onshape.com/documents/301d1509d49ed7de7df54bc7",
+      "url": "https://cad.onshape.com/documents/428d6c6ce712e814915d7aa5/w/042098ee4f3eff7f16ca395%5B%E2%80%A6%5Dad04cb6fa750860?renderMode=0&uiState=65a55496bee92c73244825c9",
       "status": "unavailable",
       "reason": "Source does not expose a model-specific public preview"
     },
@@ -515,6 +515,13 @@
       "url": "https://a360.co/3RtfQmA",
       "status": "unavailable",
       "reason": "Source does not expose a model-specific public preview"
+    },
+    {
+      "program": "frc",
+      "year": "2024",
+      "url": "https://anglebotics.org/onshape",
+      "status": "unavailable",
+      "reason": "APIRequestContext.get: connect ECONNREFUSED 137.184.180.146:443\n"
     },
     {
       "program": "frc",
@@ -617,14 +624,14 @@
     {
       "program": "frc",
       "year": "2024",
-      "url": "https://cad.onshape.com/documents/9cbbec3ed4ea54a2991dedd8/w/2c2c5adc550cdfcd56da52e1/e/b995f39625c9f74bc911bc69",
+      "url": "https://cad.onshape.com/documents/bcbf24dd5a87e45bf4e7feb1/w/ffa6c81a1dfe71234cde9aca/e/e925d7cf2a2b03135bc67046",
       "status": "unavailable",
-      "reason": "Public model access returned HTTP 403"
+      "reason": "APIRequestContext.get: read ETIMEDOUT\n"
     },
     {
       "program": "frc",
       "year": "2024",
-      "url": "https://cad.onshape.com/documents/86ccd0db3f8d0454b4e0be3d/w/8aa98d3e22cbbcae131a9c2f/e/e3fee9f94d2f77a6f8470a8e",
+      "url": "https://cad.onshape.com/documents/9cbbec3ed4ea54a2991dedd8/w/2c2c5adc550cdfcd56da52e1/e/b995f39625c9f74bc911bc69",
       "status": "unavailable",
       "reason": "Public model access returned HTTP 403"
     },
@@ -634,6 +641,13 @@
       "url": "https://grabcad.com/library/8612-2024-creshendo-full-robot-solidworks-cad-file-1",
       "status": "unavailable",
       "reason": "Public CAD page HTTP 403"
+    },
+    {
+      "program": "frc",
+      "year": "2024",
+      "url": "https://cad.onshape.com/documents/86ccd0db3f8d0454b4e0be3d/w/8aa98d3e22cbbcae131a9c2f/e/e3fee9f94d2f77a6f8470a8e",
+      "status": "unavailable",
+      "reason": "Public model access returned HTTP 403"
     },
     {
       "program": "frc",
@@ -648,13 +662,6 @@
       "url": "https://grabcad.com/library/robonauts-118-2025-robot-firefly-1",
       "status": "unavailable",
       "reason": "Public CAD page HTTP 403"
-    },
-    {
-      "program": "frc",
-      "year": "2024",
-      "url": "https://anglebotics.org/onshape",
-      "status": "unavailable",
-      "reason": "APIRequestContext.get: Timeout 45000ms exceeded.\n"
     },
     {
       "program": "frc",
@@ -837,6 +844,13 @@
       "url": "https://cad.onshape.com/documents/32d35195096474e63d47b95e/w/1a14984bd337a633d080d313/e/1384f76932dd5b82bcd7d5c6?renderMode=0&uiState=697ab5a4e221123b719c0438",
       "status": "unavailable",
       "reason": "Layout geometry; robot preview cannot be identified"
+    },
+    {
+      "program": "frc",
+      "year": "2025",
+      "url": "https://cad.onshape.com/documents/4c5e2ea12b5cd01cf3661d92/w/b89d262a51dc00d48009a6da/e/022b3839db0b9eb6d8878a1b?configuration=default&renderMode=0&uiState=680e5d4b93a2077c70aad2de",
+      "status": "unavailable",
+      "reason": "APIRequestContext.get: read ETIMEDOUT\n"
     },
     {
       "program": "frc",
