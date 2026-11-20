@@ -26,6 +26,10 @@ YOUTUBE_INPUT = ROOT / "data" / "ftc-youtube.json"
 USER_AGENT = "FIRSTHub FTC resource filter/1.0 (+https://firsthub.site/)"
 
 RESOURCE_CATALOGUE = [
+    ("BIOBUZZ Competition Manual", "official", "season", "FIRST 官方比赛手册 PDF，包含赛事资格、检查、评审、比赛和机器人规则。", "https://ftc-resources.firstinspires.org/ftc/game/manual"),
+    ("BIOBUZZ Combined Team Updates", "official", "season", "FIRST 官方 Team Updates 合辑，汇总赛季中发布的规则更正与说明。", "https://ftc-resources.firstinspires.org/ftc/game/tu-combined"),
+    ("BIOBUZZ Playing Field Resources", "official", "cad", "FIRST 官方场地资源，包含 Onshape 和 STEP 场地 CAD、搭建与验收指南、可打印 AprilTags。", "https://ftc-resources.firstinspires.org/ftc/field"),
+    ("BIOBUZZ Official Game Q&A", "official", "season", "FIRST 官方赛季规则问答，提供已发布的规则解释与澄清。", "https://game-qa.firstinspires.org/boards/2027/FTC/QA"),
     ("BIOBUZZ Crossbotics Turret CAD", "cad", "community", "BIOBUZZ 炮塔原型：公开参数化模型、STEP/STL/DXF 下载与设计记录；作者标注仍在开发、部分尚未实机验证。", "https://github.com/crossbotics/ftc-part-designs/blob/main/2026-2027-BioBuzz/turret/README.md"),
     ("FTC Documentation", "official", "official", "FIRST 官方控制系统、硬件、编程与赛季技术文档。", "https://ftc-docs.firstinspires.org/"),
     ("FTC Robot Controller SDK", "programming", "official", "FIRST 官方 Android Studio SDK、示例 OpMode 与版本说明。", "https://github.com/FIRST-Tech-Challenge/FtcRobotController"),
@@ -109,6 +113,14 @@ CURATED_TEAM_RESOURCES = [
     {"season": "2025", "teamNumber": 14779, "teamName": "Spontaneous Construction", "title": "Team technical wiki and public updates", "posts": 0, "sourceType": "team", "sourcePlatform": "x", "source": "https://x.com/SponConFTC", "links": [{"type": "website", "url": "https://x.com/SponConFTC"}, {"type": "website", "url": "http://projectrobotica.wiki"}]},
     {"season": "2025", "teamNumber": 14291, "teamName": "Small Town Robotics", "title": "Public team updates on X", "posts": 0, "sourceType": "team", "sourcePlatform": "x", "source": "https://x.com/SmallTownFTC", "links": [{"type": "website", "url": "https://x.com/SmallTownFTC"}]},
 ]
+
+# These team threads omit the game and season from their titles. Their first
+# posts were published during BIOBUZZ and introduce the teams' current builds.
+REVIEWED_THREAD_SEASONS = {
+    "https://www.chiefdelphi.com/t/team-20169-quackens-build-thread/526199": "2026",
+    "https://www.chiefdelphi.com/t/ftc-32808-boundbreakers-build-thread/526074": "2026",
+    "https://www.chiefdelphi.com/t/techalongs-17062-build-thread-ftc-open-alliance/525395": "2026",
+}
 
 # A search-result match is not proof of season affiliation. Keep known false
 # positives out even while previous data is retained across refreshes.
@@ -359,6 +371,8 @@ def main() -> None:
                 or url in seen_open or url in REJECTED_PUBLIC_VIDEO_URLS):
             continue
         seen_open.add(url)
+        if url in REVIEWED_THREAD_SEASONS:
+            item["season"] = REVIEWED_THREAD_SEASONS[url]
         combined_links = item.get("links", []) + previous_links.get(url, []) + enriched.get(url, [])
         item["links"] = list({(link.get("type"), link.get("url")): link for link in combined_links if link.get("url")}.values())
         priority = {'cad': 0, 'code': 1, 'video': 2, 'website': 3, 'discord': 4}
