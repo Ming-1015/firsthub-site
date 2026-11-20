@@ -104,7 +104,7 @@ function setLang(l){
   applyI18n(); renderLangSelector();
   renderStats(); renderImpact(); fillAwardScriptFilters(); renderAwardScripts(); renderOpen(); renderHall(); renderTech(); renderTsChips(); renderTsite(); renderSeasonGuide(); renderChampBox();
   if(document.body.classList.contains('ftc-mode')){
-    setProgram('ftc');
+    renderProgram('ftc');
     if(ftcCategory!=='overview'){
       $('ftcPanelTitle').textContent=t(FTC_PANEL_COPY[ftcCategory][0]);
       $('ftcPanelLead').textContent=t(FTC_PANEL_COPY[ftcCategory][1]);
@@ -229,7 +229,8 @@ const CHAMP_FINALISTS = {
    ================================================================ */
 const $ = id => document.getElementById(id);
 
-let currentSeason = "2026";
+let currentSeason = YEARS.at(-1);
+let frcTab = 'home';
 
 /* ---- 工具 ---- */
 function btn(cls,label,href,ext){
@@ -264,10 +265,12 @@ function renderCadPreviews(previews, alt){
 document.querySelectorAll('.tab-btn').forEach(b=>{
   b.addEventListener('click',()=>switchTab(b.dataset.tab));
 });
-function switchTab(tab){
+function switchTab(tab,updateUrl=true){
+  frcTab=tab;
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+tab));
   $('seasonBar').hidden=!['impact','scripts','open'].includes(tab);
+  if(updateUrl) saveLibraryLocation();
   // 不在切换栏目时强制滚动。这样短内容栏目不会因页面高度被压缩、
   // 滚动位置被浏览器钳制，而把首行卡片顶到粘性导航栏后面。
 }
@@ -279,7 +282,7 @@ function renderSeasonList(){
     return '<button class="season-btn'+(y===currentSeason?' active':'')+'" onclick="selectSeason(\''+y+'\')"><span class="yr">'+y+'</span><span class="gm">'+s.game+'</span></button>';
   }).join('');
 }
-function selectSeason(y){
+function selectSeason(y,updateUrl=true){
   currentSeason = y;
   renderSeasonList();
   renderStats();
@@ -287,7 +290,7 @@ function selectSeason(y){
   loadAwardScripts(y);
   renderOpen();
   renderChampBox();
-  try{ history.replaceState(null,'','#'+y); }catch(e){}
+  if(updateUrl) saveLibraryLocation();
 }
 
 /* ---- 顶部统计 ---- */
@@ -622,7 +625,8 @@ const STYLE = {
 {t:"Season Materials 官方资料",tEn:"Official Season Materials",u:"https://www.firstinspires.org/resources/library/frc/season-materials",k:"ext"},
 {t:"At Home 手册（官方 PDF）",tEn:"At Home Manual (Official PDF)",u:"https://firstfrc.blob.core.windows.net/frc2021/Manual/AtHomeManualSections/2021AtHomeChallengesManualSection02.pdf",k:"pdf"} ]}
 };
-let sgSeason = "2026";
+const DEFAULT_STYLE_SEASON=Object.keys(STYLE).sort().at(-1);
+let sgSeason=DEFAULT_STYLE_SEASON;
 const SG_LABEL = k=>{const m={pdf:t('sg_pdf'),zip:t('sg_zip'),ppt:t('sg_ppt'),img:t('sg_img')};return m[k]||k.toUpperCase();};
 function renderSeasonGuide(){
   const ZH = LANG==='zh-CN';
@@ -639,7 +643,11 @@ function renderSeasonGuide(){
     return '<div class="card"><div class="num"><span class="badge gray">'+(isExt?'WEB':(x.k==='img'?t('sg_img'):x.k.toUpperCase()))+'</span></div><div class="nm">'+esc(ZH?x.t:(x.tEn||x.t))+'</div><div class="links">'+btn(isExt?'site':'essay',label,x.u)+'</div></div>';
   }).join('');
 }
-function setSeasonGuide(y){sgSeason=y;renderSeasonGuide();}
+function setSeasonGuide(y,updateUrl=true){
+  sgSeason=y;
+  renderSeasonGuide();
+  if(updateUrl) saveLibraryLocation();
+}
 
 /* ---- 初始化 ---- */
 Object.assign(I18N.en,{ftc_tab_style:"Season Style Guide",ftc_card_style:"Official FIRST brand guidelines, logos, and social media assets organized by season."});
@@ -736,7 +744,8 @@ const FTC_LABELS={
 };
 function ftcLabel(value){return (FTC_LABELS[LANG]&&FTC_LABELS[LANG][value])||FTC_LABELS.en[value]||value;}
 const FTC_PANEL_COPY={awards:['ftc_tab_awards','ftc_card_awards'],portfolios:['ftc_tab_portfolios','ftc_card_portfolios'],open:['ftc_tab_open','ftc_card_open'],sites:['ftc_tab_sites','ftc_card_sites'],resources:['ftc_tab_resources','ftc_card_resources'],style:['ftc_tab_style','ftc_card_style']};
-let ftcSeason='2026',ftcCategory='overview',ftcFilter='all',ftcDetailFilter='all',ftcSort='default';
+const DEFAULT_FTC_SEASON=Object.keys(FTC_SEASONS).at(-1);
+let ftcSeason=DEFAULT_FTC_SEASON,ftcCategory='overview',ftcFilter='all',ftcDetailFilter='all',ftcSort='default';
 let ftcFeatures=new Set();
 function matchesFtcFeatures(item,features=ftcFeatures){
   return [...features].every(feature=>feature==='preview'?item.previewAvailable:(item.tags||[]).includes(feature));
@@ -779,12 +788,18 @@ function renderFtcStats(){
 function renderFtcSeasons(){
   $('ftcSeasons').innerHTML=Object.keys(FTC_SEASONS).map(y=>'<button class="ftc-season-btn'+(y===ftcSeason?' active':'')+'" onclick="selectFtcSeason(\''+y+'\')"><strong>'+(y+'–'+String(Number(y)+1).slice(-2))+'</strong><small>'+FTC_SEASONS[y]+'</small></button>').join('');
 }
-function selectFtcSeason(y){ftcSeason=y;renderFtcSeasons();renderFtcStats();if(ftcCategory!=='overview')renderFtcCards();}
-function renderFtcFromCard(category){const button=[...document.querySelectorAll('#ftcNav button')].find(node=>node.getAttribute('onclick')?.includes("'"+category+"'"));if(button)renderFtc(category,button);}
-function renderFtc(category,button){
+function selectFtcSeason(y){
+  ftcSeason=y;
+  renderFtcSeasons();
+  renderFtcStats();
+  if(ftcCategory!=='overview')renderFtcCards();
+  saveLibraryLocation();
+}
+function renderFtc(category,updateUrl=true){
   const overview=$('ftcOverview'),panel=$('ftcPanel');ftcCategory=category;ftcFilter='all';ftcDetailFilter='all';ftcSort='default';ftcFeatures.clear();
   document.querySelector('.ftc-seasonbar').hidden=(category==='overview'||category==='resources'||category==='sites');
-  document.querySelectorAll('#ftcNav button').forEach(b=>b.classList.toggle('active',b===button));
+  document.querySelectorAll('#ftcNav button').forEach(b=>b.classList.toggle('active',b.dataset.ftcTab===category));
+  if(updateUrl) saveLibraryLocation();
   if(category==='overview'){
     overview.hidden=false;panel.hidden=true;$('ftcCount').textContent=t('ftc_featured');return;
   }
@@ -869,7 +884,7 @@ function renderFtcCards(){
   $('ftcPanelTotal').textContent=seasonItems.length+t('ftc_records');$('ftcCount').textContent=items.length+' / '+seasonItems.length;$('ftcResultCount').textContent=t('ftc_result_showing')+' '+items.length+' / '+seasonItems.length;
   const renderCard=item=>{
     if(ftcCategory==='open'){
-      const original=FTC_AUTO_DATA.openTeams.find(record=>record.season===item.season&&record.source===item.url&&record.teamNumber===item.number);
+      const original=FTC_AUTO_DATA?.openTeams.find(record=>record.season===item.season&&record.source===item.url&&record.teamNumber===item.number);
       const direct=(item.links||[]).filter((link,index)=>link.type==='cad'||index<5).map(link=>{
         const model=link.type==='cad'&&original&&(original.cadPreviews||[]).find(entry=>entry.url===link.url);
         const href=model&&model.status==='ok'&&model.modelUrl?model.modelUrl:link.url;
@@ -895,7 +910,12 @@ function renderFtcCards(){
   $('ftcContent').innerHTML=items.length?visible.map(renderCard).join('')+(items.length>visible.length?'<div class="info-box">'+limitNote+'</div>':''):'<div class="info-box">'+t('ftc_empty')+'</div>';
 }
 function setProgram(program){
+  renderProgram(program);
+  saveLibraryLocation();
+}
+function renderProgram(program){
   const ftc = program === 'ftc';
+  const wasFtc=document.body.classList.contains('ftc-mode');
   document.body.classList.toggle('ftc-mode',ftc);
   $('programFrc').classList.toggle('active',!ftc);
   $('programFtc').classList.toggle('active',ftc);
@@ -909,15 +929,52 @@ function setProgram(program){
     document.querySelector('[data-i18n="hero_sub"]').textContent=t('ftc_hero_sub');
     document.querySelector('[data-i18n="built_by"]').textContent=t('ftc_built_by');
     renderFtcStats();
-    history.replaceState(null,'',location.pathname+location.search+'#ftc');
-  }else if(location.hash==='#ftc'){
+  }else if(wasFtc){
     applyI18n();renderStats();
-    history.replaceState(null,'',location.pathname+location.search+'#2026');
   }
 }
+
+/* Library links. Keep legacy #YYYY and #ftc bookmarks working. */
+function saveLibraryLocation(){
+  const hash=document.body.classList.contains('ftc-mode')
+    ? '#ftc/'+ftcSeason+'/'+ftcCategory
+    : '#frc/'+(frcTab==='style'?sgSeason:currentSeason)+'/'+frcTab;
+  if(location.hash!==hash) history.pushState(null,'',hash);
+}
+function readLibraryLocation(){
+  const parts=location.hash.slice(1).split('/');
+  const [program,year,section]=parts;
+  if(program==='ftc'){
+    return {
+      program,
+      year:Object.hasOwn(FTC_SEASONS,year)?year:DEFAULT_FTC_SEASON,
+      section:Object.hasOwn(FTC_PANEL_COPY,section)?section:'overview'
+    };
+  }
+  const tab=program==='frc'&&document.getElementById('tab-'+section)?section:'home';
+  const season=program==='frc'?year:parts.length===1?program:undefined;
+  const seasons=tab==='style'?STYLE:SEASONS;
+  const defaultSeason=tab==='style'?DEFAULT_STYLE_SEASON:YEARS.at(-1);
+  return {program:'frc',year:Object.hasOwn(seasons,season)?season:defaultSeason,section:tab};
+}
+function restoreLibraryLocation(){
+  const {program,year,section}=readLibraryLocation();
+  if(program==='ftc'){
+    const seasonChanged=ftcSeason!==year;
+    ftcSeason=year;
+    if(seasonChanged) renderFtcSeasons();
+    if(ftcCategory!==section) renderFtc(section,false);
+    else if(seasonChanged&&section!=='overview') renderFtcCards();
+  }else{
+    if(section==='style'&&sgSeason!==year) setSeasonGuide(year,false);
+    if(section!=='style'&&currentSeason!==year) selectSeason(year,false);
+    if(frcTab!==section) switchTab(section,false);
+  }
+  renderProgram(program);
+}
 (function init(){
-  const h = (location.hash||'').replace('#','');
-  if(SEASONS[h]) currentSeason = h;
+  const route=readLibraryLocation();
+  if(route.program==='frc'&&route.section!=='style') currentSeason=route.year;
   applyI18n(); renderLangSelector();
   renderSeasonList();
   renderStats();
@@ -928,8 +985,9 @@ function setProgram(program){
   renderHall();
   renderTech();
   renderFtcSeasons();
-  if(h==='ftc') setProgram('ftc');
   renderTsChips();
   renderTsite();
   renderSeasonGuide();
+  restoreLibraryLocation();
+  window.addEventListener('hashchange',restoreLibraryLocation);
 })();
