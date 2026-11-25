@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-22T11:33:52.514245+00:00",
-  "total": 495,
-  "ok": 346,
+  "generatedAt": "2026-11-25T13:07:24.033922+00:00",
+  "total": 497,
+  "ok": 348,
   "unavailable": [
     {
       "program": "frc",
@@ -299,6 +299,13 @@
     },
     {
       "program": "frc",
+      "year": "2021",
+      "url": "https://cad.onshape.com/documents/b4e6eb8e1987dbd3f1c2a0e1/w/27b753ca3f12bae42ccd0165/e/127c5a982cfe9a346074609a",
+      "status": "unavailable",
+      "reason": "APIRequestContext.get: read ETIMEDOUT\n"
+    },
+    {
+      "program": "frc",
       "year": "2023",
       "url": "https://a360.co/3GwtNM4",
       "status": "unavailable",
@@ -310,13 +317,6 @@
       "url": "https://grabcad.com/library/frc-2881-2022-compact-bot-1",
       "status": "unavailable",
       "reason": "Public CAD page HTTP 403"
-    },
-    {
-      "program": "frc",
-      "year": "2021",
-      "url": "https://cad.onshape.com/documents/b4e6eb8e1987dbd3f1c2a0e1/w/27b753ca3f12bae42ccd0165/e/127c5a982cfe9a346074609a",
-      "status": "unavailable",
-      "reason": "APIRequestContext.get: read ETIMEDOUT\n"
     },
     {
       "program": "frc",
@@ -370,18 +370,18 @@
     {
       "program": "frc",
       "year": "2023",
+      "url": "https://cad.onshape.com/documents?nodeId=f06001a1c60020a0aa7d0c29&resourceType=folder",
+      "status": "unavailable",
+      "reason": "Source does not expose a model-specific public preview"
+    },
+    {
+      "program": "frc",
+      "year": "2023",
       "url": "https://cad.onshape.com/documents/f4d7887f5c15200e52717dea/w/413dcbdc27297173129bd6fd/e/3d402f0c641fef3932e5ecca",
       "status": "unavailable",
       "element": "D[0.5]-A[0]",
       "modelUrl": "https://cad.onshape.com/documents/f4d7887f5c15200e52717dea/w/413dcbdc27297173129bd6fd/e/3d402f0c641fef3932e5ecca",
       "reason": "rendered image is fully transparent"
-    },
-    {
-      "program": "frc",
-      "year": "2023",
-      "url": "https://cad.onshape.com/documents?nodeId=f06001a1c60020a0aa7d0c29&resourceType=folder",
-      "status": "unavailable",
-      "reason": "Source does not expose a model-specific public preview"
     },
     {
       "program": "frc",
@@ -617,6 +617,13 @@
     {
       "program": "frc",
       "year": "2024",
+      "url": "https://anglebotics.org/onshape",
+      "status": "unavailable",
+      "reason": "APIRequestContext.get: Timeout 45000ms exceeded.\n"
+    },
+    {
+      "program": "frc",
+      "year": "2024",
       "url": "https://cad.onshape.com/documents/213466195ba91e0919630feb/w/335e73d619814648bcf17040/e/0d55cfe60738c6de5df3af07",
       "status": "unavailable",
       "reason": "Public model access returned HTTP 404"
@@ -631,9 +638,9 @@
     {
       "program": "frc",
       "year": "2024",
-      "url": "https://anglebotics.org/onshape",
+      "url": "https://cad.onshape.com/documents/86ccd0db3f8d0454b4e0be3d/w/8aa98d3e22cbbcae131a9c2f/e/e3fee9f94d2f77a6f8470a8e",
       "status": "unavailable",
-      "reason": "APIRequestContext.get: Timeout 45000ms exceeded.\n"
+      "reason": "Public model access returned HTTP 403"
     },
     {
       "program": "frc",
@@ -641,13 +648,6 @@
       "url": "https://grabcad.com/library/8612-2024-creshendo-full-robot-solidworks-cad-file-1",
       "status": "unavailable",
       "reason": "Public CAD page HTTP 403"
-    },
-    {
-      "program": "frc",
-      "year": "2024",
-      "url": "https://cad.onshape.com/documents/86ccd0db3f8d0454b4e0be3d/w/8aa98d3e22cbbcae131a9c2f/e/e3fee9f94d2f77a6f8470a8e",
-      "status": "unavailable",
-      "reason": "Public model access returned HTTP 403"
     },
     {
       "program": "frc",
@@ -954,17 +954,17 @@
     },
     {
       "program": "ftc",
-      "year": "2024",
-      "url": "https://cad.onshape.com/documents/5fb2d19e001ab6d2d16b4e4a/w/420b09c87a8fc1c1972f08b8/e/7c4509066a5287026858cb57?renderMode=0&uiState=66d71a3bd73c575d1b48886a",
-      "status": "unavailable",
-      "reason": "Linked CAD tab is missing or is not a renderable model"
-    },
-    {
-      "program": "ftc",
       "year": "2023",
       "url": "https://cad.onshape.com/documents/caf129466649d4d73a1cb931/w/a1cef9f47a7b0c356bb0030a/e/e3d790905dc0b6aeecf218c0?renderMode=0&uiState=6711a789067ce3720186c118",
       "status": "unavailable",
       "reason": "Linked tab is a field/layout or design sketch, not a robot model"
+    },
+    {
+      "program": "ftc",
+      "year": "2024",
+      "url": "https://cad.onshape.com/documents/5fb2d19e001ab6d2d16b4e4a/w/420b09c87a8fc1c1972f08b8/e/7c4509066a5287026858cb57?renderMode=0&uiState=66d71a3bd73c575d1b48886a",
+      "status": "unavailable",
+      "reason": "Linked CAD tab is missing or is not a renderable model"
     },
     {
       "program": "ftc",
